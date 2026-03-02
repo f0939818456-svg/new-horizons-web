@@ -1,5 +1,5 @@
 :root {
-  --brand: #4E342E; /* 深棕色主題 */
+  --brand: #4E342E;
   --text: #111;
   --muted: #666;
   --bg: #fff;
@@ -29,7 +29,7 @@ a { color: inherit; text-decoration: none; transition: 0.2s; }
 }
 
 /* ==========================================================================
-   Header & Logo
+   Header
    ========================================================================== */
 .site-header {
   position: sticky;
@@ -37,7 +37,7 @@ a { color: inherit; text-decoration: none; transition: 0.2s; }
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
-  z-index: 100;
+  z-index: 100; /* 確保 Header 在一般內容之上 */
 }
 
 .header-inner {
@@ -47,11 +47,6 @@ a { color: inherit; text-decoration: none; transition: 0.2s; }
   padding: 16px 0;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-}
-
 .logo img {
   height: 54px;
   width: auto;
@@ -59,7 +54,7 @@ a { color: inherit; text-decoration: none; transition: 0.2s; }
 }
 
 /* ==========================================================================
-   Desktop Navigation (保留原功能)
+   Desktop Navigation (保留桌機邏輯)
    ========================================================================== */
 .desktop-nav {
   display: flex;
@@ -67,181 +62,118 @@ a { color: inherit; text-decoration: none; transition: 0.2s; }
   align-items: center;
 }
 
-.nav__link, 
-.nav__btn {
+.nav__link, .nav__btn {
   font-size: 16px;
   font-weight: 500;
-  color: var(--text);
   padding: 8px 12px;
   border-radius: 8px;
-  border: none;
-  background: transparent;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 4px;
-  font-family: inherit;
-  white-space: nowrap; 
 }
 
-.nav__link:hover, 
-.nav__btn:hover {
-  background: #f5f5f5;
-  color: var(--brand);
-}
+.nav__link:hover { background: #f5f5f5; color: var(--brand); }
 
-.nav__arrow {
-  font-size: 10px;
-  opacity: 0.4;
-  transition: transform 0.3s ease;
-}
-
-/* ==========================================================================
-   Dropdown Menu (桌機懸浮邏輯)
-   ========================================================================== */
-.nav__dropdown {
-  position: relative;
-  padding-bottom: 15px;
-  margin-bottom: -15px;
-}
-
+.nav__dropdown { position: relative; }
 .nav__menu {
   position: absolute;
   top: 100%;
   left: 50%;
   transform: translateX(-50%) translateY(10px);
-  width: fit-content; 
-  min-width: 180px; 
   background: #fff;
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 8px;
-  box-shadow: var(--shadow);
   display: none;
   opacity: 0;
-  transition: opacity 0.2s ease, transform 0.2s ease;
   z-index: 1000;
 }
 
 @media (min-width: 901px) {
   .nav__dropdown:hover .nav__menu {
-    display: grid;
+    display: block;
     opacity: 1;
     transform: translateX(-50%) translateY(0);
   }
-  .nav__dropdown:hover .nav__arrow {
-    transform: rotate(180deg);
-  }
-}
-
-.nav__menu a {
-  padding: 10px 20px;
-  font-size: 15px;
-  border-radius: 8px;
-  display: block;
-  white-space: nowrap; 
-}
-
-.nav__menu a:hover {
-  background: #f8f8f8;
-  color: var(--brand);
-}
-
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
 }
 
 /* ==========================================================================
-   Mobile Menu & Sidebar (優化部分)
-   ========================================================================= */
+   Mobile Menu (修正截圖中的重疊問題)
+   ========================================================================== */
 .mobile-btn {
   display: none;
   border: 1px solid var(--border);
   background: #fff;
-  padding: 8px 12px;
+  padding: 10px 14px;
   border-radius: 8px;
   cursor: pointer;
-  font-weight: 500;
-  font-size: 14px;
 }
 
 @media (max-width: 900px) {
   .desktop-nav { display: none; }
-  .mobile-btn { display: flex; align-items: center; gap: 5px; }
+  .mobile-btn { display: flex; }
 
-  /* 側邊面板優化 */
+  /* 修正重點：確保面板有背景色，且完全覆蓋螢幕高度 */
   .mobile-panel {
     position: fixed;
     right: 0; 
     top: 0;
     height: 100vh;
-    width: 300px; /* 優化寬度 */
-    background: #fff;
+    width: 280px; 
+    background: #ffffff; /* 必須有實色背景，防止截圖中的文字重疊 */
     transform: translateX(100%);
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    z-index: 2001;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 9999; /* 必須高於 site-header */
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    box-shadow: -5px 0 25px rgba(0,0,0,0.1);
+    padding: 60px 20px 20px; /* 頂部留白，避免撞到手機頂端 */
+    box-shadow: -5px 0 20px rgba(0,0,0,0.15);
+    overflow-y: auto;
   }
 
-  /* 手機版下拉菜單重構：取消絕對定位，改為垂直排列 */
-  .mobile-panel .nav__dropdown {
-    padding-bottom: 0;
-    margin-bottom: 0;
-    width: 100%;
+  .mobile-menu[aria-hidden="false"] .mobile-panel {
+    transform: translateX(0);
   }
 
-  .mobile-panel .nav__menu {
-    position: static; /* 取消絕對定位 */
-    transform: none;
-    display: none; /* 由 JS 切換或預設隱藏 */
-    opacity: 1;
-    box-shadow: none;
-    border: none;
-    border-left: 2px solid var(--border);
-    margin-left: 15px;
-    margin-top: 5px;
-    padding: 0 0 10px 10px;
-    width: 100%;
-  }
-
-  /* 當手機版下拉被啟動時 (假設新增 active class) */
-  .mobile-panel .nav__dropdown.is-active .nav__menu {
-    display: block;
-  }
-
+  /* 手機版選單項目垂直排列 */
   .mobile-panel .nav__link, 
   .mobile-panel .nav__btn {
-    padding: 14px 0;
-    font-size: 17px;
     width: 100%;
+    padding: 15px 10px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 18px;
     justify-content: flex-start;
-    border-bottom: 1px solid #f9f9f9;
   }
 
-  .mobile-panel .nav__arrow {
-    margin-left: auto; /* 箭頭靠右 */
-    font-size: 12px;
+  /* 隱藏手機版中原本的懸浮下拉選單，改為直接展開或另外處理 */
+  .mobile-panel .nav__menu {
+    position: static;
+    transform: none;
+    opacity: 1;
+    display: block; /* 在手機版直接列出子選項 */
+    border: none;
+    box-shadow: none;
+    padding-left: 20px;
+  }
+  
+  .mobile-panel .nav__menu a {
+    padding: 10px 0;
+    font-size: 16px;
+    color: var(--muted);
   }
 }
 
-/* 選單顯示邏輯保持原樣 */
-.mobile-menu { position: fixed; inset: 0; pointer-events: none; z-index: 2000; }
+.mobile-menu { position: fixed; inset: 0; pointer-events: none; z-index: 9000; }
 .mobile-menu[aria-hidden="false"] { pointer-events: auto; }
-.mobile-menu[aria-hidden="false"] .mobile-panel { transform: translateX(0); }
 
 .mobile-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.4); /* 稍微深一點增加層次感 */
-  backdrop-filter: blur(2px);
+  background: rgba(0,0,0,0.5);
   opacity: 0;
   transition: opacity 0.3s ease;
-  z-index: 1;
+  z-index: -1;
 }
 
 .mobile-menu[aria-hidden="false"] .mobile-backdrop { opacity: 1; }
