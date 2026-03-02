@@ -24,16 +24,16 @@ loadComponent("#site-footer", "/components/footer.html");
 
 /**
  * Header 互動邏輯 (Dropdown, Mobile Menu)
- * - 桌機 (>900px)：完全交給 CSS hover（不改你原功能）
- * - 手機 (<=900px)：JS 控制 dropdown + 側欄 + 自動生成跳轉連結
+ * - 桌機 (>900px)：交給 CSS hover（不動你的桌機功能）
+ * - 手機 (<=900px)：JS 控制側欄 + accordion + 點擊關閉規則
  */
 function setupHeaderInteractions() {
   const root = document.querySelector("#site-header");
   if (!root || root.dataset.bound === "1") return;
-  root.dataset.bound = "1"; // 防止重複綁定事件
+  root.dataset.bound = "1";
 
   // -------------------------
-  // A) Dropdown 處理（手機點擊）
+  // A) Dropdown（手機點擊開關；桌機交給 hover）
   // -------------------------
   const dropdownButtons = root.querySelectorAll("[data-dropdown]");
 
@@ -43,8 +43,7 @@ function setupHeaderInteractions() {
 
   dropdownButtons.forEach((btn) => {
     btn.addEventListener("click", (e) => {
-      // 桌機：交給 CSS hover
-      if (window.innerWidth > 900) return;
+      if (window.innerWidth > 900) return; // 桌機不介入
 
       e.preventDefault();
       e.stopPropagation();
@@ -60,7 +59,7 @@ function setupHeaderInteractions() {
   });
 
   // -------------------------
-  // B) 手機側欄（☰ 開/關）
+  // B) Mobile sidebar open/close
   // -------------------------
   const openMenu = root.querySelector("#openMenu");
   const mobileMenu = root.querySelector("#mobileMenu");
@@ -70,67 +69,17 @@ function setupHeaderInteractions() {
   const lockScroll = () => document.body.classList.add("no-scroll");
   const unlockScroll = () => document.body.classList.remove("no-scroll");
 
-  // ✅ 從桌機 .desktop-nav 複製一份到手機側欄（不動桌機）
-  function buildMobileLinksIfEmpty() {
-    if (!mobileMenu) return;
+  // 取 mobile panel（手機側欄內容區）
+  const panel = mobileMenu?.querySelector(".mobile-panel") || root;
 
-    const panel = mobileMenu.querySelector(".mobile-panel");
-    if (!panel) return;
+  function closeAllMobileAccordions() {
+    panel.querySelectorAll?.(".submenu, .mobile-submenu, [data-mmenu]").forEach((el) => {
+      el.classList.remove("is-open");
+      if (el.setAttribute) el.setAttribute("aria-hidden", "true");
+    });
 
-    // 如果已經有容器就復用；沒有就建
-    let mobileLinks = panel.querySelector(".mobile-links");
-    if (!mobileLinks) {
-      mobileLinks = document.createElement("nav");
-      mobileLinks.className = "mobile-links";
-      panel.appendChild(mobileLinks);
-    }
-
-    // 已經生成過就不重複塞
-    if (mobileLinks.children.length > 0) return;
-
-    const desktopNav = root.querySelector(".desktop-nav");
-    if (!desktopNav) return;
-
-    Array.from(desktopNav.children).forEach((item) => {
-      // 1) 一般連結：a.nav__link
-      const directLink = item.matches?.("a.nav__link")
-        ? item
-        : item.querySelector?.("a.nav__link");
-
-      if (directLink) {
-        const a = directLink.cloneNode(true);
-        mobileLinks.appendChild(a);
-        return;
-      }
-
-      // 2) 下拉選單群：.nav__dropdown
-      const dropdown = item.classList?.contains("nav__dropdown")
-        ? item
-        : item.querySelector?.(".nav__dropdown");
-
-      if (dropdown) {
-        const btn = dropdown.querySelector(".nav__btn");
-        const title = btn ? btn.textContent.trim() : "Menu";
-
-        const group = document.createElement("div");
-        group.className = "mobile-group";
-
-        const groupTitle = document.createElement("div");
-        groupTitle.className = "mobile-group-title";
-        groupTitle.textContent = title;
-
-        const groupList = document.createElement("div");
-        groupList.className = "mobile-group-list";
-
-        dropdown.querySelectorAll(".nav__menu a").forEach((subA) => {
-          const a = subA.cloneNode(true);
-          groupList.appendChild(a);
-        });
-
-        group.appendChild(groupTitle);
-        group.appendChild(groupList);
-        mobileLinks.appendChild(group);
-      }
+    panel.querySelectorAll?.("[data-mdropdown]").forEach((btn) => {
+      if (btn.setAttribute) btn.setAttribute("aria-expanded", "false");
     });
   }
 
@@ -138,12 +87,12 @@ function setupHeaderInteractions() {
     mobileMenu?.setAttribute("aria-hidden", "true");
     unlockScroll();
     closeAllDropdowns();
+    closeAllMobileAccordions();
   };
 
   if (openMenu) {
     openMenu.addEventListener("click", (e) => {
       e.stopPropagation();
-      buildMobileLinksIfEmpty(); // ✅ 確保側欄有跳轉連結
       mobileMenu?.setAttribute("aria-hidden", "false");
       lockScroll();
     });
@@ -157,30 +106,73 @@ function setupHeaderInteractions() {
     if (e.key === "Escape") hideMobileMenu();
   });
 
-  // 回到桌機寬度時，自動收起側欄（避免鎖滾動卡住）
+  // 回到桌機寬度時，自動關側欄（避免卡住 no-scroll）
   window.addEventListener("resize", () => {
     if (window.innerWidth > 900) hideMobileMenu();
   });
 
   // -------------------------
-  // C) 手機側欄子選單 Accordion（如果你 header.html 有用 data-mdropdown/data-mmenu）
+  // C) Mobile accordion（支援兩種結構）
+  // 1) data-mdropdown="x" 搭配 data-mmenu="x"
+  // 2) 按鈕後面緊跟 submenu 容器（nextElementSibling）
   // -------------------------
-  const mBtns = root.querySelectorAll("[data-mdropdown]");
+  function getSubmenuForButton(btn) {
+    const key = btn.getAttribute("data-mdropdown");
+
+    // 結構 1：用 key 找
+    if (key) {
+      const byKey =
+        panel.querySelector?.(`[data-mmenu="${key}"]`) ||
+        panel.querySelector?.(`.submenu[data-key="${key}"]`) ||
+        panel.querySelector?.(`.mobile-submenu[data-key="${key}"]`);
+      if (byKey) return byKey;
+    }
+
+    // 結構 2：找按鈕後面的 submenu
+    const next = btn.nextElementSibling;
+    if (
+      next &&
+      (next.matches?.("[data-mmenu]") ||
+        next.classList?.contains("submenu") ||
+        next.classList?.contains("mobile-submenu"))
+    ) {
+      return next;
+    }
+
+    return null;
+  }
+
+  const mBtns = panel.querySelectorAll?.("[data-mdropdown]") || [];
   mBtns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
+      if (window.innerWidth > 900) return; // 桌機不介入
+
+      e.preventDefault();
       e.stopPropagation();
-      const key = btn.getAttribute("data-mdropdown");
-      const menuEl = root.querySelector(`[data-mmenu="${key}"]`);
-      menuEl?.classList.toggle("is-open");
+
+      const submenu = getSubmenuForButton(btn);
+      if (!submenu) return;
+
+      const isOpen = submenu.classList.contains("is-open");
+
+      // 先關其他
+      closeAllMobileAccordions();
+
+      // 再開自己
+      if (!isOpen) {
+        submenu.classList.add("is-open");
+        if (submenu.setAttribute) submenu.setAttribute("aria-hidden", "false");
+        if (btn.setAttribute) btn.setAttribute("aria-expanded", "true");
+      }
     });
   });
 
   // -------------------------
-  // D) 全域點擊關閉（只針對手機，且點 header 內不誤關）
+  // D) 全域點擊：手機點 header 外關閉 dropdown（不影響桌機）
   // -------------------------
   document.addEventListener("click", (e) => {
-    if (window.innerWidth > 900) return; // 桌機不干涉
-    if (root.contains(e.target)) return; // 點 header/側欄內不關
+    if (window.innerWidth > 900) return;
+    if (root.contains(e.target)) return;
     closeAllDropdowns();
   });
 }
