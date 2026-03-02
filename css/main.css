@@ -5,70 +5,70 @@
   --bg: #fff;
   --border: #e6e6e6;
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  }
-  
-  * {
-  box-sizing: border-box;
+}
+
+* { 
+  box-sizing: border-box; 
   -webkit-font-smoothing: antialiased;
-  }
-  
-  body {
+}
+
+body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", "PingFang TC",
-  "Microsoft JhengHei", sans-serif;
+    "Microsoft JhengHei", sans-serif;
   color: var(--text);
   background: var(--bg);
   line-height: 1.5;
-  }
-  
-  a { color: inherit; text-decoration: none; transition: 0.2s; }
-  
-  .container {
+}
+
+a { color: inherit; text-decoration: none; transition: 0.2s; }
+
+.container {
   width: min(1200px, calc(100% - 40px));
   margin: 0 auto;
-  }
-  
-  /* ==========================================================================
-  Header & Logo
-  ========================================================================== */
-  .site-header {
+}
+
+/* ==========================================================================
+   Header & Logo
+   ========================================================================== */
+.site-header {
   position: sticky;
   top: 0;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
   z-index: 100;
-  }
-  
-  .header-inner {
+}
+
+.header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 16px 0;
-  }
-  
-  .logo {
+}
+
+.logo {
   display: flex;
   align-items: center;
-  }
-  
-  .logo img {
+}
+
+.logo img {
   height: 54px;
   width: auto;
   display: block;
-  }
-  
-  /* ==========================================================================
-  Desktop Navigation
-  ========================================================================== */
-  .desktop-nav {
+}
+
+/* ==========================================================================
+   Desktop Navigation (保留原功能)
+   ========================================================================== */
+.desktop-nav {
   display: flex;
   gap: 8px;
   align-items: center;
-  }
-  
-  .nav__link,
-  .nav__btn {
+}
+
+.nav__link, 
+.nav__btn {
   font-size: 16px;
   font-weight: 500;
   color: var(--text);
@@ -81,37 +81,37 @@
   align-items: center;
   gap: 4px;
   font-family: inherit;
-  white-space: nowrap;
-  }
-  
-  .nav__link:hover,
-  .nav__btn:hover {
+  white-space: nowrap; 
+}
+
+.nav__link:hover, 
+.nav__btn:hover {
   background: #f5f5f5;
   color: var(--brand);
-  }
-  
-  .nav__arrow {
+}
+
+.nav__arrow {
   font-size: 10px;
   opacity: 0.4;
   transition: transform 0.3s ease;
-  }
-  
-  /* ==========================================================================
-  Dropdown Menu
-  ========================================================================== */
-  .nav__dropdown {
+}
+
+/* ==========================================================================
+   Dropdown Menu (桌機懸浮邏輯)
+   ========================================================================== */
+.nav__dropdown {
   position: relative;
   padding-bottom: 15px;
   margin-bottom: -15px;
-  }
-  
-  .nav__menu {
+}
+
+.nav__menu {
   position: absolute;
   top: 100%;
   left: 50%;
   transform: translateX(-50%) translateY(10px);
-  width: fit-content;
-  min-width: 180px;
+  width: fit-content; 
+  min-width: 180px; 
   background: #fff;
   border: 1px solid var(--border);
   border-radius: 12px;
@@ -121,161 +121,137 @@
   opacity: 0;
   transition: opacity 0.2s ease, transform 0.2s ease;
   z-index: 1000;
-  }
-  
-  @media (min-width: 901px) {
+}
+
+@media (min-width: 901px) {
   .nav__dropdown:hover .nav__menu {
-  display: grid;
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
+    display: grid;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
   }
   .nav__dropdown:hover .nav__arrow {
-  transform: rotate(180deg);
+    transform: rotate(180deg);
   }
-  }
-  
-  .nav__menu a {
+}
+
+.nav__menu a {
   padding: 10px 20px;
   font-size: 15px;
   border-radius: 8px;
   display: block;
-  white-space: nowrap;
-  }
-  
-  .nav__menu a:hover {
+  white-space: nowrap; 
+}
+
+.nav__menu a:hover {
   background: #f8f8f8;
   color: var(--brand);
-  }
-  
-  /* ==========================================================================
-  Header Actions (僅保留手機版按鈕容器)
-  ========================================================================== */
-  .header-actions {
+}
+
+.header-actions {
   display: flex;
   align-items: center;
   gap: 12px;
-  }
-  
+}
+
 /* ==========================================================================
-   Mobile Menu (優化版 - 僅針對 900px 以下)
-   ========================================================================== */
-   @media (max-width: 900px) {
-    .desktop-nav { display: none; }
-    .mobile-btn { 
-      display: flex; 
-      align-items: center;
-      gap: 6px;
-      font-size: 14px;
-      font-weight: 600;
-    }
-  
-    /* 面板主體 */
-    .mobile-panel {
-      position: fixed;
-      right: 0;
-      top: 0;
-      height: 100vh;
-      width: 300px; /* 固定寬度更美觀 */
-      background: #fff;
-      transform: translateX(100%);
-      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-      z-index: 2001;
-      display: flex;
-      flex-direction: column;
-      box-shadow: -10px 0 30px rgba(0,0,0,0.1);
-    }
-  
-    /* 當選單開啟時 (假設你 JS 會切換 aria-hidden="false") */
-    .mobile-menu[aria-hidden="false"] .mobile-panel {
-      transform: translateX(0);
-    }
-  
-    /* 面板頂部 (放置關閉按鈕或 Logo) */
-    .mobile-panel-header {
-      padding: 20px;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      justify-content: flex-end;
-    }
-  
-    .mobile-close-btn {
-      background: none;
-      border: none;
-      font-size: 24px;
-      cursor: pointer;
-      color: var(--muted);
-    }
-  
-    /* 選單滾動區域 */
-    .mobile-nav-content {
-      flex: 1;
-      overflow-y: auto;
-      padding: 20px;
-    }
-  
-    /* 手機版連結樣式 */
-    .mobile-nav__item {
-      border-bottom: 1px solid #f5f5f5;
-    }
-  
-    .mobile-nav__link {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 0;
-      font-size: 17px;
-      font-weight: 500;
-      color: var(--text);
-    }
-  
-    /* 手機版下拉選單 (手風琴模式) */
-    .mobile-dropdown-menu {
-      display: none; /* 預設隱藏，點擊父層後顯示 */
-      background: #fcfcfc;
-      padding-left: 15px;
-      padding-bottom: 10px;
-    }
-  
-    .mobile-dropdown-menu a {
-      display: block;
-      padding: 12px 0;
-      font-size: 15px;
-      color: var(--muted);
-    }
-  
-    /* 顯示下拉選單的狀態類別 (由 JS 控制) */
-    .mobile-nav__item.is-active .mobile-dropdown-menu {
-      display: block;
-    }
-    
-    .mobile-nav__item.is-active .nav__arrow {
-      transform: rotate(180deg);
-    }
-  
-    /* 背景遮罩 */
-    .mobile-backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(2px);
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-      z-index: 2000;
-    }
-  
-    .mobile-menu[aria-hidden="false"] .mobile-backdrop {
-      opacity: 1;
-      visibility: visible;
-    }
+   Mobile Menu & Sidebar (優化部分)
+   ========================================================================= */
+.mobile-btn {
+  display: none;
+  border: 1px solid var(--border);
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+  .desktop-nav { display: none; }
+  .mobile-btn { display: flex; align-items: center; gap: 5px; }
+
+  /* 側邊面板優化 */
+  .mobile-panel {
+    position: fixed;
+    right: 0; 
+    top: 0;
+    height: 100vh;
+    width: 300px; /* 優化寬度 */
+    background: #fff;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 2001;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: -5px 0 25px rgba(0,0,0,0.1);
   }
-  
-  /* ==========================================================================
-  Footer
-  ========================================================================== */
-  .site-footer {
+
+  /* 手機版下拉菜單重構：取消絕對定位，改為垂直排列 */
+  .mobile-panel .nav__dropdown {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    width: 100%;
+  }
+
+  .mobile-panel .nav__menu {
+    position: static; /* 取消絕對定位 */
+    transform: none;
+    display: none; /* 由 JS 切換或預設隱藏 */
+    opacity: 1;
+    box-shadow: none;
+    border: none;
+    border-left: 2px solid var(--border);
+    margin-left: 15px;
+    margin-top: 5px;
+    padding: 0 0 10px 10px;
+    width: 100%;
+  }
+
+  /* 當手機版下拉被啟動時 (假設新增 active class) */
+  .mobile-panel .nav__dropdown.is-active .nav__menu {
+    display: block;
+  }
+
+  .mobile-panel .nav__link, 
+  .mobile-panel .nav__btn {
+    padding: 14px 0;
+    font-size: 17px;
+    width: 100%;
+    justify-content: flex-start;
+    border-bottom: 1px solid #f9f9f9;
+  }
+
+  .mobile-panel .nav__arrow {
+    margin-left: auto; /* 箭頭靠右 */
+    font-size: 12px;
+  }
+}
+
+/* 選單顯示邏輯保持原樣 */
+.mobile-menu { position: fixed; inset: 0; pointer-events: none; z-index: 2000; }
+.mobile-menu[aria-hidden="false"] { pointer-events: auto; }
+.mobile-menu[aria-hidden="false"] .mobile-panel { transform: translateX(0); }
+
+.mobile-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4); /* 稍微深一點增加層次感 */
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.mobile-menu[aria-hidden="false"] .mobile-backdrop { opacity: 1; }
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.site-footer {
   margin-top: 80px;
   background: #1a1a1a;
   color: #fff;
   padding: 60px 0 20px;
-  }
+}
