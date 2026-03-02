@@ -23,15 +23,15 @@ loadComponent("#site-header", "/components/header.html").then(() => {
 loadComponent("#site-footer", "/components/footer.html");
 
 /**
- * Header 互動邏輯 (Dropdown, Mobile Menu)
+ * Header 互動邏輯
  */
 function setupHeaderInteractions() {
   const root = document.querySelector("#site-header");
   if (!root || root.dataset.bound === "1") return;
-  root.dataset.bound = "1"; // 防止重複綁定事件
+  root.dataset.bound = "1";
 
   // -------------------------
-  // A) Dropdown 處理 (處理手機版點擊)
+  // A) 桌機/手機 下拉選單處理
   // -------------------------
   const dropdownButtons = root.querySelectorAll("[data-dropdown]");
   
@@ -41,7 +41,7 @@ function setupHeaderInteractions() {
 
   dropdownButtons.forEach((btn) => {
     btn.addEventListener("click", (e) => {
-      // 桌機版 (寬度 > 900px) 讓 CSS hover 處理，JS 不介入
+      // 寬度大於 900px 時由 CSS Hover 控制，不執行 JS
       if (window.innerWidth > 900) return;
 
       e.preventDefault();
@@ -71,7 +71,11 @@ function setupHeaderInteractions() {
     });
   }
 
-  const hideMobileMenu = () => mobileMenu?.setAttribute("aria-hidden", "true");
+  const hideMobileMenu = () => {
+    mobileMenu?.setAttribute("aria-hidden", "true");
+    // 關閉側欄時順便關閉裡面可能開著的子選單
+    root.querySelectorAll("[data-mmenu]").forEach(m => m.classList.remove("is-open"));
+  };
 
   if (closeMenu) closeMenu.addEventListener("click", hideMobileMenu);
   if (backdrop) backdrop.addEventListener("click", hideMobileMenu);
@@ -80,17 +84,22 @@ function setupHeaderInteractions() {
   const mBtns = root.querySelectorAll("[data-mdropdown]");
   mBtns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
+      e.preventDefault();
       e.stopPropagation();
       const key = btn.getAttribute("data-mdropdown");
       const menuEl = root.querySelector(`[data-mmenu="${key}"]`);
-      menuEl?.classList.toggle("is-open");
+      
+      if (menuEl) {
+        const isOpen = menuEl.classList.contains("is-open");
+        // 如果想讓手機版一次只能開一個子選單，可以取消下面這行的註解：
+        // root.querySelectorAll("[data-mmenu]").forEach(m => m.classList.remove("is-open"));
+        menuEl.classList.toggle("is-open", !isOpen);
+      }
     });
   });
 
-  // -------------------------
-  // 全域點擊關閉 (點擊空白處關閉下拉選單)
-  // -------------------------
+  // 全域點擊關閉
   document.addEventListener("click", () => {
-    closeAllDropdowns();
+    if (window.innerWidth <= 900) closeAllDropdowns();
   });
 }
