@@ -1,0 +1,131 @@
+<style>
+  /* 縮窄寬度並優化排版的頁尾樣式 */
+  .site-footer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 30px 0 25px; /* 縮小上下寬度，讓頁尾更精簡 */
+    font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+  }
+  
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    flex-wrap: wrap;
+  }
+
+  /* 左側品牌資訊排版 */
+  .footer-brand {
+    flex: 1;
+    min-width: 300px;
+  }
+
+  .footer-logo-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 12px;
+  }
+
+  .footer-logo {
+    width: 60px; /* 調整為更適中的商業比例 */
+    height: auto;
+  }
+
+  .footer-logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .footer-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+
+  .footer-slogan {
+    font-size: 0.95rem;
+    color: #ffffff;
+    letter-spacing: 4px;
+    margin-bottom: 18px;
+    font-weight: 300;
+    opacity: 0.9;
+  }
+
+  .footer-contact-info {
+    font-size: 0.9rem;
+    color: #cccccc;
+    line-height: 1.8;
+  }
+
+  /* 右側法律連結排版 */
+  .footer-links {
+    display: flex;
+    gap: 30px;
+    margin-top: 10px; /* 與標題線條對齊 */
+  }
+
+  .footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.85rem;
+    opacity: 0.7;
+    transition: 0.3s;
+    white-space: nowrap;
+  }
+
+  .footer-links a:hover {
+    opacity: 1;
+  }
+
+  /* 底部版權線條 */
+  .footer-bottom {
+    border-top: 1px solid #333;
+    margin-top: 30px;
+    padding-top: 20px;
+    font-size: 0.8rem;
+    color: #666666;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 40px;
+  }
+
+  @media (max-width: 768px) {
+    .footer-inner { flex-direction: column; gap: 25px; }
+    .footer-links { justify-content: flex-start; }
+  }
+</style>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo-title">
+        <div class="footer-logo">
+          <img src="/assets/images/logofooter.png" alt="日暘國際教育">
+        </div>
+        <div class="footer-title">日暘國際教育</div>
+      </div>
+      
+      <div class="footer-slogan">照耀卓越，引航未來</div>
+      
+      <div class="footer-contact-info">
+        <div>(04) 3707-9662</div>
+        <div>台中市南屯區龍富路四段59號</div>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <a href="#">使用條款 Terms of Use</a>
+      <a href="#">隱私權政策 Privacy Policy</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    &copy; 2026 New Horizons Education. All Rights Reserved.
+  </div>
+</footer>

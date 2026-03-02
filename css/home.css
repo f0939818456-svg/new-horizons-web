@@ -1,0 +1,230 @@
+/* 全域標題 */
+.section__title {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--brand);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  
+  /* 1. HERO Section */
+  .hero {
+    position: relative;
+    height: calc(100vh - 80px);
+    min-height: 500px;
+    background-color: #111;
+    overflow: hidden;
+  }
+  .hero__slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease-in-out, visibility 1s;
+  }
+  .hero__slide.is-active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+  }
+  .hero__slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 100%);
+    z-index: 2;
+  }
+  .hero__content {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    z-index: 3;
+    color: #fff;
+  }
+  .hero__slogan {
+    font-size: clamp(32px, 4vw, 56px);
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 15px;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  }
+  .hero__dots {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    gap: 12px;
+  }
+  .hero__dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .hero__dot.is-active {
+    background: #fff;
+    transform: scale(1.3);
+  }
+  
+  /* 移除左上角文字（如果有出現在 HTML 的話，請直接刪除該標籤） */
+
+/* 2. LATEST NEWS (左右佈局) */
+.news-section {
+    padding: 100px 0; /* 增加上下間距 */
+    background-color: #fafafa;
+}
+
+.news-grid {
+    display: flex;
+    flex-direction: column; /* 改為垂直排列卡片 */
+    gap: 24px;
+}
+
+.news-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 0; /* 內距由內部容器控制 */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: 0.3s ease;
+    display: flex; /* 開啟 flex 實現左右配置 */
+    overflow: hidden;
+    border-top: none; 
+    border-left: 5px solid var(--brand); /* 改為左側邊條更有設計感 */
+    text-decoration: none;
+    color: inherit;
+}
+
+.news-card:hover {
+    transform: translateX(10px); /* 往右滑動一點點 */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.news-card__content {
+    padding: 30px;
+    flex: 1; /* 佔據左側剩餘空間 */
+    display: flex;
+    flex-direction: column;
+}
+
+.news-card__image {
+    width: 250px; /* 設定右側圖片寬度 */
+    height: auto;
+}
+
+.news-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 針對手機版自動切換回上下佈局 */
+@media (max-width: 768px) {
+    .news-card { flex-direction: column-reverse; }
+    .news-card__image { width: 100%; height: 200px; }
+}
+
+/* 高級感按鈕樣式 */
+.news-more-wrapper {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 100px; /* 這裡撐開與下一區塊的距離 */
+}
+
+.btn-fancy {
+    display: inline-block;
+    padding: 16px 48px;
+    background: var(--brand);
+    color: #fff;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(78, 52, 46, 0.2);
+}
+
+.btn-fancy:hover {
+    background: #3e2723;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(78, 52, 46, 0.3);
+    color: #fff;
+}
+  
+  /* 3. OUR SERVICES */
+  .service-section { padding: 100px 0; }
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+  }
+  .service-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    transition: 0.4s;
+    display: flex;
+    flex-direction: column;
+  }
+  .service-card:hover { transform: translateY(-10px); }
+  .service-card__img img { width: 100%; height: 240px; object-fit: cover; }
+  .service-card__body { padding: 30px; flex-grow: 1; }
+  .service-card__title { font-size: 22px; color: var(--brand); margin-bottom: 15px; font-weight: 700; }
+  .btn-outline {
+    display: inline-block;
+    padding: 10px 24px;
+    border: 2px solid var(--brand);
+    color: var(--brand);
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.3s;
+  }
+  .btn-outline:hover { background: var(--brand); color: #fff; }
+  
+  /* 4. VIDEO SECTION */
+  .video-section {
+    position: relative;
+    height: 60vh;
+    min-height: 400px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .bg-video {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+  }
+  .video-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(30, 20, 18, 0.5);
+    z-index: 1;
+  }
+  .video-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+  }
+  .btn-primary {
+    display: inline-block;
+    background: var(--brand);
+    color: #fff;
+    padding: 14px 36px;
+    font-weight: 600;
+    border-radius: 30px;
+  }
