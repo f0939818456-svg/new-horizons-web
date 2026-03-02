@@ -263,3 +263,43 @@ body.no-scroll { overflow: hidden; }
   color: #fff;
   padding: 60px 0 20px;
 }
+@media (max-width: 900px){
+
+  /* 讓 mobile panel 可以當定位參考 */
+  .mobile-panel{
+    position: fixed;
+  }
+
+  /* 關閉按鈕（#closeMenu）鎖在右上角 */
+  #closeMenu{
+    position: absolute;
+    top: 16px;
+    right: 16px;
+
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    border: none;
+    background: #f3f3f3;
+
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1;
+
+    cursor: pointer;
+  }
+
+  #closeMenu:hover{
+    background: #e5e5e5;
+  }
+
+  /* 為了避免選單內容被 X 蓋住，往下推一點 */
+  .mobile-panel{
+    padding-top: 60px;
+  }
+}
