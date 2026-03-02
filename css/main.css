@@ -157,50 +157,72 @@ a { color: inherit; text-decoration: none; transition: 0.2s; }
 }
 
 /* ==========================================================================
-   Mobile Menu (Sidebar)
+   Mobile Menu (Sidebar) - 修正後的版本
    ========================================================================== */
-.mobile-btn {
-  display: none;
-  border: 1px solid var(--border);
-  background: #fff;
-  padding: 10px 14px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-@media (max-width: 900px) {
-  .desktop-nav { display: none; }
-  .mobile-btn { display: flex; }
-}
-
-.mobile-menu { position: fixed; inset: 0; pointer-events: none; z-index: 2000; }
-.mobile-menu[aria-hidden="false"] { pointer-events: auto; }
-
-.mobile-panel {
-  position: absolute;
-  right: 0; top: 0;
-  height: 100%;
-  width: min(85vw, 320px);
-  background: #fff;
-  transform: translateX(100%);
-  transition: transform 0.3s ease;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-}
-
-.mobile-menu[aria-hidden="false"] .mobile-panel { transform: translateX(0); }
-
-.mobile-backdrop {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 1;
-}
-
-.mobile-menu[aria-hidden="false"] .mobile-backdrop { opacity: 1; }
+   @media (max-width: 900px) {
+    .desktop-nav { display: none; }
+    .mobile-btn { 
+      display: flex; 
+      align-items: center;
+      justify-content: center;
+      z-index: 101; /* 確保按鈕在 Header 之上 */
+    }
+  }
+  
+  .mobile-panel {
+    position: fixed; /* 改為 fixed 確保捲動時不移位 */
+    right: 0; 
+    top: 0;
+    height: 100vh;
+    width: min(85vw, 320px);
+    background: #ffffff; /* 強制白色背景以遮擋後方文字 */
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2001;
+    display: flex;
+    flex-direction: column;
+    padding: 80px 24px 40px; /* 增加頂部留白，避免被關閉按鈕擋住 */
+    box-shadow: -5px 0 25px rgba(0,0,0,0.15);
+    overflow-y: auto; /* 內容過長時可捲動 */
+  }
+  
+  /* 修正手機版選單內的連結排版 */
+  .mobile-panel a, 
+  .mobile-panel .nav__btn {
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    font-size: 18px; /* 加大字體方便點擊 */
+    color: var(--text);
+    border-bottom: 1px solid #f0f0f0; /* 加入水平分隔線 */
+    text-align: left;
+  }
+  
+  .mobile-panel a:last-child {
+    border-bottom: none;
+  }
+  
+  /* 展開後的狀態 */
+  .mobile-menu[aria-hidden="false"] .mobile-panel { 
+    transform: translateX(0); 
+  }
+  
+  /* 遮罩層修正 */
+  .mobile-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px); /* 增加模糊感，讓後方 Banner 不干擾視覺 */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2000;
+    pointer-events: none;
+  }
+  
+  .mobile-menu[aria-hidden="false"] .mobile-backdrop { 
+    opacity: 1; 
+    pointer-events: auto;
+  }
 
 /* ==========================================================================
    Footer
