@@ -10,7 +10,7 @@
   /* 1. HERO Section */
   .hero {
     position: relative;
-    height: calc(100vh - 80px);
+    height: 300px;
     min-height: 300px;
     background-color: #111;
     overflow: hidden;
