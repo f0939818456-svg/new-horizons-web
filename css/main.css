@@ -5,7 +5,6 @@
   --bg: #fff;
   --border: #e6e6e6;
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  --header-height: 80px;
 }
 
 * { 
@@ -15,7 +14,8 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", "PingFang TC",
+    "Microsoft JhengHei", sans-serif;
   color: var(--text);
   background: var(--bg);
   line-height: 1.5;
@@ -34,159 +34,180 @@ a { color: inherit; text-decoration: none; transition: 0.2s; }
 .site-header {
   position: sticky;
   top: 0;
-  height: var(--header-height);
   background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
-  z-index: 1000;
-  display: flex;
-  align-items: center;
+  z-index: 100;
 }
 
 .header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  padding: 16px 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
 }
 
 .logo img {
-  height: 50px; /* 稍微縮小以維持精緻感 */
+  height: 54px;
   width: auto;
   display: block;
 }
 
 /* ==========================================================================
-   Desktop Navigation (901px 以上)
+   Desktop Navigation
    ========================================================================== */
 .desktop-nav {
   display: flex;
-  gap: 12px;
+  gap: 8px;
   align-items: center;
 }
 
-/* 確保桌機版絕對不顯示手機按鈕 */
-.mobile-btn {
-  display: none !important; 
-}
-
-.nav__link, .nav__btn {
+.nav__link, 
+.nav__btn {
   font-size: 16px;
   font-weight: 500;
   color: var(--text);
-  padding: 8px 16px;
+  padding: 8px 12px;
   border-radius: 8px;
-  transition: 0.3s;
+  border: none;
+  background: transparent;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: inherit;
+  white-space: nowrap; 
 }
 
-.nav__link:hover {
+.nav__link:hover, 
+.nav__btn:hover {
   background: #f5f5f5;
   color: var(--brand);
 }
 
-/* Dropdown logic */
-.nav__dropdown { position: relative; }
+.nav__arrow {
+  font-size: 10px;
+  opacity: 0.4;
+  transition: transform 0.3s ease;
+}
+
+/* ==========================================================================
+   Dropdown Menu
+   ========================================================================== */
+.nav__dropdown {
+  position: relative;
+  padding-bottom: 15px;
+  margin-bottom: -15px;
+}
+
 .nav__menu {
   position: absolute;
   top: 100%;
   left: 50%;
   transform: translateX(-50%) translateY(10px);
+  width: fit-content; 
+  min-width: 180px; 
   background: #fff;
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 10px;
+  padding: 8px;
   box-shadow: var(--shadow);
   display: none;
   opacity: 0;
-  z-index: 1100;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 1000;
 }
 
-.nav__dropdown:hover .nav__menu {
+@media (min-width: 901px) {
+  .nav__dropdown:hover .nav__menu {
+    display: grid;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  .nav__dropdown:hover .nav__arrow {
+    transform: rotate(180deg);
+  }
+}
+
+.nav__menu a {
+  padding: 10px 20px;
+  font-size: 15px;
+  border-radius: 8px;
   display: block;
-  opacity: 1;
-  transform: translateX(-50%) translateY(5px);
+  white-space: nowrap; 
+}
+
+.nav__menu a:hover {
+  background: #f8f8f8;
+  color: var(--brand);
 }
 
 /* ==========================================================================
-   Mobile Navigation (900px 以下)
+   Header Actions (僅保留手機版按鈕容器)
    ========================================================================== */
-@media (max-width: 900px) {
-  .desktop-nav { 
-    display: none !important; 
-  }
-
-  .mobile-btn { 
-    display: flex !important; /* 手機版才顯現 */
-    background: #fff;
-    border: 1px solid var(--border);
-    padding: 10px 16px;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 14px;
-    cursor: pointer;
-    z-index: 1100;
-  }
-
-  .mobile-panel {
-    position: fixed;
-    right: 0;
-    top: 0;
-    height: 100vh;
-    width: 300px; /* 固定寬度更美觀 */
-    background: #ffffff; /* 強制純白遮擋 Banner */
-    transform: translateX(100%);
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    z-index: 2100;
-    padding: 100px 30px 40px;
-    display: flex;
-    flex-direction: column;
-    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
-  }
-
-  /* 針對手機截圖中的堆疊問題進行排版修正 */
-  .mobile-panel a, .mobile-panel .nav__btn {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 18px 0;
-    font-size: 19px;
-    font-weight: 600;
-    color: var(--text);
-    border-bottom: 1px solid #f2f2f2;
-    background: transparent;
-    text-align: left;
-  }
-
-  .mobile-menu[aria-hidden="false"] .mobile-panel { 
-    transform: translateX(0); 
-  }
-
-  /* 提升遮罩質感，使用模糊效果 */
-  .mobile-backdrop {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(6px); /* 模糊背景，讓選單更突出 */
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 2050;
-    pointer-events: none;
-  }
-
-  .mobile-menu[aria-hidden="false"] .mobile-backdrop { 
-    opacity: 1; 
-    pointer-events: auto;
-  }
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 /* ==========================================================================
-   Footer (採用您要求的專業比例)
+   Mobile Menu (Sidebar)
+   ========================================================================== */
+.mobile-btn {
+  display: none;
+  border: 1px solid var(--border);
+  background: #fff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .desktop-nav { display: none; }
+  .mobile-btn { display: flex; }
+}
+
+.mobile-menu { position: fixed; inset: 0; pointer-events: none; z-index: 2000; }
+.mobile-menu[aria-hidden="false"] { pointer-events: auto; }
+
+.mobile-panel {
+  position: absolute;
+  right: 0; top: 0;
+  height: 100%;
+  width: min(85vw, 320px);
+  background: #fff;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu[aria-hidden="false"] .mobile-panel { transform: translateX(0); }
+
+.mobile-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.mobile-menu[aria-hidden="false"] .mobile-backdrop { opacity: 1; }
+
+/* ==========================================================================
+   Footer
    ========================================================================== */
 .site-footer {
+  margin-top: 80px;
   background: #1a1a1a;
   color: #fff;
-  padding: 60px 0 30px;
-  margin-top: 0; /* 貼合內容 */
+  padding: 60px 0 20px;
 }
