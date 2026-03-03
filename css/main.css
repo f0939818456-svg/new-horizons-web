@@ -155,7 +155,7 @@ a { color: inherit; text-decoration: none; transition: 0.2s; }
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 999999; /* 超高層級，必定蓋過 banner */
+  z-index: 999999;
 }
 
 .mobile-menu[aria-hidden="false"] {
@@ -197,7 +197,7 @@ a { color: inherit; text-decoration: none; transition: 0.2s; }
 }
 
 /* =========================
-   Mobile Links
+   Mobile Links + Close Button
 ========================= */
 @media (max-width: 900px) {
 
@@ -249,21 +249,6 @@ a { color: inherit; text-decoration: none; transition: 0.2s; }
     padding: 10px;
     font-size: 15px;
   }
-}
-
-/* 鎖住背景滾動 */
-body.no-scroll { overflow: hidden; }
-
-/* =========================
-   Footer
-========================= */
-.site-footer {
-  margin-top: 80px;
-  background: #1a1a1a;
-  color: #fff;
-  padding: 60px 0 20px;
-}
-@media (max-width: 900px){
 
   /* 讓 mobile panel 可以當定位參考 */
   .mobile-panel{
@@ -302,7 +287,24 @@ body.no-scroll { overflow: hidden; }
   .mobile-panel{
     padding-top: 60px;
   }
-  /* ========== ABOUT PAGE (Balanced) ========== */
+}
+
+/* 鎖住背景滾動 */
+body.no-scroll { overflow: hidden; }
+
+/* =========================
+   Footer
+========================= */
+.site-footer {
+  margin-top: 80px;
+  background: #1a1a1a;
+  color: #fff;
+  padding: 60px 0 20px;
+}
+
+/* =========================
+   ABOUT PAGE (Balanced)  ✅移到外面：桌機也能吃到
+========================= */
 .about { padding: 28px 0 84px; }
 .about p { line-height: 1.85; max-width: 64ch; margin: 0 0 12px; }
 .about h2 { margin: 0 0 12px; letter-spacing: -0.02em; }
@@ -548,5 +550,4 @@ body.no-scroll { overflow: hidden; }
   .metrics-grid{ grid-template-columns: 1fr; }
   .team-grid{ grid-template-columns: 1fr; }
   .logo-grid{ grid-template-columns: repeat(2, 1fr); }
-}
 }
