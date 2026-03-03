@@ -3,16 +3,210 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>大學申請榜</title>
+    <title>大學申請榜 | New Horizons Education</title>
+    <meta name="description" content="New Horizons 大學申請榜：以申請季與校系整理錄取成果，提供清晰、可閱讀的榜單呈現。">
+
     <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/college.css" />
   </head>
 
   <body>
     <div id="site-header"></div>
 
-    <main class="container" style="padding: 28px 0">
-      <h1>大學申請榜</h1>
-      <p>這頁之後會放 大學申請榜 的內容。</p>
+    <main class="container admissions">
+      <!-- HERO：只講榜單 -->
+      <section class="adm-hero" aria-label="Admissions Board Hero">
+        <div class="adm-hero__media">
+          <img src="/images/admissions/banner.jpg" alt="Admissions banner" />
+          <div class="adm-hero__overlay"></div>
+        </div>
+
+        <div class="adm-hero__content">
+          <p class="eyebrow">ADMISSIONS BOARD</p>
+          <h1 class="adm-hero__title">
+            大學申請榜<br />
+            <span class="adm-accent">錄取成果一眼看懂</span>
+          </h1>
+          <p class="adm-hero__subtitle">
+            本頁僅展示錄取/候補/錄取確認等結果，依申請季整理。
+           （若需申請規劃與策略，請至其他頁面查看。）
+          </p>
+
+          <div class="adm-kpis" aria-label="Highlights">
+            <div class="adm-kpi">
+              <div class="adm-kpi__num">2026</div>
+              <div class="adm-kpi__label">申請季</div>
+            </div>
+            <div class="adm-kpi">
+              <div class="adm-kpi__num">12+</div>
+              <div class="adm-kpi__label">上榜案例</div>
+            </div>
+            <div class="adm-kpi">
+              <div class="adm-kpi__num">更新中</div>
+              <div class="adm-kpi__label">持續新增</div>
+            </div>
+          </div>
+
+          <div class="adm-note" role="note">
+            ※ 為保護隱私，個人資訊可匿名呈現；如需驗證可提供「遮蔽版證明」。
+          </div>
+        </div>
+
+        <a class="adm-hero__scroll" href="#board" aria-label="Scroll to board">
+          <span>SCROLL</span><i></i>
+        </a>
+      </section>
+
+      <div id="board" class="adm-anchor"></div>
+
+      <!-- 篩選 / 搜尋（目前靜態外觀；要做真的篩選我可以再補 JS） -->
+      <section class="adm-toolbar" aria-label="Board Filters">
+        <div class="adm-toolbar__left">
+          <h2 class="adm-toolbar__title">榜單總覽</h2>
+          <p class="muted adm-toolbar__desc">用「申請季 / 地區 / 學院」快速定位，或用關鍵字搜尋校名與科系。</p>
+        </div>
+
+        <div class="adm-toolbar__right" role="group" aria-label="Filters">
+          <label class="adm-field">
+            <span class="adm-field__label">申請季</span>
+            <select class="adm-input" aria-label="Season">
+              <option>2026</option>
+              <option>2025</option>
+              <option>2024</option>
+            </select>
+          </label>
+
+          <label class="adm-field">
+            <span class="adm-field__label">地區</span>
+            <select class="adm-input" aria-label="Region">
+              <option>全部</option>
+              <option>台灣</option>
+              <option>美國</option>
+              <option>英國</option>
+              <option>日本</option>
+              <option>歐洲</option>
+            </select>
+          </label>
+
+          <label class="adm-field">
+            <span class="adm-field__label">學院</span>
+            <select class="adm-input" aria-label="School">
+              <option>全部</option>
+              <option>工程</option>
+              <option>商管</option>
+              <option>社科/人文</option>
+              <option>設計/藝術</option>
+              <option>理學</option>
+            </select>
+          </label>
+
+          <label class="adm-field adm-search">
+            <span class="adm-field__label">搜尋</span>
+            <input class="adm-input" type="search" placeholder="輸入：學校 / 科系 / 關鍵字…" aria-label="Search"/>
+          </label>
+        </div>
+      </section>
+
+      <!-- BOARD：純結果卡 -->
+      <section class="adm-grid" aria-label="Admissions Results Board">
+        <!-- 卡片 A -->
+        <article class="adm-card">
+          <div class="adm-card__top">
+            <div class="adm-badge">2026｜美國｜工程</div>
+            <div class="adm-chip">匿名 A</div>
+          </div>
+
+          <h3 class="adm-card__title">錄取結果</h3>
+
+          <div class="adm-card__list" aria-label="Offers">
+            <div class="adm-offer">
+              <div class="adm-offer__school">Example University</div>
+              <div class="adm-offer__dept">Computer Science</div>
+              <div class="adm-offer__tag ok">Offer</div>
+            </div>
+            <div class="adm-offer">
+              <div class="adm-offer__school">Example Institute</div>
+              <div class="adm-offer__dept">Electrical Engineering</div>
+              <div class="adm-offer__tag ok">Offer</div>
+            </div>
+            <div class="adm-offer">
+              <div class="adm-offer__school">Example College</div>
+              <div class="adm-offer__dept">Data Science</div>
+              <div class="adm-offer__tag wait">Waitlist</div>
+            </div>
+          </div>
+
+          <div class="adm-card__bottom">
+            <div class="adm-proof">（可選）遮蔽版錄取信：可提供驗證</div>
+          </div>
+        </article>
+
+        <!-- 卡片 B -->
+        <article class="adm-card">
+          <div class="adm-card__top">
+            <div class="adm-badge">2026｜台灣｜商管</div>
+            <div class="adm-chip">匿名 B</div>
+          </div>
+
+          <h3 class="adm-card__title">錄取結果</h3>
+
+          <div class="adm-card__list">
+            <div class="adm-offer">
+              <div class="adm-offer__school">Example University (TW)</div>
+              <div class="adm-offer__dept">Business Administration</div>
+              <div class="adm-offer__tag ok">錄取</div>
+            </div>
+            <div class="adm-offer">
+              <div class="adm-offer__school">Example University (TW)</div>
+              <div class="adm-offer__dept">Economics</div>
+              <div class="adm-offer__tag ok">錄取</div>
+            </div>
+          </div>
+
+          <div class="adm-card__bottom">
+            <div class="adm-proof">（可選）遮蔽版證明：可提供驗證</div>
+          </div>
+        </article>
+
+        <!-- 卡片 C -->
+        <article class="adm-card">
+          <div class="adm-card__top">
+            <div class="adm-badge">2026｜日本｜設計</div>
+            <div class="adm-chip">匿名 C</div>
+          </div>
+
+          <h3 class="adm-card__title">錄取結果</h3>
+
+          <div class="adm-card__list">
+            <div class="adm-offer">
+              <div class="adm-offer__school">Example University (JP)</div>
+              <div class="adm-offer__dept">Design</div>
+              <div class="adm-offer__tag ok">合格</div>
+            </div>
+            <div class="adm-offer">
+              <div class="adm-offer__school">Example University (JP)</div>
+              <div class="adm-offer__dept">Media Arts</div>
+              <div class="adm-offer__tag no">未錄取</div>
+            </div>
+          </div>
+
+          <div class="adm-card__bottom">
+            <div class="adm-proof">（可選）遮蔽版通知：可提供驗證</div>
+          </div>
+        </article>
+      </section>
+
+      <!-- 小型、低侵入 CTA（不談規劃） -->
+      <section class="adm-cta" aria-label="CTA">
+        <div class="adm-cta__inner">
+          <h2>想出現在下一期榜單？</h2>
+          <p class="muted">若你希望更新你的錄取成果到本頁，或需要匿名/遮蔽展示方式，歡迎聯絡我們。</p>
+          <div class="adm-cta__actions">
+            <a class="btn primary" href="/contact">聯絡我們</a>
+            <a class="btn ghost" href="/services">查看服務</a>
+          </div>
+        </div>
+      </section>
     </main>
 
     <div id="site-footer"></div>
