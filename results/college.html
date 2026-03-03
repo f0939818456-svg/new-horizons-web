@@ -25,15 +25,30 @@
         </div>
       </section>
     
-      <nav class="adm-nav" aria-label="Region Switcher">
-        <button class="nav-btn active">全部結果</button>
-        <button class="nav-btn">美國申請</button>
-        <button class="nav-btn">英國/歐洲</button>
-        <button class="nav-btn">亞洲地區</button>
+      <section class="adm-summary-wall">
+        <div class="wall-card">
+          <h3 class="wall-title">SELECTED ADMISSIONS</h3>
+          <div class="logo-grid">
+            <div class="logo-item"><span>JHU</span></div>
+            <div class="logo-item"><span>COLUMBIA</span></div>
+            <div class="logo-item"><span>UPENN</span></div>
+            <div class="logo-item"><span>CORNELL</span></div>
+            <div class="logo-item"><span>UCB</span></div>
+            <div class="logo-item"><span>UCLA</span></div>
+          </div>
+        </div>
+      </section>
+    
+      <nav class="adm-nav" id="filter-nav">
+        <button class="nav-btn active" data-target="all">全部結果</button>
+        <button class="nav-btn" data-target="us">美國申請</button>
+        <button class="nav-btn" data-target="uk-eu">英國/歐洲</button>
+        <button class="nav-btn" data-target="asia">亞洲地區</button>
       </nav>
     
-      <section class="adm-grid">
-        <article class="adm-card featured">
+      <section class="adm-grid" id="admissions-grid">
+        
+        <article class="adm-card us">
           <div class="adm-card__header">
             <div class="student-info">
               <span class="student-name">Hsien-Jue C.</span>
@@ -51,7 +66,6 @@
               </div>
               <div class="status-tag">Admission</div>
             </div>
-    
             <div class="result-item secondary">
               <span class="school-name">Columbia University</span>
               <span class="status-dot"></span>
@@ -61,11 +75,31 @@
               <span class="status-dot"></span>
             </div>
           </div>
-    
           <div class="adm-card__footer">
-            <span class="proof-link">View Verification</span>
+            <a href="#" class="proof-link">View Verification</a>
           </div>
         </article>
+    
+        <article class="adm-card asia">
+          <div class="adm-card__header">
+            <div class="student-info">
+              <span class="student-name">Anonymous B.</span>
+              <span class="student-tag">NTU · Business</span>
+            </div>
+            <div class="adm-badge">Fall 2026</div>
+          </div>
+          <div class="adm-result-list">
+            <div class="result-item accepted">
+              <div class="school-logo">HKU</div>
+              <div class="school-detail">
+                <h4>University of Hong Kong</h4>
+                <p>Finance (MSc)</p>
+              </div>
+              <div class="status-tag">Admission</div>
+            </div>
+          </div>
+        </article>
+    
       </section>
     </main>
 

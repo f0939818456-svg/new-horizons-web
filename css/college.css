@@ -1,100 +1,109 @@
-/* 移除複雜的工具列，改用簡約導覽 */
-.adm-nav {
+/* Stats & Hero */
+.adm-stats-row {
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 40px;
+    gap: 40px;
+    margin-top: 24px;
   }
+  .stat-item { display: flex; flex-direction: column; }
+  .stat-item strong { font-size: 1.5rem; color: #fff; }
+  .stat-item span { font-size: 0.8rem; color: rgba(255,255,255,0.7); text-transform: uppercase; }
   
-  .nav-btn {
-    background: none;
-    border: none;
-    padding: 8px 16px;
-    font-weight: 600;
-    color: #667085;
-    cursor: pointer;
-    border-bottom: 2px solid transparent;
+  /* 校徽牆樣式 */
+  .adm-summary-wall { margin-bottom: 40px; }
+  .wall-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    text-align: center;
+  }
+  .wall-title { 
+    font-size: 0.75rem; 
+    color: #98A2B3; 
+    margin-bottom: 24px; 
+    letter-spacing: 0.2em;
+    font-weight: 700;
+  }
+  .logo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+  }
+  .logo-item {
+    font-weight: 900;
+    color: #D0D5DD;
+    font-size: 1.2rem;
     transition: 0.3s;
   }
+  .logo-item:hover { color: #101828; transform: scale(1.1); }
   
+  /* 導覽列 */
+  .adm-nav {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+  .nav-btn {
+    background: transparent;
+    border: none;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    color: #667085;
+    cursor: pointer;
+    border-radius: 999px;
+    transition: all 0.3s;
+  }
   .nav-btn.active {
-    color: #101828;
-    border-bottom: 2px solid #101828;
+    background: #101828;
+    color: #fff;
   }
   
-  /* 卡片重構：從「列表」變成「成就展現」 */
+  /* 卡片與結果列表 */
   .adm-card {
-    background: #FFFFFF;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    background: #fff;
+    border-radius: 20px;
     padding: 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
     display: flex;
     flex-direction: column;
-    transition: transform 0.2s;
   }
-  
-  .adm-card:hover { transform: translateY(-5px); }
-  
-  .student-name {
-    display: block;
-    font-size: 1.2rem;
-    font-weight: 800;
-    color: #101828;
+  .adm-card__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
   }
+  .student-name { font-size: 1.25rem; font-weight: 800; display: block; }
+  .student-tag { color: #667085; font-size: 0.85rem; }
   
-  .student-tag {
-    font-size: 0.85rem;
-    color: #667085;
-  }
-  
-  /* 結果項目的視覺分級 */
   .result-item.accepted {
-    background: #F0FDF4; /* 淡淡的成功綠 */
+    background: #F0FDF4;
     border: 1px solid #DCFCE7;
     padding: 16px;
-    border-radius: 12px;
-    margin: 16px 0;
+    border-radius: 14px;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 15px;
+    margin-bottom: 12px;
   }
-  
   .school-logo {
-    width: 48px;
-    height: 48px;
+    width: 50px; height: 50px;
     background: #fff;
-    border-radius: 8px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 900;
+    font-weight: 800;
     font-size: 0.7rem;
-    border: 1px solid #eee;
+    border: 1px solid #EAECF0;
   }
-  
-  .school-detail h4 { margin: 0; font-size: 1rem; color: #166534; }
-  .school-detail p { margin: 0; font-size: 0.8rem; color: #15803d; }
-  
-  .status-tag {
-    margin-left: auto;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #15803d;
-  }
-  
   .result-item.secondary {
     display: flex;
     justify-content: space-between;
-    padding: 8px 4px;
-    font-size: 0.9rem;
-    color: #475467;
+    padding: 10px 5px;
     border-bottom: 1px solid #F2F4F7;
+    font-size: 0.9rem;
   }
-  
-  .status-dot {
-    width: 8px;
-    height: 8px;
-    background: #34D399;
-    border-radius: 50%;
-  }
+  .status-dot { width: 8px; height: 8px; background: #34D399; border-radius: 50%; }
+  .proof-link { font-size: 0.8rem; color: #98A2B3; text-decoration: none; margin-top: 15px; display: inline-block; }
