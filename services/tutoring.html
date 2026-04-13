@@ -167,9 +167,17 @@
         margin-bottom: 48px;
       }
       .subject-header__icon {
-        font-size: 52px;
-        line-height: 1;
+        font-size: 13px;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        background: var(--brand);
+        color: var(--gold-light);
+        border-radius: var(--radius);
+        padding: 10px 16px;
         flex-shrink: 0;
+        align-self: flex-start;
+        margin-top: 8px;
+        line-height: 1;
       }
       .subject-header__meta { flex: 1; }
       .subject-header__eyebrow {
@@ -414,120 +422,6 @@
         font-size: 11px;
       }
 
-      /* Free Trial Section */
-      .trial-section {
-        background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand) 100%);
-        padding: 80px 0;
-        scroll-margin-top: 80px;
-      }
-      .trial-section__inner {
-        max-width: 780px;
-        margin: 0 auto;
-        text-align: center;
-        color: #fff;
-      }
-      .trial-section__eyebrow {
-        font-size: 11px;
-        font-weight: 700;
-        letter-spacing: 0.22em;
-        text-transform: uppercase;
-        color: var(--gold-light);
-        margin-bottom: 20px;
-      }
-      .trial-section__title {
-        font-size: clamp(26px, 3.5vw, 44px);
-        font-weight: 900;
-        margin: 0 0 16px;
-        line-height: 1.2;
-      }
-      .trial-section__sub {
-        font-size: 16px;
-        opacity: 0.85;
-        margin: 0 0 44px;
-        line-height: 1.7;
-      }
-
-      /* Trial Form */
-      .trial-form-box {
-        background: rgba(255,255,255,0.07);
-        border: 1px solid rgba(255,255,255,0.15);
-        border-radius: var(--radius-lg);
-        padding: 44px 48px;
-        text-align: left;
-        backdrop-filter: blur(8px);
-      }
-      .trial-form-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 18px;
-      }
-      .trial-form-full { grid-column: 1 / -1; }
-      .trial-form-group label {
-        display: block;
-        font-size: 13px;
-        font-weight: 700;
-        color: rgba(255,255,255,0.85);
-        margin-bottom: 7px;
-        letter-spacing: 0.04em;
-      }
-      .trial-form-group input,
-      .trial-form-group select,
-      .trial-form-group textarea {
-        width: 100%;
-        padding: 13px 16px;
-        border: 1.5px solid rgba(255,255,255,0.2);
-        border-radius: var(--radius);
-        font-size: 15px;
-        font-family: inherit;
-        color: #fff;
-        background: rgba(255,255,255,0.08);
-        transition: 0.2s;
-        box-sizing: border-box;
-      }
-      .trial-form-group input::placeholder,
-      .trial-form-group textarea::placeholder { color: rgba(255,255,255,0.4); }
-      .trial-form-group select { color: #fff; }
-      .trial-form-group select option { color: var(--text); background: #fff; }
-      .trial-form-group input:focus,
-      .trial-form-group select:focus,
-      .trial-form-group textarea:focus {
-        outline: none;
-        border-color: var(--gold-light);
-        background: rgba(255,255,255,0.13);
-      }
-      .trial-form-group textarea { resize: vertical; }
-      .trial-submit-btn {
-        width: 100%;
-        padding: 16px;
-        background: var(--gold);
-        color: #fff;
-        border: none;
-        border-radius: 50px;
-        font-size: 16px;
-        font-weight: 700;
-        cursor: pointer;
-        transition: 0.3s;
-        letter-spacing: 0.03em;
-        margin-top: 6px;
-        box-shadow: 0 8px 24px rgba(0,0,0,0.25);
-      }
-      .trial-submit-btn:hover {
-        background: #a07a30;
-        transform: translateY(-2px);
-        box-shadow: 0 12px 32px rgba(0,0,0,0.35);
-      }
-      #trialResponseMsg {
-        margin-top: 16px;
-        text-align: center;
-        font-weight: 600;
-        font-size: 15px;
-        display: none;
-        padding: 14px;
-        border-radius: var(--radius);
-        color: #fff;
-      }
-      #trialResponseMsg.success { background: rgba(22,163,74,0.3); display: block; }
-      #trialResponseMsg.error { background: rgba(220,38,38,0.3); display: block; }
 
       /* FAQ Accordion */
       .faq-list { display: flex; flex-direction: column; gap: 12px; }
@@ -590,7 +484,17 @@
         transition: 0.3s;
       }
       .why-card:hover { box-shadow: var(--shadow); transform: translateY(-4px); border-color: var(--gold); }
-      .why-card__icon { font-size: 42px; margin-bottom: 16px; }
+      .why-card__icon {
+        font-size: 13px;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        color: var(--gold);
+        border: 1.5px solid var(--gold);
+        border-radius: 50px;
+        display: inline-block;
+        padding: 5px 12px;
+        margin-bottom: 18px;
+      }
       .why-card__title { font-size: 17px; font-weight: 800; color: var(--text); margin: 0 0 10px; }
       .why-card__desc { font-size: 14px; color: var(--muted); line-height: 1.7; margin: 0; }
 
@@ -635,8 +539,6 @@
 
       /* Responsive */
       @media (max-width: 900px) {
-        .trial-form-grid { grid-template-columns: 1fr; }
-        .trial-form-box { padding: 32px 24px; }
         .why-grid { grid-template-columns: 1fr 1fr; }
         .testimonial-mini-grid { grid-template-columns: 1fr; }
         .school-subject-cols { grid-template-columns: 1fr 1fr; }
@@ -667,7 +569,7 @@
             SAT 數位考試、IELTS / TOEFL、AP 各科、校內全科——<br />日暘師資陪你走過每一個學習里程碑
           </p>
           <div class="tutoring-hero__cta-row">
-            <a href="#trial" class="btn btn-gold" style="font-size:16px;padding:16px 40px;">✦ 免費試聽一堂課</a>
+            <a href="/contact/index.html" class="btn btn-gold" style="font-size:16px;padding:16px 40px;">✦ 預約面談</a>
             <a href="#sat" class="btn btn-ghost">查看課程 →</a>
           </div>
           <div class="tutoring-hero__stats">
@@ -696,22 +598,22 @@
 
       <!-- ====== GUARANTEE STRIP ====== -->
       <div class="guarantee-strip-top">
-        🛡️ SAT 進步不足 100 分・免費重修保障
+        ✦ SAT 進步不足 100 分・提供重修保障
         <span>|</span>
-        🎯 免費試聽一堂課，上過再決定
+        ✦ 小班制 ≤ 8 人，問題當堂解決
         <span>|</span>
-        📊 每月進度報告，家長同步掌握
+        ✦ 每月進度報告，家長同步掌握
       </div>
 
       <!-- ====== ANCHOR NAV ====== -->
       <nav class="subject-nav" aria-label="課程導覽">
         <div class="container subject-nav__inner">
-          <a href="#sat"    class="subject-nav__link">📐 SAT 數位考試</a>
-          <a href="#ielts"  class="subject-nav__link">🗣️ IELTS / TOEFL</a>
-          <a href="#ap"     class="subject-nav__link">🔬 AP 各科</a>
-          <a href="#school" class="subject-nav__link">📚 校內全科</a>
-          <a href="#why"    class="subject-nav__link">✦ 為什麼選我們</a>
-          <a href="#trial"  class="subject-nav__link subject-nav__link--trial">▶ 免費試聽申請</a>
+          <a href="#sat"    class="subject-nav__link">SAT 數位考試</a>
+          <a href="#ielts"  class="subject-nav__link">IELTS / TOEFL</a>
+          <a href="#ap"     class="subject-nav__link">AP 各科</a>
+          <a href="#school" class="subject-nav__link">校內全科</a>
+          <a href="#why"    class="subject-nav__link">為什麼選我們</a>
+          <a href="/contact/index.html" class="subject-nav__link subject-nav__link--trial">✦ 預約面談</a>
         </div>
       </nav>
 
@@ -719,7 +621,7 @@
       <section class="subject-section" id="sat">
         <div class="container">
           <div class="subject-header">
-            <span class="subject-header__icon">📐</span>
+            <span class="subject-header__icon">SAT</span>
             <div class="subject-header__meta">
               <div class="subject-header__eyebrow">SAT Digital · 數位考試專班</div>
               <h2 class="subject-header__title">SAT 數位考試課程</h2>
@@ -737,7 +639,6 @@
 
           <div class="course-cards">
             <div class="course-card">
-              <div class="course-card__badge"><span class="badge-free">免費試聽</span></div>
               <div class="course-card__name">SAT 基礎提升班</div>
               <div class="course-card__target">▲ 目標：900 → 1200</div>
               <p class="course-card__desc">從基礎概念建立到解題策略，適合 SAT 初學或前次考分偏低的學員。</p>
@@ -749,7 +650,7 @@
               </ul>
               <div class="course-card__footer">
                 <span class="course-card__price">洽詢報價</span>
-                <a href="#trial" class="course-card__cta">立即報名 →</a>
+                <a href="/contact/index.html" class="course-card__cta">預約面談 →</a>
               </div>
             </div>
 
@@ -767,7 +668,7 @@
               </ul>
               <div class="course-card__footer">
                 <span class="course-card__price">洽詢報價</span>
-                <a href="#trial" class="course-card__cta">立即報名 →</a>
+                <a href="/contact/index.html" class="course-card__cta">預約面談 →</a>
               </div>
             </div>
 
@@ -783,7 +684,7 @@
               </ul>
               <div class="course-card__footer">
                 <span class="course-card__price">洽詢報價</span>
-                <a href="#trial" class="course-card__cta">立即報名 →</a>
+                <a href="/contact/index.html" class="course-card__cta">預約面談 →</a>
               </div>
             </div>
           </div>
@@ -815,7 +716,7 @@
       <section class="subject-section" id="ielts">
         <div class="container">
           <div class="subject-header">
-            <span class="subject-header__icon">🗣️</span>
+            <span class="subject-header__icon">IE</span>
             <div class="subject-header__meta">
               <div class="subject-header__eyebrow">IELTS · TOEFL · 英語能力認證</div>
               <h2 class="subject-header__title">IELTS / TOEFL 課程</h2>
@@ -823,15 +724,11 @@
                 聽說讀寫四技全方位訓練，針對考試格式精準備考。IELTS 目標 7.0+，TOEFL 目標 100+。
                 外師 + 中師雙軌制，強化 Speaking 口說與 Writing 寫作，讓成績有感提升。
               </p>
-              <div class="subject-header__badges">
-                <span class="badge-free">免費試聽</span>
-              </div>
             </div>
           </div>
 
           <div class="course-cards">
             <div class="course-card course-card--highlight">
-              <div class="course-card__badge"><span class="badge-free">免費試聽</span></div>
               <div class="course-card__name">IELTS 全科班</div>
               <div class="course-card__target">▲ 目標：Band 6.0 → 7.0+</div>
               <p class="course-card__desc">聽力、閱讀、寫作、口說四大技能同步提升，搭配 Cambridge 官方題庫演練。</p>
@@ -843,7 +740,7 @@
               </ul>
               <div class="course-card__footer">
                 <span class="course-card__price">洽詢報價</span>
-                <a href="#trial" class="course-card__cta">立即報名 →</a>
+                <a href="/contact/index.html" class="course-card__cta">預約面談 →</a>
               </div>
             </div>
 
@@ -858,7 +755,7 @@
               </ul>
               <div class="course-card__footer">
                 <span class="course-card__price">洽詢報價</span>
-                <a href="#trial" class="course-card__cta">立即報名 →</a>
+                <a href="/contact/index.html" class="course-card__cta">預約面談 →</a>
               </div>
             </div>
 
@@ -874,7 +771,7 @@
               </ul>
               <div class="course-card__footer">
                 <span class="course-card__price">洽詢報價</span>
-                <a href="#trial" class="course-card__cta">立即報名 →</a>
+                <a href="/contact/index.html" class="course-card__cta">預約面談 →</a>
               </div>
             </div>
 
@@ -889,7 +786,7 @@
               </ul>
               <div class="course-card__footer">
                 <span class="course-card__price">洽詢報價</span>
-                <a href="#trial" class="course-card__cta">立即報名 →</a>
+                <a href="/contact/index.html" class="course-card__cta">預約面談 →</a>
               </div>
             </div>
           </div>
@@ -900,7 +797,7 @@
       <section class="subject-section" id="ap">
         <div class="container">
           <div class="subject-header">
-            <span class="subject-header__icon">🔬</span>
+            <span class="subject-header__icon">AP</span>
             <div class="subject-header__meta">
               <div class="subject-header__eyebrow">Advanced Placement · AP 各科</div>
               <h2 class="subject-header__title">AP 各科課程</h2>
@@ -949,7 +846,7 @@
               </ul>
               <div class="course-card__footer">
                 <span class="course-card__price">洽詢報價</span>
-                <a href="#trial" class="course-card__cta">立即報名 →</a>
+                <a href="/contact/index.html" class="course-card__cta">預約面談 →</a>
               </div>
             </div>
 
@@ -964,7 +861,7 @@
               </ul>
               <div class="course-card__footer">
                 <span class="course-card__price">洽詢報價</span>
-                <a href="#trial" class="course-card__cta">立即報名 →</a>
+                <a href="/contact/index.html" class="course-card__cta">預約面談 →</a>
               </div>
             </div>
 
@@ -979,7 +876,7 @@
               </ul>
               <div class="course-card__footer">
                 <span class="course-card__price">洽詢報價</span>
-                <a href="#trial" class="course-card__cta">立即報名 →</a>
+                <a href="/contact/index.html" class="course-card__cta">預約面談 →</a>
               </div>
             </div>
           </div>
@@ -990,7 +887,7 @@
       <section class="subject-section" id="school">
         <div class="container">
           <div class="subject-header">
-            <span class="subject-header__icon">📚</span>
+            <span class="subject-header__icon">GPA</span>
             <div class="subject-header__meta">
               <div class="subject-header__eyebrow">School Subjects · 校內全科補習</div>
               <h2 class="subject-header__title">校內全科補習</h2>
@@ -998,9 +895,6 @@
                 無論是微積分、文學分析、化學還是物理，日暘師資協助學生鞏固校內成績、穩住 GPA。
                 配合學校進度量身安排，適合希望在大學申請前強化學業表現的學員。
               </p>
-              <div class="subject-header__badges">
-                <span class="badge-free">免費學力評量</span>
-              </div>
             </div>
           </div>
 
@@ -1063,7 +957,6 @@
 
           <div class="course-cards" style="margin-top:36px;">
             <div class="course-card course-card--highlight">
-              <div class="course-card__badge"><span class="badge-free">免費評量</span></div>
               <div class="course-card__name">校內一對一補習</div>
               <div class="course-card__target">▲ 配合個人進度，穩住 GPA</div>
               <p class="course-card__desc">完全依學校課程設計，師資會事先與學員確認教材進度，每堂課有針對性。</p>
@@ -1074,7 +967,7 @@
               </ul>
               <div class="course-card__footer">
                 <span class="course-card__price">洽詢報價</span>
-                <a href="#trial" class="course-card__cta">立即報名 →</a>
+                <a href="/contact/index.html" class="course-card__cta">預約面談 →</a>
               </div>
             </div>
 
@@ -1089,7 +982,7 @@
               </ul>
               <div class="course-card__footer">
                 <span class="course-card__price">洽詢報價</span>
-                <a href="#trial" class="course-card__cta">立即報名 →</a>
+                <a href="/contact/index.html" class="course-card__cta">預約面談 →</a>
               </div>
             </div>
 
@@ -1104,7 +997,7 @@
               </ul>
               <div class="course-card__footer">
                 <span class="course-card__price">洽詢報價</span>
-                <a href="#trial" class="course-card__cta">立即報名 →</a>
+                <a href="/contact/index.html" class="course-card__cta">預約面談 →</a>
               </div>
             </div>
           </div>
@@ -1123,34 +1016,34 @@
 
           <div class="why-grid">
             <div class="why-card">
-              <div class="why-card__icon">🛡️</div>
+              <div class="why-card__icon">01</div>
               <h3 class="why-card__title">分數保障制度</h3>
-              <p class="why-card__desc">SAT 課程進步不足 100 分，提供免費重修。我們的成效用數字說話，不只是口號。</p>
+              <p class="why-card__desc">SAT 課程進步不足 100 分，提供重修。我們的成效用數字說話，不只是口號。</p>
             </div>
             <div class="why-card">
-              <div class="why-card__icon">👥</div>
+              <div class="why-card__icon">02</div>
               <h3 class="why-card__title">小班精英制（≤ 8 人）</h3>
               <p class="why-card__desc">嚴格控制班級人數，確保每位學員都能獲得充分關注，問題當堂解決，不留到隔週。</p>
             </div>
             <div class="why-card">
-              <div class="why-card__icon">📋</div>
+              <div class="why-card__icon">03</div>
               <h3 class="why-card__title">月度學習進度報告</h3>
               <p class="why-card__desc">每月提供詳細書面進度報告給家長，清楚呈現測驗成績趨勢與下階段學習計畫。</p>
             </div>
             <div class="why-card">
-              <div class="why-card__icon">🎯</div>
+              <div class="why-card__icon">04</div>
               <h3 class="why-card__title">考試策略導向</h3>
               <p class="why-card__desc">不只教知識，更教應試策略。Digital SAT Adaptive 模組、AP FRQ 得分技巧，全部包含。</p>
             </div>
             <div class="why-card">
-              <div class="why-card__icon">👨‍🏫</div>
+              <div class="why-card__icon">05</div>
               <h3 class="why-card__title">資深專科師資</h3>
               <p class="why-card__desc">各科老師均具 5 年以上教學資歷，部分師資擁有目標考試滿分或近滿分成績。</p>
             </div>
             <div class="why-card">
-              <div class="why-card__icon">🔗</div>
+              <div class="why-card__icon">06</div>
               <h3 class="why-card__title">留學申請整合優勢</h3>
-              <p class="why-card__desc">補習成績直接與留學申請顧問串接，成績達標後無縫對接大學申請規劃服務。</p>
+              <p class="why-card__desc">補習成績達標後，無縫對接大學申請規劃，不需另找其他機構，節省大量溝通成本。</p>
             </div>
           </div>
 
@@ -1189,15 +1082,15 @@
           <div class="faq-list" id="tutFaq">
             <div class="faq-item">
               <button class="faq-item__q" type="button">
-                免費試聽是怎麼安排的？<i class="faq-item__q-icon">+</i>
+                如何安排第一次面談諮詢？<i class="faq-item__q-icon">+</i>
               </button>
-              <div class="faq-item__a">填寫下方的免費試聽申請表後，顧問會在 24 小時內與您聯繫，確認科目、時間與班別，安排您旁聽或參與一堂完整課程，完全不需要付費，也沒有強迫入學的壓力。</div>
+              <div class="faq-item__a">填寫聯絡我們頁面的預約表單，或直接致電 (04) 3707-9662，顧問將在 24 小時內回覆，確認科目、學員程度與目標後安排面談，深度評估最適合的課程方向。</div>
             </div>
             <div class="faq-item">
               <button class="faq-item__q" type="button">
                 課程是線上還是實體上課？<i class="faq-item__q-icon">+</i>
               </button>
-              <div class="faq-item__a">我們以台中辦公室實體教學為主，提供更好的學習環境與師生互動。部分一對一課程可視情況安排線上進行，歡迎填寫報名表時備註您的需求。</div>
+              <div class="faq-item__a">我們以台中辦公室實體教學為主，提供更好的學習環境與師生互動。部分一對一課程可視情況安排線上進行，歡迎在面談時告知您的需求。</div>
             </div>
             <div class="faq-item">
               <button class="faq-item__q" type="button">
@@ -1227,84 +1120,15 @@
         </div>
       </section>
 
-      <!-- ====== FREE TRIAL FORM ====== -->
-      <section class="trial-section" id="trial">
-        <div class="container">
-          <div class="trial-section__inner">
-            <div class="trial-section__eyebrow">FREE TRIAL · 免費試聽申請</div>
-            <h2 class="trial-section__title">上過一堂課再決定<br/>讓成果說話</h2>
-            <p class="trial-section__sub">
-              填寫下方表單，顧問將在 24 小時內與您確認試聽安排。<br />
-              完全免費、無任何入學壓力。
-            </p>
-
-            <div class="trial-form-box">
-              <form id="trialForm">
-                <div class="trial-form-grid">
-                  <div class="trial-form-group">
-                    <label>學生姓名 *</label>
-                    <input type="text" name="name" required placeholder="您的姓名" />
-                  </div>
-                  <div class="trial-form-group">
-                    <label>聯絡電話</label>
-                    <input type="tel" name="phone" placeholder="0912-345-678" />
-                  </div>
-                  <div class="trial-form-group">
-                    <label>聯絡信箱 *</label>
-                    <input type="email" name="email" required placeholder="example@email.com" />
-                  </div>
-                  <div class="trial-form-group">
-                    <label>目前就讀年級</label>
-                    <select name="grade">
-                      <option value="">請選擇</option>
-                      <option>國三（即將升高一）</option>
-                      <option>高一</option>
-                      <option>高二</option>
-                      <option>高三（申請中）</option>
-                      <option>其他</option>
-                    </select>
-                  </div>
-                  <div class="trial-form-group trial-form-full">
-                    <label>希望試聽的科目 *</label>
-                    <select name="subject" required>
-                      <option value="">請選擇科目</option>
-                      <option>SAT 數位考試</option>
-                      <option>IELTS 全科班</option>
-                      <option>IELTS Speaking 密集班</option>
-                      <option>TOEFL iBT 全科班</option>
-                      <option>AP Calculus AB/BC</option>
-                      <option>AP Physics</option>
-                      <option>AP Chemistry</option>
-                      <option>AP Biology</option>
-                      <option>AP CS / Statistics</option>
-                      <option>AP 其他科目</option>
-                      <option>校內全科補習（請於備註說明科目）</option>
-                    </select>
-                  </div>
-                  <div class="trial-form-group trial-form-full">
-                    <label>目前程度 / 備注（選填）</label>
-                    <textarea name="message" rows="3" placeholder="例：SAT 目前考過 1100 分，希望在 3 個月後考試前衝到 1400+..."></textarea>
-                  </div>
-                </div>
-                <button type="submit" class="trial-submit-btn" id="trialSubmitBtn">
-                  ✦ 送出免費試聽申請
-                </button>
-              </form>
-              <div id="trialResponseMsg"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ====== Bottom CTA ====== -->
-      <section style="padding:64px 0;background:var(--bg-alt);text-align:center;">
-        <div class="container">
-          <p style="font-size:13px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;">還有其他問題？</p>
-          <h3 style="font-size:26px;font-weight:800;color:var(--text);margin:0 0 24px;">直接撥打電話或 LINE 諮詢</h3>
+      <!-- ====== CTA ====== -->
+      <section style="background:linear-gradient(135deg,var(--brand-dark) 0%,var(--brand) 100%);padding:80px 0;text-align:center;color:#fff;">
+        <div class="container" style="max-width:640px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-light);margin-bottom:20px;">CONSULTATION · 預約面談</div>
+          <h2 style="font-size:clamp(26px,3.5vw,40px);font-weight:900;margin:0 0 16px;line-height:1.2;">讓顧問為你評估<br/>最適合的課程方向</h2>
+          <p style="font-size:16px;opacity:0.85;margin:0 0 40px;line-height:1.7;">填寫預約表單，顧問將在 24 小時內與您確認面談時間，深度了解學員程度與目標後，提供完整課程建議。</p>
           <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-            <a href="tel:04-3707-9662" class="btn btn-gold" style="font-size:16px;padding:15px 40px;">📞 (04) 3707-9662</a>
-            <a href="https://line.me/ti/p/~@topscore" target="_blank" rel="noopener" class="btn" style="background:#06c755;color:#fff;border-radius:50px;font-weight:700;padding:15px 40px;font-size:16px;">💬 LINE 官方諮詢</a>
-            <a href="/contact/index.html" class="btn btn-outline" style="font-size:16px;padding:15px 40px;">預約面談</a>
+            <a href="/contact/index.html" class="btn btn-gold" style="font-size:16px;padding:16px 44px;">✦ 前往預約面談</a>
+            <a href="tel:04-3707-9662" class="btn btn-ghost" style="font-size:16px;padding:16px 44px;">(04) 3707-9662</a>
           </div>
         </div>
       </section>
@@ -1317,8 +1141,8 @@
         <span class="float-cta__icon">💬</span> LINE 免費諮詢
         <span class="float-cta__pulse"></span>
       </a>
-      <a href="#trial" class="float-cta__btn float-cta__btn--consult">
-        <span class="float-cta__icon">✦</span> 免費試聽申請
+      <a href="/contact/index.html" class="float-cta__btn float-cta__btn--consult">
+        <span class="float-cta__icon">✦</span> 預約面談
       </a>
     </div>
 
@@ -1348,34 +1172,6 @@
         });
       }, { passive: true });
 
-      // Trial form submission
-      const trialScriptURL = 'https://script.google.com/macros/s/AKfycbwtEDKhBTMakGEaBVp2FXJHU3dMEmcSE1X4h1ePu3WzrGDlrVVrLucyhv76z1V-8dAl/exec';
-      const trialForm = document.getElementById('trialForm');
-      const trialBtn  = document.getElementById('trialSubmitBtn');
-      const trialMsg  = document.getElementById('trialResponseMsg');
-
-      trialForm.addEventListener('submit', e => {
-        e.preventDefault();
-        trialBtn.disabled = true;
-        trialBtn.textContent = '傳送中...';
-        trialMsg.className = '';
-        trialMsg.style.display = 'none';
-
-        fetch(trialScriptURL, { method: 'POST', body: new FormData(trialForm) })
-          .then(() => {
-            trialMsg.className = 'success';
-            trialMsg.textContent = '✓ 申請成功！顧問將在 24 小時內與您聯繫安排試聽。';
-            trialForm.reset();
-            trialBtn.disabled = false;
-            trialBtn.textContent = '✦ 送出免費試聽申請';
-          })
-          .catch(() => {
-            trialMsg.className = 'error';
-            trialMsg.textContent = '發生錯誤，請直接撥打 (04) 3707-9662 或透過 LINE 聯繫。';
-            trialBtn.disabled = false;
-            trialBtn.textContent = '重新傳送';
-          });
-      });
     </script>
   </body>
 </html>

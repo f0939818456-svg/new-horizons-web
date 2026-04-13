@@ -1,11 +1,3 @@
-<!-- Top Announcement Bar -->
-<div class="announce-bar" id="announceBar">
-  <span class="announce-bar__badge">新消息</span>
-  🎉 暑期班開放報名中！本月新生享 <strong>免費試聽一堂課</strong>，限額 10 席
-  <a href="/services/tutoring.html">立即預約 →</a>
-  <button class="announce-bar__close" id="closeAnnounce" aria-label="關閉公告">✕</button>
-</div>
-
 <header class="site-header">
   <div class="container header-inner">
     <a href="/" class="logo">
@@ -37,7 +29,7 @@
           <a href="/services/tutoring.html#ielts">IELTS / TOEFL</a>
           <a href="/services/tutoring.html#ap">AP 各科</a>
           <a href="/services/tutoring.html#school">校內全科</a>
-          <a href="/services/tutoring.html#trial" style="color:#16A34A;font-weight:700;">✦ 免費試聽申請</a>
+          <a href="/contact/index.html" style="color:var(--brand);font-weight:700;">✦ 預約面談</a>
         </div>
       </div>
 
@@ -74,7 +66,7 @@
         </div>
       </div>
 
-      <a class="nav-cta" href="/services/tutoring.html#trial">免費試聽</a>
+      <a class="nav-cta" href="/contact/index.html">預約面談</a>
     </nav>
 
     <div class="header-actions">
@@ -111,7 +103,7 @@
           <a href="/services/tutoring.html#ielts">IELTS / TOEFL</a>
           <a href="/services/tutoring.html#ap">AP 各科</a>
           <a href="/services/tutoring.html#school">校內全科</a>
-          <a href="/services/tutoring.html#trial" style="color:#16A34A;font-weight:700;">免費試聽申請</a>
+          <a href="/contact/index.html" style="color:var(--brand);font-weight:700;">✦ 預約面談</a>
         </div>
 
         <button class="m-dd-btn" type="button" data-mdropdown="blog">
@@ -142,21 +134,10 @@
         </div>
 
         <a href="/contact/index.html">聯絡我們</a>
-        <a href="/services/tutoring.html#trial" style="background:var(--gold);color:#fff;border-radius:50px;text-align:center;margin-top:8px;font-weight:700;">✦ 免費試聽申請</a>
+        <a href="/contact/index.html" style="background:var(--brand);color:#fff;border-radius:50px;text-align:center;margin-top:8px;font-weight:700;">✦ 預約面談</a>
       </div>
     </div>
     <div class="mobile-backdrop" id="menuBackdrop"></div>
   </div>
 </header>
 
-<script>
-  // Announcement bar close
-  document.getElementById('closeAnnounce')?.addEventListener('click', function() {
-    document.getElementById('announceBar').style.display = 'none';
-    sessionStorage.setItem('announceClosed', '1');
-  });
-  if (sessionStorage.getItem('announceClosed') === '1') {
-    const bar = document.getElementById('announceBar');
-    if (bar) bar.style.display = 'none';
-  }
-</script>
