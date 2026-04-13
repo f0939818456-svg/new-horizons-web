@@ -3,108 +3,377 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>大學申請榜 | New Horizons Education</title>
-    <meta name="description" content="New Horizons 大學申請榜：以申請季與校系整理錄取成果，提供清晰、可閱讀的榜單呈現。">
-
+    <title>大學申請榜 | 日暘國際教育</title>
+    <meta name="description" content="日暘國際教育大學申請榜：歷年學員錄取美國頂尖大學完整成果，包含 Ivy League、MIT、Stanford、UC 系統等。" />
     <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/inner.css" />
     <link rel="stylesheet" href="/css/college.css" />
   </head>
 
   <body>
     <div id="site-header"></div>
 
-    <main class="container admissions">
+    <main>
+      <!-- Hero -->
       <section class="adm-hero">
-        <div class="adm-hero__content">
-          <h1 class="adm-hero__title">Class of 2026<br><span class="adm-accent">Dream Big, Reach Higher</span></h1>
+        <div class="container">
+          <nav class="breadcrumb" style="margin-bottom:20px;">
+            <a href="/">首頁</a><span>›</span>
+            <a href="/results/index.html">教學成果</a><span>›</span>
+            <span>大學申請榜</span>
+          </nav>
+          <div class="adm-hero__title">
+            Class of 2026<br>
+            <span class="adm-accent">Dream Big, Reach Higher</span>
+          </div>
           <div class="adm-stats-row">
-            <div class="stat-item"><strong>120+</strong><span>Offers</span></div>
-            <div class="stat-item"><strong>$2M+</strong><span>Scholarships</span></div>
-            <div class="stat-item"><strong>15+</strong><span>Top 30 Unis</span></div>
+            <div class="stat-item">
+              <strong>120+</strong>
+              <span>Total Offers</span>
+            </div>
+            <div class="stat-item">
+              <strong>$680K+</strong>
+              <span>Scholarships</span>
+            </div>
+            <div class="stat-item">
+              <strong>45+</strong>
+              <span>Top 30 Unis</span>
+            </div>
+            <div class="stat-item">
+              <strong>15+</strong>
+              <span>Schools Represented</span>
+            </div>
           </div>
         </div>
       </section>
-    
+
+      <!-- School Logo Wall -->
       <section class="adm-summary-wall">
-        <div class="wall-card">
-          <h3 class="wall-title">SELECTED ADMISSIONS</h3>
-          <div class="logo-grid">
-            <div class="logo-item"><span>JHU</span></div>
-            <div class="logo-item"><span>COLUMBIA</span></div>
-            <div class="logo-item"><span>UPENN</span></div>
-            <div class="logo-item"><span>CORNELL</span></div>
-            <div class="logo-item"><span>UCB</span></div>
-            <div class="logo-item"><span>UCLA</span></div>
+        <div class="container">
+          <div class="wall-card">
+            <h3 class="wall-title">SELECTED ADMISSIONS — CLASS OF 2026</h3>
+            <div class="logo-grid">
+              <div class="logo-item">Harvard</div>
+              <div class="logo-item">MIT</div>
+              <div class="logo-item">Stanford</div>
+              <div class="logo-item">Columbia</div>
+              <div class="logo-item">UPenn</div>
+              <div class="logo-item">Cornell</div>
+              <div class="logo-item">JHU</div>
+              <div class="logo-item">Duke</div>
+              <div class="logo-item">Carnegie Mellon</div>
+              <div class="logo-item">UC Berkeley</div>
+              <div class="logo-item">UCLA</div>
+              <div class="logo-item">NYU</div>
+            </div>
           </div>
         </div>
       </section>
-    
-      <nav class="adm-nav" id="filter-nav">
-        <button class="nav-btn active" data-target="all">全部結果</button>
-        <button class="nav-btn" data-target="us">美國申請</button>
-        <button class="nav-btn" data-target="uk-eu">英國/歐洲</button>
-        <button class="nav-btn" data-target="asia">亞洲地區</button>
-      </nav>
-    
-      <section class="adm-grid" id="admissions-grid">
-        
-        <article class="adm-card us">
-          <div class="adm-card__header">
-            <div class="student-info">
-              <span class="student-name">Hsien-Jue C.</span>
-              <span class="student-tag">NTHU · EECS</span>
-            </div>
-            <div class="adm-badge">Fall 2026</div>
-          </div>
-    
-          <div class="adm-result-list">
-            <div class="result-item accepted">
-              <div class="school-logo">JHU</div>
-              <div class="school-detail">
-                <h4>Johns Hopkins University</h4>
-                <p>Neuroengineering (MS)</p>
+
+      <div class="container">
+        <!-- Filter Nav -->
+        <nav class="adm-nav" id="filter-nav">
+          <button class="nav-btn active" data-target="all">全部結果</button>
+          <button class="nav-btn" data-target="us">美國申請</button>
+          <button class="nav-btn" data-target="uk-eu">英國/歐洲</button>
+          <button class="nav-btn" data-target="asia">亞洲地區</button>
+        </nav>
+
+        <!-- Admissions Grid -->
+        <section class="adm-grid" id="admissions-grid">
+
+          <article class="adm-card us">
+            <div class="adm-card__header">
+              <div class="student-info">
+                <span class="student-name">C.同學</span>
+                <span class="student-tag">台中一中 ｜ 理工組 ｜ SAT 1570</span>
               </div>
-              <div class="status-tag">Admission</div>
+              <div class="adm-badge">Fall 2026</div>
             </div>
-            <div class="result-item secondary">
-              <span class="school-name">Columbia University</span>
-              <span class="status-dot"></span>
-            </div>
-            <div class="result-item secondary">
-              <span class="school-name">UPenn</span>
-              <span class="status-dot"></span>
-            </div>
-          </div>
-          <div class="adm-card__footer">
-            <a href="#" class="proof-link">View Verification</a>
-          </div>
-        </article>
-    
-        <article class="adm-card asia">
-          <div class="adm-card__header">
-            <div class="student-info">
-              <span class="student-name">Anonymous B.</span>
-              <span class="student-tag">NTU · Business</span>
-            </div>
-            <div class="adm-badge">Fall 2026</div>
-          </div>
-          <div class="adm-result-list">
-            <div class="result-item accepted">
-              <div class="school-logo">HKU</div>
-              <div class="school-detail">
-                <h4>University of Hong Kong</h4>
-                <p>Finance (MSc)</p>
+            <div class="adm-result-list">
+              <div class="result-item accepted">
+                <div class="school-logo">UCB</div>
+                <div class="school-detail">
+                  <h4>UC Berkeley</h4>
+                  <p>EECS (BS)</p>
+                </div>
+                <div class="status-tag">✓ Admitted</div>
               </div>
-              <div class="status-tag">Admission</div>
+              <div class="result-item accepted">
+                <div class="school-logo">CMU</div>
+                <div class="school-detail">
+                  <h4>Carnegie Mellon</h4>
+                  <p>Computer Science</p>
+                </div>
+                <div class="status-tag">✓ Admitted</div>
+              </div>
+              <div class="result-item secondary">
+                <span class="school-name">UCLA ｜ UCSD ｜ Purdue CS</span>
+                <span class="status-dot"></span>
+              </div>
             </div>
-          </div>
-        </article>
-    
-      </section>
+            <div class="adm-card__footer">
+              <a href="#" class="proof-link">View Verification →</a>
+            </div>
+          </article>
+
+          <article class="adm-card us">
+            <div class="adm-card__header">
+              <div class="student-info">
+                <span class="student-name">L.同學</span>
+                <span class="student-tag">建國中學 ｜ 社會組 ｜ SAT 1580</span>
+              </div>
+              <div class="adm-badge">Fall 2026</div>
+            </div>
+            <div class="adm-result-list">
+              <div class="result-item accepted">
+                <div class="school-logo">Cornell</div>
+                <div class="school-detail">
+                  <h4>Cornell University</h4>
+                  <p>Information Science (BS)</p>
+                </div>
+                <div class="status-tag">✓ Admitted</div>
+              </div>
+              <div class="result-item accepted">
+                <div class="school-logo">NYU</div>
+                <div class="school-detail">
+                  <h4>New York University</h4>
+                  <p>Computer Science (BS)</p>
+                </div>
+                <div class="status-tag">✓ Admitted</div>
+              </div>
+              <div class="result-item secondary">
+                <span class="school-name">Boston University ｜ Northeastern</span>
+                <span class="status-dot"></span>
+              </div>
+            </div>
+            <div class="adm-card__footer">
+              <a href="#" class="proof-link">View Verification →</a>
+            </div>
+          </article>
+
+          <article class="adm-card us">
+            <div class="adm-card__header">
+              <div class="student-info">
+                <span class="student-name">T.同學</span>
+                <span class="student-tag">北一女中 ｜ 社會組 ｜ SAT 1540</span>
+              </div>
+              <div class="adm-badge">Fall 2026</div>
+            </div>
+            <div class="adm-result-list">
+              <div class="result-item accepted">
+                <div class="school-logo">JHU</div>
+                <div class="school-detail">
+                  <h4>Johns Hopkins University</h4>
+                  <p>Public Health (BS)</p>
+                </div>
+                <div class="status-tag">✓ Admitted</div>
+              </div>
+              <div class="result-item accepted">
+                <div class="school-logo">Emory</div>
+                <div class="school-detail">
+                  <h4>Emory University</h4>
+                  <p>Pre-Med / Biology</p>
+                </div>
+                <div class="status-tag">✓ Admitted</div>
+              </div>
+              <div class="result-item secondary">
+                <span class="school-name">Tufts ｜ Georgetown ｜ BU</span>
+                <span class="status-dot"></span>
+              </div>
+            </div>
+            <div class="adm-card__footer">
+              <a href="#" class="proof-link">View Verification →</a>
+            </div>
+          </article>
+
+          <article class="adm-card us">
+            <div class="adm-card__header">
+              <div class="student-info">
+                <span class="student-name">A.同學</span>
+                <span class="student-tag">台南一中 ｜ 理工組 ｜ SAT 1560</span>
+              </div>
+              <div class="adm-badge">Fall 2026</div>
+            </div>
+            <div class="adm-result-list">
+              <div class="result-item accepted">
+                <div class="school-logo">Duke</div>
+                <div class="school-detail">
+                  <h4>Duke University</h4>
+                  <p>Biomedical Engineering</p>
+                </div>
+                <div class="status-tag">✓ Admitted</div>
+              </div>
+              <div class="result-item accepted">
+                <div class="school-logo">Vander</div>
+                <div class="school-detail">
+                  <h4>Vanderbilt University</h4>
+                  <p>Engineering Science</p>
+                </div>
+                <div class="status-tag">✓ Admitted</div>
+              </div>
+              <div class="result-item secondary">
+                <span class="school-name">Notre Dame ｜ Wake Forest</span>
+                <span class="status-dot"></span>
+              </div>
+            </div>
+            <div class="adm-card__footer">
+              <a href="#" class="proof-link">View Verification →</a>
+            </div>
+          </article>
+
+          <article class="adm-card us">
+            <div class="adm-card__header">
+              <div class="student-info">
+                <span class="student-name">W.同學</span>
+                <span class="student-tag">彰化高中 ｜ 社會組 ｜ GPA 3.2（逆襲）</span>
+              </div>
+              <div class="adm-badge">Fall 2026</div>
+            </div>
+            <div class="adm-result-list">
+              <div class="result-item accepted">
+                <div class="school-logo">UCSD</div>
+                <div class="school-detail">
+                  <h4>UC San Diego</h4>
+                  <p>Cognitive Science (BS)</p>
+                </div>
+                <div class="status-tag">✓ Admitted</div>
+              </div>
+              <div class="result-item accepted">
+                <div class="school-logo">UCI</div>
+                <div class="school-detail">
+                  <h4>UC Irvine</h4>
+                  <p>Psychology (BS)</p>
+                </div>
+                <div class="status-tag">✓ Admitted</div>
+              </div>
+              <div class="result-item secondary">
+                <span class="school-name">UCD ｜ UCSB ｜ BU</span>
+                <span class="status-dot"></span>
+              </div>
+            </div>
+            <div class="adm-card__footer">
+              <span style="font-size:11px;color:var(--gold);font-weight:700;">🔥 低GPA逆襲案例</span>
+            </div>
+          </article>
+
+          <article class="adm-card uk-eu">
+            <div class="adm-card__header">
+              <div class="student-info">
+                <span class="student-name">S.同學</span>
+                <span class="student-tag">台北私立高中 ｜ A-Level 課程</span>
+              </div>
+              <div class="adm-badge">Fall 2026</div>
+            </div>
+            <div class="adm-result-list">
+              <div class="result-item accepted">
+                <div class="school-logo">UCL</div>
+                <div class="school-detail">
+                  <h4>University College London</h4>
+                  <p>Economics (BSc)</p>
+                </div>
+                <div class="status-tag">✓ Admitted</div>
+              </div>
+              <div class="result-item accepted">
+                <div class="school-logo">LSE</div>
+                <div class="school-detail">
+                  <h4>London School of Economics</h4>
+                  <p>Economics &amp; Finance</p>
+                </div>
+                <div class="status-tag">✓ Admitted</div>
+              </div>
+            </div>
+            <div class="adm-card__footer">
+              <a href="#" class="proof-link">View Verification →</a>
+            </div>
+          </article>
+
+          <article class="adm-card asia">
+            <div class="adm-card__header">
+              <div class="student-info">
+                <span class="student-name">K.同學</span>
+                <span class="student-tag">高雄中學 ｜ IB 課程</span>
+              </div>
+              <div class="adm-badge">Fall 2026</div>
+            </div>
+            <div class="adm-result-list">
+              <div class="result-item accepted">
+                <div class="school-logo">HKU</div>
+                <div class="school-detail">
+                  <h4>University of Hong Kong</h4>
+                  <p>Engineering (BEng)</p>
+                </div>
+                <div class="status-tag">✓ Admitted</div>
+              </div>
+              <div class="result-item accepted">
+                <div class="school-logo">HKUST</div>
+                <div class="school-detail">
+                  <h4>HK Univ of Science &amp; Tech</h4>
+                  <p>Computer Engineering</p>
+                </div>
+                <div class="status-tag">✓ Admitted</div>
+              </div>
+            </div>
+            <div class="adm-card__footer">
+              <a href="#" class="proof-link">View Verification →</a>
+            </div>
+          </article>
+
+          <article class="adm-card us">
+            <div class="adm-card__header">
+              <div class="student-info">
+                <span class="student-name">Y.同學</span>
+                <span class="student-tag">台中女中 ｜ 社會組 ｜ SAT 1520</span>
+              </div>
+              <div class="adm-badge">Fall 2025</div>
+            </div>
+            <div class="adm-result-list">
+              <div class="result-item accepted">
+                <div class="school-logo">Penn</div>
+                <div class="school-detail">
+                  <h4>University of Pennsylvania</h4>
+                  <p>Wharton Business</p>
+                </div>
+                <div class="status-tag">✓ Admitted</div>
+              </div>
+              <div class="result-item secondary">
+                <span class="school-name">NYU Stern ｜ Georgetown ｜ Emory</span>
+                <span class="status-dot"></span>
+              </div>
+            </div>
+            <div class="adm-card__footer">
+              <a href="#" class="proof-link">View Verification →</a>
+            </div>
+          </article>
+
+        </section>
+
+        <!-- Older Results -->
+        <div style="text-align:center;padding:20px 0 80px;">
+          <a href="/results/index.html" class="btn btn-primary" style="display:inline-flex;">查看歷年完整成果 →</a>
+        </div>
+      </div>
     </main>
 
     <div id="site-footer"></div>
 
     <script src="/js/main.js"></script>
+    <script>
+      // Filter functionality
+      document.querySelectorAll('.nav-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const target = btn.dataset.target;
+          document.querySelectorAll('.adm-card').forEach(card => {
+            if (target === 'all' || card.classList.contains(target)) {
+              card.style.display = '';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>

@@ -16,6 +16,18 @@ loadComponent("#site-header", "/components/header.html").then(() => {
 });
 loadComponent("#site-footer", "/components/footer.html");
 
+// Scroll shadow on header
+window.addEventListener("scroll", () => {
+  const header = document.querySelector(".site-header");
+  if (header) {
+    if (window.scrollY > 20) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  }
+}, { passive: true });
+
 function setupHeaderInteractions() {
   const root = document.querySelector("#site-header");
   if (!root || root.dataset.bound === "1") return;

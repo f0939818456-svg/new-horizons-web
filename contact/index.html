@@ -3,59 +3,157 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>聯絡我們 | 日暘國際教育 New Horizons Education</title>
+    <title>聯絡我們 | 日暘國際教育</title>
+    <meta name="description" content="預約日暘國際教育免費初次諮詢，讓資深顧問評估你的條件並制定最佳申請策略。電話：(04) 3707-9662" />
     <link rel="stylesheet" href="/css/main.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/inner.css" />
     <style>
-      :root {
-        --primary-gold: #a68d5e; /* 高級金 */
-        --dark-text: #2c3e50;
-        --light-bg: #f8f9fa;
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        margin-bottom: 64px;
       }
-      body { font-family: "PingFang TC", "Microsoft JhengHei", sans-serif; color: var(--dark-text); line-height: 1.6; }
-      .contact-header { text-align: center; padding: 60px 0 40px; background: #fff; }
-      .contact-header h1 { font-size: 2.5rem; letter-spacing: 4px; margin-bottom: 10px; font-weight: 700; }
-      .contact-header p { color: #888; font-size: 1.1rem; }
-      
-      .grid-container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 50px; }
-      
-      /* 左側資訊區塊 */
-      .contact-info { padding: 20px; }
-      .info-item { margin-bottom: 30px; border-left: 3px solid var(--primary-gold); padding-left: 20px; }
-      .info-item h3 { font-size: 1.2rem; margin: 0 0 10px; color: var(--primary-gold); }
-      
-      /* 社群按鈕 */
-      .social-links { display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap; }
-      .btn-social { 
-        padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: 500;
-        transition: 0.3s; display: inline-flex; align-items: center; gap: 8px;
+      .contact-info-card {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 36px;
       }
-      .line-btn { background: #06c755; color: white; }
-      .threads-btn { background: #000; color: white; }
-      .btn-social:hover { opacity: 0.8; transform: translateY(-2px); }
+      .info-item {
+        margin-bottom: 28px;
+        padding-left: 20px;
+        border-left: 3px solid var(--gold);
+      }
+      .info-item h3 {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin: 0 0 8px;
+      }
+      .info-item p {
+        font-size: 15px;
+        color: var(--text);
+        margin: 0;
+        line-height: 1.7;
+      }
+      .social-links {
+        display: flex;
+        gap: 12px;
+        margin-top: 24px;
+        flex-wrap: wrap;
+      }
+      .btn-social {
+        padding: 11px 22px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 14px;
+        transition: 0.3s;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border: none;
+        cursor: pointer;
+      }
+      .btn-line { background: #06c755; color: #fff; }
+      .btn-threads { background: #1C1C1E; color: #fff; }
+      .btn-social:hover { opacity: 0.85; transform: translateY(-2px); }
 
-      /* 右側媒體區塊 */
-      .media-section { display: flex; flex-direction: column; gap: 30px; }
-      .map-container { width: 100%; height: 350px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-      .fb-container { border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); background: #fff; }
-
-      /* --- 新增表單樣式 --- */
-      .form-section { background: var(--light-bg); padding: 60px 20px; border-radius: 20px; margin: 40px 0 80px; }
-      .form-container { max-width: 700px; margin: 0 auto; }
-      .form-group { margin-bottom: 20px; text-align: left; }
-      .form-group label { display: block; margin-bottom: 8px; font-weight: 600; }
-      .form-group input, .form-group select, .form-group textarea {
-        width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; box-sizing: border-box;
+      .media-col { display: flex; flex-direction: column; gap: 28px; }
+      .map-wrap {
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        border: 1px solid var(--border);
+        height: 320px;
       }
+      .map-wrap iframe { display: block; width: 100%; height: 100%; border: none; }
+      .fb-wrap {
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        border: 1px solid var(--border);
+        background: #fff;
+      }
+
+      /* Form */
+      .form-section {
+        background: var(--bg-alt);
+        border-radius: var(--radius-lg);
+        padding: 56px 48px;
+        margin-bottom: 80px;
+        border: 1px solid var(--border);
+      }
+      .form-inner { max-width: 660px; margin: 0 auto; }
+      .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+      .form-group { margin-bottom: 0; }
+      .form-group label {
+        display: block;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 8px;
+        letter-spacing: 0.03em;
+      }
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        width: 100%;
+        padding: 13px 16px;
+        border: 1.5px solid var(--border);
+        border-radius: var(--radius);
+        font-size: 15px;
+        font-family: inherit;
+        color: var(--text);
+        background: #fff;
+        transition: 0.2s;
+        box-sizing: border-box;
+      }
+      .form-group input:focus,
+      .form-group select:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: var(--brand);
+        box-shadow: 0 0 0 3px rgba(78,52,46,0.1);
+      }
+      .form-group textarea { resize: vertical; }
+      .form-full { grid-column: 1 / -1; }
       .submit-btn {
-        background: var(--primary-gold); color: white; border: none; padding: 15px;
-        font-size: 1.1rem; border-radius: 8px; cursor: pointer; transition: 0.3s; width: 100%; font-weight: bold;
+        width: 100%;
+        padding: 16px;
+        background: var(--brand);
+        color: #fff;
+        border: none;
+        border-radius: 50px;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: 0.3s;
+        letter-spacing: 0.03em;
+        margin-top: 8px;
       }
-      .submit-btn:hover { background: #8e774d; }
-      #responseMessage { margin-top: 20px; text-align: center; font-weight: bold; color: var(--primary-gold); display: none; }
+      .submit-btn:hover {
+        background: var(--brand-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(78,52,46,0.3);
+      }
+      #responseMessage {
+        margin-top: 18px;
+        text-align: center;
+        font-weight: 600;
+        font-size: 15px;
+        display: none;
+        padding: 14px;
+        border-radius: var(--radius);
+      }
+      #responseMessage.success { background: #DCFCE7; color: #16A34A; display: block; }
+      #responseMessage.error   { background: #FEE2E2; color: #DC2626; display: block; }
 
-      @media (max-width: 768px) {
-        .grid-container { grid-template-columns: 1fr; }
+      @media (max-width: 900px) {
+        .contact-grid { grid-template-columns: 1fr; }
+        .form-grid { grid-template-columns: 1fr; }
+        .form-section { padding: 36px 24px; }
       }
     </style>
   </head>
@@ -66,134 +164,178 @@
 
     <div id="site-header"></div>
 
-    <main class="container" style="max-width: 1100px; margin: 0 auto; padding: 0 20px;">
-      
-      <section class="contact-header">
-        <h1>CONTACT US</h1>
-        <p>邁向卓越航道，與日暘攜手共創未來</p>
+    <main>
+      <!-- Page Hero -->
+      <section class="page-hero">
+        <div class="container page-hero__inner">
+          <nav class="breadcrumb">
+            <a href="/">首頁</a><span>›</span><span>聯絡我們</span>
+          </nav>
+          <span class="page-hero__label">CONTACT US</span>
+          <h1 class="page-hero__title">與日暘聯繫<br/>開始你的留學旅程</h1>
+          <p class="page-hero__desc">
+            預約免費初次諮詢，讓資深顧問深度了解你的情況，
+            為你制定最合適的申請策略與時程規劃。
+          </p>
+        </div>
       </section>
 
-      <div class="grid-container">
-        <div class="contact-info">
-          <div class="info-item">
-            <h3>辦公地點 Address</h3>
-            <p>台北市 [請填入具體區域路段]<br>New Horizons Education Center</p>
+      <div class="container" style="padding: 64px 0 0;">
+
+        <!-- Contact Info + Map -->
+        <div class="contact-grid">
+          <div class="contact-info-card">
+            <h2 style="font-size:22px;font-weight:800;margin:0 0 28px;color:var(--text);">聯絡資訊</h2>
+
+            <div class="info-item">
+              <h3>辦公地點 Address</h3>
+              <p>台中市南屯區龍富路四段59號<br/>日暘國際教育 New Horizons Education</p>
+            </div>
+
+            <div class="info-item">
+              <h3>聯絡電話 Phone</h3>
+              <p>(04) 3707-9662</p>
+            </div>
+
+            <div class="info-item">
+              <h3>電子郵件 Email</h3>
+              <p>info@topscore.tw</p>
+            </div>
+
+            <div class="info-item">
+              <h3>辦公時間 Hours</h3>
+              <p>週一至週五：10:00–19:00<br/>週六：10:00–17:00<br/>週日：預約制</p>
+            </div>
+
+            <div class="info-item" style="margin-bottom:0;">
+              <h3>社群聯絡 Social</h3>
+              <div class="social-links">
+                <a href="#" class="btn-social btn-line">
+                  💬 LINE 官方諮詢
+                </a>
+                <a href="#" class="btn-social btn-threads">
+                  𝕋 Threads
+                </a>
+              </div>
+            </div>
           </div>
 
-          <div class="info-item">
-            <h3>聯絡電話 Phone</h3>
-            <p>+886 (02) XXXX-XXXX</p>
-          </div>
+          <div class="media-col">
+            <div class="map-wrap">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.5!2d120.638!3d24.134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346917bbfe70c785%3A0x0!2zMjTCsDA4JzAyLjQiTiAxMjDCsDM4JzE2LjgiRQ!5e0!3m2!1szh-TW!2stw!4v1700000000000!5m2!1szh-TW!2stw"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
 
-          <div class="info-item">
-            <h3>電子郵件 Email</h3>
-            <p>info@newhorizons.edu.tw</p>
-          </div>
-
-          <div class="info-item">
-            <h3>社群聯絡 Social Connect</h3>
-            <div class="social-links">
-              <a href="https://line.me/R/ti/p/@你的ID" class="btn-social line-btn">
-                <span>LINE 官方諮詢</span>
-              </a>
-              <a href="https://www.threads.net/@你的帳號" class="btn-social threads-btn">
-                <span>Threads</span>
-              </a>
+            <div class="fb-wrap">
+              <div class="fb-page"
+                data-href="https://www.facebook.com/日暘國際教育中心"
+                data-tabs="timeline"
+                data-width="500"
+                data-height="280"
+                data-small-header="true"
+                data-adapt-container-width="true"
+                data-hide-cover="false"
+                data-show-facepile="true">
+                <blockquote cite="https://www.facebook.com/日暘國際教育中心" class="fb-xfbml-parse-ignore">
+                  <a href="https://www.facebook.com/日暘國際教育中心">日暘國際教育 New Horizons Education</a>
+                </blockquote>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="media-section">
-          <div class="map-container">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.70!2d121.54!3d25.04!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDAyJzI0LjAiTiAxMjHCsDMyJzI0LjAiRQ!5e0!3m2!1szh-TW!2stw!4v1700000000000!5m2!1szh-TW!2stw" 
-              width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
-            </iframe>
-          </div>
-
-          <div class="fb-container">
-            <div class="fb-page" 
-              data-href="https://www.facebook.com/日暘國際教育中心-1000XXXXXXXX" 
-              data-tabs="timeline" 
-              data-width="500" 
-              data-height="350" 
-              data-small-header="false" 
-              data-adapt-container-width="true" 
-              data-hide-cover="false" 
-              data-show-facepile="true">
-              <blockquote cite="https://www.facebook.com/日暘國際教育中心" class="fb-xfbml-parse-ignore">
-                <a href="https://www.facebook.com/日暘國際教育中心">日暘國際教育中心 New Horizons Education</a>
-              </blockquote>
+        <!-- Consultation Form -->
+        <section class="form-section">
+          <div class="form-inner">
+            <div style="text-align:center;margin-bottom:40px;">
+              <span class="section-label" style="text-align:center;display:block;">CONSULTATION</span>
+              <h2 style="font-size:28px;font-weight:800;margin:0 0 10px;">預約專家諮詢</h2>
+              <div class="section-divider center"></div>
+              <p style="font-size:15px;color:var(--muted);">請填寫下方資訊，我們將在 24 小時內由顧問與您聯繫安排。</p>
             </div>
+
+            <form id="consultationForm">
+              <div class="form-grid" style="gap:20px;display:grid;">
+                <div class="form-group">
+                  <label>學生姓名 *</label>
+                  <input type="text" name="name" required placeholder="您的姓名" />
+                </div>
+                <div class="form-group">
+                  <label>聯絡電話</label>
+                  <input type="tel" name="phone" placeholder="0912-345-678" />
+                </div>
+                <div class="form-group">
+                  <label>聯絡信箱 *</label>
+                  <input type="email" name="email" required placeholder="example@email.com" />
+                </div>
+                <div class="form-group">
+                  <label>目前就讀年級</label>
+                  <select name="grade">
+                    <option value="">請選擇</option>
+                    <option value="國三">國三（即將升高一）</option>
+                    <option value="高一">高一</option>
+                    <option value="高二">高二</option>
+                    <option value="高三">高三（申請中）</option>
+                    <option value="其他">其他</option>
+                  </select>
+                </div>
+                <div class="form-group form-full">
+                  <label>有興趣的服務</label>
+                  <select name="service">
+                    <option value="">請選擇</option>
+                    <option value="Core 考試課程">Core — SAT / AP / TOEFL 課程</option>
+                    <option value="Compass 留學規劃">Compass — 客製美國留學規劃</option>
+                    <option value="Mentor 申請代辦">Mentor — 海外留學全程代辦</option>
+                    <option value="初次諮詢">初次諮詢（不確定）</option>
+                  </select>
+                </div>
+                <div class="form-group form-full">
+                  <label>目標學校或諮詢問題</label>
+                  <textarea name="message" rows="5" placeholder="請描述您的背景、目標學校，或想諮詢的具體問題..."></textarea>
+                </div>
+              </div>
+              <button type="submit" class="submit-btn" id="submitBtn" style="margin-top:24px;">
+                提交預約申請
+              </button>
+            </form>
+            <div id="responseMessage"></div>
           </div>
-        </div>
+        </section>
+
       </div>
-
-      <section class="form-section">
-        <div class="form-container">
-          <h2 style="text-align:center; margin-bottom: 10px; font-weight: 700;">預約專家諮詢</h2>
-          <p style="text-align:center; color: #666; margin-bottom: 40px;">請填寫下方資訊，我們將由專人為您安排</p>
-          
-          <form id="consultationForm">
-            <div class="form-group">
-              <label>學生姓名 Name</label>
-              <input type="text" name="name" required placeholder="您的稱呼">
-            </div>
-            <div class="form-group">
-              <label>聯絡信箱 Email</label>
-              <input type="email" name="email" required placeholder="example@email.com">
-            </div>
-            <div class="form-group">
-              <label>預計申請領域 Field of Interest</label>
-              <select name="major">
-                <option value="電資工程 EECS">電資工程 EECS</option>
-                <option value="神經工程 Neuroengineering">神經工程 Neuroengineering</option>
-                <option value="商學院 Business">商學院 Business</option>
-                <option value="其他 Other">其他領域</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>諮詢訊息 Message</label>
-              <textarea name="message" rows="5" placeholder="請描述您的背景或想諮詢的問題..."></textarea>
-            </div>
-            <button type="submit" class="submit-btn" id="submitBtn">提交預約申請</button>
-          </form>
-          <div id="responseMessage"></div>
-        </div>
-      </section>
-
     </main>
-    
 
     <div id="site-footer"></div>
 
     <script src="/js/main.js"></script>
-    
     <script>
       const scriptURL = 'https://script.google.com/macros/s/AKfycbwtEDKhBTMakGEaBVp2FXJHU3dMEmcSE1X4h1ePu3WzrGDlrVVrLucyhv76z1V-8dAl/exec';
       const form = document.getElementById('consultationForm');
-      const btn = document.getElementById('submitBtn');
-      const msg = document.getElementById('responseMessage');
+      const btn  = document.getElementById('submitBtn');
+      const msg  = document.getElementById('responseMessage');
 
       form.addEventListener('submit', e => {
         e.preventDefault();
         btn.disabled = true;
-        btn.innerHTML = '傳送中...';
-        
-        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-          .then(response => {
-            msg.style.display = 'block';
-            msg.innerHTML = '✓ 提交成功！顧問將儘速與您聯繫。';
+        btn.textContent = '傳送中...';
+        msg.className = '';
+        msg.style.display = 'none';
+
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+          .then(() => {
+            msg.className = 'success';
+            msg.textContent = '✓ 提交成功！顧問將在 24 小時內與您聯繫。';
             form.reset();
             btn.disabled = false;
-            btn.innerHTML = '提交預約申請';
+            btn.textContent = '提交預約申請';
           })
-          .catch(error => {
-            msg.style.display = 'block';
-            msg.style.color = 'red';
-            msg.innerHTML = '發生錯誤，請稍後再試或直接聯繫 LINE 顧問。';
+          .catch(() => {
+            msg.className = 'error';
+            msg.textContent = '發生錯誤，請稍後再試，或直接撥打 (04) 3707-9662。';
             btn.disabled = false;
-            btn.innerHTML = '重新傳送';
+            btn.textContent = '重新傳送';
           });
       });
     </script>

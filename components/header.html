@@ -1,3 +1,11 @@
+<!-- Top Announcement Bar -->
+<div class="announce-bar" id="announceBar">
+  <span class="announce-bar__badge">新消息</span>
+  🎉 暑期班開放報名中！本月新生享 <strong>免費試聽一堂課</strong>，限額 10 席
+  <a href="/services/tutoring.html">立即預約 →</a>
+  <button class="announce-bar__close" id="closeAnnounce" aria-label="關閉公告">✕</button>
+</div>
+
 <header class="site-header">
   <div class="container header-inner">
     <a href="/" class="logo">
@@ -12,9 +20,24 @@
           留學服務 <span class="nav__arrow">▾</span>
         </button>
         <div class="nav__menu" data-menu="services">
+          <a href="/services/index.html">服務總覽</a>
           <a href="/services/core.html">Core 美國留學考試課程</a>
           <a href="/services/compass.html">Compass 客製美國留學規劃</a>
           <a href="/services/mentor.html">Mentor 海外留學代辦</a>
+        </div>
+      </div>
+
+      <div class="nav__dropdown">
+        <button class="nav__btn" type="button" data-dropdown="tutoring" style="color:var(--brand);font-weight:700;">
+          課程補習 <span class="nav__arrow">▾</span>
+        </button>
+        <div class="nav__menu" data-menu="tutoring" style="min-width:220px;">
+          <a href="/services/tutoring.html" style="font-weight:700;color:var(--brand);">補習課程總覽</a>
+          <a href="/services/tutoring.html#sat">SAT 數位考試</a>
+          <a href="/services/tutoring.html#ielts">IELTS / TOEFL</a>
+          <a href="/services/tutoring.html#ap">AP 各科</a>
+          <a href="/services/tutoring.html#school">校內全科</a>
+          <a href="/services/tutoring.html#trial" style="color:#16A34A;font-weight:700;">✦ 免費試聽申請</a>
         </div>
       </div>
 
@@ -51,13 +74,11 @@
         </div>
       </div>
 
-      <a class="nav__link" href="/contact/index.html">聯絡我們</a>
+      <a class="nav-cta" href="/services/tutoring.html#trial">免費試聽</a>
     </nav>
 
     <div class="header-actions">
-      <button class="mobile-btn" id="openMenu" type="button" aria-label="Open menu">
-        ☰
-      </button>
+      <button class="mobile-btn" id="openMenu" type="button" aria-label="Open menu">☰</button>
     </div>
   </div>
 
@@ -75,9 +96,22 @@
           留學服務 <span class="nav__arrow">▾</span>
         </button>
         <div class="m-dd-menu" data-mmenu="services">
+          <a href="/services/index.html">服務總覽</a>
           <a href="/services/core.html">Core 美國留學考試課程</a>
-          <a href="/services/compass.html">Compass 客製美國留學規劃</a>
+          <a href="/services/compass.html">Compass 客製留學規劃</a>
           <a href="/services/mentor.html">Mentor 海外留學代辦</a>
+        </div>
+
+        <button class="m-dd-btn" type="button" data-mdropdown="tutoring" style="color:var(--brand);font-weight:700;">
+          課程補習 ✦ <span class="nav__arrow">▾</span>
+        </button>
+        <div class="m-dd-menu" data-mmenu="tutoring">
+          <a href="/services/tutoring.html">補習課程總覽</a>
+          <a href="/services/tutoring.html#sat">SAT 數位考試</a>
+          <a href="/services/tutoring.html#ielts">IELTS / TOEFL</a>
+          <a href="/services/tutoring.html#ap">AP 各科</a>
+          <a href="/services/tutoring.html#school">校內全科</a>
+          <a href="/services/tutoring.html#trial" style="color:#16A34A;font-weight:700;">免費試聽申請</a>
         </div>
 
         <button class="m-dd-btn" type="button" data-mdropdown="blog">
@@ -108,8 +142,21 @@
         </div>
 
         <a href="/contact/index.html">聯絡我們</a>
+        <a href="/services/tutoring.html#trial" style="background:var(--gold);color:#fff;border-radius:50px;text-align:center;margin-top:8px;font-weight:700;">✦ 免費試聽申請</a>
       </div>
     </div>
     <div class="mobile-backdrop" id="menuBackdrop"></div>
   </div>
 </header>
+
+<script>
+  // Announcement bar close
+  document.getElementById('closeAnnounce')?.addEventListener('click', function() {
+    document.getElementById('announceBar').style.display = 'none';
+    sessionStorage.setItem('announceClosed', '1');
+  });
+  if (sessionStorage.getItem('announceClosed') === '1') {
+    const bar = document.getElementById('announceBar');
+    if (bar) bar.style.display = 'none';
+  }
+</script>

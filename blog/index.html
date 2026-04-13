@@ -3,20 +3,173 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>留學部落格</title>
+    <title>留學部落格 | 日暘國際教育</title>
+    <meta name="description" content="日暘留學部落格：學校介紹、考試攻略、學員經驗分享、留學資源，幫助你掌握申請美國大學的所有重要知識。" />
     <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/inner.css" />
   </head>
-
   <body>
     <div id="site-header"></div>
+    <main>
+      <section class="page-hero">
+        <div class="container page-hero__inner">
+          <nav class="breadcrumb">
+            <a href="/">首頁</a><span>›</span><span>留學部落格</span>
+          </nav>
+          <span class="page-hero__label">BLOG</span>
+          <h1 class="page-hero__title">留學部落格</h1>
+          <p class="page-hero__desc">學校介紹、考試攻略、學員經驗，以及你想知道的一切留學知識，都在這裡。</p>
+        </div>
+      </section>
 
-    <main class="container" style="padding: 28px 0">
-      <h1>留學部落格</h1>
-      <p>這頁之後會放 留學部落格 的內容。</p>
+      <div class="container" style="padding:72px 0 100px;display:grid;grid-template-columns:1fr 280px;gap:56px;align-items:start;">
+        <main>
+          <!-- Category Nav -->
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:40px;">
+            <a href="/blog/index.html" class="nav-btn active" style="text-decoration:none;padding:9px 20px;border-radius:50px;font-size:14px;font-weight:600;background:var(--brand);color:#fff;border:none;">全部</a>
+            <a href="/blog/school.html" class="nav-btn" style="text-decoration:none;padding:9px 20px;border-radius:50px;font-size:14px;font-weight:600;background:#fff;color:var(--muted);border:1.5px solid var(--border);">學校相關</a>
+            <a href="/blog/exam.html" class="nav-btn" style="text-decoration:none;padding:9px 20px;border-radius:50px;font-size:14px;font-weight:600;background:#fff;color:var(--muted);border:1.5px solid var(--border);">考試相關</a>
+            <a href="/blog/experience.html" class="nav-btn" style="text-decoration:none;padding:9px 20px;border-radius:50px;font-size:14px;font-weight:600;background:#fff;color:var(--muted);border:1.5px solid var(--border);">經驗分享</a>
+            <a href="/blog/resources.html" class="nav-btn" style="text-decoration:none;padding:9px 20px;border-radius:50px;font-size:14px;font-weight:600;background:#fff;color:var(--muted);border:1.5px solid var(--border);">網站資源</a>
+          </div>
+
+          <!-- Featured Article -->
+          <a href="/blog/exam.html" class="article-card is-featured" style="display:flex;text-decoration:none;color:inherit;background:#fff;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);margin-bottom:28px;transition:0.3s;">
+            <div class="article-card__thumb-placeholder" style="width:380px;flex-shrink:0;min-height:240px;font-size:48px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#EDE0DC,#F5ECD7);">
+              📐
+            </div>
+            <div class="article-card__body" style="padding:28px 32px;display:flex;flex-direction:column;">
+              <div class="article-card__meta">
+                <span class="tag tag-brand">考試相關</span>
+                <span class="article-card__date">2026.03.10</span>
+              </div>
+              <h2 class="article-card__title" style="font-size:22px;">數位 SAT 完全攻略：2026 年備考策略與高分秘訣</h2>
+              <p class="article-card__excerpt">College Board 全面轉換為數位化 SAT，不只是「把紙本搬到電腦上」那麼簡單——考試架構、計時邏輯、難度動態調整（Adaptive Test）都有根本性改變。本文整理日暘顧問多年輔導心得，帶你系統性了解 Digital SAT 的備考策略...</p>
+              <span class="article-card__readmore" style="margin-top:auto;">閱讀全文 →</span>
+            </div>
+          </a>
+
+          <!-- Article Grid -->
+          <div class="article-grid">
+            <a href="/blog/school.html" class="article-card" style="text-decoration:none;color:inherit;">
+              <div class="article-card__thumb-placeholder">🏛️</div>
+              <div class="article-card__body">
+                <div class="article-card__meta">
+                  <span class="tag tag-gold">學校相關</span>
+                  <span class="article-card__date">2026.02.20</span>
+                </div>
+                <h3 class="article-card__title">UC 系統九校完整比較：哪所最適合你？</h3>
+                <p class="article-card__excerpt">UCB、UCLA、UCSD、UCI……UC 系統哪所最強？各校有何特色？申請策略有何不同？全面解析。</p>
+                <span class="article-card__readmore">閱讀全文 →</span>
+              </div>
+            </a>
+
+            <a href="/blog/experience.html" class="article-card" style="text-decoration:none;color:inherit;">
+              <div class="article-card__thumb-placeholder">💬</div>
+              <div class="article-card__body">
+                <div class="article-card__meta">
+                  <span class="tag tag-green">經驗分享</span>
+                  <span class="article-card__date">2026.02.05</span>
+                </div>
+                <h3 class="article-card__title">從 GPA 3.1 到 UC Berkeley：一位學員的逆轉故事</h3>
+                <p class="article-card__excerpt">「我以為自己沒有機會。」C.同學分享她如何透過策略性規劃，克服 GPA 劣勢，最終拿下 UCB EECS 錄取。</p>
+                <span class="article-card__readmore">閱讀全文 →</span>
+              </div>
+            </a>
+
+            <a href="/blog/exam.html" class="article-card" style="text-decoration:none;color:inherit;">
+              <div class="article-card__thumb-placeholder">📝</div>
+              <div class="article-card__body">
+                <div class="article-card__meta">
+                  <span class="tag tag-brand">考試相關</span>
+                  <span class="article-card__date">2026.01.28</span>
+                </div>
+                <h3 class="article-card__title">AP 考試怎麼選科？不同申請方向的最優策略</h3>
+                <p class="article-card__excerpt">理工 vs 社會組的 AP 選科邏輯完全不同。本文根據目標科系，給出 AP 選科的最佳建議。</p>
+                <span class="article-card__readmore">閱讀全文 →</span>
+              </div>
+            </a>
+
+            <a href="/blog/school.html" class="article-card" style="text-decoration:none;color:inherit;">
+              <div class="article-card__thumb-placeholder">🗺️</div>
+              <div class="article-card__body">
+                <div class="article-card__meta">
+                  <span class="tag tag-gold">學校相關</span>
+                  <span class="article-card__date">2026.01.15</span>
+                </div>
+                <h3 class="article-card__title">Ivy League 八校詳細比較：風格、強項與申請建議</h3>
+                <p class="article-card__excerpt">哈佛、耶魯、普林斯頓……常春藤盟校各有什麼不同？申請時有哪些重點要注意？日暘顧問深度解析。</p>
+                <span class="article-card__readmore">閱讀全文 →</span>
+              </div>
+            </a>
+
+            <a href="/blog/resources.html" class="article-card" style="text-decoration:none;color:inherit;">
+              <div class="article-card__thumb-placeholder">🔗</div>
+              <div class="article-card__body">
+                <div class="article-card__meta">
+                  <span class="tag tag-blue">網站資源</span>
+                  <span class="article-card__date">2025.12.20</span>
+                </div>
+                <h3 class="article-card__title">美國大學申請必備工具清單：從 Naviance 到 Common App</h3>
+                <p class="article-card__excerpt">申請美國大學需要用到哪些工具和網站？日暘整理出最完整的工具清單，幫你少走彎路。</p>
+                <span class="article-card__readmore">閱讀全文 →</span>
+              </div>
+            </a>
+
+            <a href="/blog/experience.html" class="article-card" style="text-decoration:none;color:inherit;">
+              <div class="article-card__thumb-placeholder">✈️</div>
+              <div class="article-card__body">
+                <div class="article-card__meta">
+                  <span class="tag tag-green">經驗分享</span>
+                  <span class="article-card__date">2025.12.05</span>
+                </div>
+                <h3 class="article-card__title">入學前必做的 10 件事：CMU 學長姐的第一學期生存指南</h3>
+                <p class="article-card__excerpt">拿到 offer 之後，接下來呢？日暘學員分享赴美前的實際準備清單，讓你的第一學期更順利。</p>
+                <span class="article-card__readmore">閱讀全文 →</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="pagination">
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn wide">下一頁 →</button>
+          </div>
+        </main>
+
+        <!-- Sidebar -->
+        <aside>
+          <div class="sidebar-widget">
+            <div class="sidebar-widget__title">文章分類</div>
+            <ul class="sidebar-link-list">
+              <li><a href="/blog/school.html">學校相關</a></li>
+              <li><a href="/blog/exam.html">考試相關</a></li>
+              <li><a href="/blog/experience.html">經驗分享</a></li>
+              <li><a href="/blog/resources.html">網站資源</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-widget">
+            <div class="sidebar-widget__title">熱門文章</div>
+            <ul class="sidebar-link-list">
+              <li><a href="/blog/exam.html">數位 SAT 完全攻略 2026</a></li>
+              <li><a href="/blog/school.html">UC 系統九校完整比較</a></li>
+              <li><a href="/blog/experience.html">GPA 3.1 → UCB 逆轉故事</a></li>
+              <li><a href="/blog/school.html">Ivy League 八校詳細比較</a></li>
+              <li><a href="/blog/exam.html">AP 考試怎麼選科？</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-widget contact-widget">
+            <div class="sidebar-widget__title">免費諮詢</div>
+            <p>有任何關於美國留學的問題？預約日暘顧問的免費諮詢，獲得個人化建議。</p>
+            <a href="/contact/index.html" class="btn btn-gold" style="display:flex;justify-content:center;">預約諮詢</a>
+          </div>
+        </aside>
+      </div>
     </main>
-
     <div id="site-footer"></div>
-
     <script src="/js/main.js"></script>
   </body>
 </html>
