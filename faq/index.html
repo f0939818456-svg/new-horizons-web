@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>常見問題 FAQ | 日暘國際教育</title>
+    <meta name="description" content="日暘國際教育常見問題：補習課程、Compass 留學規劃、Mentor 申請代辦、費用與時程。找到你最想知道的答案。" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/inner.css" />
+    <style>
+      .faq-section { margin-bottom: 64px; }
+      .faq-section__title {
+        font-size: 18px;
+        font-weight: 800;
+        color: var(--brand);
+        margin: 0 0 20px;
+        padding-bottom: 12px;
+        border-bottom: 2px solid var(--border);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .faq-section__title .faq-icon {
+        width: 32px; height: 32px;
+        background: var(--brand);
+        color: #fff;
+        border-radius: 8px;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 14px; font-weight: 700; flex-shrink: 0;
+      }
+      .faq-list { display: flex; flex-direction: column; gap: 10px; }
+      .faq-item {
+        border: 1.5px solid var(--border);
+        border-radius: var(--radius);
+        background: #fff;
+        overflow: hidden;
+        transition: border-color 0.2s;
+      }
+      .faq-item:hover { border-color: var(--brand); }
+      .faq-item.is-open { border-color: var(--brand); }
+      .faq-item__q {
+        width: 100%;
+        background: none;
+        border: none;
+        padding: 18px 20px;
+        text-align: left;
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--text);
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        line-height: 1.5;
+      }
+      .faq-item__q:hover { color: var(--brand); }
+      .faq-item__q-icon {
+        font-style: normal;
+        font-size: 20px;
+        font-weight: 400;
+        color: var(--brand);
+        flex-shrink: 0;
+        transition: transform 0.25s;
+      }
+      .faq-item.is-open .faq-item__q-icon { transform: rotate(45deg); }
+      .faq-item__a {
+        max-height: 0;
+        overflow: hidden;
+        font-size: 14px;
+        color: var(--muted);
+        line-height: 1.8;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+        padding: 0 20px;
+      }
+      .faq-item.is-open .faq-item__a { max-height: 400px; padding: 0 20px 20px; }
+
+      /* Category quick-nav */
+      .faq-nav {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 48px;
+      }
+      .faq-nav a {
+        text-decoration: none;
+        padding: 8px 18px;
+        border-radius: 50px;
+        font-size: 13px;
+        font-weight: 600;
+        background: var(--bg-alt);
+        color: var(--muted);
+        border: 1.5px solid var(--border);
+        transition: 0.2s;
+      }
+      .faq-nav a:hover { background: var(--brand); color: #fff; border-color: var(--brand); }
+    </style>
+  </head>
+  <body>
+    <div id="site-header"></div>
+    <main>
+      <section class="page-hero">
+        <div class="container page-hero__inner">
+          <nav class="breadcrumb">
+            <a href="/">首頁</a><span>›</span><span>常見問題</span>
+          </nav>
+          <span class="page-hero__label">FAQ · 常見問題</span>
+          <h1 class="page-hero__title">常見問題</h1>
+          <p class="page-hero__desc">找不到答案？<a href="/contact/index.html" style="color:var(--gold-light);font-weight:700;">預約顧問諮詢</a>，我們在 24 小時內回覆你。</p>
+        </div>
+      </section>
+
+      <div class="container content-sidebar-grid" style="padding:72px 0 100px;">
+        <main>
+          <!-- Quick Nav -->
+          <div class="faq-nav">
+            <a href="#general">一般諮詢</a>
+            <a href="#tutoring">補習課程</a>
+            <a href="#compass">Compass 留學規劃</a>
+            <a href="#mentor">Mentor 申請代辦</a>
+            <a href="#timeline">申請時程</a>
+            <a href="#cost">費用相關</a>
+          </div>
+
+          <!-- 一般諮詢 -->
+          <div class="faq-section" id="general">
+            <div class="faq-section__title">
+              <div class="faq-icon">Q</div>
+              一般諮詢
+            </div>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-item__q" type="button">
+                  如何預約初次諮詢？<i class="faq-item__q-icon">+</i>
+                </button>
+                <div class="faq-item__a">填寫<a href="/contact/index.html" style="color:var(--brand);">聯絡我們頁面</a>的預約表單，或直接致電 (04) 3707-9662。顧問將在 24 小時內與您確認時間，並在面談前了解學員的基本情況，讓諮詢時間更有效率。</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-item__q" type="button">
+                  初次諮詢需要準備哪些資料？<i class="faq-item__q-icon">+</i>
+                </button>
+                <div class="faq-item__a">不需要特別準備。帶著你目前的成績單、想申請的學校方向（若有的話），以及你的問題清單即可。我們的顧問會在諮詢中引導對話，協助你釐清目標與規劃方向。</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-item__q" type="button">
+                  諮詢可以線上進行嗎？<i class="faq-item__q-icon">+</i>
+                </button>
+                <div class="faq-item__a">我們以台中辦公室實體諮詢為主，提供更好的互動體驗。若您來自外縣市或有特殊需求，可以安排視訊諮詢，請在預約時說明需求。</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-item__q" type="button">
+                  我的孩子幾年級最適合來諮詢？<i class="faq-item__q-icon">+</i>
+                </button>
+                <div class="faq-item__a">越早越好。理想狀況是國三升高一暑假，讓孩子有足夠時間建立申請者形象（課外活動、成績、考試）。高二也完全來得及，高三上學期前都能做出有意義的準備。高三申請季中也歡迎諮詢，我們提供文書與選校策略支援。</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 補習課程 -->
+          <div class="faq-section" id="tutoring">
+            <div class="faq-section__title">
+              <div class="faq-icon">補</div>
+              補習課程
+            </div>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-item__q" type="button">
+                  目前提供哪些補習科目？<i class="faq-item__q-icon">+</i>
+                </button>
+                <div class="faq-item__a">我們提供 SAT 數位考試、AP 各科（Calculus BC/AB、Physics C/1、Chemistry、Biology、Statistics、US/World History、English Language/Literature 等）、IELTS、TOEFL，以及校內全科輔導。詳細科目請至<a href="/services/tutoring.html" style="color:var(--brand);">補習課程頁面</a>查看。</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-item__q" type="button">
+                  課程是線上還是實體上課？<i class="faq-item__q-icon">+</i>
+                </button>
+                <div class="faq-item__a">以台中辦公室實體教學為主，提供更好的學習環境與師生互動。部分一對一課程可視情況安排線上進行，歡迎在面談時告知您的需求。</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-item__q" type="button">
+                  SAT 分數保障是如何運作的？<i class="faq-item__q-icon">+</i>
+                </button>
+                <div class="faq-item__a">完成 SAT 衝刺精英班完整課程後，若正式考試成績較入班測驗進步未達 100 分，學員可免費重新修習下一期課程一次。詳細條款請洽顧問說明。</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-item__q" type="button">
+                  孩子學校課業很忙，時間如何配合？<i class="faq-item__q-icon">+</i>
+                </button>
+                <div class="faq-item__a">我們的排課相當有彈性，可以配合學校行事曆、考試週等調整課表。一對一課程更可完全依照學員時間安排，確保補習不影響原本的學校生活。</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-item__q" type="button">
+                  校內補習和 AP 補習有什麼不同？<i class="faq-item__q-icon">+</i>
+                </button>
+                <div class="faq-item__a">校內補習以配合學員就讀學校的課程進度為主，重點在穩住 GPA；AP 補習則針對 5 月 AP 考試，以考試導向進行系統化備考，兩者目標與課程設計不同，可依需求選擇，也可同時進行。</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-item__q" type="button">
+                  補習完成之後可以接著做留學申請嗎？<i class="faq-item__q-icon">+</i>
+                </button>
+                <div class="faq-item__a">當然可以！日暘的一大優勢就是補習與留學申請無縫接軌。成績達標後，我們的顧問團隊可直接為您制定大學申請策略，不需要另找其他機構，節省大量溝通成本。</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Compass -->
+          <div class="faq-section" id="compass">
+            <div class="faq-section__title">
+              <div class="faq-icon">C</div>
+              Compass 留學規劃
+            </div>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-item__q" type="button">
+                  Compass 服務的內容是什麼？<i class="faq-item__q-icon">+</i>
+                </button>
+                <div class="faq-item__a">Compass 是以「建立申請者形象」為核心的長期規劃服務，從高一開始（或更早），協助學生系統性規劃課外活動、競賽、研究計畫，建立獨特且有說服力的申請敘事，提升錄取頂尖名校的機率。詳細說明請見<a href="/services/compass.html" style="color:var(--brand);">Compass 服務頁面</a>。</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-item__q" type="button">
+                  Compass 和 Mentor 有什麼不同？<i class="faq-item__q-icon">+</i>
+                </button>
+                <div class="faq-item__a">Compass 是長期規劃服務（高一至高三），重點是在申請前建立強大的課外活動組合與申請者形象。Mentor 是申請代辦服務（高三申請季），重點是選校策略、文書撰寫、申請材料提交的全程協助。兩者可以配套，也可以單獨使用。</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-item__q" type="button">
+                  高二才開始還來得及嗎？<i class="faq-item__q-icon">+</i>
+                </button>
+                <div class="faq-item__a">完全來得及。高二仍有約 1.5–2 年的時間建立課外活動與成績，Compass 顧問會根據現有條件制定最有效率的強化策略。高三才開始的學生，我們則會聚焦在申請季前能夠最大化效益的準備。</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-item__q" type="button">
+                  Compass 適合哪些學生？<i class="faq-item__q-icon">+</i>
+                </button>
+                <div class="faq-item__a">Compass 特別適合以下學生：（1）目標 Top 30 以上美國大學；（2）有明確科系方向，希望針對性建立相關經歷；（3）希望早期規劃、不希望高三才手忙腳亂；（4）家長希望全程有專業顧問陪伴的學生。</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mentor -->
+          <div class="faq-section" id="mentor">
+            <div class="faq-section__title">
+              <div class="faq-icon">M</div>
+              Mentor 申請代辦
+            </div>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-item__q" type="button">
+                  Mentor 服務包含哪些項目？<i class="faq-item__q-icon">+</i>
+                </button>
+                <div class="faq-item__a">Mentor 全程申請代辦服務包含：選校策略規劃、Common App / Coalition App 帳號建立、活動清單（Activity List）撰寫、主文書（Common App Essay）引導與修改、各校補充文書（Supplemental Essays）、推薦信策略、申請時程管理、財務援助申請（若需要）、放榜後選擇建議。詳見<a href="/services/mentor.html" style="color:var(--brand);">Mentor 服務頁面</a>。</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-item__q" type="button">
+                  文書是由顧問代寫，還是學生自己寫？<i class="faq-item__q-icon">+</i>
+                </button>
+                <div class="faq-item__a">文書必須由學生自己撰寫。顧問的角色是幫助你找到最有力的故事切入點、引導你釐清自己的想法、提供具體的修改建議，並透過多輪修改幫你把文書打磨到最佳狀態。直接代寫違反申請誠信原則，我們不提供這類服務。</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-item__q" type="button">
+                  可以保證錄取特定學校嗎？<i class="faq-item__q-icon">+</i>
+                </button>
+                <div class="faq-item__a">任何機構都無法保證錄取特定學校，宣稱「保證錄取」的機構請務必謹慎辨別。日暘的承諾是：提供最紮實的申請策略、最用心的文書指導，以及最透明的選校建議，讓你在準備完善的前提下提交最強的申請。</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-item__q" type="button">
+                  幾月開始最適合加入 Mentor 服務？<i class="faq-item__q-icon">+</i>
+                </button>
+                <div class="faq-item__a">建議高三暑假（7 月）前加入，讓顧問有時間在 8 月 Common App 開放前完成選校策略規劃，並在暑假期間開始文書草稿。若 9 月才加入也仍有機會，但時間會更緊迫。</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 申請時程 -->
+          <div class="faq-section" id="timeline">
+            <div class="faq-section__title">
+              <div class="faq-icon">時</div>
+              申請時程
+            </div>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-item__q" type="button">
+                  SAT 最晚幾年級考完比較好？<i class="faq-item__q-icon">+</i>
+                </button>
+                <div class="faq-item__a">建議高三上學期（8 月或 10 月）前考到滿意分數，讓你在申請季能安心專注文書。若是 EA/ED 申請，更要在 11 月截止前提交成績。高二考一次打底，高三上再衝高是常見的策略安排。</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-item__q" type="button">
+                  AP 考試對申請有多重要？<i class="faq-item__q-icon">+</i>
+                </button>
+                <div class="faq-item__a">AP 課程（特別是 4、5 分的成績）可以展現你挑戰高難度課程的能力，對 Top 30 大學的申請有實質幫助。通常建議高一到高三共修 6–10 門 AP，選科應符合你的目標科系方向。</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-item__q" type="button">
+                  Early Decision 值得賭嗎？<i class="faq-item__q-icon">+</i>
+                </button>
+                <div class="faq-item__a">ED 對部分學校（如 Emory、Tulane、Vanderbilt）有顯著的錄取率優勢，但 ED 是具約束力的承諾（錄取即必須入學）。適合 ED 的條件是：（1）有一所你真心最想讀的學校；（2）你的申請條件對該校具競爭力；（3）財務上可以接受。顧問會根據你的情況給出具體建議。</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-item__q" type="button">
+                  Common App 何時開放？截止日期是什麼時候？<i class="faq-item__q-icon">+</i>
+                </button>
+                <div class="faq-item__a">每年 8 月 1 日開放。主要截止日期：EA/ED1 通常為 11 月 1–15 日；ED2 通常為 1 月 1 日；Regular Decision 通常為 1 月 1 日（部分學校為 1/5 或 1/15）。各校時間有差異，務必逐一確認。</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 費用 -->
+          <div class="faq-section" id="cost">
+            <div class="faq-section__title">
+              <div class="faq-icon">費</div>
+              費用相關
+            </div>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-item__q" type="button">
+                  初次諮詢需要收費嗎？<i class="faq-item__q-icon">+</i>
+                </button>
+                <div class="faq-item__a">初次諮詢免費。顧問會深入了解學員情況後，提供初步建議與服務說明。若決定合作，再根據所選服務方案收費。</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-item__q" type="button">
+                  各項服務的費用如何查詢？<i class="faq-item__q-icon">+</i>
+                </button>
+                <div class="faq-item__a">補習課程、Compass、Mentor 的費用因學員需求、課程內容與服務期間而有所不同。我們不在線上公布定價，因為每位學員的情況不同，顧問會在了解需求後提供客製化的方案說明。請直接<a href="/contact/index.html" style="color:var(--brand);">預約諮詢</a>取得詳細資訊。</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-item__q" type="button">
+                  可以分期付款嗎？<i class="faq-item__q-icon">+</i>
+                </button>
+                <div class="faq-item__a">可以。部分服務方案支援分期安排，具體方式請在諮詢時與顧問討論。</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-item__q" type="button">
+                  美國大學的申請費用大概是多少？<i class="faq-item__q-icon">+</i>
+                </button>
+                <div class="faq-item__a">每所美國大學的申請費約 $75–$90 USD，申請 10–15 所學校的總申請費約 $800–$1,350 USD。部分學校提供 fee waiver（費用豁免），申請時可一併確認資格。此費用與顧問服務費用分開計算。</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cta-box">
+            <h3>還有其他問題？</h3>
+            <p>找不到你的答案？預約免費初次諮詢，顧問直接解答你的疑問，並為你制定個人化的建議。</p>
+            <a href="/contact/index.html" class="btn btn-gold">預約顧問諮詢</a>
+          </div>
+        </main>
+
+        <aside>
+          <div class="sidebar-widget">
+            <div class="sidebar-widget__title">問題分類</div>
+            <ul class="sidebar-link-list">
+              <li><a href="#general">一般諮詢</a></li>
+              <li><a href="#tutoring">補習課程</a></li>
+              <li><a href="#compass">Compass 留學規劃</a></li>
+              <li><a href="#mentor">Mentor 申請代辦</a></li>
+              <li><a href="#timeline">申請時程</a></li>
+              <li><a href="#cost">費用相關</a></li>
+            </ul>
+          </div>
+          <div class="sidebar-widget">
+            <div class="sidebar-widget__title">了解我們的服務</div>
+            <ul class="sidebar-link-list">
+              <li><a href="/services/tutoring.html">補習課程詳情</a></li>
+              <li><a href="/services/compass.html">Compass 留學規劃</a></li>
+              <li><a href="/services/mentor.html">Mentor 申請代辦</a></li>
+            </ul>
+          </div>
+          <div class="sidebar-widget contact-widget">
+            <div class="sidebar-widget__title">直接聯繫顧問</div>
+            <p>免費初次諮詢，讓我們深入了解你的情況，給出最適合的建議。</p>
+            <a href="/contact/index.html" class="btn btn-gold" style="display:flex;justify-content:center;">立即預約</a>
+          </div>
+        </aside>
+      </div>
+    </main>
+    <div id="site-footer"></div>
+    <script src="/js/main.js"></script>
+    <script>
+      document.querySelectorAll('.faq-item__q').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const item = btn.closest('.faq-item');
+          const isOpen = item.classList.contains('is-open');
+          // Close all in same section
+          item.closest('.faq-list').querySelectorAll('.faq-item').forEach(i => i.classList.remove('is-open'));
+          if (!isOpen) item.classList.add('is-open');
+        });
+      });
+    </script>
+  </body>
+</html>

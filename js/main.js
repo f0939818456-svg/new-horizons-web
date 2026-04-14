@@ -1,3 +1,64 @@
+// ── Blog Pagination ───────────────────────────────────────────────
+function setupBlogPagination() {
+  document.querySelectorAll('.paginated-grid').forEach(grid => {
+    const perPage = parseInt(grid.dataset.perPage || '6');
+    const cards = Array.from(grid.querySelectorAll('.article-card'));
+    if (cards.length <= perPage) return;
+
+    const totalPages = Math.ceil(cards.length / perPage);
+    let currentPage = 1;
+
+    const paginationEl = document.createElement('div');
+    paginationEl.className = 'pagination';
+    grid.after(paginationEl);
+
+    function showPage(page) {
+      currentPage = page;
+      cards.forEach((card, i) => {
+        const inRange = i >= (page - 1) * perPage && i < page * perPage;
+        // preserve original display or use '' to let CSS decide
+        card.style.display = inRange ? '' : 'none';
+      });
+      renderPagination();
+      // Scroll smoothly to just above the grid
+      const offset = grid.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top: offset, behavior: 'smooth' });
+    }
+
+    function renderPagination() {
+      paginationEl.innerHTML = '';
+
+      if (currentPage > 1) {
+        const prev = document.createElement('button');
+        prev.className = 'page-btn wide';
+        prev.textContent = '← 上一頁';
+        prev.addEventListener('click', () => showPage(currentPage - 1));
+        paginationEl.appendChild(prev);
+      }
+
+      for (let i = 1; i <= totalPages; i++) {
+        const btn = document.createElement('button');
+        btn.className = 'page-btn' + (i === currentPage ? ' active' : '');
+        btn.textContent = i;
+        btn.addEventListener('click', () => showPage(i));
+        paginationEl.appendChild(btn);
+      }
+
+      if (currentPage < totalPages) {
+        const next = document.createElement('button');
+        next.className = 'page-btn wide';
+        next.textContent = '下一頁 →';
+        next.addEventListener('click', () => showPage(currentPage + 1));
+        paginationEl.appendChild(next);
+      }
+    }
+
+    showPage(1);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', setupBlogPagination);
+
 async function loadComponent(selector, url) {
   const el = document.querySelector(selector);
   if (!el) return;
