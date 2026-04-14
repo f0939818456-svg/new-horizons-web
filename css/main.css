@@ -322,6 +322,45 @@ img { display: block; max-width: 100%; }
   margin: 0 0 40px;
 }
 
+/* =========================
+   Dark-section typography overrides
+   Prevents section-title/subtitle (which have explicit dark colors)
+   from becoming unreadable when placed inside brand-colored sections.
+========================= */
+.score-improve-strip .section-title,
+.cta-box .section-title,
+.page-hero .section-title,
+.video-section .section-title,
+.adm-hero .section-title,
+.tutoring-hero .section-title,
+.stats-bar .section-title {
+  color: #fff;
+}
+
+.score-improve-strip .section-label,
+.cta-box .section-label,
+.video-section .section-label,
+.adm-hero .section-label,
+.tutoring-hero .section-label,
+.stats-bar .section-label {
+  color: var(--gold-light);
+}
+
+.score-improve-strip .section-subtitle,
+.cta-box .section-subtitle,
+.page-hero .section-subtitle,
+.video-section .section-subtitle,
+.adm-hero .section-subtitle,
+.tutoring-hero .section-subtitle {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/* Ensure all text-decoration anchor links are visible on dark sections */
+.score-improve-strip a,
+.cta-box a:not(.btn),
+.page-hero a:not(.btn),
+.stats-bar a { color: var(--gold-light); }
+
 .eyebrow {
   margin: 0 0 10px;
   font-size: 11px;
