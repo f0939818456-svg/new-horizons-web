@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>AP Physics C 完整備考指南：微積分物理的高分策略 | 日暘國際教育</title>
+    <meta name="description" content="AP Physics C Mechanics 與 E&M 完整備考指南：微積分物理的核心考點、FRQ 解題策略、常考題型分析，幫助理工科學生拿下 5 分。" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/inner.css" />
+    <style>
+      .article-wrap { max-width: 760px; }
+      .article-hero { background: linear-gradient(135deg, #2C3E50 0%, #3B4A5A 100%); padding: 80px 0 60px; color: #fff; }
+      .article-hero__eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #F5ECD7; margin-bottom: 16px; }
+      .article-hero__title { font-size: clamp(24px, 3.5vw, 42px); font-weight: 900; line-height: 1.2; margin: 0 0 20px; letter-spacing: -0.02em; }
+      .article-hero__meta { display: flex; align-items: center; gap: 16px; font-size: 13px; opacity: 0.75; }
+      .article-body { padding: 64px 0 80px; }
+      .article-body p { font-size: 16px; line-height: 1.9; color: var(--text); margin: 0 0 24px; }
+      .article-body h2 { font-size: 22px; font-weight: 800; color: var(--text); margin: 48px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #F5ECD7; }
+      .article-body h3 { font-size: 18px; font-weight: 700; color: var(--brand); margin: 32px 0 12px; }
+      .article-body blockquote { border-left: 4px solid #B8943F; padding: 16px 24px; background: #FAF6F3; border-radius: 0 8px 8px 0; margin: 28px 0; font-size: 15.5px; color: var(--text); font-style: italic; line-height: 1.8; }
+      .article-body ul { margin: 0 0 24px; padding-left: 24px; }
+      .article-body ul li { font-size: 15px; line-height: 1.9; color: var(--text); margin-bottom: 8px; }
+      .info-box { background: #FAF6F3; border: 1px solid #e8ddd6; border-radius: 12px; padding: 24px 28px; margin: 28px 0; }
+      .info-box__title { font-size: 14px; font-weight: 700; color: #B8943F; margin: 0 0 12px; letter-spacing: 0.05em; }
+      .article-cta { background: #FAF6F3; border: 1px solid #e8ddd6; border-radius: 12px; padding: 36px; margin-top: 56px; text-align: center; }
+      .article-cta h3 { font-size: 20px; font-weight: 800; margin: 0 0 10px; }
+      .article-cta p { font-size: 14.5px; color: var(--muted); margin: 0 0 24px; }
+      .article-nav { display: flex; gap: 16px; margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border); }
+      .article-nav a { font-size: 13px; font-weight: 600; color: var(--brand); text-decoration: none; }
+    </style>
+  </head>
+  <body>
+    <div id="site-header"></div>
+    <main>
+      <section class="article-hero">
+        <div class="container">
+          <nav class="breadcrumb" style="margin-bottom:20px;">
+            <a href="/" style="color:rgba(255,255,255,0.6);">首頁</a><span style="color:rgba(255,255,255,0.4);">›</span>
+            <a href="/blog/exam.html" style="color:rgba(255,255,255,0.6);">考試相關</a><span style="color:rgba(255,255,255,0.4);">›</span>
+            <span style="color:rgba(255,255,255,0.8);">AP Physics C 備考指南</span>
+          </nav>
+          <div class="article-hero__eyebrow">BLOG · EXAMS</div>
+          <h1 class="article-hero__title">AP Physics C 完整備考指南：微積分物理的高分策略</h1>
+          <div class="article-hero__meta">
+            <span>2025.10.02</span>
+            <span>·</span>
+            <span>日暘顧問團隊</span>
+            <span>·</span>
+            <span>閱讀約 5 分鐘</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="container article-body">
+        <div class="content-sidebar-grid">
+          <article class="article-wrap">
+
+            <p>AP Physics C 是所有 AP 課程中最能展示理工科實力的科目之一。分為 Mechanics（力學）和 Electricity & Magnetism（電磁學）兩個獨立考試，使用微積分作為分析工具，難度遠超 AP Physics 1 和 2。對於申請工程、物理、電機等理工科系的台灣學生，AP Physics C 的 5 分是一個極具說服力的申請加分項目。</p>
+
+            <h2>考試結構與先修要求</h2>
+            <p>AP Physics C: Mechanics 和 AP Physics C: E&M 是兩個分開的考試，可以同一天考（通常在 5 月份的 AP 考試週安排在同一天上下午），也可以只考其中一個。每個考試 90 分鐘，分為選擇題（35 道，45 分鐘）和 FRQ（3 題，45 分鐘），各佔 50%。</p>
+            <p>先修要求：AP Physics C 使用微積分，因此必須已經學過（或同步學習）AP Calculus AB 或 BC。沒有微積分基礎直接上 Physics C 會非常吃力。建議的先修順序是：AP Calc AB 或同等課程 → AP Physics C Mechanics → AP Physics C E&M。</p>
+
+            <h2>Mechanics：核心考點解析</h2>
+            <p>AP Physics C Mechanics 的主要考區包括：</p>
+            <ul>
+              <li><strong>運動學（Kinematics）</strong>：位置、速度、加速度的微積分關係；向量分析</li>
+              <li><strong>牛頓力學（Newton's Laws）</strong>：自由體圖、摩擦力、張力、彈簧力的應用</li>
+              <li><strong>功與能量（Work & Energy）</strong>：功能定理、保守力、位能的微積分計算</li>
+              <li><strong>動量（Momentum）</strong>：衝量-動量定理、碰撞（彈性與非彈性）</li>
+              <li><strong>旋轉運動（Rotation）</strong>：轉動慣量積分計算、角動量守恆——這是最難的部分，但幾乎每年必考</li>
+              <li><strong>簡諧運動（SHM）</strong>：彈簧、單擺的微分方程解法</li>
+            </ul>
+
+            <blockquote>「Rotation 是很多學生的死穴，但其實就是把線性運動的每個概念對應到旋轉版本。搞清楚這個對應關係，整個章節就通了。」——日暘物理老師</blockquote>
+
+            <h2>E&M：電磁學的挑戰</h2>
+            <p>E&M 比 Mechanics 更抽象，主要考點包括：靜電學（高斯定律的積分應用）、電位與電場的關係（微積分）、電容器、直流電路（基爾霍夫定律）、電磁感應（法拉第定律）、Maxwell's Equations 的基礎。台灣高中物理通常不涉及微積分版本的電磁學，所以 E&M 對許多學生是全新的挑戰，需要更長的備考時間。</p>
+
+            <div class="info-box">
+              <div class="info-box__title">FRQ 高分策略</div>
+              <ul>
+                <li>永遠先畫自由體圖或電路圖，再開始計算——評分老師給分時會看這些圖示</li>
+                <li>所有推導過程必須展示：從哪條定律/定理出發，如何推導到最後結果</li>
+                <li>使用正確的數學符號：積分符號、向量符號（箭頭或粗體）、偏微分符號</li>
+                <li>即使某一小題不會，後面的題目仍要嘗試——AP FRQ 的每一小題相對獨立</li>
+                <li>不要漏寫單位！物理量的單位是評分的重要一環</li>
+              </ul>
+            </div>
+
+            <h2>備考資源推薦</h2>
+            <p>College Board 歷年 FRQ 是最重要的練習資源，建議完整做完近 10 年的題目並對照評分標準（scoring guidelines）自評。Khan Academy 的 AP Physics C 課程質量不錯且免費。若需要更詳細的解說，Flipping Physics 和 Andrey K Physics 的 YouTube 頻道以清晰的物理概念講解著稱。Princeton Review 或 Barron's 的 AP Physics C 備考書提供系統化的知識整理，適合全面複習使用。</p>
+
+            <div class="article-cta">
+              <h3>想了解更多？預約顧問諮詢</h3>
+              <p>日暘資深顧問提供個人化申請策略，幫助你找到最適合的學校與備考計畫。</p>
+              <a href="/contact/index.html" class="btn btn-gold">免費預約諮詢</a>
+            </div>
+
+            <nav class="article-nav">
+              <a href="/blog/exam.html">← 返回考試相關</a>
+              <a href="/blog/index.html" style="margin-left:auto;">留學學習資源 →</a>
+            </nav>
+          </article>
+
+          <aside>
+            <div class="sidebar-widget">
+              <div class="sidebar-widget__title">文章分類</div>
+              <ul class="sidebar-link-list">
+                <li><a href="/blog/school.html">學校相關</a></li>
+                <li><a href="/blog/exam.html">考試相關</a></li>
+                <li><a href="/blog/experience.html">經驗分享</a></li>
+                <li><a href="/blog/resources.html">網站資源</a></li>
+              </ul>
+            </div>
+            <div class="sidebar-widget contact-widget">
+              <div class="sidebar-widget__title">顧問諮詢</div>
+              <p>有任何申請疑問？預約顧問，獲得個人化建議。</p>
+              <a href="/contact/index.html" class="btn btn-gold" style="display:flex;justify-content:center;">預約諮詢</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </main>
+    <div id="site-footer"></div>
+    <script src="/js/main.js"></script>
+  </body>
+</html>
