@@ -7,6 +7,14 @@
     <meta name="description" content="日暘學員與家長的真實心聲回饋，見證日暘如何陪伴每一個家庭走過最重要的升學旅程。" />
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/inner.css" />
+    <style>
+      @media (max-width: 700px) {
+        .stats-4col { grid-template-columns: 1fr 1fr !important; }
+      }
+      @media (max-width: 420px) {
+        .stats-4col { grid-template-columns: 1fr !important; }
+      }
+    </style>
   </head>
   <body>
     <div id="site-header"></div>
@@ -30,7 +38,7 @@
       <div class="container inner-body">
 
         <!-- Stats -->
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:72px;text-align:center;">
+        <div class="stats-4col" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:72px;text-align:center;">
           <div style="background:var(--bg-alt);border-radius:var(--radius);padding:28px;border:1px solid var(--border);">
             <div style="font-size:40px;font-weight:900;color:var(--brand);line-height:1;">98%</div>
             <div style="font-size:13px;color:var(--muted);margin-top:8px;">家長滿意度</div>

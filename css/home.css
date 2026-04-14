@@ -164,6 +164,7 @@
 @media (max-width: 600px) {
   .stats-bar__divider { display: none; }
   .stat-item { flex: 1; min-width: 100px; }
+  .hero__content { left: 5%; right: 5%; max-width: 100%; }
 }
 
 /* =========================

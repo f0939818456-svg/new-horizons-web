@@ -101,11 +101,30 @@
   align-items: start;
 }
 
+/* Reusable content+sidebar layout used by blog/news pages */
+.content-sidebar-grid {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 56px;
+  align-items: start;
+}
+
 @media (max-width: 900px) {
   .inner-body.has-sidebar {
     grid-template-columns: 1fr;
   }
   .inner-sidebar { order: -1; }
+
+  .content-sidebar-grid {
+    grid-template-columns: 1fr;
+  }
+  .content-sidebar-grid > aside {
+    order: -1;
+  }
+
+  .service-intro-row {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 /* =========================
