@@ -33,9 +33,16 @@
   z-index: 1;
 }
 
+.hero__slide picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .hero__slide img {
   width: 100%; height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .hero__overlay {
@@ -812,4 +819,28 @@
   .tutoring-cat-grid { grid-template-columns: 1fr; }
   .home-guarantee-bar { flex-direction: column; align-items: flex-start; gap: 20px; padding: 28px 24px; }
   .home-guarantee-bar__sep { display: none; }
+}
+
+/* =========================
+   Mobile Section Padding
+========================= */
+@media (max-width: 768px) {
+  .hero { height: 480px; }
+
+  .news-section,
+  .service-section,
+  .results-preview,
+  .tutoring-home-section { padding: 56px 0; }
+
+  .video-section { height: 50vh; min-height: 300px; }
+
+  .section__header { margin-bottom: 36px; }
+  .news-more-wrapper { margin-top: 28px; }
+
+  .news-card__content { padding: 18px 20px; }
+  .news-card__excerpt { display: none; }
+
+  .service-card__body { padding: 20px 20px 24px; }
+
+  .school-logos-strip { margin-top: 32px; }
 }

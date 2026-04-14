@@ -1220,3 +1220,22 @@
 .page-btn:hover { border-color: var(--brand); color: var(--brand); }
 .page-btn.active { background: var(--brand); color: #fff; border-color: var(--brand); }
 .page-btn.wide { width: auto; padding: 0 14px; }
+
+/* =========================
+   Mobile Inner Page Adjustments
+========================= */
+@media (max-width: 768px) {
+  .page-hero { padding: 48px 0 40px; }
+  .page-hero__title { font-size: clamp(24px, 6vw, 40px); }
+  .page-hero__desc { font-size: 15px; }
+
+  .content-sidebar-grid { padding: 48px 0 64px !important; }
+
+  .inner-body { padding: 48px 0 64px; }
+
+  .article-card.is-featured { flex-direction: column !important; }
+  .article-card.is-featured .article-card__thumb-placeholder { width: 100% !important; min-height: 180px !important; }
+
+  .sidebar-widget { margin-bottom: 20px; }
+  .cta-box { padding: 40px 24px; }
+}
