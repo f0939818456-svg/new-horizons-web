@@ -506,14 +506,23 @@
   border-bottom: 1px solid var(--border);
 }
 
-.sidebar-link-list { list-style: none; margin: 0; padding: 0; }
-
-.sidebar-link-list li {
-  border-bottom: 1px solid var(--border);
+/* 雙 class selector 提高 specificity，覆蓋部分文章 inline 的 .article-body ul/li 樣式 */
+.sidebar-widget .sidebar-link-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-.sidebar-link-list li:last-child { border-bottom: none; }
 
-.sidebar-link-list a {
+.sidebar-widget .sidebar-link-list li {
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: inherit;
+}
+.sidebar-widget .sidebar-link-list li:last-child { border-bottom: none; }
+
+.sidebar-widget .sidebar-link-list a {
   display: block;
   padding: 10px 0;
   font-size: 14px;
@@ -521,12 +530,12 @@
   transition: var(--transition);
 }
 
-.sidebar-link-list a:hover {
+.sidebar-widget .sidebar-link-list a:hover {
   color: var(--brand);
   padding-left: 6px;
 }
 
-.sidebar-link-list a.active {
+.sidebar-widget .sidebar-link-list a.active {
   color: var(--brand);
   font-weight: 600;
 }
