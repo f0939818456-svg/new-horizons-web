@@ -128,7 +128,7 @@
 ========================= */
 .stats-bar {
   background: var(--brand);
-  padding: 28px 0;
+  padding: 44px 0;
 }
 
 .stats-bar__inner {
@@ -136,41 +136,48 @@
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 32px;
 }
 
 .stat-item {
   text-align: center;
   color: #fff;
+  flex: 1;
+  min-width: 280px;
 }
 
 .stat-item__num {
-  font-size: clamp(28px, 3.5vw, 42px);
+  font-size: clamp(40px, 5.6vw, 68px);
   font-weight: 900;
   line-height: 1;
-  margin-bottom: 4px;
+  margin-bottom: 10px;
   letter-spacing: -0.02em;
+  white-space: nowrap;
 }
 
 .stat-item__num span {
   color: var(--gold-light);
+  font-size: 0.6em;
+  margin-left: 2px;
 }
 
 .stat-item__label {
-  font-size: 13px;
-  opacity: 0.8;
+  font-size: 14px;
+  opacity: 0.85;
   letter-spacing: 0.05em;
 }
 
 .stats-bar__divider {
   width: 1px;
-  height: 44px;
-  background: rgba(255,255,255,0.2);
+  height: 64px;
+  background: rgba(255,255,255,0.22);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
+  .stats-bar { padding: 32px 0; }
   .stats-bar__divider { display: none; }
-  .stat-item { flex: 1; min-width: 100px; }
+  .stat-item { min-width: 100%; }
+  .stat-item__num { font-size: clamp(34px, 9vw, 48px); }
   .hero__content { left: 5%; right: 5%; max-width: 100%; }
 }
 
@@ -845,7 +852,7 @@
    Achievement Wall (PDF Style)
 ========================= */
 .ach-wall {
-  background: linear-gradient(135deg, #1a2540 0%, #20304d 50%, #1a2540 100%);
+  background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand) 50%, #6B4C44 100%);
   color: #fff;
   padding: 90px 0;
   position: relative;
@@ -856,8 +863,8 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 20% 30%, rgba(184,148,63,0.08) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(255,255,255,0.04) 0%, transparent 50%);
+    radial-gradient(circle at 20% 30%, rgba(245,236,215,0.10) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(184,148,63,0.10) 0%, transparent 50%);
   pointer-events: none;
 }
 .ach-wall__heading {
@@ -899,7 +906,7 @@
   gap: 8px;
   margin-top: 18px;
   padding: 14px 28px;
-  background: #5b8def;
+  background: var(--gold);
   color: #fff;
   border-radius: 50px;
   font-size: 14.5px;
@@ -908,10 +915,10 @@
   text-decoration: none;
   align-self: flex-start;
   transition: var(--transition);
-  box-shadow: 0 6px 20px rgba(91,141,239,0.35);
+  box-shadow: 0 6px 20px rgba(184,148,63,0.35);
 }
 .ach-wall__cta:hover {
-  background: #3d72d9;
+  background: #9e7d32;
   transform: translateY(-2px);
   color: #fff;
 }
@@ -962,7 +969,7 @@
 }
 
 /* =========================
-   Partners Section
+   Partners Section · Logo Cards
 ========================= */
 .partners-section {
   padding: 90px 0;
@@ -971,45 +978,234 @@
 .partner-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: 18px;
   margin-top: 12px;
 }
 .partner-card {
   background: #fff;
   border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 24px 20px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
   text-align: center;
   transition: var(--transition);
+  display: flex;
+  flex-direction: column;
 }
 .partner-card:hover {
-  border-color: var(--gold);
-  box-shadow: var(--shadow-sm);
-  transform: translateY(-2px);
+  border-color: transparent;
+  box-shadow: var(--shadow);
+  transform: translateY(-4px);
+}
+.partner-card__logo {
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 .partner-card__name {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 800;
-  color: var(--brand);
-  margin-bottom: 4px;
-  letter-spacing: 0.01em;
+  color: var(--text);
+  letter-spacing: 0.02em;
+  padding: 18px 20px 4px;
 }
 .partner-card__type {
   font-size: 12.5px;
   color: var(--muted);
   letter-spacing: 0.04em;
+  padding: 0 20px 22px;
 }
 .partner-card--placeholder {
   background: transparent;
   border-style: dashed;
 }
 .partner-card--placeholder .partner-card__name { color: var(--muted); }
+.partner-card--placeholder .partner-card__logo { background: rgba(0,0,0,0.02); }
+
+/* ── Logo: College Board (deep navy + downward triangle) ── */
+.partner-card[data-brand="collegeboard"] .partner-card__logo {
+  background: linear-gradient(135deg, #006298 0%, #003E69 100%);
+}
+.logo-cb {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.logo-cb__c {
+  display: inline-block;
+  font-size: 18px;
+  color: #fff;
+  transform: rotate(0deg);
+  margin-right: 4px;
+}
+.logo-cb__b {
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* ── Logo: ACT (red squared) ── */
+.partner-card[data-brand="act"] .partner-card__logo {
+  background: linear-gradient(135deg, #D71E28 0%, #A01620 100%);
+}
+.logo-act {
+  font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+  font-size: 56px;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -0.04em;
+  font-style: italic;
+}
+
+/* ── Logo: IB (blue diamond + monogram) ── */
+.partner-card[data-brand="ib"] .partner-card__logo {
+  background: linear-gradient(135deg, #0F4391 0%, #002B6C 100%);
+}
+.logo-ib {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo-ib__square {
+  position: absolute;
+  inset: 0;
+  background: #fff;
+  transform: rotate(45deg);
+  border-radius: 6px;
+}
+.logo-ib__text {
+  position: relative;
+  font-family: Georgia, serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #0F4391;
+  font-style: italic;
+  letter-spacing: -0.02em;
+}
+
+/* ── Logo: ETS (clean type with dot) ── */
+.partner-card[data-brand="ets"] .partner-card__logo {
+  background: linear-gradient(135deg, #1B2A4E 0%, #0E1932 100%);
+}
+.logo-ets {
+  font-family: "Helvetica Neue", -apple-system, Arial, sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
+}
+.logo-ets__dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: #E8B400;
+  margin-right: 8px;
+  margin-top: 18px;
+}
+
+/* ── Logo: British Council (red squares) ── */
+.partner-card[data-brand="bc"] .partner-card__logo {
+  background: #E5005A;
+}
+.logo-bc {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  position: relative;
+}
+.logo-bc__sq {
+  width: 14px;
+  height: 14px;
+  background: #fff;
+}
+.logo-bc__sq:nth-child(2) { background: rgba(255,255,255,0.7); }
+.logo-bc__sq:nth-child(3) { background: rgba(255,255,255,0.4); }
+.logo-bc__txt {
+  margin-left: 10px;
+  font-family: Georgia, serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  text-align: left;
+}
+
+/* ── Logo: Cognia (lowercase + dot) ── */
+.partner-card[data-brand="cognia"] .partner-card__logo {
+  background: linear-gradient(135deg, #2A2A2A 0%, #000 100%);
+}
+.logo-cognia {
+  font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.01em;
+  position: relative;
+}
+.logo-cognia__dot {
+  color: #E5005A;
+  font-size: 38px;
+  margin-left: 1px;
+}
+
+/* ── Logo: WASC (deep purple + serif) ── */
+.partner-card[data-brand="wasc"] .partner-card__logo {
+  background: linear-gradient(135deg, #2C1B4E 0%, #1A0E33 100%);
+}
+.logo-wasc {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.logo-wasc__laurel {
+  font-size: 20px;
+  color: #C9A961;
+  opacity: 0.9;
+}
+.logo-wasc__laurel--l { transform: scaleX(-1); }
+.logo-wasc__text {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.04em;
+  font-style: italic;
+}
+
+/* ── Logo: NCAA (blue) ── */
+.partner-card[data-brand="ncaa"] .partner-card__logo {
+  background: linear-gradient(135deg, #003C7E 0%, #001E50 100%);
+}
+.logo-ncaa {
+  font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+  font-size: 40px;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 0.02em;
+  font-style: italic;
+}
 
 @media (max-width: 900px) {
   .partner-grid { grid-template-columns: repeat(2, 1fr); }
+  .partner-card__logo { height: 120px; }
 }
 @media (max-width: 480px) {
-  .partner-grid { grid-template-columns: 1fr; }
+  .partner-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .partner-card__logo { height: 100px; }
+  .logo-act, .logo-ets, .logo-cognia, .logo-ncaa { font-size: 32px; }
+  .logo-cb { font-size: 16px; }
+  .logo-wasc__text { font-size: 26px; }
 }
 
 /* =========================
