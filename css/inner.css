@@ -110,12 +110,13 @@
 }
 
 .page-hero__stat-num {
-  font-size: clamp(28px, 3.4vw, 40px);
+  font-size: clamp(22px, 3.4vw, 40px);
   font-weight: 900;
   letter-spacing: -0.02em;
   color: var(--gold-light);
-  line-height: 1;
+  line-height: 1.1;
   margin-bottom: 6px;
+  overflow-wrap: anywhere;
 }
 
 .page-hero__stat-label {
@@ -125,8 +126,14 @@
 }
 
 @media (max-width: 600px) {
-  .page-hero__stats > div { min-width: 50%; padding: 12px; }
+  .page-hero__stats { gap: 4px 0; }
+  .page-hero__stats > div { min-width: 50%; padding: 12px 6px; }
   .page-hero__stats > div + div::before { display: none; }
+  .page-hero__stat-num { font-size: clamp(20px, 5.5vw, 28px); }
+  .page-hero__stat-label { font-size: 12px; }
+}
+@media (max-width: 380px) {
+  .page-hero__stats > div { min-width: 100%; }
 }
 
 /* =========================
@@ -159,9 +166,11 @@
 
   .content-sidebar-grid {
     grid-template-columns: 1fr;
+    gap: 32px;
   }
+  /* 手機上文章本體優先呈現，側欄移到底部（提升閱讀流暢度） */
   .content-sidebar-grid > aside {
-    order: -1;
+    order: 1;
   }
 
   .service-intro-row {
@@ -927,11 +936,11 @@
 
 .adm-stats-row .stat-item strong {
   display: block;
-  font-size: clamp(28px, 3.4vw, 40px);
+  font-size: clamp(22px, 3.4vw, 40px);
   font-weight: 900;
   color: var(--gold-light);
   letter-spacing: -0.02em;
-  line-height: 1;
+  line-height: 1.1;
   margin-bottom: 6px;
 }
 
@@ -942,8 +951,11 @@
 }
 
 @media (max-width: 600px) {
-  .adm-stats-row .stat-item { min-width: 50%; padding: 12px; }
+  .adm-stats-row { gap: 4px 0; }
+  .adm-stats-row .stat-item { min-width: 50%; padding: 12px 6px; }
   .adm-stats-row .stat-item + .stat-item::before { display: none; }
+  .adm-stats-row .stat-item strong { font-size: clamp(20px, 5.5vw, 28px); }
+  .adm-stats-row .stat-item span { font-size: 12px; }
 }
 
 /* School logo wall */

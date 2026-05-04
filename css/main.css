@@ -297,6 +297,11 @@ img { display: block; max-width: 100%; }
   margin: 0 auto;
 }
 
+/* 小螢幕略縮邊距，讓內容多 8px 寬度（手機可讀性提升） */
+@media (max-width: 600px) {
+  .container { width: calc(100% - 32px); }
+}
+
 /* =========================
    Typography Utilities
 ========================= */
