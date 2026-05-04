@@ -14,15 +14,12 @@
   overflow: hidden;
 }
 
-/* 日暘太陽紋：放置於 banner 右上角作為品牌視覺裝飾 */
+/* 日暘太陽紋：80×80 tile 重複鋪滿 banner 作為品牌底紋 */
 .page-hero::after {
   content: '';
   position: absolute;
-  top: -120px;
-  right: -120px;
-  width: 540px;
-  height: 540px;
-  background: url("/assets/images/sun-motif.svg") center/contain no-repeat;
+  inset: 0;
+  background: url("/assets/images/sun-motif.svg") top left / 80px 80px repeat;
   pointer-events: none;
   opacity: 0.85;
 }
@@ -71,25 +68,51 @@
 
 .page-hero__stats {
   display: flex;
-  gap: 40px;
+  align-items: center;
+  gap: 0;
   flex-wrap: wrap;
   margin-top: 40px;
   padding-top: 40px;
   border-top: 1px solid rgba(255,255,255,0.18);
 }
 
+.page-hero__stats > div {
+  flex: 1;
+  min-width: 120px;
+  text-align: center;
+  padding: 0 12px;
+  position: relative;
+}
+
+.page-hero__stats > div + div::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 44px;
+  background: rgba(255,255,255,0.2);
+}
+
 .page-hero__stat-num {
-  font-size: 36px;
+  font-size: clamp(28px, 3.4vw, 40px);
   font-weight: 900;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
   color: var(--gold-light);
   line-height: 1;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .page-hero__stat-label {
   font-size: 13px;
-  opacity: 0.65;
+  opacity: 0.78;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 600px) {
+  .page-hero__stats > div { min-width: 50%; padding: 12px; }
+  .page-hero__stats > div + div::before { display: none; }
 }
 
 /* =========================
@@ -816,11 +839,8 @@
 .adm-hero::after {
   content: '';
   position: absolute;
-  top: -120px;
-  right: -120px;
-  width: 540px;
-  height: 540px;
-  background: url("/assets/images/sun-motif.svg") center/contain no-repeat;
+  inset: 0;
+  background: url("/assets/images/sun-motif.svg") top left / 80px 80px repeat;
   pointer-events: none;
   opacity: 0.85;
   z-index: 0;
@@ -839,27 +859,51 @@
 
 .adm-stats-row {
   display: flex;
-  gap: 40px;
+  align-items: center;
+  gap: 0;
   flex-wrap: wrap;
   padding-top: 28px;
   border-top: 1px solid rgba(255,255,255,0.18);
 }
 
-.adm-stats-row .stat-item { text-align: left; }
+.adm-stats-row .stat-item {
+  flex: 1;
+  min-width: 120px;
+  text-align: center;
+  padding: 0 12px;
+  position: relative;
+}
+
+.adm-stats-row .stat-item + .stat-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 44px;
+  background: rgba(255,255,255,0.2);
+}
 
 .adm-stats-row .stat-item strong {
   display: block;
-  font-size: 36px;
+  font-size: clamp(28px, 3.4vw, 40px);
   font-weight: 900;
   color: var(--gold-light);
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
   line-height: 1;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .adm-stats-row .stat-item span {
   font-size: 13px;
-  opacity: 0.65;
+  opacity: 0.78;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 600px) {
+  .adm-stats-row .stat-item { min-width: 50%; padding: 12px; }
+  .adm-stats-row .stat-item + .stat-item::before { display: none; }
 }
 
 /* School logo wall */
