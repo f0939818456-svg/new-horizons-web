@@ -38,35 +38,44 @@ function initHeroCarousel() {
     startTimer();
 }
 
-// ── Latest News Auto-Sync from /blog ─────────────────────────────
+// ── Latest News Auto-Sync from blog 分類頁 ───────────────────────
 //
-// 機制：抓取 /blog/index.html，讀取 .article-card（含 data-pinned 與
-// .article-card__date），按下列規則挑選首頁要顯示的卡片：
-//   1. 凡標記 data-pinned="true" 的文章一定會出現（依出現順序排列在最前）
-//   2. 剩下的位置，依日期 (.article-card__date 文字格式 YYYY.MM.DD) 由新到舊排序
-//   3. 取前 N 篇（N 由 #latestNewsGrid 的 data-count 決定，預設 3）
-// 這樣未來只要更新 /blog/index.html，首頁的最新消息會自動跟著走。
+// 機制：分別抓取「學校相關 / 考試相關 / 經驗分享」三個分類頁，
+// 從每頁的 .article-grid 取出 .article-card，依下列規則挑選：
+//   1. data-pinned="true" 的文章一定出現（依分類頁出現順序）
+//   2. 剩下的位置，依日期 (.article-card__date 格式 YYYY.MM.DD) 由新到舊排序
+//   3. 同一篇文章（同 href）只取一次
+//   4. 最終取前 N 篇（N 由 #latestNewsGrid 的 data-count 決定，預設 3）
+// 之後只要更新分類頁，首頁的最新消息會自動同步。
 async function initLatestNews() {
     const grid = document.getElementById("latestNewsGrid");
     if (!grid) return;
 
-    const source = grid.dataset.source || "/blog/index.html";
-    const count  = parseInt(grid.dataset.count || "3", 10);
+    const sources = (grid.dataset.sources || grid.dataset.source ||
+        "/blog/school.html,/blog/exam.html,/blog/experience.html"
+    ).split(",").map(s => s.trim()).filter(Boolean);
+    const count = parseInt(grid.dataset.count || "3", 10);
 
     try {
-        const res = await fetch(source);
-        if (!res.ok) throw new Error(res.status);
-        const html = await res.text();
+        const docs = await Promise.all(sources.map(async url => {
+            const res = await fetch(url);
+            if (!res.ok) throw new Error(url + ": " + res.status);
+            const html = await res.text();
+            return new DOMParser().parseFromString(html, "text/html");
+        }));
 
-        const doc = new DOMParser().parseFromString(html, "text/html");
-        // 排除 featured 大卡（會重複），只看 grid 裡的 article-card
-        const candidates = Array.from(
-            doc.querySelectorAll(".article-grid .article-card")
-        );
-        if (candidates.length === 0) {
-            grid.innerHTML = "";
-            return;
+        const seen = new Set();
+        const candidates = [];
+        for (const doc of docs) {
+            doc.querySelectorAll(".article-grid .article-card").forEach(card => {
+                const href = card.getAttribute("href");
+                if (!href || href === "#" || seen.has(href)) return;
+                seen.add(href);
+                candidates.push(card);
+            });
         }
+
+        if (candidates.length === 0) { grid.innerHTML = ""; return; }
 
         const pinned   = candidates.filter(c => c.dataset.pinned === "true");
         const unpinned = candidates.filter(c => c.dataset.pinned !== "true");
@@ -79,7 +88,6 @@ async function initLatestNews() {
         unpinned.sort((a, b) => parseDate(b) - parseDate(a));
 
         const chosen = [...pinned, ...unpinned].slice(0, count);
-
         grid.innerHTML = chosen.map(toNewsCard).join("");
     } catch (err) {
         console.error("無法載入最新文章:", err);
