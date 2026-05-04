@@ -47,8 +47,8 @@
               </div>
               <a href="/services/tutoring.html" class="btn btn-primary">了解補習課程 →</a>
             </div>
-            <div style="background:var(--bg-alt);border-radius:var(--radius-lg);height:320px;display:flex;align-items:center;justify-content:center;border:1px solid var(--border);">
-              <span style="font-size:28px;font-weight:900;letter-spacing:0.15em;color:var(--brand);opacity:0.35;">CORE</span>
+            <div class="service-intro-row__media">
+              <img src="/assets/images/service01.jpg" alt="補習課程" loading="lazy" />
             </div>
           </div>
 
@@ -56,8 +56,8 @@
 
           <!-- Service 2: 美國留學規劃＆代辦 -->
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-bottom:96px;" class="service-intro-row">
-            <div style="background:var(--bg-alt);border-radius:var(--radius-lg);height:320px;display:flex;align-items:center;justify-content:center;border:1px solid var(--border);">
-              <span style="font-size:28px;font-weight:900;letter-spacing:0.15em;color:var(--brand);opacity:0.35;">USA</span>
+            <div class="service-intro-row__media">
+              <img src="/assets/images/service02.jpg" alt="美國留學規劃＆代辦" loading="lazy" />
             </div>
             <div>
               <span class="section-label">SERVICE 02</span>
@@ -99,8 +99,8 @@
               </div>
               <a href="/services/mentor.html" class="btn btn-primary">了解海外留學規劃＆代辦 →</a>
             </div>
-            <div style="background:var(--bg-alt);border-radius:var(--radius-lg);height:320px;display:flex;align-items:center;justify-content:center;border:1px solid var(--border);">
-              <span style="font-size:28px;font-weight:900;letter-spacing:0.15em;color:var(--brand);opacity:0.35;">GLOBAL</span>
+            <div class="service-intro-row__media">
+              <img src="/assets/images/service03.jpg" alt="海外留學規劃＆代辦" loading="lazy" />
             </div>
           </div>
 
@@ -125,8 +125,8 @@
               </div>
               <a href="/services/online-highschool.html" class="btn btn-primary">了解美國線上高中 →</a>
             </div>
-            <div style="background:var(--bg-alt);border-radius:var(--radius-lg);height:320px;display:flex;align-items:center;justify-content:center;border:1px solid var(--border);">
-              <span style="font-size:28px;font-weight:900;letter-spacing:0.15em;color:var(--brand);opacity:0.35;">ONLINE HS</span>
+            <div class="service-intro-row__media">
+              <img src="/assets/images/service04.jpg" alt="美國線上高中" loading="lazy" />
             </div>
           </div>
 
@@ -139,8 +139,26 @@
       </section>
 
       <style>
+        .service-intro-row__media {
+          height: 320px;
+          border-radius: var(--radius-lg);
+          overflow: hidden;
+          border: 1px solid var(--border);
+          box-shadow: var(--shadow-sm);
+        }
+        .service-intro-row__media img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+          transition: transform 0.5s ease;
+        }
+        .service-intro-row__media:hover img {
+          transform: scale(1.04);
+        }
         @media (max-width: 768px) {
           .service-intro-row { grid-template-columns: 1fr !important; }
+          .service-intro-row__media { height: 240px; }
         }
       </style>
     </main>
