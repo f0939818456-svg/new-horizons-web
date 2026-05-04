@@ -143,16 +143,24 @@
       /* Guarantee Strip (top) */
       .guarantee-strip-top {
         background: var(--gold);
-        padding: 14px 0;
-        text-align: center;
+        padding: 14px 20px;
         color: #fff;
         font-size: 14px;
         font-weight: 600;
         letter-spacing: 0.05em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px 24px;
       }
-      .guarantee-strip-top span {
-        opacity: 0.7;
-        margin: 0 20px;
+      .guarantee-strip-top__item { white-space: nowrap; }
+      .guarantee-strip-top__sep {
+        opacity: 0.55;
+      }
+      @media (max-width: 700px) {
+        .guarantee-strip-top { font-size: 13px; gap: 6px 18px; padding: 12px 16px; }
+        .guarantee-strip-top__sep { display: none; }
       }
 
       /* Subject Section */
@@ -610,11 +618,11 @@
 
       <!-- ====== GUARANTEE STRIP ====== -->
       <div class="guarantee-strip-top">
-        ✦ 小班制 ≤ 8 人，問題當堂解決
-        <span>|</span>
-        ✦ 每月進度報告，家長同步掌握
-        <span>|</span>
-        ✦ 週期診斷，個人化備考調整
+        <span class="guarantee-strip-top__item">✦ 小班制 ≤ 8 人，問題當堂解決</span>
+        <span class="guarantee-strip-top__sep">|</span>
+        <span class="guarantee-strip-top__item">✦ 每月進度報告，家長同步掌握</span>
+        <span class="guarantee-strip-top__sep">|</span>
+        <span class="guarantee-strip-top__item">✦ 週期診斷，個人化備考調整</span>
       </div>
 
       <!-- ====== ANCHOR NAV ====== -->
