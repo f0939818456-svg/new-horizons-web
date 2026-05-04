@@ -61,9 +61,11 @@
 .page-hero__desc {
   font-size: 17px;
   opacity: 0.82;
-  max-width: 56ch;
-  line-height: 1.7;
+  max-width: 64ch;
+  line-height: 1.75;
   margin: 0 0 32px;
+  /* 啟用智慧斷行：避免單詞或短語被切在不合適的位置（Chrome 117+ / Safari 17.4+） */
+  text-wrap: pretty;
 }
 
 .page-hero__stats {
