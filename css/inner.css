@@ -541,12 +541,25 @@
 .contact-widget .sidebar-widget__title { color: var(--gold-light); border-color: rgba(255,255,255,0.2); }
 
 /* 使用雙 class 提高 specificity，蓋過 article 頁的 .article-body p 顏色 */
-.sidebar-widget.contact-widget p {
+.sidebar-widget.contact-widget p,
+.contact-widget p.contact-widget__desc {
   font-size: 14px;
   color: #fff;
   opacity: 0.85;
-  margin: 0 0 20px;
+  margin: 0 0 18px;
   line-height: 1.6;
+}
+
+/* 替代結構：news 文章的 contact widget 缺 sidebar-widget class，補對應樣式 */
+.contact-widget__title {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin: 0 0 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
 .contact-widget .btn-gold { width: 100%; justify-content: center; }
