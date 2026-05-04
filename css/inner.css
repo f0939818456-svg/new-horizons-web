@@ -540,9 +540,11 @@
 
 .contact-widget .sidebar-widget__title { color: var(--gold-light); border-color: rgba(255,255,255,0.2); }
 
-.contact-widget p {
+/* 使用雙 class 提高 specificity，蓋過 article 頁的 .article-body p 顏色 */
+.sidebar-widget.contact-widget p {
   font-size: 14px;
-  opacity: 0.8;
+  color: #fff;
+  opacity: 0.85;
   margin: 0 0 20px;
   line-height: 1.6;
 }
