@@ -136,8 +136,8 @@
 }
 
 @media (max-width: 560px) {
-  .float-cta { bottom: 16px; right: 16px; }
-  .float-cta__btn { padding: 12px 16px; font-size: 13px; }
+  .float-cta { bottom: 16px; right: 16px; gap: 8px; }
+  .float-cta__btn { padding: 12px 18px; font-size: 13px; min-height: 44px; }
 }
 
 /* =========================
@@ -634,13 +634,13 @@ img { display: block; max-width: 100%; }
   display: none;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border: 1.5px solid var(--border);
   background: #fff;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 20px;
   transition: var(--transition);
 }
 
