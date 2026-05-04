@@ -367,9 +367,18 @@
         transition: 0.2s;
         text-decoration: none;
         color: inherit;
+        min-width: 0;
       }
       .ap-chip:hover { border-color: var(--gold); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
-      .ap-chip__name { font-size: 14px; font-weight: 700; color: var(--text); }
+      .ap-chip__name {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text);
+        flex: 1;
+        min-width: 0;
+        overflow-wrap: break-word;
+        word-break: break-word;
+      }
       .ap-chip__score {
         font-size: 11px;
         font-weight: 700;
@@ -377,6 +386,7 @@
         color: #fff;
         border-radius: 50px;
         padding: 2px 8px;
+        flex-shrink: 0;
         white-space: nowrap;
       }
 
@@ -552,7 +562,7 @@
         .school-subject-cols { grid-template-columns: 1fr; }
         .tutoring-hero__stats { flex-direction: column; gap: 20px; }
         .tutoring-hero__stat-sep { display: none; }
-        .ap-subject-grid { grid-template-columns: 1fr 1fr; }
+        .ap-subject-grid { grid-template-columns: 1fr; }
       }
     </style>
   </head>

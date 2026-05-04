@@ -283,6 +283,11 @@ body {
   line-height: 1.6;
 }
 
+/* 中文長句啟用智慧斷行：避免標題尾端只剩一兩個孤字、避免在不合適位置斷句（Chrome 117+ / Safari 17.4+ 支援） */
+p, li, dd, blockquote, h1, h2, h3, h4, h5, h6 {
+  text-wrap: pretty;
+}
+
 a { color: inherit; text-decoration: none; transition: var(--transition); }
 
 img { display: block; max-width: 100%; }
