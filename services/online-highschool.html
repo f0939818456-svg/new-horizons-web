@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>美國線上高中 EdOptions Academy | 日暘國際教育</title>
+    <meta name="description" content="日暘代理美國 EdOptions Academy 線上高中：Cognia / WASC 雙重認證、NCAA / College Board 核可、AP 課程齊備，提供正式美國高中文憑（USHSD），全美與全球大學承認，並有 Dual Diploma 與單科選修等彈性方案。" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/inner.css" />
+    <style>
+      .accred-strip {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 28px 32px;
+        margin-bottom: 56px;
+        box-shadow: var(--shadow-sm);
+      }
+      .accred-strip__title {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 16px;
+        text-align: center;
+      }
+      .accred-strip img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .ohs-feature-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+      .ohs-feature {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 28px 26px;
+        transition: var(--transition);
+      }
+      .ohs-feature:hover {
+        border-color: var(--gold);
+        box-shadow: var(--shadow);
+        transform: translateY(-3px);
+      }
+      .ohs-feature__num {
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        color: var(--gold);
+        border: 1.5px solid var(--gold);
+        border-radius: 50px;
+        padding: 4px 12px;
+        margin-bottom: 14px;
+      }
+      .ohs-feature__title {
+        font-size: 17px;
+        font-weight: 800;
+        color: var(--text);
+        margin: 0 0 10px;
+      }
+      .ohs-feature__desc {
+        font-size: 14px;
+        color: var(--muted);
+        line-height: 1.75;
+        margin: 0;
+      }
+
+      .ohs-options {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+      .ohs-option {
+        background: var(--bg-alt);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 24px 26px;
+      }
+      .ohs-option__name {
+        font-size: 16px;
+        font-weight: 800;
+        color: var(--brand);
+        margin-bottom: 6px;
+      }
+      .ohs-option__detail {
+        font-size: 14px;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .courseplan-img-wrap {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 28px;
+        text-align: center;
+        box-shadow: var(--shadow-sm);
+      }
+      .courseplan-img-wrap img {
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+      }
+
+      .ohs-stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        background: var(--brand);
+        color: #fff;
+        border-radius: var(--radius-lg);
+        padding: 36px 32px;
+        margin: 0 0 56px;
+      }
+      .ohs-stat__num {
+        font-size: clamp(28px, 3vw, 38px);
+        font-weight: 900;
+        color: var(--gold-light);
+        line-height: 1;
+        margin-bottom: 6px;
+      }
+      .ohs-stat__label {
+        font-size: 13px;
+        opacity: 0.78;
+        letter-spacing: 0.04em;
+      }
+
+      .download-row {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+      .download-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #fff;
+        border: 1.5px solid var(--border);
+        border-radius: 50px;
+        padding: 11px 22px;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--brand);
+        transition: var(--transition);
+        text-decoration: none;
+      }
+      .download-btn:hover {
+        border-color: var(--brand);
+        background: var(--bg-alt);
+      }
+      .download-btn::before {
+        content: 'PDF';
+        font-size: 10px;
+        font-weight: 800;
+        background: var(--brand);
+        color: #fff;
+        border-radius: 4px;
+        padding: 2px 6px;
+        letter-spacing: 0.05em;
+      }
+
+      @media (max-width: 900px) {
+        .ohs-feature-grid { grid-template-columns: 1fr 1fr; }
+        .ohs-stats { grid-template-columns: 1fr 1fr; }
+      }
+      @media (max-width: 600px) {
+        .ohs-feature-grid,
+        .ohs-options,
+        .ohs-stats { grid-template-columns: 1fr; }
+        .accred-strip { padding: 20px 16px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="site-header"></div>
+
+    <main>
+      <section class="page-hero">
+        <div class="container page-hero__inner">
+          <nav class="breadcrumb">
+            <a href="/">首頁</a><span>›</span>
+            <a href="/services/index.html">留學服務</a><span>›</span>
+            <span>美國線上高中</span>
+          </nav>
+          <span class="page-hero__label">SERVICE 04 · ONLINE HIGH SCHOOL</span>
+          <h1 class="page-hero__title">美國線上高中<br/>EdOptions Academy</h1>
+          <p class="page-hero__desc">
+            由 Cognia 與 WASC 雙重認證、NCAA / College Board 核可的 K-12 線上高中。
+            學分、成績單與正式美國高中文憑（USHSD）獲全美與全球大學承認——
+            無需離家，也能與美國升學接軌。
+          </p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <a href="/contact/index.html" class="btn btn-gold">預約諮詢</a>
+            <a href="#options" class="btn btn-ghost">查看入學方案 →</a>
+          </div>
+
+          <div class="page-hero__stats">
+            <div>
+              <div class="page-hero__stat-num">90K+</div>
+              <div class="page-hero__stat-label">每年學生人次</div>
+            </div>
+            <div>
+              <div class="page-hero__stat-num">400+</div>
+              <div class="page-hero__stat-label">合作學區與學校</div>
+            </div>
+            <div>
+              <div class="page-hero__stat-num">110+</div>
+              <div class="page-hero__stat-label">服務國家數</div>
+            </div>
+            <div>
+              <div class="page-hero__stat-num">K-12</div>
+              <div class="page-hero__stat-label">完整年級範圍</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="container inner-body">
+
+        <!-- Accreditation strip -->
+        <div class="accred-strip">
+          <div class="accred-strip__title">官方認證 · Accreditations &amp; Approvals</div>
+          <img src="/assets/online-hs/accreditations.jpg" alt="WASC、Cognia、NCAA Approved、College Board Approved 認證" loading="lazy" />
+        </div>
+
+        <!-- Intro -->
+        <section style="margin-bottom:72px;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;">
+            <div>
+              <span class="section-label">WHAT IS EOA</span>
+              <h2 class="section-title">什麼是 EdOptions Academy？</h2>
+              <div class="section-divider"></div>
+              <p style="font-size:15.5px;color:var(--muted);line-height:1.8;margin-bottom:18px;">
+                EdOptions Academy（EOA）是 Edmentum 旗下完全認證的 K-12 線上高中，
+                與全美 400 餘所學區及學校合作，每年服務超過 9 萬名學生，覆蓋 110 個以上國家。
+              </p>
+              <p style="font-size:15.5px;color:var(--muted);line-height:1.8;margin-bottom:18px;">
+                學員修畢後可取得正式的<strong>美國高中文憑（US High School Diploma）</strong>，
+                學分可轉讓至其他同等認證學校。AP、世界語言、選修課與大學銜接課程齊備，
+                為孩子未來大學申請與職涯做好準備。
+              </p>
+              <div class="pill-row">
+                <span class="pill">Cognia 認證</span>
+                <span class="pill">WASC 認證</span>
+                <span class="pill">NCAA Approved</span>
+                <span class="pill">College Board AP</span>
+              </div>
+            </div>
+            <div style="background:var(--bg-alt);border-radius:var(--radius-lg);padding:32px 28px;border:1px solid var(--border);">
+              <div style="font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">為什麼選 EOA？</div>
+              <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;">
+                <li style="display:flex;gap:12px;align-items:flex-start;">
+                  <span style="color:var(--gold);font-size:18px;flex-shrink:0;">✓</span>
+                  <span style="font-size:14.5px;color:var(--text);line-height:1.7;">獲全美與全球大學承認的正式高中文憑</span>
+                </li>
+                <li style="display:flex;gap:12px;align-items:flex-start;">
+                  <span style="color:var(--gold);font-size:18px;flex-shrink:0;">✓</span>
+                  <span style="font-size:14.5px;color:var(--text);line-height:1.7;">合格美籍教師授課，含 Live Help &amp; SOS 課程</span>
+                </li>
+                <li style="display:flex;gap:12px;align-items:flex-start;">
+                  <span style="color:var(--gold);font-size:18px;flex-shrink:0;">✓</span>
+                  <span style="font-size:14.5px;color:var(--text);line-height:1.7;">課程 24/7 開放，配合學生時區與作息</span>
+                </li>
+                <li style="display:flex;gap:12px;align-items:flex-start;">
+                  <span style="color:var(--gold);font-size:18px;flex-shrink:0;">✓</span>
+                  <span style="font-size:14.5px;color:var(--text);line-height:1.7;">每週進度回報、24 小時內回覆保證</span>
+                </li>
+                <li style="display:flex;gap:12px;align-items:flex-start;">
+                  <span style="color:var(--gold);font-size:18px;flex-shrink:0;">✓</span>
+                  <span style="font-size:14.5px;color:var(--text);line-height:1.7;">92% Pass Rate · 80% 課程完成率</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Stats -->
+        <section class="ohs-stats" aria-label="EOA 數據">
+          <div>
+            <div class="ohs-stat__num">92%</div>
+            <div class="ohs-stat__label">Pass Rate（通過率）</div>
+          </div>
+          <div>
+            <div class="ohs-stat__num">80%</div>
+            <div class="ohs-stat__label">Course Completion（課程完成率）</div>
+          </div>
+          <div>
+            <div class="ohs-stat__num">100+</div>
+            <div class="ohs-stat__label">全職教師（另有 100+ 兼職）</div>
+          </div>
+          <div>
+            <div class="ohs-stat__num">21.5</div>
+            <div class="ohs-stat__label">Full-Time 完整文憑學分</div>
+          </div>
+        </section>
+
+        <!-- Features -->
+        <section style="margin-bottom:72px;">
+          <span class="section-label">KEY FEATURES</span>
+          <h2 class="section-title">EOA 的六大特色</h2>
+          <div class="section-divider"></div>
+
+          <div class="ohs-feature-grid">
+            <article class="ohs-feature">
+              <div class="ohs-feature__num">01</div>
+              <h3 class="ohs-feature__title">正式美國高中文憑</h3>
+              <p class="ohs-feature__desc">完成 21.5 學分後取得 USHSD，學分可在認證學校間轉讓，全美與全球大學承認。</p>
+            </article>
+            <article class="ohs-feature">
+              <div class="ohs-feature__num">02</div>
+              <h3 class="ohs-feature__title">College Board AP 課程</h3>
+              <p class="ohs-feature__desc">完整 AP 課程（如 Calculus、Physics、English Lang/Lit、World History 等），AP 成績可換大學學分。</p>
+            </article>
+            <article class="ohs-feature">
+              <div class="ohs-feature__num">03</div>
+              <h3 class="ohs-feature__title">合格美籍師資</h3>
+              <p class="ohs-feature__desc">州認證、具線上教學經驗的教師親自授課；提供 Zoom 直播課與每日 Live Help 時段。</p>
+            </article>
+            <article class="ohs-feature">
+              <div class="ohs-feature__num">04</div>
+              <h3 class="ohs-feature__title">彈性時間規劃</h3>
+              <p class="ohs-feature__desc">課程 self-paced，每天最少 1 小時亦可完成，特別適合運動員、藝術生或赴美前過渡期。</p>
+            </article>
+            <article class="ohs-feature">
+              <div class="ohs-feature__num">05</div>
+              <h3 class="ohs-feature__title">NCAA 學生運動員適用</h3>
+              <p class="ohs-feature__desc">EOA 通過 NCAA Eligibility Center 核可（學校代碼 240280），學生運動員可使用 EOA 學分申請美國大學體育獎學金。</p>
+            </article>
+            <article class="ohs-feature">
+              <div class="ohs-feature__num">06</div>
+              <h3 class="ohs-feature__title">Dual Diploma 雙文憑選項</h3>
+              <p class="ohs-feature__desc">可同時就讀台灣高中與 EOA，畢業時取得雙文憑——同時兼顧台灣升學選項與美國申請優勢。</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- Enrollment options -->
+        <section id="options" style="margin-bottom:72px;">
+          <span class="section-label">ENROLLMENT OPTIONS</span>
+          <h2 class="section-title">入學方案</h2>
+          <div class="section-divider"></div>
+          <p style="font-size:15.5px;color:var(--muted);line-height:1.8;margin-bottom:36px;max-width:62ch;">
+            EOA 提供多種就讀彈性——從完整四年制到單科選修都可以。實際方案會由顧問依學生現況與目標安排。
+          </p>
+
+          <div class="ohs-options">
+            <div class="ohs-option">
+              <div class="ohs-option__name">Full-Time Diploma（4 年完整制）</div>
+              <div class="ohs-option__detail">
+                從 9 年級起完整就讀 EOA，畢業時取得正式 US High School Diploma。
+                適合計畫長期遠距學習，或無法就讀實體美國高中的學生。
+              </div>
+            </div>
+            <div class="ohs-option">
+              <div class="ohs-option__name">Dual Diploma（雙文憑）</div>
+              <div class="ohs-option__detail">
+                同時就讀台灣高中與 EOA，畢業時取得兩份文憑。
+                建議在高一—高三期間完成 5 學分以上即可。
+              </div>
+            </div>
+            <div class="ohs-option">
+              <div class="ohs-option__name">Single Diploma（單文憑轉學銜接）</div>
+              <div class="ohs-option__detail">
+                從台灣高中轉入 EOA 完成剩餘學分，取得美國高中文憑後申請美國大學。
+              </div>
+            </div>
+            <div class="ohs-option">
+              <div class="ohs-option__name">Single Course（單科修課）</div>
+              <div class="ohs-option__detail">
+                每學期 18 週、0.5 學分。可單獨選修 AP、世界語言或選修課，補強台灣校內缺乏的科目。
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Course plan image -->
+        <section style="margin-bottom:72px;">
+          <span class="section-label">CURRICULUM</span>
+          <h2 class="section-title">畢業學分要求 &amp; 4 年課表範例</h2>
+          <div class="section-divider"></div>
+          <p style="font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:24px;">
+            完成 EOA 高中文憑需 21.5 學分，包含英文、數學、自然、社會與選修課。
+            建議計畫升讀美國 4 年制大學的學生：<strong>2 年世界語言、4 年數學（含 Algebra II）、4 年自然科學（生物、化學、物理 + 1 門選修）</strong>。
+          </p>
+          <div class="courseplan-img-wrap">
+            <img src="/assets/online-hs/required-courses.jpg" alt="High School Required Courses and Sample 4-Year Plan" loading="lazy" />
+          </div>
+        </section>
+
+        <!-- Resources -->
+        <section style="margin-bottom:72px;">
+          <span class="section-label">RESOURCES</span>
+          <h2 class="section-title">官方資料下載</h2>
+          <div class="section-divider"></div>
+          <p style="font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:8px;">
+            想更深入了解 EOA 的課程內容、認證細節與服務架構？以下是 Edmentum 官方提供的 EOA 完整資料。
+          </p>
+          <div class="download-row">
+            <a href="/assets/online-hs/eoa-overview.pdf" target="_blank" rel="noopener" class="download-btn">
+              EdOptions Academy 完整介紹（2024 年版）
+            </a>
+            <a href="/assets/online-hs/eoa-brochure.pdf" target="_blank" rel="noopener" class="download-btn">
+              EOA 官方 Brochure
+            </a>
+          </div>
+        </section>
+
+        <div class="cta-box">
+          <h3>想知道孩子是否適合美國線上高中？</h3>
+          <p>每位學生的適合方案不同——歡迎預約免費諮詢，由顧問依學生背景與升學目標規劃最合適的入學路徑。</p>
+          <a href="/contact/index.html" class="btn btn-gold">預約顧問諮詢</a>
+        </div>
+
+      </div>
+    </main>
+
+    <div id="site-footer"></div>
+    <script src="/js/main.js"></script>
+  </body>
+</html>
