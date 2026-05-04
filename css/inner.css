@@ -331,9 +331,11 @@
 
 .cta-box p {
   font-size: 16px;
-  opacity: 0.8;
-  max-width: 50ch;
+  opacity: 0.85;
+  max-width: 60ch;
+  line-height: 1.75;
   margin: 0 auto 28px;
+  text-wrap: pretty;
 }
 
 .cta-box .btn-gold {
