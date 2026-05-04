@@ -149,10 +149,16 @@
   overflow-wrap: anywhere;
 }
 
+/* 主數字：金色（與 about 頁 .page-hero__stat-num 一致） */
+.stat-line__num { color: var(--gold-light); }
+
+/* 標籤文字：白色但稍微壓低不透明度（與 about __stat-label 視覺對等） */
+.stat-line__txt { opacity: 0.85; }
+
 .stat-line__sub {
   font-size: 0.78em;
   font-weight: 600;
-  opacity: 0.75;
+  opacity: 0.7;
   white-space: nowrap;
   display: inline-block;
 }
