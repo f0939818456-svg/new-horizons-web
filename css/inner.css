@@ -68,6 +68,18 @@
   text-wrap: pretty;
 }
 
+/* 手機螢幕窄，桌機加的 <br/> 反而會切出過短的行；隱藏 <br/> 讓文字自由依瀏覽器寬度自動斷句 */
+@media (max-width: 700px) {
+  .page-hero__desc br,
+  .cta-box p br,
+  .video-content p br,
+  .hero__sub-slogan br,
+  .tutoring-hero__sub br,
+  .footer-cta-desc br {
+    display: none;
+  }
+}
+
 .page-hero__stats {
   display: flex;
   align-items: center;
