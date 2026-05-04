@@ -1,1 +1,5 @@
 .DS_Store
+
+# 螢幕截圖（不應入 repo）
+截圖*.png
+Screenshot*.png
