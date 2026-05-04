@@ -1,7 +1,7 @@
 // ── Blog Pagination ───────────────────────────────────────────────
 function setupBlogPagination() {
   document.querySelectorAll('.paginated-grid').forEach(grid => {
-    const perPage = parseInt(grid.dataset.perPage || '6');
+    const perPage = parseInt(grid.dataset.perPage || '12');
     const cards = Array.from(grid.querySelectorAll('.article-card'));
     if (cards.length <= perPage) return;
 
