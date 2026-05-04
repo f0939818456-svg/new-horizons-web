@@ -14,14 +14,14 @@
   overflow: hidden;
 }
 
-/* 日暘太陽紋：80×80 tile 重複鋪滿 banner 作為品牌底紋 */
+/* 日暘太陽紋：80×80 tile 重複鋪滿 banner 作為品牌底紋（隱晦） */
 .page-hero::after {
   content: '';
   position: absolute;
   inset: 0;
   background: url("/assets/images/sun-motif.svg") top left / 80px 80px repeat;
   pointer-events: none;
-  opacity: 0.85;
+  opacity: 0.45;
 }
 
 .page-hero__inner { position: relative; z-index: 1; }
@@ -842,7 +842,7 @@
   inset: 0;
   background: url("/assets/images/sun-motif.svg") top left / 80px 80px repeat;
   pointer-events: none;
-  opacity: 0.85;
+  opacity: 0.45;
   z-index: 0;
 }
 .adm-hero .container { position: relative; z-index: 1; }

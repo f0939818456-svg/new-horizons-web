@@ -558,7 +558,7 @@
   position: absolute;
   inset: 0;
   background: url("/assets/images/sun-motif.svg") top left / 80px 80px repeat;
-  opacity: 0.85;
+  opacity: 0.45;
   pointer-events: none;
   z-index: 1;
 }
@@ -863,7 +863,7 @@
   position: absolute;
   inset: 0;
   background: url("/assets/images/sun-motif.svg") top left / 80px 80px repeat;
-  opacity: 0.7;
+  opacity: 0.4;
   pointer-events: none;
 }
 .ach-wall .container { position: relative; z-index: 1; }

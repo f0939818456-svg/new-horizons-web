@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80">
   <!--
-    日暘太陽紋 · 80×80 tile
-    用於品牌 banner 的背景重複圖樣，整體保留低不透明度，
-    以白色（#F5ECD7）填色，覆蓋在棕色品牌底色上呈現微妙光暈。
+    日暘太陽紋 · 80×80 tile（隱晦版）
+    用於品牌 banner 的背景重複圖樣。fill-opacity 與 stroke-opacity
+    皆刻意調低，與 CSS opacity 疊加後呈現非常輕微的紋理感。
   -->
   <g transform="translate(40,40)" fill="#F5ECD7">
-    <!-- 8 道短光線（rays）以 45° 等距排列 -->
-    <g fill-opacity="0.18">
+    <!-- 8 道短光線：fill-opacity 從 0.18 降到 0.08 -->
+    <g fill-opacity="0.08">
       <polygon points="0,-9 1,-19 -1,-19"/>
       <g transform="rotate(45)"><polygon points="0,-9 1,-17 -1,-17"/></g>
       <g transform="rotate(90)"><polygon points="0,-9 1,-19 -1,-19"/></g>
@@ -17,9 +17,9 @@
       <g transform="rotate(315)"><polygon points="0,-9 1,-17 -1,-17"/></g>
     </g>
 
-    <!-- 中心圓環 -->
-    <circle r="6" fill="none" stroke="#F5ECD7" stroke-opacity="0.28" stroke-width="0.9"/>
-    <!-- 中心實心點 -->
-    <circle r="2.4" fill-opacity="0.42"/>
+    <!-- 中心圓環：stroke-opacity 0.28 → 0.14 -->
+    <circle r="6" fill="none" stroke="#F5ECD7" stroke-opacity="0.14" stroke-width="0.8"/>
+    <!-- 中心實心點：fill-opacity 0.42 → 0.18 -->
+    <circle r="2.4" fill-opacity="0.18"/>
   </g>
 </svg>
