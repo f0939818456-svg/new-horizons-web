@@ -42,6 +42,10 @@
   border: 1px solid var(--border);
 }
 
+@media (max-width: 600px) {
+  .split__media img { height: 240px; }
+}
+
 .split .caption {
   margin-top: 12px;
   font-size: 13px;

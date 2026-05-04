@@ -274,6 +274,18 @@
   -webkit-font-smoothing: antialiased;
 }
 
+/* 點擊頁面內錨點時自動偏移 sticky header 高度，避免目標標題被導覽列遮住 */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+@media (max-width: 900px) { html { scroll-padding-top: 76px; } }
+@media (max-width: 600px) { html { scroll-padding-top: 64px; } }
+
+/* 防止任何元素無意間造成水平滾動條（手機常見問題） */
+body { overflow-x: hidden; }
+img, video, iframe { max-width: 100%; height: auto; }
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC",
@@ -517,6 +529,11 @@ img { display: block; max-width: 100%; }
 }
 
 .logo img { height: 52px; }
+
+@media (max-width: 600px) {
+  .header-inner { padding: 10px 0; }
+  .logo img { height: 40px; }
+}
 
 /* =========================
    Desktop Navigation
