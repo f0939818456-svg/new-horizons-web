@@ -962,80 +962,31 @@
   transform: translateY(-3px);
 }
 
-/* School shield/badge */
+/* School shield/badge — 顯示真實校徽，深色背景上以白色圓底襯托 */
 .ach-school__shield {
   position: relative;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+  width: 64px;
+  height: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: 700;
-  letter-spacing: 0.02em;
   flex-shrink: 0;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.18), 0 0 0 1px rgba(0,0,0,0.05);
+  background: #fff;
+  border-radius: 50%;
+  padding: 8px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.ach-school:hover .ach-school__shield {
+  transform: scale(1.06);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.35);
 }
 .ach-school__shield img {
-  position: absolute;
-  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: contain;
-  background: #fff;
-  padding: 6px;
-  z-index: 1;
 }
-.ach-school__shield span {
-  line-height: 1;
-}
-
-/* Default shield style (fallback when img fails / not present) */
-.ach-school__shield {
-  background: var(--gold);
-  color: #fff;
-  font-size: 16px;
-}
-
-/* Per-school brand colors (real institutional colors) */
-.ach-school[data-school="mit"]          .ach-school__shield { background: #A31F34; font-size: 13px; }
-.ach-school[data-school="stanford"]     .ach-school__shield { background: #8C1515; font-size: 22px; }
-.ach-school[data-school="princeton"]    .ach-school__shield { background: #E77500; color: #1B1B1B; font-size: 22px; }
-.ach-school[data-school="columbia"]     .ach-school__shield { background: #B9D9EB; color: #002B7F; font-size: 22px; }
-.ach-school[data-school="caltech"]      .ach-school__shield { background: #FF6C0C; font-size: 13px; }
-.ach-school[data-school="yale"]         .ach-school__shield { background: #00356B; font-size: 22px; }
-.ach-school[data-school="upenn"]        .ach-school__shield { background: #990000; font-size: 22px; }
-.ach-school[data-school="ucb"]          .ach-school__shield { background: #003262; color: #FDB515; font-size: 14px; font-weight: 800; }
-.ach-school[data-school="ucla"]         .ach-school__shield { background: #2774AE; color: #FFD100; font-size: 11px; font-weight: 900; letter-spacing: 0; }
-.ach-school[data-school="brown"]        .ach-school__shield { background: #4E3629; font-size: 22px; }
-.ach-school[data-school="cornell"]      .ach-school__shield { background: #B31B1B; font-size: 22px; }
-.ach-school[data-school="cambridge"]    .ach-school__shield { background: #A3262C; font-size: 22px; }
-.ach-school[data-school="imperial"]     .ach-school__shield { background: #002147; font-size: 14px; font-weight: 800; }
-.ach-school[data-school="oxford"]       .ach-school__shield { background: #002147; font-size: 22px; }
-.ach-school[data-school="emory"]        .ach-school__shield { background: #012169; color: #F2A900; font-size: 22px; }
-.ach-school[data-school="jhu"]          .ach-school__shield { background: #002D72; font-size: 11px; font-weight: 900; letter-spacing: 0; }
-.ach-school[data-school="uchicago"]     .ach-school__shield { background: #800000; font-size: 22px; }
-.ach-school[data-school="northwestern"] .ach-school__shield { background: #4E2A84; font-size: 22px; }
-.ach-school[data-school="toronto"]      .ach-school__shield { background: #002A5C; font-size: 22px; }
-.ach-school[data-school="nyu"]          .ach-school__shield { background: #57068C; font-size: 11px; font-weight: 900; letter-spacing: 0; }
-
-/* 2026 申請季新增學校 */
-.ach-school[data-school="usc"]          .ach-school__shield { background: #990000; color: #FFCC00; font-size: 13px; font-weight: 800; }
-.ach-school[data-school="ucd"]          .ach-school__shield { background: #022851; color: #FFBF00; font-size: 13px; font-weight: 800; }
-.ach-school[data-school="uci"]          .ach-school__shield { background: #0064A4; color: #FFD200; font-size: 13px; font-weight: 800; }
-.ach-school[data-school="ucsc"]         .ach-school__shield { background: #003C6C; color: #FDC700; font-size: 10px; font-weight: 900; letter-spacing: 0; }
-.ach-school[data-school="ucr"]          .ach-school__shield { background: #003DA5; color: #FFB81C; font-size: 13px; font-weight: 800; }
-.ach-school[data-school="ucm"]          .ach-school__shield { background: #002856; color: #DAAA00; font-size: 13px; font-weight: 800; }
-.ach-school[data-school="usf"]          .ach-school__shield { background: #00543C; color: #FDBB30; font-size: 13px; font-weight: 800; }
-.ach-school[data-school="asu"]          .ach-school__shield { background: #8C1D40; color: #FFC627; font-size: 13px; font-weight: 800; }
-.ach-school[data-school="msu"]          .ach-school__shield { background: #18453B; color: #FFFFFF; font-size: 13px; font-weight: 800; }
-.ach-school[data-school="saic"]         .ach-school__shield { background: #1A1A1A; color: #FFFFFF; font-size: 11px; font-weight: 900; letter-spacing: 0; }
-.ach-school[data-school="scad"]         .ach-school__shield { background: #FFCD00; color: #1A1A1A; font-size: 11px; font-weight: 900; letter-spacing: 0; }
-.ach-school[data-school="pace"]         .ach-school__shield { background: #00509E; font-size: 22px; }
-.ach-school[data-school="temple"]       .ach-school__shield { background: #9E1B32; font-size: 22px; }
-.ach-school[data-school="unlv"]         .ach-school__shield { background: #B10202; color: #FFFFFF; font-size: 11px; font-weight: 900; letter-spacing: 0; }
+.ach-school__shield span { display: none; }
 
 .ach-school__name-en {
   font-size: 12.5px;
