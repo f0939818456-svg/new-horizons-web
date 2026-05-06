@@ -1063,12 +1063,15 @@
   border: 1px solid var(--border);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
-  transition: 0.3s;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  /* 在 column 多欄佈局下，避免 hover transform 造成 repaint 閃白 */
+  isolation: isolate;
+  position: relative;
 }
 
 .adm-card:hover {
   box-shadow: var(--shadow);
-  transform: translateY(-4px);
+  border-color: var(--gold);
 }
 
 .adm-card__header {
