@@ -12,6 +12,27 @@
   .adm-stats-row { gap: 24px; }
 }
 
+/* Allow student-tag to wrap onto its own line; don't squeeze badge */
+.student-tag {
+  display: block;
+  margin-top: 2px;
+  word-break: break-word;
+  line-height: 1.45;
+}
+
+/* On narrow phones, stack header so long student-tag has full width */
+@media (max-width: 480px) {
+  .adm-card__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 16px 18px;
+  }
+  .adm-badge { align-self: flex-end; }
+  .student-name { font-size: 14.5px; }
+  .student-tag  { font-size: 11.5px; }
+}
+
 /* Make the summary wall sit in alternating bg */
 .adm-summary-wall { background: var(--bg-alt); }
 

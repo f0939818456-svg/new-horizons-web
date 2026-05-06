@@ -1005,14 +1005,22 @@
 @media (max-width: 980px) {
   .ach-wall__layout { grid-template-columns: 1fr; gap: 48px; }
   .ach-wall__schools { grid-template-columns: repeat(4, 1fr); }
+  .ach-school__shield { width: 60px; height: 60px; }
 }
 @media (max-width: 600px) {
   .ach-wall { padding: 64px 0; }
   .ach-wall__heading { margin-bottom: 40px; }
   .ach-wall__schools { grid-template-columns: repeat(3, 1fr); gap: 12px 10px; }
   .ach-school { padding: 12px 6px 10px; }
+  .ach-school__shield { width: 54px; height: 54px; padding: 6px; }
   .ach-school__name-en { font-size: 11.5px; }
   .ach-school__name-zh { font-size: 10px; }
+}
+@media (max-width: 380px) {
+  .ach-wall__schools { gap: 10px 8px; }
+  .ach-school__shield { width: 48px; height: 48px; padding: 5px; }
+  .ach-school__name-en { font-size: 10.5px; }
+  .ach-school__name-zh { font-size: 9.5px; }
 }
 
 /* =========================

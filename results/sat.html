@@ -108,7 +108,19 @@
       .ap-score-card__sub { font-size: 10.5px; color: var(--muted); }
       @media (max-width: 700px) {
         .ap-highlight { padding: 32px 24px; }
-        .ap-highlight__grid { grid-template-columns: repeat(3, 1fr); }
+        .ap-highlight__grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+        .ap-score-card { padding: 16px 8px; }
+        .ap-score-card__score { font-size: 32px; }
+        .ap-score-card__name { font-size: 11.5px; }
+        .ap-score-card__sub { font-size: 10px; }
+        .ap-highlight__title { font-size: 22px; }
+        .ap-highlight__sub { font-size: 13.5px; }
+        .ap-highlight::before { font-size: 140px; top: -10px; right: -8px; }
+      }
+      @media (max-width: 380px) {
+        .ap-highlight { padding: 28px 20px; }
+        .ap-score-card__score { font-size: 28px; }
+        .ap-score-card__name { font-size: 11px; }
       }
 
       /* IELTS table */
@@ -171,7 +183,8 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 20px;
       }
-      @media (max-width: 900px) { .improve-grid { grid-template-columns: 1fr; } }
+      @media (max-width: 980px) { .improve-grid { grid-template-columns: 1fr 1fr; } }
+      @media (max-width: 640px) { .improve-grid { grid-template-columns: 1fr; } }
       .improve-card {
         background: #fff;
         border: 1px solid var(--border);
@@ -257,6 +270,44 @@
         line-height: 1.75;
         margin: 32px 0 0;
         border-radius: 0 var(--radius) var(--radius) 0;
+      }
+
+      .other-exams-cta {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      .other-exams-card {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 28px;
+        text-decoration: none;
+        display: block;
+        transition: 0.3s;
+      }
+      .other-exams-card:hover {
+        box-shadow: var(--shadow);
+        transform: translateY(-3px);
+      }
+      .other-exams-card__eyebrow {
+        font-size: 11px;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+        color: var(--gold);
+        margin-bottom: 10px;
+      }
+      .other-exams-card__title {
+        font-size: 18px;
+        font-weight: 800;
+        color: var(--text);
+        margin-bottom: 6px;
+        line-height: 1.4;
+      }
+      .other-exams-card__sub { font-size: 13px; color: var(--muted); line-height: 1.6; }
+      @media (max-width: 640px) {
+        .other-exams-cta { grid-template-columns: 1fr; gap: 14px; }
+        .other-exams-card { padding: 22px 20px; }
       }
     </style>
   </head>
@@ -619,16 +670,16 @@
               其他考試的學員紀錄，包含 SAT 1500+、ACT 33+、TOEFL 100+、IB HL 7 滿分等案例，依學員與家長隱私意願，目前不公開於網站。可於諮詢面談時，依學員的目標分數查閱對應的真實案例與進步軌跡。
             </p>
           </div>
-          <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;">
-            <a href="/results/college.html" style="background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;text-decoration:none;display:block;transition:0.3s;" onmouseover="this.style.boxShadow='var(--shadow)';this.style.transform='translateY(-3px)'" onmouseout="this.style.boxShadow='';this.style.transform=''">
-              <div style="font-size:11px;font-weight:900;letter-spacing:0.1em;color:var(--gold);margin-bottom:10px;">2026 申請季</div>
-              <div style="font-size:18px;font-weight:800;color:var(--text);margin-bottom:6px;">9 位學員 · 41 份錄取</div>
-              <div style="font-size:13px;color:var(--muted);">完整 2026 申請成果與獎學金紀錄</div>
+          <div class="other-exams-cta">
+            <a href="/results/college.html" class="other-exams-card">
+              <div class="other-exams-card__eyebrow">2026 申請季</div>
+              <div class="other-exams-card__title">9 位學員 · 41 份錄取</div>
+              <div class="other-exams-card__sub">完整 2026 申請成果與獎學金紀錄</div>
             </a>
-            <a href="/services/tutoring.html" style="background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;text-decoration:none;display:block;transition:0.3s;" onmouseover="this.style.boxShadow='var(--shadow)';this.style.transform='translateY(-3px)'" onmouseout="this.style.boxShadow='';this.style.transform=''">
-              <div style="font-size:11px;font-weight:900;letter-spacing:0.1em;color:var(--gold);margin-bottom:10px;">補習課程</div>
-              <div style="font-size:18px;font-weight:800;color:var(--text);margin-bottom:6px;">SAT / ACT / AP / IB / IELTS / TOEFL</div>
-              <div style="font-size:13px;color:var(--muted);">小班精英教學、週期診斷、個人化備考策略</div>
+            <a href="/services/tutoring.html" class="other-exams-card">
+              <div class="other-exams-card__eyebrow">補習課程</div>
+              <div class="other-exams-card__title">SAT / ACT / AP / IB / IELTS / TOEFL</div>
+              <div class="other-exams-card__sub">小班精英教學、週期診斷、個人化備考策略</div>
             </a>
           </div>
         </section>
