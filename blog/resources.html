@@ -7,6 +7,79 @@
     <meta name="description" content="美國留學申請必備資源清單：Common App、College Board、Naviance，以及重要申請時程表，幫助你少走彎路。" />
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/inner.css" />
+    <style>
+      .exam-link-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 18px;
+      }
+      .exam-link {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 22px 22px;
+        text-decoration: none;
+        color: inherit;
+        transition: 0.25s ease;
+      }
+      .exam-link:hover {
+        border-color: var(--gold);
+        box-shadow: 0 8px 24px rgba(78,52,46,0.08);
+        transform: translateY(-2px);
+      }
+      .exam-link__badge {
+        flex-shrink: 0;
+        width: 52px; height: 52px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 900;
+        font-size: 14px;
+        letter-spacing: 0.02em;
+        color: #fff;
+        background: var(--brand);
+      }
+      .exam-link__badge.gold { background: var(--gold); color: #1C1C1E; }
+      .exam-link__badge.dark { background: #1C1C1E; }
+      .exam-link__badge.tealdark { background: #003366; }
+      .exam-link__badge.brick { background: #B31B1B; }
+      .exam-link__body { flex: 1; min-width: 0; }
+      .exam-link__name {
+        font-size: 16px;
+        font-weight: 800;
+        color: var(--text);
+        margin-bottom: 4px;
+        line-height: 1.3;
+      }
+      .exam-link__desc {
+        font-size: 13px;
+        color: var(--muted);
+        line-height: 1.6;
+        margin-bottom: 8px;
+        word-break: keep-all;
+      }
+      .exam-link__url {
+        font-size: 12px;
+        color: var(--gold);
+        font-weight: 700;
+        font-family: ui-monospace, "SF Mono", Menlo, monospace;
+        word-break: break-all;
+      }
+      .exam-link__arrow {
+        font-size: 16px;
+        color: var(--muted);
+        flex-shrink: 0;
+        transition: 0.2s;
+      }
+      .exam-link:hover .exam-link__arrow {
+        color: var(--gold);
+        transform: translateX(3px);
+      }
+    </style>
   </head>
   <body>
     <div id="site-header"></div>
@@ -88,6 +161,138 @@
                 <div style="margin-top:10px;font-size:12px;color:var(--gold);font-weight:600;">studentaid.gov</div>
               </div>
             </div>
+          </div>
+        </section>
+
+        <!-- Exam Official Sites -->
+        <section style="margin-bottom:72px;">
+          <span class="section-label">EXAM OFFICIAL SITES</span>
+          <h2 class="section-title">考試官方網站</h2>
+          <div class="section-divider"></div>
+          <p style="font-size:14.5px;color:var(--muted);margin:8px 0 28px;max-width:62ch;">
+            報名考試、查詢成績、下載官方備考資源，請以下方各考試的<strong>官方網站</strong>為準。
+          </p>
+
+          <div class="exam-link-grid">
+            <a class="exam-link" href="https://satsuite.collegeboard.org/sat" target="_blank" rel="noopener noreferrer">
+              <div class="exam-link__badge">SAT</div>
+              <div class="exam-link__body">
+                <div class="exam-link__name">SAT</div>
+                <div class="exam-link__desc">College Board 官方平台，數位 SAT 報名、成績查詢、官方練習題（Bluebook、Khan Academy）。</div>
+                <div class="exam-link__url">satsuite.collegeboard.org/sat</div>
+              </div>
+              <div class="exam-link__arrow">→</div>
+            </a>
+
+            <a class="exam-link" href="https://www.act.org/" target="_blank" rel="noopener noreferrer">
+              <div class="exam-link__badge gold">ACT</div>
+              <div class="exam-link__body">
+                <div class="exam-link__name">ACT</div>
+                <div class="exam-link__desc">ACT 官方網站，2025 年起改為線上 / 紙筆並行，含 Science 為選考。</div>
+                <div class="exam-link__url">act.org</div>
+              </div>
+              <div class="exam-link__arrow">→</div>
+            </a>
+
+            <a class="exam-link" href="https://apstudents.collegeboard.org/" target="_blank" rel="noopener noreferrer">
+              <div class="exam-link__badge">AP</div>
+              <div class="exam-link__body">
+                <div class="exam-link__name">AP Students</div>
+                <div class="exam-link__desc">College Board 旗下 AP 學生官網，38+ 科目資訊、考試日期、成績查詢、AP Classroom 練習。</div>
+                <div class="exam-link__url">apstudents.collegeboard.org</div>
+              </div>
+              <div class="exam-link__arrow">→</div>
+            </a>
+
+            <a class="exam-link" href="https://www.ielts.org/" target="_blank" rel="noopener noreferrer">
+              <div class="exam-link__badge brick">IELTS</div>
+              <div class="exam-link__body">
+                <div class="exam-link__name">IELTS</div>
+                <div class="exam-link__desc">IELTS 全球官方網站，含考試介紹、計分標準、官方題目與報名資訊。台灣可在 British Council 或 IDP 報名。</div>
+                <div class="exam-link__url">ielts.org</div>
+              </div>
+              <div class="exam-link__arrow">→</div>
+            </a>
+
+            <a class="exam-link" href="https://www.britishcouncil.org.tw/exam/ielts" target="_blank" rel="noopener noreferrer">
+              <div class="exam-link__badge brick">BC</div>
+              <div class="exam-link__body">
+                <div class="exam-link__name">British Council 台灣（IELTS 報名）</div>
+                <div class="exam-link__desc">英國文化協會台灣官方 IELTS 報名管道，提供台中、台北、高雄等多個考場。</div>
+                <div class="exam-link__url">britishcouncil.org.tw/exam/ielts</div>
+              </div>
+              <div class="exam-link__arrow">→</div>
+            </a>
+
+            <a class="exam-link" href="https://www.ets.org/toefl.html" target="_blank" rel="noopener noreferrer">
+              <div class="exam-link__badge tealdark">TOEFL</div>
+              <div class="exam-link__body">
+                <div class="exam-link__name">TOEFL iBT</div>
+                <div class="exam-link__desc">ETS 官方 TOEFL 網站，2023 改版後考試 2 小時，報名、TOEFL Practice Online（TPO）官方模考。</div>
+                <div class="exam-link__url">ets.org/toefl</div>
+              </div>
+              <div class="exam-link__arrow">→</div>
+            </a>
+
+            <a class="exam-link" href="https://www.ets.org/gre.html" target="_blank" rel="noopener noreferrer">
+              <div class="exam-link__badge tealdark">GRE</div>
+              <div class="exam-link__body">
+                <div class="exam-link__name">GRE General Test</div>
+                <div class="exam-link__desc">ETS GRE 官網，研究所申請通用標準化測驗。2023 改版後考試縮短至 1 小時 58 分。</div>
+                <div class="exam-link__url">ets.org/gre</div>
+              </div>
+              <div class="exam-link__arrow">→</div>
+            </a>
+
+            <a class="exam-link" href="https://www.mba.com/exams/gmat-focus-edition" target="_blank" rel="noopener noreferrer">
+              <div class="exam-link__badge dark">GMAT</div>
+              <div class="exam-link__body">
+                <div class="exam-link__name">GMAT Focus Edition</div>
+                <div class="exam-link__desc">商學院申請主流測驗，2024 年改為 Focus Edition，考試 2 小時 15 分，三個 Section。</div>
+                <div class="exam-link__url">mba.com</div>
+              </div>
+              <div class="exam-link__arrow">→</div>
+            </a>
+
+            <a class="exam-link" href="https://www.ibo.org/" target="_blank" rel="noopener noreferrer">
+              <div class="exam-link__badge dark">IB</div>
+              <div class="exam-link__body">
+                <div class="exam-link__name">International Baccalaureate</div>
+                <div class="exam-link__desc">IBO 國際文憑組織官網，IB Diploma Programme 課程結構、評分方式、認證學校查詢。</div>
+                <div class="exam-link__url">ibo.org</div>
+              </div>
+              <div class="exam-link__arrow">→</div>
+            </a>
+
+            <a class="exam-link" href="https://englishtest.duolingo.com/" target="_blank" rel="noopener noreferrer">
+              <div class="exam-link__badge gold">DET</div>
+              <div class="exam-link__body">
+                <div class="exam-link__name">Duolingo English Test</div>
+                <div class="exam-link__desc">越來越多美國大學接受 DET 替代 TOEFL / IELTS，1 小時線上考試、$65 USD、48 小時內出分。</div>
+                <div class="exam-link__url">englishtest.duolingo.com</div>
+              </div>
+              <div class="exam-link__arrow">→</div>
+            </a>
+
+            <a class="exam-link" href="https://www.lsac.org/lsat" target="_blank" rel="noopener noreferrer">
+              <div class="exam-link__badge brick">LSAT</div>
+              <div class="exam-link__body">
+                <div class="exam-link__name">LSAT</div>
+                <div class="exam-link__desc">LSAC 官方網站，美國法學院 J.D. 申請通用考試，每年多次施測。</div>
+                <div class="exam-link__url">lsac.org/lsat</div>
+              </div>
+              <div class="exam-link__arrow">→</div>
+            </a>
+
+            <a class="exam-link" href="https://students-residents.aamc.org/mcat" target="_blank" rel="noopener noreferrer">
+              <div class="exam-link__badge brick">MCAT</div>
+              <div class="exam-link__body">
+                <div class="exam-link__name">MCAT</div>
+                <div class="exam-link__desc">AAMC 醫學院申請考試官方網站，考試 7.5 小時，含 4 個科目區塊。</div>
+                <div class="exam-link__url">students-residents.aamc.org/mcat</div>
+              </div>
+              <div class="exam-link__arrow">→</div>
+            </a>
           </div>
         </section>
 
