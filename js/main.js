@@ -12,7 +12,7 @@ function setupBlogPagination() {
     paginationEl.className = 'pagination';
     grid.after(paginationEl);
 
-    function showPage(page) {
+    function showPage(page, doScroll = true) {
       currentPage = page;
       cards.forEach((card, i) => {
         const inRange = i >= (page - 1) * perPage && i < page * perPage;
@@ -20,7 +20,8 @@ function setupBlogPagination() {
         card.style.display = inRange ? '' : 'none';
       });
       renderPagination();
-      // Scroll smoothly to just above the grid
+      // 初次載入不滾動；只有使用者點分頁按鈕時才平滑捲動到文章區塊上方
+      if (!doScroll) return;
       const offset = grid.getBoundingClientRect().top + window.scrollY - 80;
       window.scrollTo({ top: offset, behavior: 'smooth' });
     }
@@ -53,7 +54,7 @@ function setupBlogPagination() {
       }
     }
 
-    showPage(1);
+    showPage(1, false);
   });
 }
 
