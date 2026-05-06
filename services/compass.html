@@ -21,19 +21,19 @@
         width: 100%;
         border-collapse: collapse;
         font-size: 14.5px;
-        min-width: 640px;
+        min-width: 720px;
       }
       .ag-table th {
         background: var(--brand);
         color: #fff;
         padding: 14px 18px;
-        text-align: left;
+        text-align: center;
         font-weight: 700;
         font-size: 13px;
         letter-spacing: 0.04em;
       }
-      .ag-table th.ag-table__col-letter { width: 70px; text-align: center; }
-      .ag-table th.ag-table__col-name   { width: 240px; }
+      .ag-table th.ag-table__col-letter { width: 70px; }
+      .ag-table th.ag-table__col-name   { width: 320px; }
       .ag-table th.ag-table__col-years  { width: 90px; }
       .ag-table td {
         padding: 14px 18px;
@@ -43,6 +43,7 @@
         line-height: 1.6;
       }
       .ag-table td:first-child { text-align: center; }
+      .ag-table td:nth-child(2) strong { white-space: nowrap; }
       .ag-table tr:last-child td { border-bottom: none; }
       .ag-table tr:nth-child(even) td { background: var(--bg-alt); }
       .ag-letter {
@@ -67,7 +68,7 @@
         letter-spacing: 0.02em;
       }
       @media (max-width: 700px) {
-        .ag-table { font-size: 13.5px; min-width: 560px; }
+        .ag-table { font-size: 13.5px; min-width: 660px; }
         .ag-table th, .ag-table td { padding: 12px 14px; }
         .ag-letter { width: 32px; height: 32px; font-size: 16px; }
       }
