@@ -580,15 +580,19 @@
   opacity: 0.85;
   margin: 0 0 18px;
   line-height: 1.6;
-  word-break: keep-all;
+  word-break: keep-all !important;
+  line-break: strict;
   overflow-wrap: break-word;
   text-wrap: pretty;
 }
 
-/* 中文側欄文字斷句保護：將「日暘」「顧問」這類詞組視為整體，不在中間斷行 */
+/* 中文側欄文字斷句保護：將「日暘」「顧問」這類詞組視為整體，不在中間斷行
+   使用 !important 蓋過部分文章 inline <style> 中的 .article-body p 設定 */
 .sidebar-widget p,
-.sidebar-widget h3 {
-  word-break: keep-all;
+.sidebar-widget h3,
+.sidebar-widget div:not(.sidebar-widget__title) {
+  word-break: keep-all !important;
+  line-break: strict;
   overflow-wrap: break-word;
   text-wrap: pretty;
 }
