@@ -60,16 +60,32 @@
         letter-spacing: -0.02em; line-height: 1; margin-bottom: 6px;
       }
       .stat-highlight__label { font-size: 12px; color: var(--muted); letter-spacing: 0.03em; }
-      .school-result-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
+      .school-result-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; table-layout: fixed; }
       .school-result-table th {
-        background: var(--brand); color: #fff; padding: 12px 16px;
+        background: var(--brand); color: #fff; padding: 12px 14px;
         text-align: left; font-weight: 700; font-size: 12px; letter-spacing: 0.05em;
       }
-      .school-result-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); color: var(--text); }
+      .school-result-table th:nth-child(1) { width: 90px; }
+      .school-result-table th:nth-child(2) { width: 60px; }
+      .school-result-table td { padding: 12px 14px; border-bottom: 1px solid var(--border); color: var(--text); word-break: break-word; line-height: 1.6; }
       .school-result-table tr:nth-child(even) td { background: var(--bg-alt); }
-      .tag-ivy { background: #1C1C1E; color: #fff; border-radius: 50px; padding: 2px 8px; font-size: 11px; font-weight: 700; }
-      .tag-uc { background: #1B4F8A; color: #fff; border-radius: 50px; padding: 2px 8px; font-size: 11px; font-weight: 700; }
-      .tag-top { background: var(--brand); color: #fff; border-radius: 50px; padding: 2px 8px; font-size: 11px; font-weight: 700; }
+      .school-result-table .school-name { font-weight: 700; }
+      .school-result-table .scholar { color: var(--gold); font-weight: 700; font-size: 12.5px; display: inline-block; margin-left: 4px; }
+      .tier-tag { display: inline-block; border-radius: 50px; padding: 3px 10px; font-size: 11px; font-weight: 700; white-space: nowrap; }
+      .tier-tag.top10 { background: var(--brand); color: #fff; }
+      .tier-tag.top15 { background: #1C1C1E; color: #fff; }
+      .tier-tag.top30 { background: #6B4226; color: #fff; }
+      .tier-tag.top50 { background: #8B5A3C; color: #fff; }
+      .tier-tag.uc { background: #1B4F8A; color: #fff; }
+      .tier-tag.public { background: #4A6275; color: #fff; }
+      .tier-tag.art { background: var(--gold); color: #1C1C1E; }
+      .rank-num { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-weight: 700; color: var(--muted); }
+      @media (max-width: 640px) {
+        .school-result-table { font-size: 13px; }
+        .school-result-table th, .school-result-table td { padding: 10px 8px; }
+        .school-result-table th:nth-child(1) { width: 70px; }
+        .school-result-table th:nth-child(2) { width: 44px; }
+      }
       .article-cta {
         background: var(--bg-alt); border: 1px solid var(--border);
         border-radius: var(--radius-lg); padding: 36px; margin-top: 56px; text-align: center;
@@ -133,30 +149,33 @@
 
             <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:28px 0;"><table class="school-result-table">
               <thead>
-                <tr><th>分組</th><th>學校</th><th>備註</th></tr>
+                <tr><th>分組</th><th>排名</th><th>學校</th><th>錄取學員</th></tr>
               </thead>
               <tbody>
-                <tr><td><span class="tag-top">Top 10</span></td><td>University of Chicago</td><td>H.同學</td></tr>
-                <tr><td><span class="tag-top">Top 10</span></td><td>University of Pennsylvania</td><td>H.同學</td></tr>
-                <tr><td><span class="tag-top">Top 10</span></td><td>Johns Hopkins University</td><td>H.同學（USD$30,000 獎學金）、E.同學（USD$6,667 獎學金）</td></tr>
-                <tr><td><span class="tag-ivy">Ivy</span></td><td>Columbia University</td><td>H.同學</td></tr>
-                <tr><td><span class="tag-ivy">Ivy</span></td><td>Cornell University</td><td>H.同學</td></tr>
-                <tr><td><span class="tag-top">Top 30</span></td><td>University of Southern California</td><td>H.同學</td></tr>
-                <tr><td><span class="tag-top">Top 30</span></td><td>New York University</td><td>H.同學、E.同學</td></tr>
-                <tr><td><span class="tag-uc">UC</span></td><td>UC Davis</td><td>P.同學、N.同學</td></tr>
-                <tr><td><span class="tag-uc">UC</span></td><td>UC Irvine</td><td>N.同學</td></tr>
-                <tr><td><span class="tag-uc">UC</span></td><td>UC Santa Cruz</td><td>R.同學、P.同學、D.同學（含獎學金）</td></tr>
-                <tr><td><span class="tag-uc">UC</span></td><td>UC Riverside</td><td>R.同學、P.同學、D.同學、Y.同學、G.同學、A.同學、N.同學（含獎學金）</td></tr>
-                <tr><td><span class="tag-uc">UC</span></td><td>UC Merced</td><td>P.同學、D.同學、Y.同學、A.同學、N.同學、G.同學（含獎學金）</td></tr>
-                <tr><td>—</td><td>University of San Francisco</td><td>R.同學、P.同學、D.同學（共 USD$308,000 獎學金）</td></tr>
-                <tr><td>—</td><td>Arizona State University</td><td>P.同學、D.同學、Y.同學</td></tr>
-                <tr><td>—</td><td>Michigan State University</td><td>P.同學</td></tr>
-                <tr><td>—</td><td>Pace University、Temple University</td><td>G.同學</td></tr>
-                <tr><td>—</td><td>UNLV、University of Nevada-Reno</td><td>R.同學</td></tr>
-                <tr><td><span class="tag-top">藝術</span></td><td>School of the Art Institute of Chicago</td><td>A.同學（USD$68,000 獎學金）</td></tr>
-                <tr><td><span class="tag-top">藝術</span></td><td>Savannah College of Art and Design</td><td>A.同學（USD$28,000 獎學金）</td></tr>
+                <tr><td><span class="tier-tag top10">Top 10</span></td><td><span class="rank-num">#6</span></td><td><span class="school-name">University of Chicago</span></td><td>H</td></tr>
+                <tr><td><span class="tier-tag top10">Top 10</span></td><td><span class="rank-num">#6</span></td><td><span class="school-name">University of Pennsylvania</span></td><td>H</td></tr>
+                <tr><td><span class="tier-tag top10">Top 10</span></td><td><span class="rank-num">#7</span></td><td><span class="school-name">Johns Hopkins University</span></td><td>H<span class="scholar">$30,000</span>、E<span class="scholar">$6,667</span></td></tr>
+                <tr><td><span class="tier-tag top15">Top 15</span></td><td><span class="rank-num">#11</span></td><td><span class="school-name">Cornell University</span></td><td>H</td></tr>
+                <tr><td><span class="tier-tag top15">Top 15</span></td><td><span class="rank-num">#13</span></td><td><span class="school-name">Columbia University</span></td><td>H</td></tr>
+                <tr><td><span class="tier-tag top30">Top 30</span></td><td><span class="rank-num">#28</span></td><td><span class="school-name">USC</span></td><td>H</td></tr>
+                <tr><td><span class="tier-tag top50">Top 50</span></td><td><span class="rank-num">#33</span></td><td><span class="school-name">UC Davis</span></td><td>P、N</td></tr>
+                <tr><td><span class="tier-tag top50">Top 50</span></td><td><span class="rank-num">#33</span></td><td><span class="school-name">UC Irvine</span></td><td>N</td></tr>
+                <tr><td><span class="tier-tag top50">Top 50</span></td><td><span class="rank-num">#35</span></td><td><span class="school-name">New York University</span></td><td>H、E</td></tr>
+                <tr><td><span class="tier-tag uc">UC</span></td><td><span class="rank-num">#62</span></td><td><span class="school-name">UC Merced</span></td><td>P<span class="scholar">$100k</span>、N<span class="scholar">$100k</span>、D<span class="scholar">$80k</span>、Y<span class="scholar">$80k</span>、A<span class="scholar">$24k</span>、G</td></tr>
+                <tr><td><span class="tier-tag uc">UC</span></td><td><span class="rank-num">#76</span></td><td><span class="school-name">UC Riverside</span></td><td>P<span class="scholar">$89k</span>、R<span class="scholar">$89k</span>、D<span class="scholar">$89k</span>、N<span class="scholar">$89k</span>、Y<span class="scholar">$60k</span>、G<span class="scholar">$60k</span>、A</td></tr>
+                <tr><td><span class="tier-tag uc">UC</span></td><td><span class="rank-num">#82</span></td><td><span class="school-name">UC Santa Cruz</span></td><td>P<span class="scholar">$40k</span>、R<span class="scholar">$40k</span>、D<span class="scholar">$40k</span></td></tr>
+                <tr><td><span class="tier-tag public">私立 / 公立</span></td><td><span class="rank-num">#105</span></td><td><span class="school-name">University of San Francisco</span></td><td>P<span class="scholar">$124k</span>、R<span class="scholar">$116k</span>、D<span class="scholar">$68k</span></td></tr>
+                <tr><td><span class="tier-tag public">公立</span></td><td><span class="rank-num">#121</span></td><td><span class="school-name">Arizona State University</span></td><td>P、D、Y</td></tr>
+                <tr><td><span class="tier-tag public">公立</span></td><td><span class="rank-num">#60</span></td><td><span class="school-name">Michigan State University</span></td><td>P</td></tr>
+                <tr><td><span class="tier-tag public">私立</span></td><td><span class="rank-num">#121</span></td><td><span class="school-name">Temple University</span></td><td>G</td></tr>
+                <tr><td><span class="tier-tag public">私立</span></td><td><span class="rank-num">#172</span></td><td><span class="school-name">Pace University</span></td><td>G</td></tr>
+                <tr><td><span class="tier-tag public">公立</span></td><td><span class="rank-num">#249</span></td><td><span class="school-name">UNLV</span></td><td>R<span class="scholar">$24k</span></td></tr>
+                <tr><td><span class="tier-tag public">公立</span></td><td><span class="rank-num">#249</span></td><td><span class="school-name">University of Nevada-Reno</span></td><td>R</td></tr>
+                <tr><td><span class="tier-tag art">藝術</span></td><td><span class="rank-num">頂尖</span></td><td><span class="school-name">School of the Art Institute of Chicago</span></td><td>A<span class="scholar">$68,000</span></td></tr>
+                <tr><td><span class="tier-tag art">藝術</span></td><td><span class="rank-num">頂尖</span></td><td><span class="school-name">Savannah College of Art and Design</span></td><td>A<span class="scholar">$28,000</span></td></tr>
               </tbody>
             </table></div>
+            <p style="font-size:12.5px;color:var(--muted);line-height:1.6;margin-top:-12px;">＊排名依 U.S. News &amp; World Report 2026 National Universities Ranking；學員以英文名首字母代稱（如 H = H.同學）；獎學金金額為各校單獨提供。</p>
 
             <h2>這一年，我們做對了什麼？</h2>
 
@@ -193,7 +212,7 @@
               <div class="sidebar-widget__title">相關成果頁面</div>
               <ul class="sidebar-link-list">
                 <li><a href="/results/college.html">完整申請成果</a></li>
-                <li><a href="/results/sat.html">國際考試榜單</a></li>
+                <li><a href="/results/sat.html">國際考試成果</a></li>
               </ul>
             </div>
             <div class="sidebar-widget">

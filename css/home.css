@@ -964,8 +964,9 @@
 
 /* School shield/badge */
 .ach-school__shield {
-  width: 46px;
-  height: 46px;
+  position: relative;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -974,13 +975,24 @@
   font-weight: 700;
   letter-spacing: 0.02em;
   flex-shrink: 0;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18), 0 0 0 1px rgba(0,0,0,0.05);
+}
+.ach-school__shield img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #fff;
+  padding: 6px;
+  z-index: 1;
 }
 .ach-school__shield span {
   line-height: 1;
 }
 
-/* Default shield style */
+/* Default shield style (fallback when img fails / not present) */
 .ach-school__shield {
   background: var(--gold);
   color: #fff;

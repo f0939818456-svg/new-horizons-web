@@ -4,9 +4,261 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>國際考試成果 | 日暘國際教育</title>
-    <meta name="description" content="日暘 SAT、ACT、AP、IB、IELTS、TOEFL 教學成果——每位學員的實際分數依學員意願保密，由顧問於諮詢時針對個人情況分享相關案例。" />
+    <meta name="description" content="日暘 IELTS、AP、SAT 教學成果：AP Precalculus 100% 通過率、IELTS 8.0 滿級分、多名學員短期內單科進步 +1.0 至 +1.5 分。真實學員、真實成績。" />
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/inner.css" />
+    <style>
+      .exam-hero-stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        margin-top: 28px;
+      }
+      .exam-hero-stat {
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.18);
+        border-radius: var(--radius);
+        padding: 18px 14px;
+        text-align: center;
+      }
+      .exam-hero-stat__num {
+        font-size: clamp(22px, 3vw, 32px);
+        font-weight: 900;
+        color: var(--gold-light);
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+        margin-bottom: 4px;
+      }
+      .exam-hero-stat__label {
+        font-size: 11.5px;
+        color: rgba(255,255,255,0.78);
+        letter-spacing: 0.05em;
+        line-height: 1.4;
+      }
+      @media (max-width: 700px) {
+        .exam-hero-stats { grid-template-columns: 1fr 1fr; gap: 12px; }
+      }
+
+      .exam-section { margin-bottom: 80px; }
+      .exam-section__head { margin-bottom: 28px; }
+
+      /* AP Precalculus highlight card */
+      .ap-highlight {
+        background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand) 100%);
+        color: #fff;
+        border-radius: var(--radius-lg);
+        padding: 40px 36px;
+        position: relative;
+        overflow: hidden;
+      }
+      .ap-highlight::before {
+        content: "AP";
+        position: absolute;
+        top: -20px; right: -10px;
+        font-size: 200px;
+        font-weight: 900;
+        color: rgba(255,255,255,0.05);
+        letter-spacing: -0.05em;
+        line-height: 1;
+        pointer-events: none;
+      }
+      .ap-highlight__eyebrow {
+        display: inline-block;
+        background: var(--gold);
+        color: #1C1C1E;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        padding: 5px 12px;
+        border-radius: 50px;
+        margin-bottom: 16px;
+      }
+      .ap-highlight__title {
+        font-size: clamp(22px, 3vw, 30px);
+        font-weight: 900;
+        margin: 0 0 10px;
+        letter-spacing: -0.01em;
+        line-height: 1.25;
+      }
+      .ap-highlight__sub { font-size: 14.5px; color: var(--gold-light); margin: 0 0 28px; line-height: 1.7; }
+      .ap-highlight__grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 12px;
+        position: relative;
+        z-index: 1;
+      }
+      .ap-score-card {
+        background: #fff;
+        color: var(--text);
+        border-radius: var(--radius);
+        padding: 20px 12px;
+        text-align: center;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+      }
+      .ap-score-card__score {
+        font-size: 40px;
+        font-weight: 900;
+        color: var(--brand);
+        letter-spacing: -0.04em;
+        line-height: 1;
+        margin-bottom: 6px;
+      }
+      .ap-score-card__name { font-size: 12px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+      .ap-score-card__sub { font-size: 10.5px; color: var(--muted); }
+      @media (max-width: 700px) {
+        .ap-highlight { padding: 32px 24px; }
+        .ap-highlight__grid { grid-template-columns: repeat(3, 1fr); }
+      }
+
+      /* IELTS table */
+      .ielts-table-wrap {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--border);
+        background: #fff;
+      }
+      .ielts-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+        min-width: 560px;
+      }
+      .ielts-table th {
+        background: var(--brand);
+        color: #fff;
+        padding: 12px 14px;
+        text-align: center;
+        font-weight: 700;
+        font-size: 12px;
+        letter-spacing: 0.04em;
+      }
+      .ielts-table th:first-child { text-align: left; }
+      .ielts-table td {
+        padding: 13px 14px;
+        border-bottom: 1px solid var(--border);
+        text-align: center;
+        color: var(--text);
+        font-variant-numeric: tabular-nums;
+      }
+      .ielts-table td:first-child { text-align: left; font-weight: 700; }
+      .ielts-table tr:nth-child(even) td { background: var(--bg-alt); }
+      .ielts-table tr:hover td { background: #FFF7E5; }
+      .ielts-table .overall {
+        font-weight: 900;
+        color: var(--brand);
+        font-size: 15px;
+      }
+      .ielts-table .overall.gold { color: var(--gold); }
+      .band-tag {
+        display: inline-block;
+        font-size: 10.5px;
+        font-weight: 800;
+        letter-spacing: 0.05em;
+        padding: 2px 8px;
+        border-radius: 50px;
+        background: var(--brand);
+        color: #fff;
+      }
+      .band-tag.elite { background: var(--gold); color: #1C1C1E; }
+      .band-tag.high { background: var(--brand); color: #fff; }
+      .band-tag.mid { background: #6B4226; color: #fff; }
+
+      /* Improvement cards */
+      .improve-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      @media (max-width: 900px) { .improve-grid { grid-template-columns: 1fr; } }
+      .improve-card {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-left: 4px solid var(--gold);
+        border-radius: var(--radius);
+        padding: 28px 24px;
+        position: relative;
+      }
+      .improve-card__student {
+        font-size: 13px;
+        font-weight: 800;
+        color: var(--brand);
+        margin-bottom: 4px;
+        letter-spacing: 0.02em;
+      }
+      .improve-card__title {
+        font-size: 17px;
+        font-weight: 800;
+        color: var(--text);
+        margin: 0 0 6px;
+        line-height: 1.4;
+      }
+      .improve-card__period {
+        font-size: 12px;
+        color: var(--muted);
+        margin-bottom: 18px;
+      }
+      .improve-card__delta {
+        background: var(--gold-light);
+        border-radius: var(--radius);
+        padding: 16px 18px;
+        margin-bottom: 16px;
+      }
+      .improve-card__delta-line {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        font-size: 13.5px;
+        line-height: 2;
+      }
+      .improve-card__delta-skill { color: var(--text); font-weight: 600; }
+      .improve-card__delta-val {
+        font-family: ui-monospace, "SF Mono", Menlo, monospace;
+        font-weight: 800;
+        color: var(--text);
+        font-variant-numeric: tabular-nums;
+      }
+      .improve-card__delta-val.up { color: #1B7F3F; }
+      .improve-card__delta-val.up::before { content: "▲ "; font-size: 10px; }
+      .improve-card__note { font-size: 13px; color: var(--muted); line-height: 1.7; margin: 0; }
+
+      .band-summary-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        margin-bottom: 32px;
+      }
+      @media (max-width: 700px) { .band-summary-grid { grid-template-columns: 1fr 1fr; } }
+      .band-summary {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 20px 16px;
+        text-align: center;
+      }
+      .band-summary__num {
+        font-size: 36px;
+        font-weight: 900;
+        color: var(--brand);
+        letter-spacing: -0.02em;
+        line-height: 1;
+        margin-bottom: 6px;
+      }
+      .band-summary__label { font-size: 12.5px; color: var(--muted); line-height: 1.5; }
+      .band-summary.gold .band-summary__num { color: var(--gold); }
+
+      .priv-note {
+        background: var(--bg-alt);
+        border-left: 3px solid var(--gold);
+        padding: 16px 20px;
+        font-size: 13.5px;
+        color: var(--muted);
+        line-height: 1.75;
+        margin: 32px 0 0;
+        border-radius: 0 var(--radius) var(--radius) 0;
+      }
+    </style>
   </head>
   <body>
     <div id="site-header"></div>
@@ -21,44 +273,353 @@
           <span class="page-hero__label">ACHIEVEMENTS · INTERNATIONAL EXAMS</span>
           <h1 class="page-hero__title">國際考試成果</h1>
           <p class="page-hero__desc">
-            SAT、ACT、AP、IB、IELTS、TOEFL——<br/>
-            日暘的考試備考成果，
-            主要透過 2026 申請季的<a href="/results/college.html" style="color:var(--gold-light);text-decoration:underline;">大學申請成果</a>呈現：
-            9 位學員拿下 41 份美國大學錄取，含 University of Chicago、UPenn、JHU、Columbia、Cornell、USC、NYU 等 Top 10 至 Top 30 名校群。
+            真實學員、真實成績。<br/>
+            從 AP Precalculus 100% 通過率，到 IELTS 8.0 滿級分與多位學員短期單科 +1.0 至 +1.5 分的明顯進步，下方所有數據皆來自日暘實際學員。
           </p>
+          <div class="exam-hero-stats">
+            <div class="exam-hero-stat">
+              <div class="exam-hero-stat__num">100%</div>
+              <div class="exam-hero-stat__label">AP Precalculus 通過率</div>
+            </div>
+            <div class="exam-hero-stat">
+              <div class="exam-hero-stat__num">8.0</div>
+              <div class="exam-hero-stat__label">IELTS 最高 Overall</div>
+            </div>
+            <div class="exam-hero-stat">
+              <div class="exam-hero-stat__num">+1.5</div>
+              <div class="exam-hero-stat__label">單科最大進步幅度</div>
+            </div>
+            <div class="exam-hero-stat">
+              <div class="exam-hero-stat__num">40+</div>
+              <div class="exam-hero-stat__label">IELTS 應考人次</div>
+            </div>
+          </div>
         </div>
       </section>
 
       <div class="container inner-body">
 
-        <!-- Why exam scores are not publicly listed -->
-        <section style="margin-bottom:64px;max-width:760px;">
-          <span class="section-label">PRIVACY NOTICE</span>
-          <h2 class="section-title">為什麼我們不公開個人分數？</h2>
-          <div class="section-divider"></div>
-          <p style="font-size:16px;color:var(--text);line-height:1.85;margin:0 0 16px;">
-            日暘將每位學員的個別成績視為個人隱私。
-            分數背後是每位學員的努力、私密的家庭背景與獨特的故事，
-            我們不會在公開頁面把它們陳列為行銷數字。
-          </p>
-          <p style="font-size:16px;color:var(--text);line-height:1.85;margin:0 0 16px;">
-            申請成果則不同：在<strong>取得學員與家長同意</strong>之後，
-            我們會把錄取結果與獎學金紀錄整理出來，
-            讓未來的家庭可以看到具體的可能性，而不是空泛的承諾。
-          </p>
-          <p style="font-size:16px;color:var(--text);line-height:1.85;margin:0 0 24px;">
-            想了解我們學員實際的分數區間與進步幅度？預約一次面談，
-            顧問會針對你的情況分享相關案例與真實數據。
-          </p>
-          <a href="/contact/index.html" class="btn btn-primary">預約顧問諮詢 →</a>
+        <!-- AP Precalculus Highlight -->
+        <section class="exam-section">
+          <div class="exam-section__head">
+            <span class="section-label">AP EXAM · CLASS OF 2026</span>
+            <h2 class="section-title">AP Precalculus 100% 通過率</h2>
+            <div class="section-divider"></div>
+            <p style="font-size:15px;color:var(--muted);line-height:1.8;margin:8px 0 0;max-width:62ch;">
+              2026 屆 AP Precalculus 微積分先修課程，5 名應考學員全數通過（≥3 分），其中 4 位拿到滿分 5 分。Most U.S. colleges accept your score for credit and placement.
+            </p>
+          </div>
+
+          <div class="ap-highlight">
+            <span class="ap-highlight__eyebrow">AP PRECALCULUS · 2026</span>
+            <h3 class="ap-highlight__title">5 名學員、4 位拿下滿分 5 分</h3>
+            <p class="ap-highlight__sub">通過率 100%・滿分率 80%・全班平均 4.8</p>
+
+            <div class="ap-highlight__grid">
+              <div class="ap-score-card">
+                <div class="ap-score-card__score">5</div>
+                <div class="ap-score-card__name">Aaron Zhou</div>
+                <div class="ap-score-card__sub">滿分</div>
+              </div>
+              <div class="ap-score-card">
+                <div class="ap-score-card__score">5</div>
+                <div class="ap-score-card__name">Jason Lin</div>
+                <div class="ap-score-card__sub">滿分</div>
+              </div>
+              <div class="ap-score-card">
+                <div class="ap-score-card__score">5</div>
+                <div class="ap-score-card__name">Maxi Lin</div>
+                <div class="ap-score-card__sub">滿分</div>
+              </div>
+              <div class="ap-score-card">
+                <div class="ap-score-card__score">5</div>
+                <div class="ap-score-card__name">Terry Kuo</div>
+                <div class="ap-score-card__sub">滿分</div>
+              </div>
+              <div class="ap-score-card">
+                <div class="ap-score-card__score">4</div>
+                <div class="ap-score-card__name">Hank Lin</div>
+                <div class="ap-score-card__sub">通過</div>
+              </div>
+            </div>
+          </div>
         </section>
 
-        <!-- Quick links -->
-        <section style="margin-bottom:64px;">
-          <span class="section-label">RELATED</span>
-          <h2 class="section-title">看看真實成果</h2>
-          <div class="section-divider"></div>
-          <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:8px;">
+        <!-- IELTS Top Scores -->
+        <section class="exam-section">
+          <div class="exam-section__head">
+            <span class="section-label">IELTS · TOP SCORES</span>
+            <h2 class="section-title">IELTS 高分榜（Overall ≥ 7.0）</h2>
+            <div class="section-divider"></div>
+            <p style="font-size:15px;color:var(--muted);line-height:1.8;margin:8px 0 0;max-width:62ch;">
+              以下為日暘學員 IELTS 應考最佳成績。<strong style="color:var(--gold);">Overall 8.0 為英國頂尖大學門檻</strong>，Overall 7.0 為大多數美、英、加、澳一流大學的入學標準。
+            </p>
+          </div>
+
+          <div class="band-summary-grid">
+            <div class="band-summary gold">
+              <div class="band-summary__num">8.0</div>
+              <div class="band-summary__label">Overall 最高分（1 位）</div>
+            </div>
+            <div class="band-summary">
+              <div class="band-summary__num">5</div>
+              <div class="band-summary__label">Overall ≥ 7.0 學員</div>
+            </div>
+            <div class="band-summary">
+              <div class="band-summary__num">7</div>
+              <div class="band-summary__label">Overall 6.5 學員</div>
+            </div>
+            <div class="band-summary">
+              <div class="band-summary__num">9.0</div>
+              <div class="band-summary__label">單科最高分（Listening）</div>
+            </div>
+          </div>
+
+          <div class="ielts-table-wrap">
+            <table class="ielts-table">
+              <thead>
+                <tr>
+                  <th>學員</th>
+                  <th>L</th>
+                  <th>R</th>
+                  <th>W</th>
+                  <th>S</th>
+                  <th>Overall</th>
+                  <th>等級</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Alfie</td>
+                  <td>9.0</td><td>8.5</td><td>7.0</td><td>7.5</td>
+                  <td class="overall gold">8.0</td>
+                  <td><span class="band-tag elite">Elite</span></td>
+                </tr>
+                <tr>
+                  <td>Eli 沈</td>
+                  <td>7.5</td><td>7.0</td><td>7.0</td><td>6.0</td>
+                  <td class="overall">7.0</td>
+                  <td><span class="band-tag high">頂尖</span></td>
+                </tr>
+                <tr>
+                  <td>Hank 林</td>
+                  <td>8.0</td><td>6.5</td><td>6.0</td><td>6.5</td>
+                  <td class="overall">7.0</td>
+                  <td><span class="band-tag high">頂尖</span></td>
+                </tr>
+                <tr>
+                  <td>Paul</td>
+                  <td>7.5</td><td>7.5</td><td>6.0</td><td>6.0</td>
+                  <td class="overall">7.0</td>
+                  <td><span class="band-tag high">頂尖</span></td>
+                </tr>
+                <tr>
+                  <td>Samuel 楊</td>
+                  <td>7.0</td><td>7.5</td><td>5.5</td><td>7.0</td>
+                  <td class="overall">7.0</td>
+                  <td><span class="band-tag high">頂尖</span></td>
+                </tr>
+                <tr>
+                  <td>Sean 紹琪</td>
+                  <td>7.5</td><td>7.5</td><td>6.5</td><td>7.0</td>
+                  <td class="overall">7.0</td>
+                  <td><span class="band-tag high">頂尖</span></td>
+                </tr>
+                <tr>
+                  <td>Albert 花</td>
+                  <td>7.5</td><td>7.0</td><td>6.0</td><td>5.5</td>
+                  <td class="overall">6.5</td>
+                  <td><span class="band-tag mid">優秀</span></td>
+                </tr>
+                <tr>
+                  <td>Eric 林</td>
+                  <td>7.0</td><td>6.5</td><td>6.0</td><td>6.0</td>
+                  <td class="overall">6.5</td>
+                  <td><span class="band-tag mid">優秀</span></td>
+                </tr>
+                <tr>
+                  <td>Iverson</td>
+                  <td>6.0</td><td>8.0</td><td>6.0</td><td>6.5</td>
+                  <td class="overall">6.5</td>
+                  <td><span class="band-tag mid">優秀</span></td>
+                </tr>
+                <tr>
+                  <td>Jim 許</td>
+                  <td>6.5</td><td>7.0</td><td>5.5</td><td>5.0</td>
+                  <td class="overall">6.5</td>
+                  <td><span class="band-tag mid">優秀</span></td>
+                </tr>
+                <tr>
+                  <td>Tony</td>
+                  <td>7.0</td><td>6.5</td><td>6.0</td><td>6.5</td>
+                  <td class="overall">6.5</td>
+                  <td><span class="band-tag mid">優秀</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="font-size:12.5px;color:var(--muted);line-height:1.65;margin:14px 0 0;">
+            ＊以上為各學員自首次測驗至今的最佳成績；L=Listening、R=Reading、W=Writing、S=Speaking。
+          </p>
+        </section>
+
+        <!-- IELTS Improvement Cases -->
+        <section class="exam-section">
+          <div class="exam-section__head">
+            <span class="section-label">IELTS · IMPROVEMENT</span>
+            <h2 class="section-title">IELTS 短期進步案例</h2>
+            <div class="section-divider"></div>
+            <p style="font-size:15px;color:var(--muted);line-height:1.8;margin:8px 0 0;max-width:64ch;">
+              IELTS 是一個「吃單科短板」的考試。下面是日暘學員透過個人化補強，<strong>在 6–10 個月內</strong>把弱項拉起來、突破 Overall 大關的真實紀錄。
+            </p>
+          </div>
+
+          <div class="improve-grid">
+
+            <article class="improve-card">
+              <div class="improve-card__student">JIM 許</div>
+              <h3 class="improve-card__title">Reading +1.5 分<br/>整體 5.5 → 6.5</h3>
+              <div class="improve-card__period">2025-06 → 2026-04（10 個月）</div>
+              <div class="improve-card__delta">
+                <div class="improve-card__delta-line">
+                  <span class="improve-card__delta-skill">Reading</span>
+                  <span class="improve-card__delta-val up">5.5 → 7.0</span>
+                </div>
+                <div class="improve-card__delta-line">
+                  <span class="improve-card__delta-skill">Listening</span>
+                  <span class="improve-card__delta-val up">6.0 → 6.5</span>
+                </div>
+                <div class="improve-card__delta-line">
+                  <span class="improve-card__delta-skill">Overall</span>
+                  <span class="improve-card__delta-val up">5.5 → 6.5</span>
+                </div>
+              </div>
+              <p class="improve-card__note">經過三次正式測驗，閱讀單科從 5.5 一路拉到 7.0，是日暘 2025–2026 年度單科進步最大的案例之一。</p>
+            </article>
+
+            <article class="improve-card">
+              <div class="improve-card__student">HANK 林</div>
+              <h3 class="improve-card__title">Speaking +1.0 分<br/>整體 6.5 → 7.0</h3>
+              <div class="improve-card__period">2025-06 → 2025-12（6 個月）</div>
+              <div class="improve-card__delta">
+                <div class="improve-card__delta-line">
+                  <span class="improve-card__delta-skill">Speaking</span>
+                  <span class="improve-card__delta-val up">5.5 → 6.5</span>
+                </div>
+                <div class="improve-card__delta-line">
+                  <span class="improve-card__delta-skill">Overall</span>
+                  <span class="improve-card__delta-val up">6.5 → 7.0</span>
+                </div>
+              </div>
+              <p class="improve-card__note">Listening 與 Reading 維持 8.0、6.5 高水準的同時，Speaking 突破 6.0 大關，最終一次測驗順利達標 Overall 7.0。</p>
+            </article>
+
+            <article class="improve-card">
+              <div class="improve-card__student">SAMUEL 楊</div>
+              <h3 class="improve-card__title">全科穩定向上<br/>整體 6.0 → 7.0</h3>
+              <div class="improve-card__period">2024-09 → 2026-04（4 次測驗）</div>
+              <div class="improve-card__delta">
+                <div class="improve-card__delta-line">
+                  <span class="improve-card__delta-skill">Listening</span>
+                  <span class="improve-card__delta-val up">6.0 → 7.0</span>
+                </div>
+                <div class="improve-card__delta-line">
+                  <span class="improve-card__delta-skill">Reading</span>
+                  <span class="improve-card__delta-val up">6.0 → 7.5</span>
+                </div>
+                <div class="improve-card__delta-line">
+                  <span class="improve-card__delta-skill">Speaking</span>
+                  <span class="improve-card__delta-val up">6.0 → 7.0</span>
+                </div>
+                <div class="improve-card__delta-line">
+                  <span class="improve-card__delta-skill">Overall</span>
+                  <span class="improve-card__delta-val up">6.0 → 7.0</span>
+                </div>
+              </div>
+              <p class="improve-card__note">長期備考的耐力選手，從 6.0 起步、跨越 6.5 高原，最終在 2026 春季測驗達到 Overall 7.0。</p>
+            </article>
+
+            <article class="improve-card">
+              <div class="improve-card__student">EDWARD</div>
+              <h3 class="improve-card__title">Reading + Writing 雙進步</h3>
+              <div class="improve-card__period">2025-06 → 2026-04（3 次測驗）</div>
+              <div class="improve-card__delta">
+                <div class="improve-card__delta-line">
+                  <span class="improve-card__delta-skill">Reading</span>
+                  <span class="improve-card__delta-val up">5.0 → 5.5</span>
+                </div>
+                <div class="improve-card__delta-line">
+                  <span class="improve-card__delta-skill">Writing</span>
+                  <span class="improve-card__delta-val up">5.0 → 5.5</span>
+                </div>
+                <div class="improve-card__delta-line">
+                  <span class="improve-card__delta-skill">Listening</span>
+                  <span class="improve-card__delta-val up">6.0 → 6.5</span>
+                </div>
+              </div>
+              <p class="improve-card__note">穩定每半年回考一次，三項主科逐次往上推 0.5 分；下次目標：突破 Overall 6.0。</p>
+            </article>
+
+            <article class="improve-card">
+              <div class="improve-card__student">ALBERT 花</div>
+              <h3 class="improve-card__title">Reading 與 Speaking 雙拉</h3>
+              <div class="improve-card__period">2025-06 → 2026-01（7 個月）</div>
+              <div class="improve-card__delta">
+                <div class="improve-card__delta-line">
+                  <span class="improve-card__delta-skill">Reading</span>
+                  <span class="improve-card__delta-val up">6.5 → 7.0</span>
+                </div>
+                <div class="improve-card__delta-line">
+                  <span class="improve-card__delta-skill">Speaking</span>
+                  <span class="improve-card__delta-val up">5.0 → 5.5</span>
+                </div>
+                <div class="improve-card__delta-line">
+                  <span class="improve-card__delta-skill">Listening</span>
+                  <span class="improve-card__delta-val">7.5 維持</span>
+                </div>
+              </div>
+              <p class="improve-card__note">Listening 維持 7.5 高分，Reading 突破 7.0，Speaking 持續從 5.0 邁向 6.0。</p>
+            </article>
+
+            <article class="improve-card">
+              <div class="improve-card__student">AVA</div>
+              <h3 class="improve-card__title">Listening + Reading 進步</h3>
+              <div class="improve-card__period">2025-06 → 2026-04（3 次測驗）</div>
+              <div class="improve-card__delta">
+                <div class="improve-card__delta-line">
+                  <span class="improve-card__delta-skill">Listening</span>
+                  <span class="improve-card__delta-val up">5.5 → 6.0</span>
+                </div>
+                <div class="improve-card__delta-line">
+                  <span class="improve-card__delta-skill">Reading</span>
+                  <span class="improve-card__delta-val up">5.0 → 5.5</span>
+                </div>
+                <div class="improve-card__delta-line">
+                  <span class="improve-card__delta-skill">Speaking</span>
+                  <span class="improve-card__delta-val">5.5 → 6.0</span>
+                </div>
+              </div>
+              <p class="improve-card__note">三次正式測驗持續往上微調，Listening 與 Reading 雙雙進步 0.5 分；下一目標：Writing 與 Overall 突破 6.0。</p>
+            </article>
+
+          </div>
+
+          <div class="priv-note">
+            ＊以上資料皆為日暘國際教育實際學員的測驗紀錄，已取得學員本人或家長同意公開；學員以英文名字呈現。完整、未公開的成績紀錄與案例（含 SAT、ACT、TOEFL、AP 各科）可於諮詢面談時，依學員個別需求查閱。
+          </div>
+        </section>
+
+        <!-- Other exam programs -->
+        <section class="exam-section">
+          <div class="exam-section__head">
+            <span class="section-label">OTHER EXAMS</span>
+            <h2 class="section-title">SAT / ACT / TOEFL / IB</h2>
+            <div class="section-divider"></div>
+            <p style="font-size:15px;color:var(--muted);line-height:1.8;margin:8px 0 0;max-width:64ch;">
+              其他考試的學員紀錄，包含 SAT 1500+、ACT 33+、TOEFL 100+、IB HL 7 滿分等案例，依學員與家長隱私意願，目前不公開於網站。可於諮詢面談時，依學員的目標分數查閱對應的真實案例與進步軌跡。
+            </p>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;">
             <a href="/results/college.html" style="background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;text-decoration:none;display:block;transition:0.3s;" onmouseover="this.style.boxShadow='var(--shadow)';this.style.transform='translateY(-3px)'" onmouseout="this.style.boxShadow='';this.style.transform=''">
               <div style="font-size:11px;font-weight:900;letter-spacing:0.1em;color:var(--gold);margin-bottom:10px;">2026 申請季</div>
               <div style="font-size:18px;font-weight:800;color:var(--text);margin-bottom:6px;">9 位學員 · 41 份錄取</div>
@@ -74,7 +635,7 @@
 
         <div class="cta-box">
           <h3>讓顧問評估你目前的考試狀態</h3>
-          <p>無論你正在備考哪個國際考試，<br/>預約面談讓我們依你的目標規劃最有效的備考路徑。</p>
+          <p>不論你正在備考哪一項國際考試，<br/>預約面談讓我們依你的目標分數規劃最有效的備考路徑。</p>
           <a href="/contact/index.html" class="btn btn-gold">預約免費諮詢</a>
         </div>
 
