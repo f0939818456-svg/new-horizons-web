@@ -7,6 +7,117 @@
     <meta name="description" content="美國留學申請必備資源清單：Common App、College Board、Naviance，以及重要申請時程表，幫助你少走彎路。" />
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/inner.css" />
+    <style>
+      /* Preparation roadmap (從 9 年級到大一選課的長期規劃流程) */
+      .prep-flow {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px 28px;
+        margin-top: 8px;
+      }
+      .prep-stage {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 24px 22px 22px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        transition: 0.25s ease;
+      }
+      .prep-stage::before {
+        /* 連到下一格的小箭頭，由左下角指向右下方 */
+        content: "→";
+        position: absolute;
+        top: 50%;
+        right: -22px;
+        transform: translateY(-50%);
+        font-size: 22px;
+        font-weight: 800;
+        color: var(--gold);
+        z-index: 1;
+        opacity: 0.85;
+      }
+      .prep-stage:nth-child(3n)::before { content: ""; }
+      .prep-stage:last-child::before { content: ""; }
+      .prep-stage:hover {
+        border-color: var(--gold);
+        box-shadow: 0 8px 22px rgba(78,52,46,0.08);
+        transform: translateY(-3px);
+      }
+      .prep-stage__head {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 14px;
+      }
+      .prep-stage__badge {
+        flex-shrink: 0;
+        width: 56px; height: 56px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 13px;
+        font-weight: 900;
+        letter-spacing: 0.02em;
+        line-height: 1;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+      }
+      .prep-stage--g910  .prep-stage__badge { background: #8B6FCC; }
+      .prep-stage--g1011 .prep-stage__badge { background: #E89B5C; }
+      .prep-stage--g12a  .prep-stage__badge { background: #6BAD7A; }
+      .prep-stage--g12b  .prep-stage__badge { background: #D4B842; color: #1C1C1E; }
+      .prep-stage--g12c  .prep-stage__badge { background: #B89169; }
+      .prep-stage--final .prep-stage__badge { background: #D85C45; font-size: 12px; }
+      .prep-stage__title {
+        font-size: 15.5px;
+        font-weight: 800;
+        color: var(--text);
+        line-height: 1.35;
+      }
+      .prep-stage__period {
+        font-size: 11.5px;
+        font-weight: 700;
+        color: var(--gold);
+        letter-spacing: 0.05em;
+        margin-top: 2px;
+      }
+      .prep-stage__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        flex: 1;
+      }
+      .prep-stage__list li {
+        font-size: 13.5px;
+        color: var(--muted);
+        line-height: 1.65;
+        padding-left: 18px;
+        position: relative;
+        margin-bottom: 6px;
+      }
+      .prep-stage__list li::before {
+        content: "✦";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: var(--gold);
+        font-size: 11px;
+      }
+      .prep-stage__list li:last-child { margin-bottom: 0; }
+
+      @media (max-width: 900px) {
+        .prep-flow { grid-template-columns: 1fr 1fr; gap: 18px; }
+        .prep-stage::before { content: ""; }
+      }
+      @media (max-width: 560px) {
+        .prep-flow { grid-template-columns: 1fr; gap: 14px; }
+        .prep-stage { padding: 20px 18px; }
+        .prep-stage__badge { width: 48px; height: 48px; font-size: 12px; }
+      }
+    </style>
   </head>
   <body>
     <div id="site-header"></div>
@@ -133,6 +244,109 @@
                 </tr>
               </tbody>
             </table>
+          </div>
+        </section>
+
+        <!-- Preparation Roadmap -->
+        <section style="margin-bottom:72px;">
+          <span class="section-label">PREPARATION ROADMAP</span>
+          <h2 class="section-title">高中四年申請完整流程</h2>
+          <div class="section-divider"></div>
+          <p style="font-size:14.5px;color:var(--muted);margin:8px 0 28px;max-width:62ch;">
+            從 9 年級的 GPA 與課外活動奠基，到高三的標化考試、文書、申請、面試，再到放榜後的簽證辦理與大一選課，下方依時間軸列出每個階段該做的關鍵任務。
+          </p>
+
+          <div class="prep-flow">
+            <div class="prep-stage prep-stage--g910">
+              <div class="prep-stage__head">
+                <div class="prep-stage__badge">9-10</div>
+                <div>
+                  <div class="prep-stage__title">基礎奠定期</div>
+                  <div class="prep-stage__period">9–10 年級</div>
+                </div>
+              </div>
+              <ul class="prep-stage__list">
+                <li>開始準備語言考試</li>
+                <li>保持課業成績（GPA）</li>
+                <li>參加課外活動</li>
+                <li>大學校園參觀</li>
+              </ul>
+            </div>
+
+            <div class="prep-stage prep-stage--g1011">
+              <div class="prep-stage__head">
+                <div class="prep-stage__badge">10-11</div>
+                <div>
+                  <div class="prep-stage__title">標化考試期</div>
+                  <div class="prep-stage__period">10–11 年級</div>
+                </div>
+              </div>
+              <ul class="prep-stage__list">
+                <li>保持課業成績（GPA）</li>
+                <li>準備 SAT、ACT 考試</li>
+                <li>參加課外活動</li>
+                <li>語言能力測驗</li>
+              </ul>
+            </div>
+
+            <div class="prep-stage prep-stage--g12a">
+              <div class="prep-stage__head">
+                <div class="prep-stage__badge">12</div>
+                <div>
+                  <div class="prep-stage__title">申請衝刺期</div>
+                  <div class="prep-stage__period">12 年級・8–11 月</div>
+                </div>
+              </div>
+              <ul class="prep-stage__list">
+                <li>標化／語言成績出分</li>
+                <li>準備個人書面資料</li>
+                <li>與 CP 老師討論 EA、ED 遞交</li>
+              </ul>
+            </div>
+
+            <div class="prep-stage prep-stage--g12b">
+              <div class="prep-stage__head">
+                <div class="prep-stage__badge">12</div>
+                <div>
+                  <div class="prep-stage__title">RD 投遞期</div>
+                  <div class="prep-stage__period">12 年級・11–1 月</div>
+                </div>
+              </div>
+              <ul class="prep-stage__list">
+                <li>準備 Regular Decision 申請</li>
+                <li>準備面試相關問題</li>
+              </ul>
+            </div>
+
+            <div class="prep-stage prep-stage--g12c">
+              <div class="prep-stage__head">
+                <div class="prep-stage__badge">12 下</div>
+                <div>
+                  <div class="prep-stage__title">放榜決策期</div>
+                  <div class="prep-stage__period">12 年級下學期</div>
+                </div>
+              </div>
+              <ul class="prep-stage__list">
+                <li>準備面試</li>
+                <li>Waitlist Appeal</li>
+                <li>確定學校</li>
+              </ul>
+            </div>
+
+            <div class="prep-stage prep-stage--final">
+              <div class="prep-stage__head">
+                <div class="prep-stage__badge">畢業</div>
+                <div>
+                  <div class="prep-stage__title">入學準備</div>
+                  <div class="prep-stage__period">畢業 → 大一</div>
+                </div>
+              </div>
+              <ul class="prep-stage__list">
+                <li>準備簽證（F-1）</li>
+                <li>開學前 30 天可入境</li>
+                <li>大一選課</li>
+              </ul>
+            </div>
           </div>
         </section>
 
