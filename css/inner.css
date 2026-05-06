@@ -1412,3 +1412,116 @@
   .sidebar-widget { margin-bottom: 20px; }
   .cta-box { padding: 40px 24px; }
 }
+
+/* =========================
+   Preparation Roadmap (高中四年申請完整流程)
+   共用於 /blog/resources.html 與 /services/compass.html
+========================= */
+.prep-flow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 22px 28px;
+  margin-top: 8px;
+}
+.prep-stage {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px 22px 22px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: 0.25s ease;
+}
+.prep-stage::before {
+  content: "→";
+  position: absolute;
+  top: 50%;
+  right: -22px;
+  transform: translateY(-50%);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--gold);
+  z-index: 1;
+  opacity: 0.85;
+}
+.prep-stage:nth-child(3n)::before { content: ""; }
+.prep-stage:last-child::before { content: ""; }
+.prep-stage:hover {
+  border-color: var(--gold);
+  box-shadow: 0 8px 22px rgba(78,52,46,0.08);
+  transform: translateY(-3px);
+}
+.prep-stage__head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.prep-stage__badge {
+  flex-shrink: 0;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+.prep-stage--g910  .prep-stage__badge { background: #8B6FCC; }
+.prep-stage--g1011 .prep-stage__badge { background: #E89B5C; }
+.prep-stage--g12a  .prep-stage__badge { background: #6BAD7A; }
+.prep-stage--g12b  .prep-stage__badge { background: #D4B842; color: #1C1C1E; }
+.prep-stage--g12c  .prep-stage__badge { background: #B89169; }
+.prep-stage--final .prep-stage__badge { background: #D85C45; font-size: 12px; }
+.prep-stage__title {
+  font-size: 15.5px;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.35;
+}
+.prep-stage__period {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+}
+.prep-stage__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+.prep-stage__list li {
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.65;
+  padding-left: 18px;
+  position: relative;
+  margin-bottom: 6px;
+}
+.prep-stage__list li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--gold);
+  font-size: 11px;
+}
+.prep-stage__list li:last-child { margin-bottom: 0; }
+
+@media (max-width: 900px) {
+  .prep-flow { grid-template-columns: 1fr 1fr; gap: 18px; }
+  .prep-stage::before { content: ""; }
+}
+@media (max-width: 560px) {
+  .prep-flow { grid-template-columns: 1fr; gap: 14px; }
+  .prep-stage { padding: 20px 18px; }
+  .prep-stage__badge { width: 48px; height: 48px; font-size: 12px; }
+}
