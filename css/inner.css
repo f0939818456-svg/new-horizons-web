@@ -1041,12 +1041,20 @@
 .nav-btn:hover { border-color: var(--brand); color: var(--brand); }
 .nav-btn.active { background: var(--brand); color: #fff; border-color: var(--brand); }
 
-/* Admission cards grid */
+/* Admission cards grid — 多欄佈局，依各卡片高度自然堆疊不留空白 */
 .adm-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  gap: 24px;
+  column-count: auto;
+  column-width: 340px;
+  column-gap: 24px;
   padding-bottom: 80px;
+}
+.adm-grid > .adm-card {
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 24px;
 }
 
 .adm-card {
