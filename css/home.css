@@ -1009,6 +1009,22 @@
 .ach-school[data-school="toronto"]      .ach-school__shield { background: #002A5C; font-size: 22px; }
 .ach-school[data-school="nyu"]          .ach-school__shield { background: #57068C; font-size: 11px; font-weight: 900; letter-spacing: 0; }
 
+/* 2026 申請季新增學校 */
+.ach-school[data-school="usc"]          .ach-school__shield { background: #990000; color: #FFCC00; font-size: 13px; font-weight: 800; }
+.ach-school[data-school="ucd"]          .ach-school__shield { background: #022851; color: #FFBF00; font-size: 13px; font-weight: 800; }
+.ach-school[data-school="uci"]          .ach-school__shield { background: #0064A4; color: #FFD200; font-size: 13px; font-weight: 800; }
+.ach-school[data-school="ucsc"]         .ach-school__shield { background: #003C6C; color: #FDC700; font-size: 10px; font-weight: 900; letter-spacing: 0; }
+.ach-school[data-school="ucr"]          .ach-school__shield { background: #003DA5; color: #FFB81C; font-size: 13px; font-weight: 800; }
+.ach-school[data-school="ucm"]          .ach-school__shield { background: #002856; color: #DAAA00; font-size: 13px; font-weight: 800; }
+.ach-school[data-school="usf"]          .ach-school__shield { background: #00543C; color: #FDBB30; font-size: 13px; font-weight: 800; }
+.ach-school[data-school="asu"]          .ach-school__shield { background: #8C1D40; color: #FFC627; font-size: 13px; font-weight: 800; }
+.ach-school[data-school="msu"]          .ach-school__shield { background: #18453B; color: #FFFFFF; font-size: 13px; font-weight: 800; }
+.ach-school[data-school="saic"]         .ach-school__shield { background: #1A1A1A; color: #FFFFFF; font-size: 11px; font-weight: 900; letter-spacing: 0; }
+.ach-school[data-school="scad"]         .ach-school__shield { background: #FFCD00; color: #1A1A1A; font-size: 11px; font-weight: 900; letter-spacing: 0; }
+.ach-school[data-school="pace"]         .ach-school__shield { background: #00509E; font-size: 22px; }
+.ach-school[data-school="temple"]       .ach-school__shield { background: #9E1B32; font-size: 22px; }
+.ach-school[data-school="unlv"]         .ach-school__shield { background: #B10202; color: #FFFFFF; font-size: 11px; font-weight: 900; letter-spacing: 0; }
+
 .ach-school__name-en {
   font-size: 12.5px;
   font-weight: 800;
