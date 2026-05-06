@@ -7,6 +7,71 @@
     <meta name="description" content="日暘美國留學規劃＆代辦：從高一活動規劃、競賽研究、選校策略，到 Common App 文書、Supplement、推薦信與面試準備，一條龍協助學生申請美國頂尖大學。" />
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/inner.css" />
+    <style>
+      /* A–G Coursework table */
+      .ag-table-wrap {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--border);
+        background: #fff;
+        margin-top: 8px;
+      }
+      .ag-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14.5px;
+        min-width: 640px;
+      }
+      .ag-table th {
+        background: var(--brand);
+        color: #fff;
+        padding: 14px 18px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 13px;
+        letter-spacing: 0.04em;
+      }
+      .ag-table th.ag-table__col-letter { width: 70px; text-align: center; }
+      .ag-table th.ag-table__col-name   { width: 240px; }
+      .ag-table th.ag-table__col-years  { width: 90px; }
+      .ag-table td {
+        padding: 14px 18px;
+        border-bottom: 1px solid var(--border);
+        color: var(--text);
+        vertical-align: middle;
+        line-height: 1.6;
+      }
+      .ag-table td:first-child { text-align: center; }
+      .ag-table tr:last-child td { border-bottom: none; }
+      .ag-table tr:nth-child(even) td { background: var(--bg-alt); }
+      .ag-letter {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px; height: 36px;
+        border-radius: 50%;
+        background: var(--gold);
+        color: #1C1C1E;
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 900;
+        font-size: 18px;
+        letter-spacing: 0;
+      }
+      .ag-zh {
+        display: block;
+        font-size: 12.5px;
+        color: var(--muted);
+        font-weight: 400;
+        margin-top: 2px;
+        letter-spacing: 0.02em;
+      }
+      @media (max-width: 700px) {
+        .ag-table { font-size: 13.5px; min-width: 560px; }
+        .ag-table th, .ag-table td { padding: 12px 14px; }
+        .ag-letter { width: 32px; height: 32px; font-size: 16px; }
+      }
+    </style>
   </head>
   <body>
     <div id="site-header"></div>
@@ -47,11 +112,11 @@
             <p style="font-size:16px;color:var(--muted);line-height:1.8;margin-bottom:20px;">
               我們陪你做兩件事：<strong>規劃</strong>與<strong>代辦</strong>。
               規劃階段協助盤點學術表現、課外活動、競賽與暑期項目；
-              申請階段由顧問一對一輔導 Common App 主文書、各校 Supplement、
+              申請階段由顧問一對一輔導 UC PIQ 文書、Common App 主文書、各校 Supplement、
               推薦信與面試，從規劃到代辦完全銜接，無論你從哪一年開始都能無縫進入。
             </p>
             <div class="pill-row">
-              <span class="pill">早期規劃（高一開始）</span>
+              <span class="pill">早期規劃</span>
               <span class="pill">個人化活動策略</span>
               <span class="pill">定期顧問諮詢</span>
               <span class="pill">選校策略分析</span>
@@ -85,6 +150,113 @@
                 <span style="font-size:14.5px;color:var(--text);">預申請期文書構思與主題定位</span>
               </li>
             </ul>
+          </div>
+        </section>
+
+        <!-- Feature Grid: What we plan -->
+        <section style="margin-bottom:72px;">
+          <span class="section-label">ACTIVITY PLANNING</span>
+          <h2 class="section-title">我們幫你規劃什麼？</h2>
+          <div class="section-divider"></div>
+
+          <div class="feature-grid">
+            <div class="feature-card">
+              <div class="feature-card__icon">COMP</div>
+              <div class="feature-card__title">學術競賽規劃</div>
+              <div class="feature-card__desc">AMC/AIME、Science Olympiad、DECA、MUN、Model Congress 等競賽，依學生強項選擇最有勝算的賽事。</div>
+            </div>
+            <div class="feature-card">
+              <div class="feature-card__icon">RSCH</div>
+              <div class="feature-card__title">獨立研究計畫</div>
+              <div class="feature-card__desc">協助尋找大學教授實驗室合作機會、設計獨立研究題目，甚至發表論文，大幅提升申請競爭力。</div>
+            </div>
+            <div class="feature-card">
+              <div class="feature-card__icon">PROG</div>
+              <div class="feature-card__title">暑期項目規劃</div>
+              <div class="feature-card__desc">MIT Beaver Works、Stanford OHS、哈佛 Pre-College 等知名暑期項目申請輔導，讓暑假成為加分利器。</div>
+            </div>
+            <div class="feature-card">
+              <div class="feature-card__icon">COMM</div>
+              <div class="feature-card__title">社區服務設計</div>
+              <div class="feature-card__desc">引導學生發起有意義的社區計畫，而非走馬看花地累積「義工時數」，展現真實的領導力與影響力。</div>
+            </div>
+            <div class="feature-card">
+              <div class="feature-card__icon">ART</div>
+              <div class="feature-card__title">創意作品集輔導</div>
+              <div class="feature-card__desc">藝術、音樂、電影、設計等方向的學生，協助建立高質量的作品集與個人品牌，進一步吸引招生官目光。</div>
+            </div>
+            <div class="feature-card">
+              <div class="feature-card__icon">PLAN</div>
+              <div class="feature-card__title">選校策略分析</div>
+              <div class="feature-card__desc">依據最新錄取數據、各校偏好特質及學生條件，制定最大化錄取率的選校名單，夢想與保底兼顧。</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- A-G Coursework -->
+        <section style="margin-bottom:72px;">
+          <span class="section-label">A–G COURSEWORK</span>
+          <h2 class="section-title">美國七大向度課程規劃（A–G Coursework）</h2>
+          <div class="section-divider"></div>
+          <p style="font-size:14.5px;color:var(--muted);margin:8px 0 28px;max-width:62ch;">
+            UC 系統與多數美國大學參考的 A–G 課程要求，是高中四年選課的黃金標準。<br/>下表整理七大科目向度的最低修課年數與內容方向，協助你提早規劃選課組合。
+          </p>
+
+          <div class="ag-table-wrap">
+            <table class="ag-table">
+              <thead>
+                <tr>
+                  <th class="ag-table__col-letter">科目</th>
+                  <th class="ag-table__col-name">科目名稱</th>
+                  <th class="ag-table__col-years">最低年數</th>
+                  <th class="ag-table__col-detail">說明</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="ag-letter">A</span></td>
+                  <td><strong>History / Social Science</strong><br/><span class="ag-zh">歷史社會科學</span></td>
+                  <td>2 年</td>
+                  <td>世界史 / 美國史 / 政治經濟</td>
+                </tr>
+                <tr>
+                  <td><span class="ag-letter">B</span></td>
+                  <td><strong>English</strong><br/><span class="ag-zh">英文</span></td>
+                  <td>4 年</td>
+                  <td>文學、寫作、批判閱讀</td>
+                </tr>
+                <tr>
+                  <td><span class="ag-letter">C</span></td>
+                  <td><strong>Mathematics</strong><br/><span class="ag-zh">數學</span></td>
+                  <td>3–4 年</td>
+                  <td>Algebra → Geometry → Algebra II → Pre-Calc / Calculus</td>
+                </tr>
+                <tr>
+                  <td><span class="ag-letter">D</span></td>
+                  <td><strong>Laboratory Science</strong><br/><span class="ag-zh">實驗科學</span></td>
+                  <td>2–3 年</td>
+                  <td>生物 / 化學 / 物理</td>
+                </tr>
+                <tr>
+                  <td><span class="ag-letter">E</span></td>
+                  <td><strong>Language Other Than English</strong><br/><span class="ag-zh">外語</span></td>
+                  <td>2–3 年</td>
+                  <td>第二外語（西文 / 法文 / 韓文等）</td>
+                </tr>
+                <tr>
+                  <td><span class="ag-letter">F</span></td>
+                  <td><strong>Visual &amp; Performing Arts</strong><br/><span class="ag-zh">藝術</span></td>
+                  <td>1 年</td>
+                  <td>音樂 / 美術 / 設計 / 戲劇</td>
+                </tr>
+                <tr>
+                  <td><span class="ag-letter">G</span></td>
+                  <td><strong>College-Prep. Electives</strong><br/><span class="ag-zh">大學預備選修</span></td>
+                  <td>1 年</td>
+                  <td>上述科目以外的進階課程</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </section>
 
@@ -239,46 +411,6 @@
                 <div class="step-content__title">5 月 1 日：入學確認截止（National Decision Day）</div>
                 <div class="step-content__desc">所有學校的入學確認與押金截止日期。必須在這一天前決定最終入讀學校。</div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Feature Grid: What we plan -->
-        <section style="margin-bottom:72px;">
-          <span class="section-label">ACTIVITY PLANNING</span>
-          <h2 class="section-title">我們幫你規劃什麼？</h2>
-          <div class="section-divider"></div>
-
-          <div class="feature-grid">
-            <div class="feature-card">
-              <div class="feature-card__icon">COMP</div>
-              <div class="feature-card__title">學術競賽規劃</div>
-              <div class="feature-card__desc">AMC/AIME、Science Olympiad、DECA、MUN、Model Congress 等競賽，依學生強項選擇最有勝算的賽事。</div>
-            </div>
-            <div class="feature-card">
-              <div class="feature-card__icon">RSCH</div>
-              <div class="feature-card__title">獨立研究計畫</div>
-              <div class="feature-card__desc">協助尋找大學教授實驗室合作機會、設計獨立研究題目，甚至發表論文，大幅提升申請競爭力。</div>
-            </div>
-            <div class="feature-card">
-              <div class="feature-card__icon">PROG</div>
-              <div class="feature-card__title">暑期項目規劃</div>
-              <div class="feature-card__desc">MIT Beaver Works、Stanford OHS、哈佛 Pre-College 等知名暑期項目申請輔導，讓暑假成為加分利器。</div>
-            </div>
-            <div class="feature-card">
-              <div class="feature-card__icon">COMM</div>
-              <div class="feature-card__title">社區服務設計</div>
-              <div class="feature-card__desc">引導學生發起有意義的社區計畫，而非走馬看花地累積「義工時數」，展現真實的領導力與影響力。</div>
-            </div>
-            <div class="feature-card">
-              <div class="feature-card__icon">ART</div>
-              <div class="feature-card__title">創意作品集輔導</div>
-              <div class="feature-card__desc">藝術、音樂、電影、設計等方向的學生，協助建立高質量的作品集與個人品牌，進一步吸引招生官目光。</div>
-            </div>
-            <div class="feature-card">
-              <div class="feature-card__icon">PLAN</div>
-              <div class="feature-card__title">選校策略分析</div>
-              <div class="feature-card__desc">依據最新錄取數據、各校偏好特質及學生條件，制定最大化錄取率的選校名單，夢想與保底兼顧。</div>
             </div>
           </div>
         </section>
