@@ -1032,9 +1032,12 @@
 }
 .partner-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
   margin-top: 12px;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .partner-card {
   background: #fff;
