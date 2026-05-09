@@ -120,6 +120,32 @@
       }
       .form-group textarea { resize: vertical; }
       .form-full { grid-column: 1 / -1; }
+      .form-consent { margin-top: 4px; }
+      .consent-label {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        cursor: pointer;
+        font-size: 13.5px;
+        color: var(--muted);
+        line-height: 1.65;
+        font-weight: 400;
+        letter-spacing: 0;
+      }
+      .consent-label input[type="checkbox"] {
+        flex-shrink: 0;
+        width: 18px;
+        height: 18px;
+        margin-top: 2px;
+        accent-color: var(--brand);
+        cursor: pointer;
+      }
+      .consent-label a {
+        color: var(--brand);
+        font-weight: 600;
+        text-decoration: underline;
+      }
+      .consent-label a:hover { color: var(--gold); }
       .submit-btn {
         width: 100%;
         padding: 16px;
@@ -300,6 +326,12 @@
                 <div class="form-group form-full">
                   <label>目標學校或諮詢問題</label>
                   <textarea name="message" rows="5" placeholder="請描述您的背景、目標學校，或想諮詢的具體問題..."></textarea>
+                </div>
+                <div class="form-group form-full form-consent">
+                  <label class="consent-label">
+                    <input type="checkbox" name="consent" id="consentCheck" required />
+                    <span>我已閱讀並同意 <a href="/privacy/index.html" target="_blank" rel="noopener noreferrer">隱私政策</a>，授權日暘國際教育於諮詢與服務目的下使用我所提供的個人資料。</span>
+                  </label>
                 </div>
               </div>
               <button type="submit" class="submit-btn" id="submitBtn" style="margin-top:24px;">
