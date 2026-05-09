@@ -321,6 +321,51 @@
       }
       .course-card__cta:hover { color: var(--gold); }
 
+      /* Format split (小班制 vs 一對一) within IELTS / TOEFL course cards */
+      .course-card__format {
+        background: var(--bg-alt);
+        border-radius: 8px;
+        padding: 14px 16px 12px;
+        margin-bottom: 12px;
+      }
+      .course-card__format:last-of-type { margin-bottom: 18px; }
+      .course-card__format-title {
+        font-size: 12.5px;
+        font-weight: 800;
+        color: var(--brand);
+        letter-spacing: 0.04em;
+        margin-bottom: 8px;
+        padding-bottom: 6px;
+        border-bottom: 1px dashed var(--border);
+      }
+      .course-card__format .course-card__features {
+        margin: 0;
+        gap: 4px;
+      }
+      .course-card__format .course-card__features li { font-size: 12.5px; line-height: 1.55; }
+
+      /* IELTS / TOEFL 套裝組合說明 */
+      .ielts-package-note {
+        background: linear-gradient(135deg, rgba(184,148,63,0.08), rgba(78,52,46,0.06));
+        border: 1px solid var(--gold-light);
+        border-radius: var(--radius-lg);
+        padding: 24px 28px;
+        margin-top: 8px;
+      }
+      .ielts-package-note__title {
+        font-size: 14px;
+        font-weight: 800;
+        color: var(--brand);
+        letter-spacing: 0.05em;
+        margin-bottom: 8px;
+      }
+      .ielts-package-note p {
+        font-size: 14px;
+        color: var(--text);
+        line-height: 1.85;
+        margin: 0;
+      }
+
       /* Subject Detail: teacher strip */
       .teacher-strip {
         display: flex;
@@ -642,76 +687,136 @@
               <div class="subject-header__eyebrow">核心主打課程 · IELTS / TOEFL</div>
               <h2 class="subject-header__title">IELTS / TOEFL 英語檢定課程</h2>
               <p class="subject-header__desc">
-                日暘英語檢定為核心主力課程，聽說讀寫四技全方位訓練，針對考試格式精準備考。
-                外師 + 中師雙軌制，強化口說與寫作兩大失分關鍵。
+                日暘採用「<strong>四技拆班</strong>」教學模式：聽、說、讀、寫各自獨立成班，由專精該技能的師資授課，
+                學員可依個人弱項組合選課。每一技能都提供<strong>小班制</strong>與<strong>一對一</strong>兩種形式。
               </p>
               <div class="subject-header__badges">
                 <span class="badge-popular">核心主打</span>
+                <span class="badge-popular" style="background:#1B7F3F;">四技拆班</span>
               </div>
             </div>
           </div>
 
+          <p style="font-size:14.5px;color:var(--muted);line-height:1.75;margin:0 0 24px;max-width:64ch;">
+            ＊每張課程卡片同時呈現<strong>小班制</strong>（同程度學員一起上、團體互動學習）與<strong>一對一</strong>（完全依個人弱點客製、最快見效）兩種選擇。可單技能加強、亦可組合多技能完整備考。
+          </p>
+
           <div class="course-cards">
+
+            <!-- Listening -->
             <div class="course-card course-card--highlight">
-              <div class="course-card__badge"><span class="badge-popular">最推薦</span></div>
-              <div class="course-card__name">IELTS 全科精英班</div>
-              <div class="course-card__target">▲ 四技完整訓練</div>
-              <p class="course-card__desc">聽力、閱讀、寫作、口說四大技能同步提升，搭配 Cambridge 官方題庫演練，Writing 全程人工批改。</p>
-              <ul class="course-card__features">
-                <li>週 2 次課 + 每週 Speaking Mock</li>
-                <li>Writing 每篇人工批改與評分</li>
-                <li>外師口說 1:1 練習</li>
-                <li>小班 ≤ 8 人</li>
-                <li>每月診斷報告</li>
-              </ul>
+              <div class="course-card__badge"><span class="badge-popular">聽力</span></div>
+              <div class="course-card__name">IELTS / TOEFL 聽力班</div>
+              <div class="course-card__target">▲ Listening · 聽力專攻</div>
+              <p class="course-card__desc">聽力辨音、筆記策略、學術講座理解三大模組，搭配 Cambridge 與 ETS 官方題庫精解。</p>
+              <div class="course-card__format">
+                <div class="course-card__format-title">小班制（≤ 6 人）</div>
+                <ul class="course-card__features">
+                  <li>每週 1 次 90 分鐘團體課</li>
+                  <li>同程度學員共同演練、討論答題策略</li>
+                  <li>每月聽力模擬考 + 錯題本檢討</li>
+                </ul>
+              </div>
+              <div class="course-card__format">
+                <div class="course-card__format-title">一對一</div>
+                <ul class="course-card__features">
+                  <li>依個人弱點客製訓練重點</li>
+                  <li>逐題回放細節分析</li>
+                  <li>進度依需求 1–2 次／週彈性安排</li>
+                </ul>
+              </div>
               <div class="course-card__footer">
                 <a href="/contact/index.html" class="course-card__cta">預約面談 →</a>
               </div>
             </div>
 
-            <div class="course-card">
-              <div class="course-card__name">IELTS Speaking 密集班</div>
-              <div class="course-card__target">▲ 口說專攻方案</div>
-              <p class="course-card__desc">專攻口說失分，Part 1/2/3 系統化演練，外籍師資每週模擬考試並即時糾正，快速突破口說瓶頸。</p>
-              <ul class="course-card__features">
-                <li>每週 3 次外師 1:1 或 1:2</li>
-                <li>Topic 庫累積 200+ 題</li>
-                <li>錄音回放自我檢討</li>
-                <li>考前模擬考評分報告</li>
-              </ul>
+            <!-- Speaking -->
+            <div class="course-card course-card--highlight">
+              <div class="course-card__badge"><span class="badge-popular">口說</span></div>
+              <div class="course-card__name">IELTS / TOEFL 口說班</div>
+              <div class="course-card__target">▲ Speaking · 失分大關鍵</div>
+              <p class="course-card__desc">外籍師資全程英語授課，Part 1/2/3（IELTS）或 Independent / Integrated（TOEFL）系統化演練。</p>
+              <div class="course-card__format">
+                <div class="course-card__format-title">小班制（≤ 4 人）</div>
+                <ul class="course-card__features">
+                  <li>每週 1 次 90 分鐘 + 學員互答練習</li>
+                  <li>Topic 庫 200+ 題，每週指定主題</li>
+                  <li>每堂錄音回放、外師逐句糾正</li>
+                </ul>
+              </div>
+              <div class="course-card__format">
+                <div class="course-card__format-title">一對一</div>
+                <ul class="course-card__features">
+                  <li>外師全程 1-on-1 互動，發言密度最高</li>
+                  <li>依個人發音／文法弱點客製練習</li>
+                  <li>考前模擬考 × 3 + 詳細評分報告</li>
+                </ul>
+              </div>
               <div class="course-card__footer">
                 <a href="/contact/index.html" class="course-card__cta">預約面談 →</a>
               </div>
             </div>
 
+            <!-- Reading -->
             <div class="course-card">
-              <div class="course-card__name">TOEFL iBT 全科班</div>
-              <div class="course-card__target">▲ 四科系統化整合</div>
-              <p class="course-card__desc">Reading、Listening、Speaking、Writing 四科整合，對應 ETS 最新出題趨勢與 Integrated Task 策略。</p>
-              <ul class="course-card__features">
-                <li>ETS 官方題庫 + TPO 全解析</li>
-                <li>Integrated Writing 策略精講</li>
-                <li>Speaking 模板 + 即時糾正</li>
-                <li>小班 ≤ 8 人</li>
-              </ul>
+              <div class="course-card__name">IELTS / TOEFL 閱讀班</div>
+              <div class="course-card__target">▲ Reading · 解題技巧</div>
+              <p class="course-card__desc">學術文章結構分析、題型辨認、時間管理三大主軸，搭配高頻字彙整理與長難句拆解訓練。</p>
+              <div class="course-card__format">
+                <div class="course-card__format-title">小班制（≤ 6 人）</div>
+                <ul class="course-card__features">
+                  <li>每週 1 次 90 分鐘解題課</li>
+                  <li>每週指定文章 + 計時模擬</li>
+                  <li>錯題類型統計，集中突破弱項</li>
+                </ul>
+              </div>
+              <div class="course-card__format">
+                <div class="course-card__format-title">一對一</div>
+                <ul class="course-card__features">
+                  <li>逐題剖析閱讀策略與陷阱識別</li>
+                  <li>個人化字彙清單建構</li>
+                  <li>進度彈性，最快 4 週見效</li>
+                </ul>
+              </div>
               <div class="course-card__footer">
                 <a href="/contact/index.html" class="course-card__cta">預約面談 →</a>
               </div>
             </div>
 
+            <!-- Writing -->
             <div class="course-card">
-              <div class="course-card__name">IELTS / TOEFL 一對一衝刺</div>
-              <div class="course-card__target">▲ 考前 4–8 週密集備考</div>
-              <p class="course-card__desc">距離考試 4–8 週密集備考，個人化課表，集中攻克最薄弱技能，適合有明確考試日期的學員。</p>
-              <ul class="course-card__features">
-                <li>個人化課表，每週 4–6 小時</li>
-                <li>考前 Mock Test × 3 + 詳細評分</li>
-                <li>考後成績追蹤諮詢</li>
-              </ul>
+              <div class="course-card__name">IELTS / TOEFL 寫作班</div>
+              <div class="course-card__target">▲ Writing · 全程人工批改</div>
+              <p class="course-card__desc">Task 1 / Task 2（IELTS）或 Independent / Integrated（TOEFL）兩大寫作類型分別訓練，每篇人工批改回饋。</p>
+              <div class="course-card__format">
+                <div class="course-card__format-title">小班制（≤ 6 人）</div>
+                <ul class="course-card__features">
+                  <li>每週 1 次 90 分鐘寫作課</li>
+                  <li>每週 1 篇作文，老師逐句批改</li>
+                  <li>同學作文互評＋範文精解</li>
+                </ul>
+              </div>
+              <div class="course-card__format">
+                <div class="course-card__format-title">一對一</div>
+                <ul class="course-card__features">
+                  <li>每週 2 篇作文，回饋速度最快</li>
+                  <li>逐句重寫示範＋個人句型庫建構</li>
+                  <li>考前針對 7+ 分（IELTS）／25+ 分（TOEFL）衝刺</li>
+                </ul>
+              </div>
               <div class="course-card__footer">
                 <a href="/contact/index.html" class="course-card__cta">預約面談 →</a>
               </div>
             </div>
+          </div>
+
+          <div class="ielts-package-note">
+            <div class="ielts-package-note__title">✦ 四技組合方案</div>
+            <p>
+              想完整備考 IELTS / TOEFL 全科？可組合任意 2–4 項技能課程，
+              <strong>同時報名兩項以上享組合優惠</strong>，並由顧問依目前能力與目標分數安排個人化進度。
+              建議備考期約 3–6 個月，含 1–2 次完整模擬考。
+            </p>
           </div>
         </div>
       </section>
