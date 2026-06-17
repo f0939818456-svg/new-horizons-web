@@ -1,0 +1,24 @@
+{
+  "name": "日暘國際教育 New Horizons",
+  "short_name": "日暘國際",
+  "description": "日暘國際教育｜美國名校申請顧問。2026 申請季 100% Top 60 錄取。",
+  "icons": [
+    {
+      "src": "/assets/favicon/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/favicon/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#4E342E",
+  "background_color": "#3B2520",
+  "display": "standalone",
+  "start_url": "/",
+  "lang": "zh-Hant"
+}
