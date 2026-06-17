@@ -70,7 +70,8 @@
       .full-rank-search:focus { outline: none; border-color: var(--brand); }
       .full-rank-count { font-size: 13px; color: var(--muted); white-space: nowrap; }
       .full-rank-wrap {
-        max-height: 560px; overflow-y: auto;
+        max-height: 560px; overflow: auto;
+        -webkit-overflow-scrolling: touch;
         border: 1px solid var(--border); border-radius: var(--radius);
         margin: 12px 0 28px;
       }
@@ -95,6 +96,17 @@
         .full-rank-wrap { max-height: 480px; }
         .full-rank-wrap table { min-width: 560px; font-size: 13px; }
         .full-rank-wrap thead th, .full-rank-wrap td { padding: 9px 12px; }
+        .article-hero { padding: 56px 0 44px; }
+        .article-hero__title { font-size: 22px !important; line-height: 1.35; }
+        .article-hero__title br { display: none; }
+        .article-hero__meta { font-size: 12px; gap: 8px; }
+        .article-body { padding: 44px 0 60px; }
+        .article-body h2 { font-size: 19px; margin: 36px 0 12px; }
+        .article-body h3 { font-size: 17px; }
+        .article-body p { font-size: 15px; line-height: 1.85; }
+        .full-rank-toolbar { gap: 8px; }
+        .full-rank-count { font-size: 12px; }
+        .article-cta { padding: 28px 20px; }
       }
       .key-takeaways {
         background: var(--bg-alt); border: 1px solid var(--border);

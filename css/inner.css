@@ -157,6 +157,8 @@
   gap: 56px;
   align-items: start;
 }
+/* 防止 grid track 被寬內容（表格、長英文字串）撐爆，導致整頁橫向滾動 */
+.content-sidebar-grid > * { min-width: 0; }
 
 @media (max-width: 900px) {
   .inner-body.has-sidebar {
