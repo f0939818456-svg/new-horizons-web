@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="2026–2027 U.S. News 全球大學排名">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3B2520"/>
+      <stop offset="1" stop-color="#4E342E"/>
+    </linearGradient>
+    <radialGradient id="globeFill" cx="0.35" cy="0.35" r="0.75">
+      <stop offset="0" stop-color="#7D5A50" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#3B2520" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <g opacity="0.08" fill="#F5ECD7">
+    <circle cx="120" cy="90" r="2"/><circle cx="220" cy="120" r="1.5"/><circle cx="660" cy="80" r="2"/><circle cx="720" cy="180" r="1.5"/><circle cx="80" cy="500" r="2"/><circle cx="740" cy="520" r="2"/>
+  </g>
+
+  <!-- Globe -->
+  <g transform="translate(400 330)">
+    <circle r="180" fill="url(#globeFill)" stroke="#B8943F" stroke-width="2.5"/>
+    <ellipse rx="180" ry="60" fill="none" stroke="#B8943F" stroke-width="1.5" opacity="0.7"/>
+    <ellipse rx="180" ry="120" fill="none" stroke="#B8943F" stroke-width="1.2" opacity="0.55"/>
+    <ellipse rx="60" ry="180" fill="none" stroke="#B8943F" stroke-width="1.5" opacity="0.7"/>
+    <ellipse rx="120" ry="180" fill="none" stroke="#B8943F" stroke-width="1.2" opacity="0.55"/>
+    <line x1="-180" y1="0" x2="180" y2="0" stroke="#B8943F" stroke-width="2" opacity="0.85"/>
+    <line x1="0" y1="-180" x2="0" y2="180" stroke="#B8943F" stroke-width="2" opacity="0.85"/>
+
+    <!-- City markers -->
+    <g fill="#F5ECD7">
+      <circle cx="-90" cy="-70" r="5"/>
+      <circle cx="20" cy="-110" r="5"/>
+      <circle cx="105" cy="-30" r="5"/>
+      <circle cx="-40" cy="40" r="5"/>
+      <circle cx="80" cy="90" r="5"/>
+    </g>
+  </g>
+
+  <!-- Top rank ribbon -->
+  <g transform="translate(400 110)">
+    <polygon points="-110,-30 110,-30 95,15 0,5 -95,15" fill="#B8943F"/>
+    <polygon points="-110,-30 -95,15 -110,40 -125,15" fill="#8B6E2D"/>
+    <polygon points="110,-30 95,15 110,40 125,15" fill="#8B6E2D"/>
+    <text x="0" y="0" text-anchor="middle" font-family="-apple-system, 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="800" fill="#3B2520" letter-spacing="3">2026–2027</text>
+  </g>
+
+  <!-- Title -->
+  <text x="400" y="540" text-anchor="middle" font-family="-apple-system, 'PingFang TC', 'Helvetica Neue', sans-serif" font-size="34" font-weight="800" fill="#F5ECD7" letter-spacing="2">BEST GLOBAL UNIVERSITIES</text>
+  <text x="400" y="578" text-anchor="middle" font-family="-apple-system, 'PingFang TC', sans-serif" font-size="18" font-weight="500" fill="#F5ECD7" opacity="0.7" letter-spacing="6">U.S. NEWS · 全球排名解析</text>
+</svg>
