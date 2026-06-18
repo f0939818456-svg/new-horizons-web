@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="U.S. News 與 QS 排名比較">
+  <defs>
+    <linearGradient id="vsbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3B2520"/>
+      <stop offset="1" stop-color="#4E342E"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#vsbg)"/>
+
+  <!-- Background dots -->
+  <g opacity="0.15" fill="#F5ECD7">
+    <circle cx="100" cy="80" r="2"/><circle cx="700" cy="100" r="2"/>
+    <circle cx="80" cy="500" r="1.5"/><circle cx="720" cy="520" r="1.5"/>
+    <circle cx="200" cy="60" r="1.5"/><circle cx="600" cy="540" r="2"/>
+  </g>
+
+  <!-- Two opposing card stacks for comparison -->
+
+  <!-- LEFT: U.S. News -->
+  <g transform="translate(220 320)">
+    <!-- Card -->
+    <rect x="-140" y="-130" width="280" height="240" rx="14" fill="#F5ECD7" stroke="#B8943F" stroke-width="2"/>
+    <!-- Eyebrow -->
+    <text x="0" y="-90" text-anchor="middle" font-family="-apple-system, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="800" fill="#B8943F" letter-spacing="4">U.S. NEWS</text>
+    <!-- Title -->
+    <text x="0" y="-58" text-anchor="middle" font-family="-apple-system, 'PingFang TC', sans-serif" font-size="20" font-weight="800" fill="#3B2520">美國本科優先</text>
+    <!-- Divider -->
+    <line x1="-80" y1="-42" x2="80" y2="-42" stroke="#B8943F" stroke-width="1.5"/>
+    <!-- Bullets -->
+    <g font-family="-apple-system, 'PingFang TC', sans-serif" font-size="13" fill="#3B2520">
+      <text x="-110" y="-12">• 畢業率 / 留校率</text>
+      <text x="-110" y="14">• 學生債務</text>
+      <text x="-110" y="40">• 師資與財務資源</text>
+      <text x="-110" y="66">• 同儕評價</text>
+      <text x="-110" y="92">• 本科教育品質</text>
+    </g>
+  </g>
+
+  <!-- VS Center -->
+  <g transform="translate(400 320)">
+    <circle r="50" fill="#B8943F"/>
+    <circle r="50" fill="none" stroke="#F5ECD7" stroke-width="2" opacity="0.4"/>
+    <text y="14" text-anchor="middle" font-family="-apple-system, 'Helvetica Neue', Arial, sans-serif" font-size="34" font-weight="900" fill="#3B2520" letter-spacing="1">VS</text>
+  </g>
+
+  <!-- RIGHT: QS -->
+  <g transform="translate(580 320)">
+    <!-- Card -->
+    <rect x="-140" y="-130" width="280" height="240" rx="14" fill="#F5ECD7" stroke="#B8943F" stroke-width="2"/>
+    <!-- Eyebrow -->
+    <text x="0" y="-90" text-anchor="middle" font-family="-apple-system, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="800" fill="#B8943F" letter-spacing="4">QS</text>
+    <!-- Title -->
+    <text x="0" y="-58" text-anchor="middle" font-family="-apple-system, 'PingFang TC', sans-serif" font-size="20" font-weight="800" fill="#3B2520">英澳亞洲優先</text>
+    <!-- Divider -->
+    <line x1="-80" y1="-42" x2="80" y2="-42" stroke="#B8943F" stroke-width="1.5"/>
+    <!-- Bullets -->
+    <g font-family="-apple-system, 'PingFang TC', sans-serif" font-size="13" fill="#3B2520">
+      <text x="-110" y="-12">• 學術聲望</text>
+      <text x="-110" y="14">• 雇主聲望</text>
+      <text x="-110" y="40">• 國際化程度</text>
+      <text x="-110" y="66">• 研究與引用</text>
+      <text x="-110" y="92">• 全球品牌辨識</text>
+    </g>
+  </g>
+
+  <!-- Top eyebrow -->
+  <text x="400" y="100" text-anchor="middle" font-family="-apple-system, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="800" fill="#B8943F" letter-spacing="6">RANKINGS GUIDE</text>
+
+  <!-- Main title -->
+  <text x="400" y="148" text-anchor="middle" font-family="-apple-system, 'PingFang TC', sans-serif" font-size="32" font-weight="900" fill="#F5ECD7" letter-spacing="2">兩種排名 · 不同戰場</text>
+
+  <!-- Sub-line -->
+  <text x="400" y="180" text-anchor="middle" font-family="-apple-system, 'PingFang TC', sans-serif" font-size="14" font-weight="500" fill="#F5ECD7" opacity="0.65" letter-spacing="3">U.S. News 與 QS 排名怎麼看？該看哪個？</text>
+
+  <!-- Footer -->
+  <text x="400" y="555" text-anchor="middle" font-family="-apple-system, 'PingFang TC', sans-serif" font-size="13" font-weight="600" fill="#F5ECD7" opacity="0.55" letter-spacing="4">完整方法論對照 · 同校排名差異案例</text>
+</svg>

@@ -1,0 +1,723 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>2027 QS 世界大學排名分析：家長該怎麼看懂排名背後的升學訊號？ | 日暘國際教育</title>
+    <meta name="description" content="QS World University Rankings 2027 最新公布：MIT 蟬聯全球第一、Imperial 與 Stanford 並列第二、NUS 進入前 10。日暘顧問解析 Top 300 國家分布、亞洲與台灣大學表現，提供家長真正可用的選校策略框架。" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/inner.css" />
+    <style>
+      .article-wrap { max-width: 760px; }
+      .article-hero {
+        background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand) 100%);
+        padding: 80px 0 60px; color: #fff;
+      }
+      .article-hero__eyebrow {
+        font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
+        text-transform: uppercase; color: var(--gold-light); margin-bottom: 16px;
+      }
+      .article-hero__title {
+        font-size: clamp(24px, 3.5vw, 42px); font-weight: 900;
+        line-height: 1.2; margin: 0 0 20px; letter-spacing: -0.02em;
+      }
+      .article-hero__meta { display: flex; align-items: center; gap: 16px; font-size: 13px; opacity: 0.75; flex-wrap: wrap; }
+      .article-body { padding: 64px 0 80px; }
+      .article-body p { font-size: 16px; line-height: 1.9; color: var(--text); margin: 0 0 24px; text-wrap: pretty; }
+      .article-body h2 {
+        font-size: 22px; font-weight: 800; color: var(--text);
+        margin: 48px 0 16px; padding-bottom: 10px;
+        border-bottom: 2px solid var(--gold-light);
+      }
+      .article-body h3 { font-size: 18px; font-weight: 700; color: var(--brand); margin: 32px 0 12px; }
+      .article-body strong { color: var(--brand); }
+      .article-body blockquote {
+        border-left: 4px solid var(--gold); padding: 16px 24px;
+        background: var(--bg-alt); border-radius: 0 var(--radius) var(--radius) 0;
+        margin: 28px 0; font-size: 15.5px; color: var(--text);
+        font-style: italic; line-height: 1.8;
+      }
+      .rank-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 24px 0; }
+      .rank-table th { background: var(--brand); color: #fff; padding: 12px 14px; text-align: left; font-weight: 700; font-size: 12.5px; letter-spacing: 0.05em; }
+      .rank-table td { padding: 12px 14px; border-bottom: 1px solid var(--border); color: var(--text); line-height: 1.6; vertical-align: top; }
+      .rank-table tr:nth-child(even) td { background: var(--bg-alt); }
+      .rank-table .school-name { font-weight: 700; }
+      .rank-num { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-weight: 700; color: var(--muted); }
+      .country-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 24px 0; }
+      .country-table th { background: var(--brand-dark); color: #fff; padding: 12px 14px; text-align: left; font-size: 12.5px; letter-spacing: 0.05em; }
+      .country-table td { padding: 12px 14px; border-bottom: 1px solid var(--border); }
+      .country-table tr:nth-child(even) td { background: var(--bg-alt); }
+      .country-table td.num { text-align: right; font-family: ui-monospace, "SF Mono", Menlo, monospace; font-weight: 700; }
+      @media (max-width: 640px) {
+        .rank-table, .country-table { min-width: 540px; font-size: 13px; }
+        .rank-table th, .rank-table td, .country-table th, .country-table td { padding: 10px 12px; }
+      }
+      .full-rank-toolbar {
+        display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
+        margin: 24px 0 12px;
+      }
+      .full-rank-search {
+        flex: 1 1 240px; min-width: 200px;
+        padding: 10px 14px; font-size: 14px;
+        border: 1.5px solid var(--border); border-radius: var(--radius);
+        background: #fff; color: var(--text);
+        transition: border-color 0.2s;
+        font-family: inherit;
+      }
+      .full-rank-search:focus { outline: none; border-color: var(--brand); }
+      .full-rank-count { font-size: 13px; color: var(--muted); white-space: nowrap; }
+      .full-rank-wrap {
+        max-height: 580px; overflow: auto;
+        -webkit-overflow-scrolling: touch;
+        border: 1px solid var(--border); border-radius: var(--radius);
+        margin: 12px 0 28px;
+      }
+      .full-rank-wrap table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 0; }
+      .full-rank-wrap thead th {
+        position: sticky; top: 0; z-index: 1;
+        background: var(--brand); color: #fff;
+        padding: 12px 14px; text-align: left; font-weight: 700;
+        font-size: 12.5px; letter-spacing: 0.05em;
+      }
+      .full-rank-wrap td { padding: 10px 14px; border-bottom: 1px solid var(--border); color: var(--text); line-height: 1.55; vertical-align: top; }
+      .full-rank-wrap tr:nth-child(even) td { background: var(--bg-alt); }
+      .full-rank-wrap tr.is-hidden { display: none; }
+      .full-rank-wrap th:nth-child(1), .full-rank-wrap td:nth-child(1) { width: 60px; }
+      .full-rank-wrap th:nth-child(3), .full-rank-wrap td:nth-child(3) { width: 100px; white-space: nowrap; }
+      .full-rank-empty {
+        padding: 32px; text-align: center; color: var(--muted); font-size: 14px;
+        display: none;
+      }
+      .full-rank-empty.is-visible { display: block; }
+      .key-takeaways {
+        background: var(--bg-alt); border: 1px solid var(--border);
+        border-radius: var(--radius-lg); padding: 24px 28px; margin: 32px 0;
+      }
+      .key-takeaways__title { font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--brand); margin-bottom: 12px; }
+      .key-takeaways ul { margin: 0; padding-left: 20px; }
+      .key-takeaways li { font-size: 14.5px; line-height: 1.85; color: var(--text); margin-bottom: 6px; }
+      .tier-card {
+        background: var(--bg-alt); border: 1px solid var(--border);
+        border-radius: var(--radius); padding: 16px 20px; margin: 8px 0;
+        display: flex; gap: 16px; align-items: flex-start;
+      }
+      .tier-card__badge {
+        flex-shrink: 0; background: var(--brand); color: #fff;
+        border-radius: 50px; padding: 4px 12px; font-size: 11px; font-weight: 800;
+        letter-spacing: 0.05em; white-space: nowrap;
+      }
+      .tier-card__body { font-size: 14.5px; line-height: 1.7; color: var(--text); }
+      .tier-card__body strong { color: var(--brand); }
+      .article-cta {
+        background: var(--bg-alt); border: 1px solid var(--border);
+        border-radius: var(--radius-lg); padding: 36px; margin-top: 56px; text-align: center;
+      }
+      .article-cta h3 { font-size: 20px; font-weight: 800; margin: 0 0 10px; }
+      .article-cta p { font-size: 14.5px; color: var(--muted); margin: 0 0 24px; line-height: 1.7; text-wrap: pretty; }
+      .article-nav { display: flex; gap: 16px; margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border); flex-wrap: wrap; }
+      .article-nav a { font-size: 13px; font-weight: 600; color: var(--brand); text-decoration: none; }
+      .source-list { font-size: 13px; color: var(--muted); line-height: 1.8; padding-left: 20px; word-break: break-all; }
+      .source-list li { margin-bottom: 8px; }
+      .source-list a { color: var(--brand); text-decoration: none; }
+      .source-list a:hover { text-decoration: underline; }
+      @media (max-width: 640px) {
+        .full-rank-wrap { max-height: 480px; }
+        .full-rank-wrap table { min-width: 560px; font-size: 13px; }
+        .full-rank-wrap thead th, .full-rank-wrap td { padding: 9px 12px; }
+        .article-hero { padding: 56px 0 44px; }
+        .article-hero__title { font-size: 22px !important; line-height: 1.35; }
+        .article-hero__title br { display: none; }
+        .article-hero__meta { font-size: 12px; gap: 8px; }
+        .article-body { padding: 44px 0 60px; }
+        .article-body h2 { font-size: 19px; margin: 36px 0 12px; }
+        .article-body h3 { font-size: 17px; }
+        .article-body p { font-size: 15px; line-height: 1.85; }
+        .full-rank-toolbar { gap: 8px; }
+        .full-rank-count { font-size: 12px; }
+        .article-cta { padding: 28px 20px; }
+        .tier-card { padding: 14px 16px; gap: 12px; flex-direction: column; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="site-header"></div>
+    <main>
+      <section class="article-hero">
+        <div class="container">
+          <nav class="breadcrumb" style="margin-bottom:20px;">
+            <a href="/" style="color:rgba(255,255,255,0.6);">首頁</a><span style="color:rgba(255,255,255,0.4);">›</span>
+            <a href="/blog/school.html" style="color:rgba(255,255,255,0.6);">學校相關</a><span style="color:rgba(255,255,255,0.4);">›</span>
+            <span style="color:rgba(255,255,255,0.8);">2027 QS 世界大學排名</span>
+          </nav>
+          <div class="article-hero__eyebrow">BLOG · SCHOOLS</div>
+          <h1 class="article-hero__title">2027 QS 世界大學排名分析<br/>家長該怎麼看懂排名背後的升學訊號？</h1>
+          <div class="article-hero__meta">
+            <span>2026.06.18</span>
+            <span>·</span>
+            <span>日暘顧問團隊</span>
+            <span>·</span>
+            <span>閱讀約 10 分鐘</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="container article-body">
+        <div class="content-sidebar-grid">
+          <article class="article-wrap">
+
+            <p><strong>2027 QS World University Rankings</strong> 已公布。根據本次 Top 300 榜單，全球高等教育的競爭格局仍然由美國、英國、澳洲、歐洲與亞洲頂尖大學共同主導。對家長而言，QS 排名不只是「哪一所學校第幾名」，更重要的是看懂排名背後反映出的<strong>國際教育趨勢、學校品牌價值，以及未來升學與就業的可能性</strong>。</p>
+
+            <p>QS 世界大學排名主要評估大學在<strong>研究、學術聲望、雇主聲望、師生比、國際化程度與永續發展</strong>等面向的表現。其中，學術聲望、雇主評價、研究影響力與就業成果，都是家長在規劃孩子留學時值得參考的重要指標。</p>
+
+            <div class="key-takeaways">
+              <div class="key-takeaways__title">本文重點摘要</div>
+              <ul>
+                <li>MIT 蟬聯全球第一，Imperial College London 與 Stanford 並列第二。</li>
+                <li>新加坡國立大學 NUS 進入全球前 10，亞洲頂尖大學已能與美英直接競爭。</li>
+                <li>Top 300 國家分布：美國 50 所、英國 33 所、澳洲 19 所、德國 17 所、中國 16 所。</li>
+                <li>台灣共 4 所進入 Top 300：台大、清大、陽明交大、成大。</li>
+              </ul>
+            </div>
+
+            <h2>一、2027 QS 世界前段排名：美英名校仍然強勢</h2>
+            <p>在 2027 QS 世界大學排名中，全球前 10 名仍然由<strong>美國、英國、瑞士與新加坡名校</strong>主導：</p>
+
+            <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:28px 0;"><table class="rank-table">
+              <thead>
+                <tr><th>排名</th><th>學校</th><th>國家 / 地區</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><span class="rank-num">#1</span></td><td><span class="school-name">Massachusetts Institute of Technology (MIT)</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#2</span></td><td><span class="school-name">Imperial College London</span></td><td>英國</td></tr>
+                <tr><td><span class="rank-num">#2</span></td><td><span class="school-name">Stanford University</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#4</span></td><td><span class="school-name">University of Oxford</span></td><td>英國</td></tr>
+                <tr><td><span class="rank-num">#5</span></td><td><span class="school-name">Harvard University</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#6</span></td><td><span class="school-name">University of Cambridge</span></td><td>英國</td></tr>
+                <tr><td><span class="rank-num">#7</span></td><td><span class="school-name">California Institute of Technology (Caltech)</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#8</span></td><td><span class="school-name">ETH Zurich</span></td><td>瑞士</td></tr>
+                <tr><td><span class="rank-num">#8</span></td><td><span class="school-name">UCL</span></td><td>英國</td></tr>
+                <tr><td><span class="rank-num">#10</span></td><td><span class="school-name">National University of Singapore (NUS)</span></td><td>新加坡</td></tr>
+              </tbody>
+            </table></div>
+
+            <p>從前 10 名可以看出，<strong>美國與英國仍然是全球頂尖高等教育的核心</strong>。美國大學在科技、工程、商業、研究與創新方面仍具備強大優勢；英國大學則延續其長期累積的學術聲望、國際化程度與研究實力。</p>
+
+            <p>值得注意的是，<strong>新加坡國立大學 NUS 進入全球前 10</strong>，代表亞洲頂尖大學已經不只是區域性名校，而是可以直接與美英頂尖大學競爭的全球級大學。</p>
+
+            <h2>二、Top 300 國家分布：美國最多，英國第二，亞洲快速崛起</h2>
+            <p>根據本次 Top 300 榜單，各國進入前 300 名的大學數量如下（前 20）：</p>
+
+            <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:28px 0;"><table class="country-table">
+              <thead>
+                <tr><th>國家 / 地區</th><th>Top 300 學校數</th><th>國家 / 地區</th><th>Top 300 學校數</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>美國</td><td class="num">50</td><td>英國</td><td class="num">33</td></tr>
+                <tr><td>澳洲</td><td class="num">19</td><td>德國</td><td class="num">17</td></tr>
+                <tr><td>中國</td><td class="num">16</td><td>加拿大</td><td class="num">12</td></tr>
+                <tr><td>荷蘭</td><td class="num">12</td><td>日本</td><td class="num">10</td></tr>
+                <tr><td>南韓</td><td class="num">8</td><td>馬來西亞</td><td class="num">8</td></tr>
+                <tr><td>瑞士</td><td class="num">7</td><td>香港</td><td class="num">6</td></tr>
+                <tr><td>法國</td><td class="num">6</td><td>比利時</td><td class="num">6</td></tr>
+                <tr><td>紐西蘭</td><td class="num">6</td><td>瑞典</td><td class="num">6</td></tr>
+                <tr><td>義大利</td><td class="num">6</td><td>印度</td><td class="num">6</td></tr>
+                <tr><td>西班牙</td><td class="num">6</td><td>台灣</td><td class="num">4</td></tr>
+              </tbody>
+            </table></div>
+
+            <p>這個分布顯示三個明顯趨勢：</p>
+
+            <p>第一，<strong>美國仍然是世界排名中最具規模的高等教育強國</strong>。Top 300 中有 50 所美國大學，代表美國不只是有 MIT、Stanford、Harvard 這些頂尖名校，也有大量排名前 300 的研究型大學。對申請美國的學生來說，選校空間非常大，不一定只能盯著 Ivy League 或 Top 20。</p>
+
+            <p>第二，<strong>英國仍然保持高度國際競爭力</strong>。Top 300 中有 33 所英國大學，顯示英國大學在全球聲望、研究實力與國際學生吸引力上仍然非常強。對想用三年完成本科，或希望未來申請英國碩士的學生來說，英國仍是重要選項。</p>
+
+            <p>第三，<strong>亞洲大學的國際能見度持續上升</strong>。新加坡、香港、中國大陸、日本、南韓、馬來西亞、台灣與印度都有學校進入 Top 300。這代表亞洲高等教育不再只是「備選方案」，而是越來越多家庭可以認真評估的升學路線。</p>
+
+            <h2>三、亞洲大學表現亮眼：新加坡、香港、中國大陸最突出</h2>
+            <p>2027 QS 排名中，亞洲前段大學表現非常強勢：</p>
+
+            <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:28px 0;"><table class="rank-table">
+              <thead>
+                <tr><th>排名</th><th>學校</th><th>地區</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><span class="rank-num">#10</span></td><td><span class="school-name">National University of Singapore (NUS)</span></td><td>新加坡</td></tr>
+                <tr><td><span class="rank-num">#11</span></td><td><span class="school-name">The University of Hong Kong</span></td><td>香港</td></tr>
+                <tr><td><span class="rank-num">#12</span></td><td><span class="school-name">Nanyang Technological University (NTU)</span></td><td>新加坡</td></tr>
+                <tr><td><span class="rank-num">#13</span></td><td><span class="school-name">Peking University</span></td><td>中國</td></tr>
+                <tr><td><span class="rank-num">#14</span></td><td><span class="school-name">Tsinghua University</span></td><td>中國</td></tr>
+                <tr><td><span class="rank-num">#18</span></td><td><span class="school-name">The Chinese University of Hong Kong (CUHK)</span></td><td>香港</td></tr>
+                <tr><td><span class="rank-num">#26</span></td><td><span class="school-name">Fudan University</span></td><td>中國</td></tr>
+                <tr><td><span class="rank-num">#33</span></td><td><span class="school-name">HKUST</span></td><td>香港</td></tr>
+                <tr><td><span class="rank-num">#36</span></td><td><span class="school-name">Shanghai Jiao Tong University</span></td><td>中國</td></tr>
+                <tr><td><span class="rank-num">#38</span></td><td><span class="school-name">Seoul National University</span></td><td>南韓</td></tr>
+                <tr><td><span class="rank-num">#39</span></td><td><span class="school-name">The University of Tokyo</span></td><td>日本</td></tr>
+                <tr><td><span class="rank-num">#54</span></td><td><span class="school-name">National Taiwan University (NTU)</span></td><td>台灣</td></tr>
+              </tbody>
+            </table></div>
+
+            <p>這代表<strong>亞洲頂尖學校已經在全球排名中佔有重要位置</strong>。對台灣學生而言，香港、新加坡、日本與韓國大學可以成為美英之外的強力選項，尤其適合重視亞洲就業市場、國際商業、科技產業、金融、工程與研究發展的學生。</p>
+
+            <h2>四、台灣大學在 2027 QS Top 300 的位置</h2>
+            <p>台灣共有 <strong>4 所學校</strong>進入本次 Top 300：</p>
+
+            <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:28px 0;"><table class="rank-table">
+              <thead>
+                <tr><th>排名</th><th>學校</th><th>地區</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><span class="rank-num">#54</span></td><td><span class="school-name">國立台灣大學 NTU</span></td><td>台灣</td></tr>
+                <tr><td><span class="rank-num">#142</span></td><td><span class="school-name">國立清華大學 NTHU</span></td><td>台灣</td></tr>
+                <tr><td><span class="rank-num">#177</span></td><td><span class="school-name">國立陽明交通大學 NYCU</span></td><td>台灣</td></tr>
+                <tr><td><span class="rank-num">#191</span></td><td><span class="school-name">國立成功大學 NCKU</span></td><td>台灣</td></tr>
+              </tbody>
+            </table></div>
+
+            <p>台灣大學仍然是台灣排名最高的大學，位居全球第 54 名，具備相當高的國際辨識度。不過，若與新加坡、香港、中國大陸前段學校相比，台灣整體進入世界前 100 的學校數量較少，這也反映出國際化、研究能量、國際學生比例與全球雇主聲望等面向仍有提升空間。</p>
+
+            <p>對家長來說，這也說明一件事：如果孩子未來想<strong>進入國際企業、申請海外研究所，或在全球市場發展</strong>，學校的國際排名與國際能見度確實值得納入考量。</p>
+
+            <h2>五、為什麼家長要看 QS 排名？</h2>
+            <p>QS 排名最大的價值，不是讓家長單純比較「第幾名」，而是<strong>幫助家庭建立一個國際化的選校框架</strong>。</p>
+
+            <h3>1. 幫助家長了解學校的國際知名度</h3>
+            <p>很多家長熟悉 Harvard、Oxford、Cambridge、MIT，但對於其他國家的優秀大學不一定熟悉。QS 排名可以幫助家長快速理解一所學校在全球高等教育中的位置。例如，荷蘭、德國、瑞士、澳洲、加拿大都有許多排名非常好的大學，但因為台灣家長比較少接觸，容易被低估。</p>
+
+            <h3>2. 協助評估未來研究所與就業競爭力</h3>
+            <p>QS 排名包含雇主聲望、就業成果與學術聲望等指標。這對未來想申請研究所、進入跨國公司、金融業、科技業、顧問業或國際組織的學生有一定參考價值。排名高的學校通常代表其在國際學術圈與就業市場中有較高能見度。</p>
+
+            <h3>3. 幫助學生設定合理的申請學校組合</h3>
+            <p>很多家庭選校時容易只看 Top 20、Top 50，但實際申請時，應該依照學生條件規劃<strong>夢想校、目標校與安全校</strong>：</p>
+
+            <div class="tier-card">
+              <span class="tier-card__badge">世界前 30</span>
+              <div class="tier-card__body">競爭極高，適合作為<strong>夢想校</strong>。</div>
+            </div>
+            <div class="tier-card">
+              <span class="tier-card__badge">世界 30–100</span>
+              <div class="tier-card__body">仍是全球頂尖名校，適合作為<strong>高目標校</strong>。</div>
+            </div>
+            <div class="tier-card">
+              <span class="tier-card__badge">世界 100–200</span>
+              <div class="tier-card__body">很多學校在特定科系非常強，適合作為<strong>目標校</strong>。</div>
+            </div>
+            <div class="tier-card">
+              <span class="tier-card__badge">世界 200–300</span>
+              <div class="tier-card__body">仍具國際認可度，可作為<strong>安全校或科系導向選擇</strong>。</div>
+            </div>
+
+            <h2>六、但 QS 排名不能當作唯一選校標準</h2>
+            <p>家長一定要注意：QS 排名很重要，但<strong>不能只看 QS 排名</strong>。</p>
+
+            <p>因為世界大學排名主要衡量的是學校整體表現，不一定完全等於某一個科系的實力。例如，一所綜合排名第 150 的學校，可能在工程、商科、藝術設計、教育、公共衛生或資料科學領域非常強；而一所排名前 50 的學校，也不代表每一個科系都最適合學生。</p>
+
+            <blockquote>真正好的選校，不是只選排名最高的學校，而是選最適合孩子發展的學校。</blockquote>
+
+            <p>所以選校時應該同時看：學校排名、科系排名、課程內容、實習機會、地理位置、學費與生活費、畢業後工作政策、錄取難度、學生個性與適應能力、未來職涯方向。</p>
+
+            <h2>七、給家長的結論</h2>
+            <p>2027 QS 世界大學排名告訴我們，<strong>全球大學競爭越來越激烈</strong>。美國與英國仍然是頂尖教育強國，但亞洲、澳洲、歐洲大學的國際競爭力也正在快速提升。對台灣學生而言，未來留學選擇不應該只侷限在單一國家，而應該根據科系、申請條件、家庭預算與未來發展做整體規劃。</p>
+
+            <p>QS 排名值得參考，因為它能幫助我們了解學校的國際聲望、研究實力、雇主認可度與全球影響力。但<strong>排名只是起點，不是答案</strong>。</p>
+
+            <h2>八、2027 QS 世界大學排名完整榜單</h2>
+            <p>以下為本年度 QS World University Rankings 的 Top 300 完整榜單，共 <strong>300 所大學</strong>。可使用上方搜尋框依學校名稱或國家快速篩選。<strong>同名次表示與其他學校並列</strong>（例如 #2 同時為 Imperial College London 與 Stanford University）。</p>
+
+            <div class="full-rank-toolbar">
+              <input type="search" id="rankSearch" class="full-rank-search" placeholder="搜尋學校或國家…（例：Stanford、新加坡、Australia）" autocomplete="off">
+              <span class="full-rank-count" id="rankCount">顯示 300 / 300 所</span>
+            </div>
+            <div class="full-rank-wrap">
+              <table id="fullRankTable">
+                <thead>
+                  <tr><th>排名</th><th>學校</th><th>國家 / 地區</th></tr>
+                </thead>
+                <tbody>
+                <tr><td><span class="rank-num">#1</span></td><td><span class="school-name">Massachusetts Institute of Technology (MIT)</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#2</span></td><td><span class="school-name">Imperial College London</span></td><td>英國</td></tr>
+                <tr><td><span class="rank-num">#2</span></td><td><span class="school-name">Stanford University</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#4</span></td><td><span class="school-name">University of Oxford</span></td><td>英國</td></tr>
+                <tr><td><span class="rank-num">#5</span></td><td><span class="school-name">Harvard University</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#6</span></td><td><span class="school-name">University of Cambridge</span></td><td>英國</td></tr>
+                <tr><td><span class="rank-num">#7</span></td><td><span class="school-name">California Institute of Technology (Caltech)</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#8</span></td><td><span class="school-name">ETH Zurich</span></td><td>瑞士</td></tr>
+                <tr><td><span class="rank-num">#8</span></td><td><span class="school-name">UCL</span></td><td>英國</td></tr>
+                <tr><td><span class="rank-num">#10</span></td><td><span class="school-name">National University of Singapore (NUS)</span></td><td>新加坡</td></tr>
+                <tr><td><span class="rank-num">#11</span></td><td><span class="school-name">The University of Hong Kong</span></td><td>香港</td></tr>
+                <tr><td><span class="rank-num">#12</span></td><td><span class="school-name">Nanyang Technological University, Singapore (NTU Singapore)</span></td><td>新加坡</td></tr>
+                <tr><td><span class="rank-num">#13</span></td><td><span class="school-name">Peking University</span></td><td>中國</td></tr>
+                <tr><td><span class="rank-num">#14</span></td><td><span class="school-name">Tsinghua University</span></td><td>中國</td></tr>
+                <tr><td><span class="rank-num">#15</span></td><td><span class="school-name">University of Pennsylvania</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#16</span></td><td><span class="school-name">Cornell University</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#16</span></td><td><span class="school-name">Yale University</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#18</span></td><td><span class="school-name">The Chinese University of Hong Kong (CUHK)</span></td><td>香港</td></tr>
+                <tr><td><span class="rank-num">#19</span></td><td><span class="school-name">The University of New South Wales (UNSW Sydney)</span></td><td>澳洲</td></tr>
+                <tr><td><span class="rank-num">#20</span></td><td><span class="school-name">Johns Hopkins University</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#20</span></td><td><span class="school-name">University of California, Berkeley (UCB)</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#22</span></td><td><span class="school-name">EPFL – École polytechnique fédérale de Lausanne</span></td><td>瑞士</td></tr>
+                <tr><td><span class="rank-num">#22</span></td><td><span class="school-name">The University of Melbourne</span></td><td>澳洲</td></tr>
+                <tr><td><span class="rank-num">#24</span></td><td><span class="school-name">University of Chicago</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#25</span></td><td><span class="school-name">Technical University of Munich</span></td><td>德國</td></tr>
+                <tr><td><span class="rank-num">#26</span></td><td><span class="school-name">Fudan University</span></td><td>中國</td></tr>
+                <tr><td><span class="rank-num">#27</span></td><td><span class="school-name">Princeton University</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#28</span></td><td><span class="school-name">The University of Sydney</span></td><td>澳洲</td></tr>
+                <tr><td><span class="rank-num">#29</span></td><td><span class="school-name">Australian National University (ANU)</span></td><td>澳洲</td></tr>
+                <tr><td><span class="rank-num">#30</span></td><td><span class="school-name">McGill University</span></td><td>加拿大</td></tr>
+                <tr><td><span class="rank-num">#31</span></td><td><span class="school-name">Monash University</span></td><td>澳洲</td></tr>
+                <tr><td><span class="rank-num">#32</span></td><td><span class="school-name">University of Toronto</span></td><td>加拿大</td></tr>
+                <tr><td><span class="rank-num">#33</span></td><td><span class="school-name">The Hong Kong University of Science and Technology</span></td><td>香港</td></tr>
+                <tr><td><span class="rank-num">#34</span></td><td><span class="school-name">Université PSL</span></td><td>法國</td></tr>
+                <tr><td><span class="rank-num">#35</span></td><td><span class="school-name">The University of Edinburgh</span></td><td>英國</td></tr>
+                <tr><td><span class="rank-num">#36</span></td><td><span class="school-name">Shanghai Jiao Tong University</span></td><td>中國</td></tr>
+                <tr><td><span class="rank-num">#37</span></td><td><span class="school-name">King&#x27;s College London</span></td><td>英國</td></tr>
+                <tr><td><span class="rank-num">#38</span></td><td><span class="school-name">Seoul National University</span></td><td>南韓</td></tr>
+                <tr><td><span class="rank-num">#39</span></td><td><span class="school-name">The University of Tokyo</span></td><td>日本</td></tr>
+                <tr><td><span class="rank-num">#40</span></td><td><span class="school-name">The University of Manchester</span></td><td>英國</td></tr>
+                <tr><td><span class="rank-num">#40</span></td><td><span class="school-name">The University of Queensland</span></td><td>澳洲</td></tr>
+                <tr><td><span class="rank-num">#42</span></td><td><span class="school-name">Yonsei University</span></td><td>南韓</td></tr>
+                <tr><td><span class="rank-num">#43</span></td><td><span class="school-name">Columbia University</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#43</span></td><td><span class="school-name">Institut Polytechnique de Paris</span></td><td>法國</td></tr>
+                <tr><td><span class="rank-num">#45</span></td><td><span class="school-name">Northwestern University</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#45</span></td><td><span class="school-name">University of British Columbia</span></td><td>加拿大</td></tr>
+                <tr><td><span class="rank-num">#47</span></td><td><span class="school-name">Zhejiang University</span></td><td>中國</td></tr>
+                <tr><td><span class="rank-num">#48</span></td><td><span class="school-name">Delft University of Technology</span></td><td>荷蘭</td></tr>
+                <tr><td><span class="rank-num">#49</span></td><td><span class="school-name">University of California, Los Angeles (UCLA)</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#50</span></td><td><span class="school-name">The Hong Kong Polytechnic University</span></td><td>香港</td></tr>
+                <tr><td><span class="rank-num">#51</span></td><td><span class="school-name">University of Michigan-Ann Arbor</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#52</span></td><td><span class="school-name">City University of Hong Kong (CityUHK)</span></td><td>香港</td></tr>
+                <tr><td><span class="rank-num">#52</span></td><td><span class="school-name">Korea University</span></td><td>南韓</td></tr>
+                <tr><td><span class="rank-num">#54</span></td><td><span class="school-name">National Taiwan University (NTU)</span></td><td>台灣</td></tr>
+                <tr><td><span class="rank-num">#55</span></td><td><span class="school-name">Carnegie Mellon University</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#56</span></td><td><span class="school-name">Universiti Malaya (UM)</span></td><td>馬來西亞</td></tr>
+                <tr><td><span class="rank-num">#57</span></td><td><span class="school-name">University of Bristol</span></td><td>英國</td></tr>
+                <tr><td><span class="rank-num">#58</span></td><td><span class="school-name">New York University (NYU)</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#59</span></td><td><span class="school-name">KU Leuven</span></td><td>比利時</td></tr>
+                <tr><td><span class="rank-num">#60</span></td><td><span class="school-name">University of Amsterdam</span></td><td>荷蘭</td></tr>
+                <tr><td><span class="rank-num">#61</span></td><td><span class="school-name">Ludwig-Maximilians-Universität München</span></td><td>德國</td></tr>
+                <tr><td><span class="rank-num">#62</span></td><td><span class="school-name">The London School of Economics and Political Science (LSE)</span></td><td>英國</td></tr>
+                <tr><td><span class="rank-num">#63</span></td><td><span class="school-name">KFUPM</span></td><td>沙烏地阿拉伯</td></tr>
+                <tr><td><span class="rank-num">#64</span></td><td><span class="school-name">Kyoto University</span></td><td>日本</td></tr>
+                <tr><td><span class="rank-num">#65</span></td><td><span class="school-name">KAIST</span></td><td>南韓</td></tr>
+                <tr><td><span class="rank-num">#66</span></td><td><span class="school-name">Brown University</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#67</span></td><td><span class="school-name">The University of Auckland</span></td><td>紐西蘭</td></tr>
+                <tr><td><span class="rank-num">#68</span></td><td><span class="school-name">The University of Warwick</span></td><td>英國</td></tr>
+                <tr><td><span class="rank-num">#68</span></td><td><span class="school-name">University of Birmingham</span></td><td>英國</td></tr>
+                <tr><td><span class="rank-num">#70</span></td><td><span class="school-name">Duke University</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#71</span></td><td><span class="school-name">Lund University</span></td><td>瑞典</td></tr>
+                <tr><td><span class="rank-num">#72</span></td><td><span class="school-name">University of Texas at Austin</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#73</span></td><td><span class="school-name">Sorbonne University</span></td><td>法國</td></tr>
+                <tr><td><span class="rank-num">#74</span></td><td><span class="school-name">University of Illinois Urbana-Champaign</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#75</span></td><td><span class="school-name">Trinity College Dublin, The University of Dublin</span></td><td>愛爾蘭</td></tr>
+                <tr><td><span class="rank-num">#76</span></td><td><span class="school-name">Université Paris-Saclay</span></td><td>法國</td></tr>
+                <tr><td><span class="rank-num">#77</span></td><td><span class="school-name">The University of Western Australia</span></td><td>澳洲</td></tr>
+                <tr><td><span class="rank-num">#77</span></td><td><span class="school-name">University of Leeds</span></td><td>英國</td></tr>
+                <tr><td><span class="rank-num">#79</span></td><td><span class="school-name">Adelaide University</span></td><td>澳洲</td></tr>
+                <tr><td><span class="rank-num">#80</span></td><td><span class="school-name">University of Glasgow</span></td><td>英國</td></tr>
+                <tr><td><span class="rank-num">#81</span></td><td><span class="school-name">University of California, San Diego (UCSD)</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#82</span></td><td><span class="school-name">KTH Royal Institute of Technology</span></td><td>瑞典</td></tr>
+                <tr><td><span class="rank-num">#82</span></td><td><span class="school-name">The University of Sheffield</span></td><td>英國</td></tr>
+                <tr><td><span class="rank-num">#84</span></td><td><span class="school-name">Universidad de Buenos Aires (UBA)</span></td><td>阿根廷</td></tr>
+                <tr><td><span class="rank-num">#85</span></td><td><span class="school-name">Durham University</span></td><td>英國</td></tr>
+                <tr><td><span class="rank-num">#86</span></td><td><span class="school-name">Universität Heidelberg</span></td><td>德國</td></tr>
+                <tr><td><span class="rank-num">#87</span></td><td><span class="school-name">Politecnico di Milano</span></td><td>義大利</td></tr>
+                <tr><td><span class="rank-num">#87</span></td><td><span class="school-name">University of Technology Sydney</span></td><td>澳洲</td></tr>
+                <tr><td><span class="rank-num">#87</span></td><td><span class="school-name">Uppsala University</span></td><td>瑞典</td></tr>
+                <tr><td><span class="rank-num">#90</span></td><td><span class="school-name">Nanjing University</span></td><td>中國</td></tr>
+                <tr><td><span class="rank-num">#90</span></td><td><span class="school-name">University of Copenhagen</span></td><td>丹麥</td></tr>
+                <tr><td><span class="rank-num">#92</span></td><td><span class="school-name">Pennsylvania State University</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#92</span></td><td><span class="school-name">University of Washington</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#94</span></td><td><span class="school-name">Boston University</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#95</span></td><td><span class="school-name">The University of Osaka</span></td><td>日本</td></tr>
+                <tr><td><span class="rank-num">#96</span></td><td><span class="school-name">University of Alberta</span></td><td>加拿大</td></tr>
+                <tr><td><span class="rank-num">#97</span></td><td><span class="school-name">Institute of Science Tokyo</span></td><td>日本</td></tr>
+                <tr><td><span class="rank-num">#97</span></td><td><span class="school-name">University of Nottingham</span></td><td>英國</td></tr>
+                <tr><td><span class="rank-num">#98</span></td><td><span class="school-name">Freie Universitaet Berlin</span></td><td>德國</td></tr>
+                <tr><td><span class="rank-num">#98</span></td><td><span class="school-name">University of Zurich</span></td><td>瑞士</td></tr>
+                <tr><td><span class="rank-num">#100</span></td><td><span class="school-name">Purdue University</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#100</span></td><td><span class="school-name">University College Dublin</span></td><td>愛爾蘭</td></tr>
+                <tr><td><span class="rank-num">#102</span></td><td><span class="school-name">Tohoku University</span></td><td>日本</td></tr>
+                <tr><td><span class="rank-num">#103</span></td><td><span class="school-name">Queen Mary University of London</span></td><td>英國</td></tr>
+                <tr><td><span class="rank-num">#104</span></td><td><span class="school-name">RWTH Aachen University</span></td><td>德國</td></tr>
+                <tr><td><span class="rank-num">#105</span></td><td><span class="school-name">Technical University of Denmark</span></td><td>丹麥</td></tr>
+                <tr><td><span class="rank-num">#106</span></td><td><span class="school-name">Pohang University of Science And Technology (POSTECH)</span></td><td>南韓</td></tr>
+                <tr><td><span class="rank-num">#107</span></td><td><span class="school-name">King Saud University</span></td><td>沙烏地阿拉伯</td></tr>
+                <tr><td><span class="rank-num">#108</span></td><td><span class="school-name">Sungkyunkwan University (SKKU)</span></td><td>南韓</td></tr>
+                <tr><td><span class="rank-num">#109</span></td><td><span class="school-name">Qatar University</span></td><td>卡達</td></tr>
+                <tr><td><span class="rank-num">#110</span></td><td><span class="school-name">KIT, Karlsruhe Institute of Technology</span></td><td>德國</td></tr>
+                <tr><td><span class="rank-num">#111</span></td><td><span class="school-name">Sapienza University of Rome</span></td><td>義大利</td></tr>
+                <tr><td><span class="rank-num">#111</span></td><td><span class="school-name">University of Southampton</span></td><td>英國</td></tr>
+                <tr><td><span class="rank-num">#113</span></td><td><span class="school-name">University of Waterloo</span></td><td>加拿大</td></tr>
+                <tr><td><span class="rank-num">#113</span></td><td><span class="school-name">Utrecht University</span></td><td>荷蘭</td></tr>
+                <tr><td><span class="rank-num">#115</span></td><td><span class="school-name">Lomonosov Moscow State University</span></td><td>俄羅斯</td></tr>
+                <tr><td><span class="rank-num">#115</span></td><td><span class="school-name">University of St Andrews</span></td><td>英國</td></tr>
+                <tr><td><span class="rank-num">#118</span></td><td><span class="school-name">Indian Institute of Technology Delhi (IITD)</span></td><td>印度</td></tr>
+                <tr><td><span class="rank-num">#119</span></td><td><span class="school-name">Leiden University</span></td><td>荷蘭</td></tr>
+                <tr><td><span class="rank-num">#119</span></td><td><span class="school-name">Pontificia Universidad Católica de Chile (UC)</span></td><td>智利</td></tr>
+                <tr><td><span class="rank-num">#119</span></td><td><span class="school-name">RMIT University</span></td><td>澳洲</td></tr>
+                <tr><td><span class="rank-num">#122</span></td><td><span class="school-name">Rice University</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#123</span></td><td><span class="school-name">Alma Mater Studiorum - Università di Bologna</span></td><td>義大利</td></tr>
+                <tr><td><span class="rank-num">#123</span></td><td><span class="school-name">University of Helsinki</span></td><td>芬蘭</td></tr>
+                <tr><td><span class="rank-num">#125</span></td><td><span class="school-name">University of Bath</span></td><td>英國</td></tr>
+                <tr><td><span class="rank-num">#126</span></td><td><span class="school-name">Aalto University</span></td><td>芬蘭</td></tr>
+                <tr><td><span class="rank-num">#126</span></td><td><span class="school-name">Macquarie University (Sydney, Australia)</span></td><td>澳洲</td></tr>
+                <tr><td><span class="rank-num">#128</span></td><td><span class="school-name">Aarhus University</span></td><td>丹麥</td></tr>
+                <tr><td><span class="rank-num">#128</span></td><td><span class="school-name">Universiti Sains Malaysia (USM)</span></td><td>馬來西亞</td></tr>
+                <tr><td><span class="rank-num">#130</span></td><td><span class="school-name">Universiti Kebangsaan Malaysia (UKM)</span></td><td>馬來西亞</td></tr>
+                <tr><td><span class="rank-num">#131</span></td><td><span class="school-name">University of Oslo</span></td><td>挪威</td></tr>
+                <tr><td><span class="rank-num">#131</span></td><td><span class="school-name">University of Wisconsin-Madison</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#133</span></td><td><span class="school-name">Universidade de São Paulo</span></td><td>巴西</td></tr>
+                <tr><td><span class="rank-num">#134</span></td><td><span class="school-name">Indian Institute of Technology Bombay (IITB)</span></td><td>印度</td></tr>
+                <tr><td><span class="rank-num">#134</span></td><td><span class="school-name">University of Science and Technology of China</span></td><td>中國</td></tr>
+                <tr><td><span class="rank-num">#136</span></td><td><span class="school-name">University of Exeter</span></td><td>英國</td></tr>
+                <tr><td><span class="rank-num">#137</span></td><td><span class="school-name">University of California, Davis</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#138</span></td><td><span class="school-name">Universiti Putra Malaysia (UPM)</span></td><td>馬來西亞</td></tr>
+                <tr><td><span class="rank-num">#139</span></td><td><span class="school-name">University of Liverpool</span></td><td>英國</td></tr>
+                <tr><td><span class="rank-num">#140</span></td><td><span class="school-name">Humboldt-Universität zu Berlin</span></td><td>德國</td></tr>
+                <tr><td><span class="rank-num">#140</span></td><td><span class="school-name">University of Vienna</span></td><td>奧地利</td></tr>
+                <tr><td><span class="rank-num">#142</span></td><td><span class="school-name">Georgia Institute of Technology</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#142</span></td><td><span class="school-name">National Tsing Hua University - NTHU</span></td><td>台灣</td></tr>
+                <tr><td><span class="rank-num">#142</span></td><td><span class="school-name">Western University</span></td><td>加拿大</td></tr>
+                <tr><td><span class="rank-num">#145</span></td><td><span class="school-name">Universidad Nacional Autónoma de México  (UNAM)</span></td><td>墨西哥</td></tr>
+                <tr><td><span class="rank-num">#146</span></td><td><span class="school-name">Tongji University</span></td><td>中國</td></tr>
+                <tr><td><span class="rank-num">#147</span></td><td><span class="school-name">Khalifa University</span></td><td>阿聯</td></tr>
+                <tr><td><span class="rank-num">#148</span></td><td><span class="school-name">Erasmus University Rotterdam</span></td><td>荷蘭</td></tr>
+                <tr><td><span class="rank-num">#149</span></td><td><span class="school-name">Newcastle University</span></td><td>英國</td></tr>
+                <tr><td><span class="rank-num">#150</span></td><td><span class="school-name">Ghent University</span></td><td>比利時</td></tr>
+                <tr><td><span class="rank-num">#150</span></td><td><span class="school-name">University of Basel</span></td><td>瑞士</td></tr>
+                <tr><td><span class="rank-num">#152</span></td><td><span class="school-name">Eindhoven University of Technology</span></td><td>荷蘭</td></tr>
+                <tr><td><span class="rank-num">#153</span></td><td><span class="school-name">University of Southern California</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#154</span></td><td><span class="school-name">Wageningen University &amp; Research</span></td><td>荷蘭</td></tr>
+                <tr><td><span class="rank-num">#155</span></td><td><span class="school-name">Hanyang University</span></td><td>南韓</td></tr>
+                <tr><td><span class="rank-num">#156</span></td><td><span class="school-name">Nagoya University</span></td><td>日本</td></tr>
+                <tr><td><span class="rank-num">#157</span></td><td><span class="school-name">University of Groningen</span></td><td>荷蘭</td></tr>
+                <tr><td><span class="rank-num">#158</span></td><td><span class="school-name">Technische Universität Berlin (TU Berlin)</span></td><td>德國</td></tr>
+                <tr><td><span class="rank-num">#158</span></td><td><span class="school-name">Universiti Teknologi Malaysia</span></td><td>馬來西亞</td></tr>
+                <tr><td><span class="rank-num">#158</span></td><td><span class="school-name">University of North Carolina at Chapel Hill</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#158</span></td><td><span class="school-name">University of York</span></td><td>英國</td></tr>
+                <tr><td><span class="rank-num">#162</span></td><td><span class="school-name">Université de Montréal</span></td><td>加拿大</td></tr>
+                <tr><td><span class="rank-num">#162</span></td><td><span class="school-name">Washington University in St. Louis</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#164</span></td><td><span class="school-name">Lancaster University</span></td><td>英國</td></tr>
+                <tr><td><span class="rank-num">#165</span></td><td><span class="school-name">Universitat de Barcelona</span></td><td>西班牙</td></tr>
+                <tr><td><span class="rank-num">#165</span></td><td><span class="school-name">Wuhan University</span></td><td>中國</td></tr>
+                <tr><td><span class="rank-num">#167</span></td><td><span class="school-name">Stockholm University</span></td><td>瑞典</td></tr>
+                <tr><td><span class="rank-num">#168</span></td><td><span class="school-name">University of Geneva</span></td><td>瑞士</td></tr>
+                <tr><td><span class="rank-num">#169</span></td><td><span class="school-name">Texas A&amp;M University</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#170</span></td><td><span class="school-name">Indian Institute of Technology Madras (IITM)</span></td><td>印度</td></tr>
+                <tr><td><span class="rank-num">#171</span></td><td><span class="school-name">Kyushu University</span></td><td>日本</td></tr>
+                <tr><td><span class="rank-num">#172</span></td><td><span class="school-name">Arizona State University</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#173</span></td><td><span class="school-name">University of California, Santa Barbara (UCSB)</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#174</span></td><td><span class="school-name">Chalmers University of Technology</span></td><td>瑞典</td></tr>
+                <tr><td><span class="rank-num">#174</span></td><td><span class="school-name">McMaster University</span></td><td>加拿大</td></tr>
+                <tr><td><span class="rank-num">#174</span></td><td><span class="school-name">Queen&#x27;s University Belfast</span></td><td>英國</td></tr>
+                <tr><td><span class="rank-num">#177</span></td><td><span class="school-name">Al-Farabi Kazakh National University</span></td><td>哈薩克</td></tr>
+                <tr><td><span class="rank-num">#177</span></td><td><span class="school-name">National Yang Ming Chiao Tung University (NYCU Taiwan)</span></td><td>台灣</td></tr>
+                <tr><td><span class="rank-num">#179</span></td><td><span class="school-name">Cardiff University</span></td><td>英國</td></tr>
+                <tr><td><span class="rank-num">#179</span></td><td><span class="school-name">Hokkaido University</span></td><td>日本</td></tr>
+                <tr><td><span class="rank-num">#179</span></td><td><span class="school-name">Queen&#x27;s University at Kingston</span></td><td>加拿大</td></tr>
+                <tr><td><span class="rank-num">#182</span></td><td><span class="school-name">Michigan State University</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#183</span></td><td><span class="school-name">Emory University</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#184</span></td><td><span class="school-name">University of Cape Town</span></td><td>南非</td></tr>
+                <tr><td><span class="rank-num">#185</span></td><td><span class="school-name">Technische Universität Dresden</span></td><td>德國</td></tr>
+                <tr><td><span class="rank-num">#185</span></td><td><span class="school-name">Universidad de Chile</span></td><td>智利</td></tr>
+                <tr><td><span class="rank-num">#185</span></td><td><span class="school-name">Vrije Universiteit Amsterdam</span></td><td>荷蘭</td></tr>
+                <tr><td><span class="rank-num">#188</span></td><td><span class="school-name">Tecnológico de Monterrey</span></td><td>墨西哥</td></tr>
+                <tr><td><span class="rank-num">#189</span></td><td><span class="school-name">Curtin University</span></td><td>澳洲</td></tr>
+                <tr><td><span class="rank-num">#190</span></td><td><span class="school-name">Harbin Institute of Technology</span></td><td>中國</td></tr>
+                <tr><td><span class="rank-num">#191</span></td><td><span class="school-name">National Cheng Kung University (NCKU)</span></td><td>台灣</td></tr>
+                <tr><td><span class="rank-num">#191</span></td><td><span class="school-name">Technische Universität Wien</span></td><td>奧地利</td></tr>
+                <tr><td><span class="rank-num">#191</span></td><td><span class="school-name">Universitas Indonesia</span></td><td>印尼</td></tr>
+                <tr><td><span class="rank-num">#191</span></td><td><span class="school-name">University of Bern</span></td><td>瑞士</td></tr>
+                <tr><td><span class="rank-num">#195</span></td><td><span class="school-name">University of Wollongong</span></td><td>澳洲</td></tr>
+                <tr><td><span class="rank-num">#196</span></td><td><span class="school-name">Université catholique de Louvain (UCLouvain)</span></td><td>比利時</td></tr>
+                <tr><td><span class="rank-num">#196</span></td><td><span class="school-name">University of Reading</span></td><td>英國</td></tr>
+                <tr><td><span class="rank-num">#198</span></td><td><span class="school-name">University of Otago</span></td><td>紐西蘭</td></tr>
+                <tr><td><span class="rank-num">#199</span></td><td><span class="school-name">Complutense University of Madrid</span></td><td>西班牙</td></tr>
+                <tr><td><span class="rank-num">#200</span></td><td><span class="school-name">King Abdulaziz University (KAU)</span></td><td>沙烏地阿拉伯</td></tr>
+                <tr><td><span class="rank-num">#201</span></td><td><span class="school-name">The Ohio State University</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#201</span></td><td><span class="school-name">Waseda University</span></td><td>日本</td></tr>
+                <tr><td><span class="rank-num">#203</span></td><td><span class="school-name">Loughborough University</span></td><td>英國</td></tr>
+                <tr><td><span class="rank-num">#204</span></td><td><span class="school-name">Università di Padova</span></td><td>義大利</td></tr>
+                <tr><td><span class="rank-num">#205</span></td><td><span class="school-name">Indian Institute of Technology Kharagpur (IIT-KGP)</span></td><td>印度</td></tr>
+                <tr><td><span class="rank-num">#206</span></td><td><span class="school-name">Gadjah Mada University</span></td><td>印尼</td></tr>
+                <tr><td><span class="rank-num">#206</span></td><td><span class="school-name">Politecnico di Torino</span></td><td>義大利</td></tr>
+                <tr><td><span class="rank-num">#208</span></td><td><span class="school-name">Tel Aviv University</span></td><td>以色列</td></tr>
+                <tr><td><span class="rank-num">#209</span></td><td><span class="school-name">Rheinische Friedrich-Wilhelms-Universität Bonn</span></td><td>德國</td></tr>
+                <tr><td><span class="rank-num">#209</span></td><td><span class="school-name">Universität Hamburg</span></td><td>德國</td></tr>
+                <tr><td><span class="rank-num">#211</span></td><td><span class="school-name">Universitat Autònoma de Barcelona</span></td><td>西班牙</td></tr>
+                <tr><td><span class="rank-num">#212</span></td><td><span class="school-name">Chulalongkorn University</span></td><td>泰國</td></tr>
+                <tr><td><span class="rank-num">#213</span></td><td><span class="school-name">Hamad Bin Khalifa University (HBKU)</span></td><td>卡達</td></tr>
+                <tr><td><span class="rank-num">#213</span></td><td><span class="school-name">Keio University</span></td><td>日本</td></tr>
+                <tr><td><span class="rank-num">#215</span></td><td><span class="school-name">Massey University</span></td><td>紐西蘭</td></tr>
+                <tr><td><span class="rank-num">#216</span></td><td><span class="school-name">Hong Kong Baptist University</span></td><td>香港</td></tr>
+                <tr><td><span class="rank-num">#217</span></td><td><span class="school-name">United Arab Emirates University</span></td><td>阿聯</td></tr>
+                <tr><td><span class="rank-num">#218</span></td><td><span class="school-name">Friedrich-Alexander-Universität Erlangen-Nürnberg</span></td><td>德國</td></tr>
+                <tr><td><span class="rank-num">#218</span></td><td><span class="school-name">The Hebrew University of Jerusalem</span></td><td>以色列</td></tr>
+                <tr><td><span class="rank-num">#220</span></td><td><span class="school-name">University College Cork</span></td><td>愛爾蘭</td></tr>
+                <tr><td><span class="rank-num">#221</span></td><td><span class="school-name">Indian Institute of Science (IISc) Bangalore</span></td><td>印度</td></tr>
+                <tr><td><span class="rank-num">#221</span></td><td><span class="school-name">Indian Institute of Technology Kanpur (IITK)</span></td><td>印度</td></tr>
+                <tr><td><span class="rank-num">#223</span></td><td><span class="school-name">American University of Beirut (AUB)</span></td><td>黎巴嫩</td></tr>
+                <tr><td><span class="rank-num">#223</span></td><td><span class="school-name">University of Twente</span></td><td>荷蘭</td></tr>
+                <tr><td><span class="rank-num">#225</span></td><td><span class="school-name">University of Gothenburg</span></td><td>瑞典</td></tr>
+                <tr><td><span class="rank-num">#226</span></td><td><span class="school-name">Universidad Autónoma de Madrid</span></td><td>西班牙</td></tr>
+                <tr><td><span class="rank-num">#227</span></td><td><span class="school-name">Deakin University</span></td><td>澳洲</td></tr>
+                <tr><td><span class="rank-num">#228</span></td><td><span class="school-name">University of Florida</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#228</span></td><td><span class="school-name">University of Ottawa</span></td><td>加拿大</td></tr>
+                <tr><td><span class="rank-num">#230</span></td><td><span class="school-name">Eberhard Karls Universität Tübingen</span></td><td>德國</td></tr>
+                <tr><td><span class="rank-num">#230</span></td><td><span class="school-name">Griffith University</span></td><td>澳洲</td></tr>
+                <tr><td><span class="rank-num">#230</span></td><td><span class="school-name">University of Strathclyde</span></td><td>英國</td></tr>
+                <tr><td><span class="rank-num">#233</span></td><td><span class="school-name">Universidad de los Andes</span></td><td>哥倫比亞</td></tr>
+                <tr><td><span class="rank-num">#233</span></td><td><span class="school-name">University of Lausanne</span></td><td>瑞士</td></tr>
+                <tr><td><span class="rank-num">#235</span></td><td><span class="school-name">École Normale Supérieure de Lyon</span></td><td>法國</td></tr>
+                <tr><td><span class="rank-num">#235</span></td><td><span class="school-name">Tianjin University</span></td><td>中國</td></tr>
+                <tr><td><span class="rank-num">#237</span></td><td><span class="school-name">Beijing Normal University</span></td><td>中國</td></tr>
+                <tr><td><span class="rank-num">#237</span></td><td><span class="school-name">University of Lisbon</span></td><td>葡萄牙</td></tr>
+                <tr><td><span class="rank-num">#239</span></td><td><span class="school-name">Central European University</span></td><td>奧地利</td></tr>
+                <tr><td><span class="rank-num">#240</span></td><td><span class="school-name">Queensland University of Technology (QUT)</span></td><td>澳洲</td></tr>
+                <tr><td><span class="rank-num">#241</span></td><td><span class="school-name">La Trobe University</span></td><td>澳洲</td></tr>
+                <tr><td><span class="rank-num">#241</span></td><td><span class="school-name">Victoria University of Wellington</span></td><td>紐西蘭</td></tr>
+                <tr><td><span class="rank-num">#243</span></td><td><span class="school-name">Beijing Institute of Technology</span></td><td>中國</td></tr>
+                <tr><td><span class="rank-num">#244</span></td><td><span class="school-name">The University of Newcastle, Australia (UON)</span></td><td>澳洲</td></tr>
+                <tr><td><span class="rank-num">#245</span></td><td><span class="school-name">Albert-Ludwigs-Universitaet Freiburg</span></td><td>德國</td></tr>
+                <tr><td><span class="rank-num">#246</span></td><td><span class="school-name">Université Paris 1 Panthéon-Sorbonne</span></td><td>法國</td></tr>
+                <tr><td><span class="rank-num">#246</span></td><td><span class="school-name">University of Surrey</span></td><td>英國</td></tr>
+                <tr><td><span class="rank-num">#248</span></td><td><span class="school-name">Universite libre de Bruxelles</span></td><td>比利時</td></tr>
+                <tr><td><span class="rank-num">#249</span></td><td><span class="school-name">University of Calgary</span></td><td>加拿大</td></tr>
+                <tr><td><span class="rank-num">#250</span></td><td><span class="school-name">Technical University of Darmstadt</span></td><td>德國</td></tr>
+                <tr><td><span class="rank-num">#251</span></td><td><span class="school-name">University of Rochester</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#252</span></td><td><span class="school-name">University of California, Irvine</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#252</span></td><td><span class="school-name">University of Maryland, College Park</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#254</span></td><td><span class="school-name">Maastricht University</span></td><td>荷蘭</td></tr>
+                <tr><td><span class="rank-num">#255</span></td><td><span class="school-name">University of Minnesota (System)</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#255</span></td><td><span class="school-name">University of Porto</span></td><td>葡萄牙</td></tr>
+                <tr><td><span class="rank-num">#257</span></td><td><span class="school-name">University of Canterbury | Te Whare Wānanga o Waitaha</span></td><td>紐西蘭</td></tr>
+                <tr><td><span class="rank-num">#258</span></td><td><span class="school-name">American University of Sharjah</span></td><td>阿聯</td></tr>
+                <tr><td><span class="rank-num">#258</span></td><td><span class="school-name">Sun Yat-sen University</span></td><td>中國</td></tr>
+                <tr><td><span class="rank-num">#260</span></td><td><span class="school-name">University of Massachusetts Amherst</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#261</span></td><td><span class="school-name">Universiti Teknologi PETRONAS (UTP)</span></td><td>馬來西亞</td></tr>
+                <tr><td><span class="rank-num">#261</span></td><td><span class="school-name">University of Göttingen</span></td><td>德國</td></tr>
+                <tr><td><span class="rank-num">#263</span></td><td><span class="school-name">Universitat Pompeu Fabra (Barcelona)</span></td><td>西班牙</td></tr>
+                <tr><td><span class="rank-num">#264</span></td><td><span class="school-name">Norwegian University of Science And Technology</span></td><td>挪威</td></tr>
+                <tr><td><span class="rank-num">#265</span></td><td><span class="school-name">Vanderbilt University</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#266</span></td><td><span class="school-name">Singapore University of Technology and Design</span></td><td>新加坡</td></tr>
+                <tr><td><span class="rank-num">#267</span></td><td><span class="school-name">University of Macau</span></td><td>澳門</td></tr>
+                <tr><td><span class="rank-num">#268</span></td><td><span class="school-name">University of Virginia</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#269</span></td><td><span class="school-name">University of Cologne</span></td><td>德國</td></tr>
+                <tr><td><span class="rank-num">#270</span></td><td><span class="school-name">Dartmouth College</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#270</span></td><td><span class="school-name">University of Milan</span></td><td>義大利</td></tr>
+                <tr><td><span class="rank-num">#272</span></td><td><span class="school-name">Taylor&#x27;s University</span></td><td>馬來西亞</td></tr>
+                <tr><td><span class="rank-num">#273</span></td><td><span class="school-name">Charles University</span></td><td>捷克</td></tr>
+                <tr><td><span class="rank-num">#273</span></td><td><span class="school-name">University of Sussex</span></td><td>英國</td></tr>
+                <tr><td><span class="rank-num">#275</span></td><td><span class="school-name">University of Galway</span></td><td>愛爾蘭</td></tr>
+                <tr><td><span class="rank-num">#276</span></td><td><span class="school-name">Universitas Airlangga</span></td><td>印尼</td></tr>
+                <tr><td><span class="rank-num">#277</span></td><td><span class="school-name">Universidade Estadual de Campinas (Unicamp)</span></td><td>巴西</td></tr>
+                <tr><td><span class="rank-num">#277</span></td><td><span class="school-name">University of Antwerp</span></td><td>比利時</td></tr>
+                <tr><td><span class="rank-num">#279</span></td><td><span class="school-name">Istanbul Technical University</span></td><td>土耳其</td></tr>
+                <tr><td><span class="rank-num">#279</span></td><td><span class="school-name">University of Navarra</span></td><td>西班牙</td></tr>
+                <tr><td><span class="rank-num">#279</span></td><td><span class="school-name">University of Pittsburgh</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#282</span></td><td><span class="school-name">UCSI University</span></td><td>馬來西亞</td></tr>
+                <tr><td><span class="rank-num">#283</span></td><td><span class="school-name">Radboud University</span></td><td>荷蘭</td></tr>
+                <tr><td><span class="rank-num">#283</span></td><td><span class="school-name">University of Bergen</span></td><td>挪威</td></tr>
+                <tr><td><span class="rank-num">#283</span></td><td><span class="school-name">University of Sharjah</span></td><td>阿聯</td></tr>
+                <tr><td><span class="rank-num">#283</span></td><td><span class="school-name">University of Southern Denmark (SDU)</span></td><td>丹麥</td></tr>
+                <tr><td><span class="rank-num">#287</span></td><td><span class="school-name">Institut Teknologi Bandung (ITB)</span></td><td>印尼</td></tr>
+                <tr><td><span class="rank-num">#288</span></td><td><span class="school-name">University of Aberdeen</span></td><td>英國</td></tr>
+                <tr><td><span class="rank-num">#289</span></td><td><span class="school-name">Georgetown University</span></td><td>美國</td></tr>
+                <tr><td><span class="rank-num">#289</span></td><td><span class="school-name">University of Warsaw</span></td><td>波蘭</td></tr>
+                <tr><td><span class="rank-num">#291</span></td><td><span class="school-name">Swinburne University of Technology</span></td><td>澳洲</td></tr>
+                <tr><td><span class="rank-num">#292</span></td><td><span class="school-name">University of Johannesburg</span></td><td>南非</td></tr>
+                <tr><td><span class="rank-num">#293</span></td><td><span class="school-name">Universidad Nacional de Colombia</span></td><td>哥倫比亞</td></tr>
+                <tr><td><span class="rank-num">#293</span></td><td><span class="school-name">University of Waikato</span></td><td>紐西蘭</td></tr>
+                <tr><td><span class="rank-num">#295</span></td><td><span class="school-name">Vrije Universiteit Brussel (VUB)</span></td><td>比利時</td></tr>
+                <tr><td><span class="rank-num">#296</span></td><td><span class="school-name">Stellenbosch University</span></td><td>南非</td></tr>
+                <tr><td><span class="rank-num">#296</span></td><td><span class="school-name">Xi’an Jiaotong University</span></td><td>中國</td></tr>
+                <tr><td><span class="rank-num">#298</span></td><td><span class="school-name">Dalhousie University</span></td><td>加拿大</td></tr>
+                <tr><td><span class="rank-num">#299</span></td><td><span class="school-name">Ulsan National Institute of Science and Technology (UNIST)</span></td><td>南韓</td></tr>
+                <tr><td><span class="rank-num">#300</span></td><td><span class="school-name">Sichuan University</span></td><td>中國</td></tr>
+                </tbody>
+              </table>
+              <div class="full-rank-empty" id="rankEmpty">查無符合條件的學校</div>
+            </div>
+            <p style="font-size:12.5px;color:var(--muted);line-height:1.6;margin-top:-12px;">＊資料來源：QS World University Rankings 2027 Top 300 整理後榜單。學校名稱沿用原始英文資料，國家／地區譯為中文。</p>
+
+            <div class="article-cta">
+              <h3>讓 QS 排名變成你的選校工具，而不是壓力</h3>
+              <p>排名只是起點，真正的選校策略要依學生的科系方向、申請條件與長期目標規劃。預約日暘顧問面談。</p>
+              <a href="/contact/index.html" class="btn btn-gold">✦ 預約顧問面談</a>
+            </div>
+
+            <h2>資料來源與延伸閱讀</h2>
+            <ol class="source-list">
+              <li><a href="https://www.topuniversities.com/world-university-rankings" target="_blank" rel="noopener">QS World University Rankings 2027: Top Global Universities</a></li>
+              <li><a href="https://www.topuniversities.com/world-university-rankings/methodology" target="_blank" rel="noopener">QS World University Rankings: Methodology</a></li>
+              <li><a href="https://support.qs.com/hc/en-gb/articles/15441557138716-QS-Rankings-Cycle-2027" target="_blank" rel="noopener">QS Rankings Cycle 2027</a></li>
+              <li><a href="https://www.qs.com/rankings-performance/" target="_blank" rel="noopener">QS Rankings and Performance</a></li>
+              <li><a href="https://www.topuniversities.com/qs-world-university-rankings" target="_blank" rel="noopener">QS World University Rankings: Top Global Universities</a></li>
+            </ol>
+
+            <div class="article-nav">
+              <a href="/blog/articles/us-news-global-2026.html">← 2026–2027 U.S. News 全球排名</a>
+              <a href="/blog/articles/ivy-league.html" style="margin-left:auto;">Ivy League 八校深度比較 →</a>
+            </div>
+
+          </article>
+
+          <aside>
+            <div class="sidebar-widget">
+              <div class="sidebar-widget__title">相關文章</div>
+              <ul class="sidebar-link-list">
+                <li><a href="/blog/articles/us-news-global-2026.html">2026–2027 U.S. News 全球排名</a></li>
+                <li><a href="/blog/articles/ivy-league.html">Ivy League 八校深度比較</a></li>
+                <li><a href="/blog/articles/uc-system.html">UC 系統九校完整比較</a></li>
+                <li><a href="/blog/articles/canada-universities.html">加拿大頂尖大學申請指南</a></li>
+              </ul>
+            </div>
+            <div class="sidebar-widget">
+              <div class="sidebar-widget__title">文章分類</div>
+              <ul class="sidebar-link-list">
+                <li><a href="/blog/school.html">學校相關</a></li>
+                <li><a href="/blog/exam.html">考試相關</a></li>
+                <li><a href="/blog/experience.html">經驗分享</a></li>
+                <li><a href="/blog/resources.html">網站資源</a></li>
+              </ul>
+            </div>
+            <div class="sidebar-widget contact-widget">
+              <div class="sidebar-widget__title">顧問諮詢</div>
+              <p>排名只是工具，<br/>策略才是關鍵。<br/>預約顧問，獲得個人化選校建議。</p>
+              <a href="/contact/index.html" class="btn btn-gold" style="display:flex;justify-content:center;">預約諮詢</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </main>
+    <div id="site-footer"></div>
+    <script src="/js/main.js"></script>
+    <script>
+      (function () {
+        var input = document.getElementById('rankSearch');
+        var table = document.getElementById('fullRankTable');
+        var countEl = document.getElementById('rankCount');
+        var emptyEl = document.getElementById('rankEmpty');
+        if (!input || !table) return;
+        var rows = Array.prototype.slice.call(table.tBodies[0].rows);
+        var total = rows.length;
+        var haystacks = rows.map(function (tr) { return tr.textContent.toLowerCase(); });
+        var timer = null;
+        function apply() {
+          var q = input.value.trim().toLowerCase();
+          var shown = 0;
+          for (var i = 0; i < rows.length; i++) {
+            var match = !q || haystacks[i].indexOf(q) !== -1;
+            rows[i].classList.toggle('is-hidden', !match);
+            if (match) shown++;
+          }
+          countEl.textContent = '顯示 ' + shown + ' / ' + total + ' 所';
+          emptyEl.classList.toggle('is-visible', shown === 0);
+        }
+        input.addEventListener('input', function () {
+          clearTimeout(timer);
+          timer = setTimeout(apply, 80);
+        });
+      })();
+    </script>
+  </body>
+</html>
