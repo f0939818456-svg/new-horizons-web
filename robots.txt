@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# 不索引的頁面（系統頁、表單回覆頁）
+Disallow: /results/thanks.html
+Disallow: /components/
+
+Sitemap: https://www.newhorizons.com.tw/sitemap.xml
