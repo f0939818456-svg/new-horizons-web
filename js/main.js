@@ -76,7 +76,16 @@ async function loadComponent(selector, url) {
 loadComponent("#site-header", "/components/header.html").then(() => {
   setupHeaderInteractions();
 });
-loadComponent("#site-footer", "/components/footer.html");
+loadComponent("#site-footer", "/components/footer.html").then(() => {
+  // 頁尾版權列進入視窗時，淡出浮動 CTA，避免遮住 footer 連結
+  const footerBottom = document.querySelector(".footer-bottom");
+  const floatCta = document.querySelector(".float-cta");
+  if (footerBottom && floatCta && "IntersectionObserver" in window) {
+    new IntersectionObserver(entries => {
+      floatCta.classList.toggle("is-hidden", entries[0].isIntersecting);
+    }).observe(footerBottom);
+  }
+});
 
 // Scroll shadow on header
 window.addEventListener("scroll", () => {

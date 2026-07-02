@@ -105,8 +105,11 @@
         background: var(--bg-alt);
         border-bottom: 1px solid var(--border);
         position: sticky;
-        top: 0;
-        z-index: 90;
+        top: 76px; /* 黏在網站 header 正下方（header 為 sticky top:0, z-index:1000） */
+        z-index: 99;
+      }
+      @media (max-width: 600px) {
+        .subject-nav { top: 60px; }
       }
       .subject-nav__inner {
         display: flex;

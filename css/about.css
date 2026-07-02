@@ -65,12 +65,15 @@
 .principle-card,
 .metric-card,
 .team-card {
-  padding: 28px 24px;
+  padding: 32px 28px;
   border-radius: var(--radius);
   border: 1px solid var(--border);
   background: #fff;
   transition: 0.3s;
 }
+
+/* 兩欄版 metrics（手機收合為單欄，由下方 media query 接手） */
+.metrics-grid--two { grid-template-columns: 1fr 1fr; }
 
 .principle-card:hover,
 .metric-card:hover,
@@ -129,6 +132,7 @@
 @media (max-width: 580px) {
   .principles-grid,
   .metrics-grid,
+  .metrics-grid--two,
   .team-grid {
     grid-template-columns: 1fr;
   }

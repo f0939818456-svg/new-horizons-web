@@ -1413,6 +1413,10 @@
 
   .sidebar-widget { margin-bottom: 20px; }
   .cta-box { padding: 40px 24px; }
+
+  /* 觸控目標 ≥ 44px（iOS HIG） */
+  .page-btn { width: 44px; height: 44px; }
+  .page-btn.wide { width: auto; }
 }
 
 /* =========================

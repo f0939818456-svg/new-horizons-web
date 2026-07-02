@@ -59,7 +59,6 @@
         cursor: pointer;
       }
       .btn-line { background: #06c755; color: #fff; }
-      .btn-threads { background: #1C1C1E; color: #fff; }
       .btn-facebook { background: #1877F2; color: #fff; }
       .btn-social:hover { opacity: 0.85; transform: translateY(-2px); }
 
@@ -189,6 +188,7 @@
         .contact-grid { grid-template-columns: 1fr; }
         .form-grid { grid-template-columns: 1fr; }
         .form-section { padding: 36px 24px; }
+        .desktop-only { display: none; }
       }
     </style>
   </head>
@@ -248,9 +248,6 @@
                 <a href="https://line.me/ti/p/@nh3707" target="_blank" rel="noopener" class="btn-social btn-line">
                   LINE 官方諮詢
                 </a>
-                <a href="#" class="btn-social btn-threads">
-                  𝕋 Threads
-                </a>
                 <a href="https://www.facebook.com/profile.php?id=100090262853963" target="_blank" rel="noopener" class="btn-social btn-facebook">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                   Facebook
@@ -285,14 +282,17 @@
           </div>
         </div>
 
-        <!-- Consultation Form -->
+        <!-- Consultation via LINE -->
         <section class="form-section">
           <div class="form-inner">
             <div style="text-align:center;margin-bottom:40px;">
               <span class="section-label" style="text-align:center;display:block;">CONSULTATION</span>
-              <h2 style="font-size:28px;font-weight:800;margin:0 0 10px;">預約顧問諮詢</h2>
+              <h2 style="font-size:28px;font-weight:800;margin:0 0 10px;">LINE 預約顧問諮詢</h2>
               <div class="section-divider center"></div>
-              <p style="font-size:15px;color:var(--muted);">請填寫下方資訊，我們將在 24 小時內由顧問與您聯繫安排。</p>
+              <p style="font-size:15px;color:var(--muted);line-height:1.8;">
+                填寫下方資訊後點「透過 LINE 送出諮詢」，會自動開啟日暘官方 LINE（<strong style="color:var(--brand);">@nh3707</strong>）並帶入你的諮詢內容，<br class="desktop-only"/>
+                加入好友後按「傳送」即可，顧問將於 24 小時內回覆。
+              </p>
             </div>
 
             <form id="consultationForm">
@@ -300,14 +300,6 @@
                 <div class="form-group">
                   <label>學生姓名 *</label>
                   <input type="text" name="name" required placeholder="您的姓名" />
-                </div>
-                <div class="form-group">
-                  <label>聯絡電話</label>
-                  <input type="tel" name="phone" placeholder="0912-345-678" />
-                </div>
-                <div class="form-group">
-                  <label>聯絡信箱 *</label>
-                  <input type="email" name="email" required placeholder="example@email.com" />
                 </div>
                 <div class="form-group">
                   <label>目前就讀年級</label>
@@ -343,10 +335,13 @@
                 </div>
               </div>
               <button type="submit" class="submit-btn" id="submitBtn" style="margin-top:24px;">
-                送出預約
+                透過 LINE 送出諮詢
               </button>
             </form>
             <div id="responseMessage"></div>
+            <p style="text-align:center;margin-top:20px;font-size:14px;color:var(--muted);">
+              不想填表單？<a href="https://line.me/R/ti/p/%40nh3707" target="_blank" rel="noopener" style="color:#06c755;font-weight:700;">直接加入官方 LINE @nh3707</a> 與顧問對話。
+            </p>
           </div>
         </section>
 
@@ -357,32 +352,45 @@
 
     <script src="/js/main.js"></script>
     <script>
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbwtEDKhBTMakGEaBVp2FXJHU3dMEmcSE1X4h1ePu3WzrGDlrVVrLucyhv76z1V-8dAl/exec';
+      // ── LINE 官方帳號導流 ──────────────────────────────────────
+      // 送出時：組合諮詢訊息 → 複製到剪貼簿（備援）→ 開啟 LINE OA 聊天室
+      // 並自動帶入訊息。未加好友者 LINE 會先顯示「加入好友」畫面。
+      const LINE_OA_ID = '@nh3707';
       const form = document.getElementById('consultationForm');
-      const btn  = document.getElementById('submitBtn');
       const msg  = document.getElementById('responseMessage');
 
       form.addEventListener('submit', e => {
         e.preventDefault();
-        btn.disabled = true;
-        btn.textContent = '傳送中...';
-        msg.className = '';
-        msg.style.display = 'none';
 
-        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-          .then(() => {
-            msg.className = 'success';
-            msg.textContent = '✓ 提交成功！顧問將在 24 小時內與您聯繫。';
-            form.reset();
-            btn.disabled = false;
-            btn.textContent = '提交預約申請';
-          })
-          .catch(() => {
-            msg.className = 'error';
-            msg.textContent = '發生錯誤，請稍後再試，或直接撥打 (04) 3707-9662。';
-            btn.disabled = false;
-            btn.textContent = '重新傳送';
-          });
+        const data  = new FormData(form);
+        const lines = ['【預約顧問諮詢】'];
+        lines.push('學生姓名：' + (data.get('name') || '').trim());
+        if (data.get('grade'))   lines.push('就讀年級：' + data.get('grade'));
+        if (data.get('service')) lines.push('有興趣的服務：' + data.get('service'));
+        const detail = (data.get('message') || '').trim();
+        if (detail) lines.push('諮詢內容：' + detail);
+        lines.push('——');
+        lines.push('（來自官網預約表單）');
+        const text = lines.join('\n');
+
+        // 備援：先複製訊息，LINE 未自動帶入時可直接貼上
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).catch(() => {});
+        }
+
+        // 開啟 LINE 官方帳號並自動帶入諮詢內容
+        window.open(
+          'https://line.me/R/oaMessage/' + encodeURIComponent(LINE_OA_ID) + '/?' + encodeURIComponent(text),
+          '_blank',
+          'noopener'
+        );
+
+        msg.className = 'success';
+        msg.innerHTML =
+          '✓ 已為你開啟 LINE！加入官方帳號後直接按「傳送」即可。<br/>' +
+          '若 LINE 沒有自動開啟，請<a href="https://line.me/R/ti/p/%40nh3707" target="_blank" rel="noopener" ' +
+          'style="color:inherit;font-weight:700;text-decoration:underline;">點此加入官方 LINE</a>' +
+          '——諮詢內容已自動複製，貼到聊天室即可。';
       });
     </script>
   </body>
