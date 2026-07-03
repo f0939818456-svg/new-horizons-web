@@ -87,6 +87,19 @@ loadComponent("#site-footer", "/components/footer.html").then(() => {
   }
 });
 
+// ── GA4 事件：LINE 轉換追蹤 ──────────────────────────────────
+// 全站任何 line.me 連結（含動態載入的 header/footer 與浮動 CTA）
+// 被點擊時回報 GA4，用於衡量「網站 → LINE 諮詢」轉換
+document.addEventListener("click", e => {
+  const a = e.target.closest ? e.target.closest('a[href*="line.me"]') : null;
+  if (!a || typeof gtag !== "function") return;
+  gtag("event", "line_click", {
+    link_url: a.href,
+    link_text: (a.textContent || "").trim().slice(0, 50),
+    page_path: location.pathname
+  });
+});
+
 // Scroll shadow on header
 window.addEventListener("scroll", () => {
   const header = document.querySelector(".site-header");

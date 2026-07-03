@@ -195,6 +195,14 @@
         .form-inner br { display: none; }
       }
     </style>
+      <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2XVKWTR562"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2XVKWTR562');
+    </script>
   </head>
 
   <body>
@@ -390,6 +398,15 @@
           '_blank',
           'noopener'
         );
+
+        // GA4：回報一次諮詢轉換
+        if (typeof gtag === 'function') {
+          gtag('event', 'generate_lead', {
+            method: 'LINE',
+            service: data.get('service') || '(未選)',
+            grade: data.get('grade') || '(未選)'
+          });
+        }
 
         msg.className = 'success';
         msg.innerHTML =
