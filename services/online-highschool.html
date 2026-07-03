@@ -147,6 +147,17 @@
         .accred-strip { padding: 24px 20px 20px; }
       }
 
+      /* Intro：桌機雙欄，900px 以下收合單欄（原為行內樣式，手機會硬擠兩欄） */
+      .ohs-intro-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 56px;
+        align-items: start;
+      }
+      @media (max-width: 900px) {
+        .ohs-intro-grid { grid-template-columns: 1fr; gap: 32px; }
+      }
+
       .ohs-feature-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -223,6 +234,13 @@
         max-width: 100%;
         height: auto;
         margin: 0 auto;
+        display: block;
+      }
+      .courseplan-zoom-hint {
+        margin-top: 12px;
+        font-size: 12.5px;
+        color: var(--muted);
+        letter-spacing: 0.04em;
       }
 
       .ohs-stats {
@@ -306,10 +324,37 @@
       }
       @media (max-width: 600px) {
         .ohs-feature-grid,
-        .ohs-options { grid-template-columns: 1fr; }
-        .ohs-stats > div { min-width: 50%; padding: 12px; }
+        .ohs-options { grid-template-columns: 1fr; gap: 14px; }
+        .ohs-feature { padding: 22px 20px; }
+        .ohs-option { padding: 20px 20px; }
+
+        /* 數據條：2×2 排列、縮小內距 */
+        .ohs-stats { padding: 18px 12px; margin-bottom: 44px; }
+        .ohs-stats > div { min-width: 50%; padding: 12px 6px; }
         .ohs-stats > div + div::before { display: none; }
-        .accred-strip { padding: 20px 16px; }
+        .ohs-stat__label { font-size: 12px; }
+
+        /* 認證徽章：縮小字級與內距，避免 2 欄在小螢幕溢出 */
+        .accred-strip { padding: 20px 14px 16px; }
+        .accred-grid { gap: 10px; }
+        .accred-cell { padding: 16px 8px; }
+        .accred-cell__logo { height: 52px; margin-bottom: 10px; }
+        .accred-cognia { font-size: 22px; }
+        .accred-wasc__seal { width: 46px; height: 46px; font-size: 14px; }
+        .accred-ncaa { font-size: 17px; padding: 9px 12px; }
+        .accred-ap { padding: 8px 10px; gap: 6px; }
+        .accred-ap__ap { font-size: 18px; }
+        .accred-ap__cb { font-size: 10px; }
+        .accred-cell__name { font-size: 13px; }
+        .accred-cell__role { font-size: 11px; }
+
+        /* 課表圖：縮小留白，圖面最大化 */
+        .courseplan-img-wrap { padding: 12px; }
+        .courseplan-zoom-hint { margin-top: 10px; }
+
+        /* 區塊間距：72px 在手機過大，統一收斂 */
+        .inner-body section { margin-bottom: 48px !important; }
+        .accred-strip { margin-bottom: 40px; }
       }
     </style>
       <!-- Google tag (gtag.js) -->
@@ -415,7 +460,7 @@
 
         <!-- Intro -->
         <section style="margin-bottom:72px;">
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;">
+          <div class="ohs-intro-grid">
             <div>
               <span class="section-label">WHAT WE OFFER</span>
               <h2 class="section-title">什麼是美國線上高中？</h2>
@@ -530,8 +575,7 @@
           <h2 class="section-title">入學方案</h2>
           <div class="section-divider"></div>
           <p style="font-size:15.5px;color:var(--muted);line-height:1.8;margin-bottom:36px;max-width:62ch;">
-            本課程提供多種就讀彈性，從完整四年制到單科選修都可以。<br/>
-            實際方案會由顧問依學生現況與目標安排。
+            本課程提供多種就讀彈性，從完整四年制到單科選修都可以。實際方案會由顧問依學生現況與目標安排。
           </p>
 
           <div class="ohs-options">
@@ -574,7 +618,10 @@
             建議計畫升讀美國 4 年制大學的學生：<strong>2 年世界語言、4 年數學（含 Algebra II）、4 年自然科學（生物、化學、物理 + 1 門選修）</strong>。
           </p>
           <div class="courseplan-img-wrap">
-            <img src="/assets/online-hs/required-courses.jpg" alt="High School Required Courses and Sample 4-Year Plan" loading="lazy" />
+            <a href="/assets/online-hs/required-courses.jpg" target="_blank" rel="noopener" aria-label="開啟原始大圖">
+              <img src="/assets/online-hs/required-courses.jpg" alt="High School Required Courses and Sample 4-Year Plan" loading="lazy" />
+            </a>
+            <div class="courseplan-zoom-hint">點擊圖片可放大檢視</div>
           </div>
         </section>
 
