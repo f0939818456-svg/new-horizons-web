@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="2026 AP 成績分布分析">
+  <defs>
+    <linearGradient id="apbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3B2520"/>
+      <stop offset="1" stop-color="#4E342E"/>
+    </linearGradient>
+    <linearGradient id="apbar" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#7D5A50"/>
+      <stop offset="1" stop-color="#B8943F"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#apbg)"/>
+
+  <!-- Floating dots -->
+  <g opacity="0.18" fill="#F5ECD7">
+    <circle cx="90" cy="80" r="2"/><circle cx="170" cy="40" r="1.5"/>
+    <circle cx="650" cy="60" r="2"/><circle cx="730" cy="140" r="1.5"/>
+    <circle cx="70" cy="520" r="2"/><circle cx="740" cy="500" r="2"/>
+    <circle cx="620" cy="545" r="1.5"/><circle cx="150" cy="560" r="1.5"/>
+  </g>
+
+  <!-- Left: score distribution bar chart (scores 1–5) -->
+  <g transform="translate(90 130)">
+    <!-- baseline -->
+    <line x1="0" y1="300" x2="290" y2="300" stroke="#B8943F" stroke-width="2" opacity="0.7"/>
+    <!-- bars -->
+    <rect x="10"  y="240" width="40" height="60"  rx="6" fill="url(#apbar)" opacity="0.45"/>
+    <rect x="70"  y="205" width="40" height="95"  rx="6" fill="url(#apbar)" opacity="0.6"/>
+    <rect x="130" y="150" width="40" height="150" rx="6" fill="url(#apbar)" opacity="0.75"/>
+    <rect x="190" y="95"  width="40" height="205" rx="6" fill="url(#apbar)" opacity="0.9"/>
+    <rect x="250" y="30"  width="40" height="270" rx="6" fill="url(#apbar)" stroke="#F5ECD7" stroke-width="1.5"/>
+    <!-- score labels -->
+    <g font-family="-apple-system, 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="800" fill="#F5ECD7" text-anchor="middle" opacity="0.85">
+      <text x="30"  y="326">1</text>
+      <text x="90"  y="326">2</text>
+      <text x="150" y="326">3</text>
+      <text x="210" y="326">4</text>
+      <text x="270" y="326">5</text>
+    </g>
+    <!-- highlight star on the 5 bar -->
+    <text x="270" y="14" text-anchor="middle" font-family="-apple-system, Arial, sans-serif" font-size="20" fill="#B8943F">★</text>
+    <!-- trend arrow up -->
+    <g stroke="#8FBF8F" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.9">
+      <path d="M 40 120 L 130 60 L 180 92 L 268 -6"/>
+      <path d="M 244 0 L 268 -6 L 264 18"/>
+    </g>
+  </g>
+
+  <!-- Right: title + stat chips -->
+  <g transform="translate(575 120)">
+    <text x="0" y="0" text-anchor="middle" font-family="-apple-system, 'Helvetica Neue', Arial, sans-serif" font-size="64" font-weight="900" fill="#F5ECD7" letter-spacing="2">AP</text>
+    <text x="0" y="34" text-anchor="middle" font-family="-apple-system, 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="800" fill="#B8943F" letter-spacing="6">2026</text>
+
+    <!-- Stat 1 -->
+    <g transform="translate(0 100)">
+      <rect x="-105" y="-30" width="210" height="56" rx="10" fill="rgba(245,236,215,0.08)" stroke="#B8943F" stroke-width="1.2"/>
+      <text x="0" y="-2" text-anchor="middle" font-family="-apple-system, 'Helvetica Neue', Arial, sans-serif" font-size="21" font-weight="900" fill="#F5ECD7" letter-spacing="0.5">Calc BC 46%</text>
+      <text x="0" y="18" text-anchor="middle" font-family="-apple-system, 'PingFang TC', sans-serif" font-size="11" font-weight="600" fill="#F5ECD7" opacity="0.65" letter-spacing="3">5 分比例再上升</text>
+    </g>
+    <!-- Stat 2 -->
+    <g transform="translate(0 186)">
+      <rect x="-105" y="-30" width="210" height="56" rx="10" fill="rgba(245,236,215,0.08)" stroke="#B8943F" stroke-width="1.2"/>
+      <text x="0" y="-2" text-anchor="middle" font-family="-apple-system, 'Helvetica Neue', Arial, sans-serif" font-size="21" font-weight="900" fill="#F5ECD7" letter-spacing="0.5">Latin +14.4</text>
+      <text x="0" y="18" text-anchor="middle" font-family="-apple-system, 'PingFang TC', sans-serif" font-size="11" font-weight="600" fill="#F5ECD7" opacity="0.65" letter-spacing="3">3+ 升幅最大</text>
+    </g>
+    <!-- Stat 3 -->
+    <g transform="translate(0 272)">
+      <rect x="-105" y="-30" width="210" height="56" rx="10" fill="rgba(245,236,215,0.08)" stroke="#B8943F" stroke-width="1.2"/>
+      <text x="0" y="-2" text-anchor="middle" font-family="-apple-system, 'Helvetica Neue', Arial, sans-serif" font-size="21" font-weight="900" fill="#F5ECD7" letter-spacing="0.5">7/6 查分</text>
+      <text x="0" y="18" text-anchor="middle" font-family="-apple-system, 'PingFang TC', sans-serif" font-size="11" font-weight="600" fill="#F5ECD7" opacity="0.65" letter-spacing="3">成績開放查詢</text>
+    </g>
+  </g>
+
+  <!-- Footer text -->
+  <text x="400" y="555" text-anchor="middle" font-family="-apple-system, 'PingFang TC', sans-serif" font-size="22" font-weight="800" fill="#F5ECD7" letter-spacing="3">2026 AP 成績分布 · 對比 2025</text>
+</svg>
