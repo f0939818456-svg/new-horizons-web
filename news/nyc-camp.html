@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>紐約 10 天升學文化探索營 | 日暘國際教育</title>
+    <meta name="description" content="走進真實的美國大學與城市生活：參訪 Columbia 與 NYU、自由女神、大都會博物館、華爾街與布魯克林，現場觀賞職業球賽。以升學啟發 × 文化探索 × 城市體驗為核心的 10 天紐約探索營。" />
+    <link rel="canonical" href="https://www.newhorizons.com.tw/news/nyc-camp.html" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/inner.css" />
+    <style>
+      /* ── 五大特色 ── */
+      .nyc-features { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+      .nyc-feature {
+        background: #fff; border: 1px solid var(--border); border-radius: var(--radius-lg);
+        padding: 26px 26px; transition: var(--transition);
+      }
+      .nyc-feature:hover { border-color: var(--gold); box-shadow: var(--shadow); transform: translateY(-3px); }
+      .nyc-feature__num {
+        display: inline-block; font-size: 12px; font-weight: 900; letter-spacing: 0.08em;
+        color: var(--gold); border: 1.5px solid var(--gold); border-radius: 50px;
+        padding: 4px 12px; margin-bottom: 12px;
+      }
+      .nyc-feature__title { font-size: 16.5px; font-weight: 800; color: var(--text); margin: 0 0 8px; }
+      .nyc-feature__desc { font-size: 14px; color: var(--muted); line-height: 1.75; margin: 0; }
+      .nyc-feature--wide { grid-column: 1 / -1; }
+
+      /* ── 行程總覽表 ── */
+      .itin-table-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid var(--border); margin: 24px 0 10px; }
+      .itin-table { width: 100%; min-width: 680px; border-collapse: collapse; font-size: 13.5px; }
+      .itin-table th { background: var(--brand); color: #fff; padding: 11px 14px; text-align: left; font-weight: 700; white-space: nowrap; }
+      .itin-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); line-height: 1.6; vertical-align: top; }
+      .itin-table td:first-child { font-weight: 800; color: var(--brand); white-space: nowrap; }
+      .itin-table td:nth-child(2) { font-weight: 700; min-width: 130px; }
+      .itin-table tr:nth-child(even) td { background: #FAF8F6; }
+      .itin-note { font-size: 13px; color: var(--muted); margin: 0 0 0; }
+
+      /* ── 每日行程 ── */
+      .day-block {
+        border: 1px solid var(--border); border-radius: var(--radius-lg);
+        background: #fff; padding: 28px 30px; margin-bottom: 20px;
+      }
+      .day-block__head { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; flex-wrap: wrap; }
+      .day-block__num {
+        flex-shrink: 0; background: var(--brand); color: var(--gold-light);
+        font-size: 13px; font-weight: 900; letter-spacing: 0.06em;
+        border-radius: 50px; padding: 6px 16px;
+      }
+      .day-block__title { font-size: 18px; font-weight: 800; color: var(--text); margin: 0; }
+      .day-block p { font-size: 14.5px; color: var(--text); line-height: 1.85; margin: 0 0 14px; text-wrap: pretty; }
+      .day-block__focus {
+        display: flex; gap: 8px; align-items: flex-start; flex-wrap: wrap;
+        border-top: 1px dashed var(--border); padding-top: 14px; margin-top: 2px;
+      }
+      .day-block__focus-label {
+        flex-shrink: 0; font-size: 12px; font-weight: 800; color: var(--gold);
+        letter-spacing: 0.08em; padding: 3px 0;
+      }
+      .day-block__focus span.chip {
+        font-size: 12px; font-weight: 600; color: var(--brand);
+        background: var(--gold-light); border-radius: 50px; padding: 3px 12px;
+      }
+
+      /* ── 學生收穫 ── */
+      .gain-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px; }
+      .gain-list li {
+        display: flex; gap: 14px; align-items: flex-start;
+        background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
+        padding: 18px 22px;
+      }
+      .gain-list li::before { content: '✓'; color: var(--gold); font-size: 18px; font-weight: 900; flex-shrink: 0; }
+      .gain-list strong { color: var(--brand); }
+      .gain-list span { font-size: 14.5px; color: var(--text); line-height: 1.75; }
+
+      /* ── 給家長的話 ── */
+      .parent-note {
+        background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand) 100%);
+        color: #fff; border-radius: var(--radius-lg); padding: 44px 40px; margin-bottom: 72px;
+      }
+      .parent-note__label { font-size: 12px; font-weight: 700; letter-spacing: 0.18em; color: #F5ECD7; margin-bottom: 16px; text-transform: uppercase; }
+      .parent-note p { font-size: 15.5px; line-height: 1.95; margin: 0 0 16px; opacity: 0.94; text-wrap: pretty; }
+      .parent-note p:last-child { margin-bottom: 0; }
+
+      /* ── 手機 ── */
+      @media (max-width: 720px) {
+        .nyc-features { grid-template-columns: 1fr; gap: 14px; }
+        .nyc-feature { padding: 22px 20px; }
+        .day-block { padding: 22px 20px; }
+        .day-block__title { font-size: 16.5px; }
+        .parent-note { padding: 32px 24px; }
+        .gain-list li { padding: 16px 18px; }
+        .inner-body section { margin-bottom: 48px !important; }
+      }
+    </style>
+      <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2XVKWTR562"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2XVKWTR562');
+    </script>
+  </head>
+  <body>
+    <div id="site-header"></div>
+
+    <main>
+      <section class="page-hero">
+        <div class="container page-hero__inner">
+          <nav class="breadcrumb">
+            <a href="/">首頁</a><span>›</span>
+            <a href="/news/events.html">講座活動</a><span>›</span>
+            <span>紐約 10 天升學文化探索營</span>
+          </nav>
+          <span class="page-hero__label">SPECIAL PROGRAM · NEW YORK</span>
+          <h1 class="page-hero__title">紐約 10 天<br/>升學文化探索營</h1>
+          <p class="page-hero__desc">
+            New York College, Culture &amp; City Experience Program<br/>
+            走進真實的美國大學與城市生活，把旅行變成升學方向的起點。
+          </p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <a href="https://line.me/R/oaMessage/%40nh3707/?%E3%80%90%E6%B4%BB%E5%8B%95%E8%AB%AE%E8%A9%A2%E3%80%91%0A%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%E3%80%8C%E7%B4%90%E7%B4%84%2010%20%E5%A4%A9%E5%8D%87%E5%AD%B8%E6%96%87%E5%8C%96%E6%8E%A2%E7%B4%A2%E7%87%9F%E3%80%8D%EF%BC%8C%E8%AB%8B%E6%8F%90%E4%BE%9B%E6%A2%AF%E6%AC%A1%E6%97%A5%E6%9C%9F%E8%88%87%E8%B2%BB%E7%94%A8%E8%B3%87%E8%A8%8A%E3%80%82%0A%E2%80%94%E2%80%94%0A%EF%BC%88%E4%BE%86%E8%87%AA%E5%AE%98%E7%B6%B2%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%89" target="_blank" rel="noopener" class="btn btn-gold">LINE 諮詢報名</a>
+            <a href="#itinerary" class="btn btn-ghost">查看 10 天行程 →</a>
+          </div>
+
+          <div class="page-hero__stats">
+            <div>
+              <div class="page-hero__stat-num">10 天</div>
+              <div class="page-hero__stat-label">完整行程</div>
+            </div>
+            <div>
+              <div class="page-hero__stat-num">2 所</div>
+              <div class="page-hero__stat-label">Columbia＆NYU 參訪</div>
+            </div>
+            <div>
+              <div class="page-hero__stat-num">20+</div>
+              <div class="page-hero__stat-label">經典地標與街區</div>
+            </div>
+            <div>
+              <div class="page-hero__stat-num">1 場</div>
+              <div class="page-hero__stat-label">MLB / NBA / NHL 球賽</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="container inner-body">
+
+        <!-- Intro -->
+        <section style="margin-bottom:72px;">
+          <span class="section-label">ABOUT THE PROGRAM</span>
+          <h2 class="section-title">為什麼是紐約？</h2>
+          <div class="section-divider"></div>
+          <p style="font-size:15.5px;color:var(--text);line-height:1.9;margin-bottom:18px;max-width:72ch;">
+            紐約不只是一座世界級城市，更是美國高等教育、金融、藝術、媒體與移民文化的核心舞台。
+            對正在準備、或未來計畫申請美國大學的學生而言，親自走進紐約，是提前理解美國教育與城市生活最直接的方式。
+          </p>
+          <p style="font-size:15.5px;color:var(--text);line-height:1.9;margin-bottom:18px;max-width:72ch;">
+            本營隊以「<strong>升學啟發 × 文化探索 × 城市體驗</strong>」為核心：從 Columbia 與 NYU 兩所風格迥異的名校，
+            到自由女神、大都會博物館、華爾街與布魯克林街區，再到職業球賽與年輕人聚集的潮流社區，
+            帶領學生全面認識這座充滿能量與機會的城市。
+          </p>
+          <p style="font-size:15.5px;color:var(--text);line-height:1.9;margin-bottom:0;max-width:72ch;">
+            更重要的是，我們希望學生在旅程中開始思考：自己適合什麼樣的大學？喜歡什麼樣的城市生活？未來想選擇什麼領域？
+            這些第一手的觀察與反思，都將成為日後申請 essay、面試與選校時<strong>最真實、最有說服力的素材</strong>。
+          </p>
+        </section>
+
+        <!-- Five features -->
+        <section style="margin-bottom:72px;">
+          <span class="section-label">HIGHLIGHTS</span>
+          <h2 class="section-title">行程五大特色</h2>
+          <div class="section-divider"></div>
+
+          <div class="nyc-features">
+            <article class="nyc-feature">
+              <div class="nyc-feature__num">01</div>
+              <h3 class="nyc-feature__title">走進兩種頂尖大學，親身比較校園型態</h3>
+              <p class="nyc-feature__desc">參訪 Columbia University（傳統封閉式校園）與 New York University（城市型大學），透過實地對照，幫助學生釐清自己適合的校園環境與學習模式。</p>
+            </article>
+            <article class="nyc-feature">
+              <div class="nyc-feature__num">02</div>
+              <h3 class="nyc-feature__title">從紐約讀懂美國歷史與多元文化</h3>
+              <p class="nyc-feature__desc">自由女神像、Ellis Island、Wall Street、Brooklyn Bridge——每個地標背後，都是美國移民史、金融發展與城市文化的縮影。</p>
+            </article>
+            <article class="nyc-feature">
+              <div class="nyc-feature__num">03</div>
+              <h3 class="nyc-feature__title">深入年輕世代的真實紐約</h3>
+              <p class="nyc-feature__desc">Fifth Avenue、SoHo、Williamsburg、Chelsea Market、High Line、Hudson Yards，走進紐約年輕人真正生活與聚集的街區。</p>
+            </article>
+            <article class="nyc-feature">
+              <div class="nyc-feature__num">04</div>
+              <h3 class="nyc-feature__title">現場感受美國職業運動文化</h3>
+              <p class="nyc-feature__desc">依月份與賽程安排 MLB、NBA 或 NHL 主場賽事（Yankees、Mets、Knicks、Nets、Rangers、Islanders），體驗美國最具感染力的體育與球迷文化。</p>
+            </article>
+            <article class="nyc-feature nyc-feature--wide">
+              <div class="nyc-feature__num">05</div>
+              <h3 class="nyc-feature__title">把旅行變成升學規劃的一部分</h3>
+              <p class="nyc-feature__desc">每日設定學習重點，並安排參訪後討論與 Reflection Session，引導學生將觀察轉化為個人興趣、校園偏好與申請方向。</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- Itinerary overview -->
+        <section id="itinerary" style="margin-bottom:72px;">
+          <span class="section-label">ITINERARY</span>
+          <h2 class="section-title">10 天行程總覽</h2>
+          <div class="section-divider"></div>
+
+          <div class="itin-table-wrap">
+            <table class="itin-table">
+              <thead>
+                <tr><th>天數</th><th>主題</th><th>上午</th><th>下午</th><th>晚間</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Day 1</td><td>抵達紐約＋城市初體驗</td><td>抵達紐約、專車接機</td><td>飯店 Check-in、休整</td><td>Times Square 漫步＋團體晚餐</td></tr>
+                <tr><td>Day 2</td><td>Midtown 地標＋第五大道</td><td>Bryant Park、紐約公共圖書館、Grand Central</td><td>Fifth Avenue 逛街、Rockefeller Center</td><td>Top of the Rock / 帝國大廈夜景</td></tr>
+                <tr><td>Day 3</td><td>Columbia＋Upper West Side</td><td>Columbia University 校園參訪</td><td>Columbia Bookstore、Central Park West</td><td>Upper West Side 晚餐＋參訪心得討論</td></tr>
+                <tr><td>Day 4</td><td>NYU＋SoHo 潮流區</td><td>NYU 校園參訪、Washington Square Park</td><td>SoHo / NoHo 街區探索</td><td>Broadway / Off-Broadway 音樂劇</td></tr>
+                <tr><td>Day 5</td><td>自由女神＋Downtown</td><td>Statue of Liberty</td><td>Ellis Island、Wall Street、Charging Bull</td><td>Seaport / Battery Park 晚餐</td></tr>
+                <tr><td>Day 6</td><td>Brooklyn 年輕文化日</td><td>Brooklyn Bridge 步行</td><td>DUMBO、Time Out Market、Brooklyn Heights</td><td>Williamsburg 逛街、晚餐</td></tr>
+                <tr><td>Day 7</td><td>博物館＋Central Park</td><td>The Met 大都會博物館</td><td>Central Park、Guggenheim 外觀</td><td>Reflection Session / 自由晚餐</td></tr>
+                <tr><td>Day 8</td><td>球賽體驗日</td><td>Chelsea Market、High Line</td><td>Hudson Yards、返飯店休整</td><td>MLB / NBA / NHL 職業球賽</td></tr>
+                <tr><td>Day 9</td><td>Outlet 購物日</td><td>Woodbury Outlet 或 Jersey Gardens</td><td>Outlet 購物</td><td>Farewell Dinner 歡送晚宴</td></tr>
+                <tr><td>Day 10</td><td>輕鬆收尾＋返程</td><td>退房、寄放行李</td><td>Little Island / West Village 自由活動</td><td>前往機場、返程</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="itin-note">＊實際行程順序與內容，將依當地天氣、賽程與場館開放狀況彈性調整。</p>
+        </section>
+
+        <!-- Daily details -->
+        <section style="margin-bottom:72px;">
+          <span class="section-label">DAY BY DAY</span>
+          <h2 class="section-title">每日行程介紹</h2>
+          <div class="section-divider"></div>
+
+          <div class="day-block">
+            <div class="day-block__head">
+              <span class="day-block__num">DAY 1</span>
+              <h3 class="day-block__title">抵達紐約：城市探索的第一步</h3>
+            </div>
+            <p>抵達紐約後由專車接送至飯店，完成 Check-in 與休息調整。第一天刻意保留餘裕，讓學生適應時差、熟悉飯店周邊環境，並完成安全與團體生活說明。</p>
+            <p>傍晚步行前往 Times Square 並享用團體晚餐。作為紐約最具代表性的地標，Times Square 的燈光、人潮與街頭文化，會是學生對這座城市速度與多元最直接的第一印象。</p>
+            <div class="day-block__focus">
+              <span class="day-block__focus-label">學習重點</span>
+              <span class="chip">適應美國城市環境</span><span class="chip">建立團體規範</span><span class="chip">紐約第一印象</span>
+            </div>
+          </div>
+
+          <div class="day-block">
+            <div class="day-block__head">
+              <span class="day-block__num">DAY 2</span>
+              <h3 class="day-block__title">Midtown 城市地標＋第五大道</h3>
+            </div>
+            <p>走訪 Midtown Manhattan 的核心地標：Bryant Park、New York Public Library、Grand Central Terminal、Rockefeller Center 與第五大道。紐約公共圖書館展現這座城市對公共教育與知識資源的重視；Grand Central 是城市交通與建築美學的經典；Rockefeller Center 與第五大道則呈現紐約作為全球商業與品牌中心的樣貌。</p>
+            <p>下午的第五大道不只是逛街——它同時是觀察品牌經營、消費文化與國際流行趨勢的最佳窗口。晚上登上 Top of the Rock 或帝國大廈，從高處俯瞰 Manhattan，為接下來八天的城市探索建立完整的空間概念。</p>
+            <div class="day-block__focus">
+              <span class="day-block__focus-label">學習重點</span>
+              <span class="chip">城市地標</span><span class="chip">公共建築</span><span class="chip">品牌與商業文化</span><span class="chip">紐約城市空間</span>
+            </div>
+          </div>
+
+          <div class="day-block">
+            <div class="day-block__head">
+              <span class="day-block__num">DAY 3</span>
+              <h3 class="day-block__title">Columbia University＋Upper West Side</h3>
+            </div>
+            <p>走進 Ivy League——Columbia University 校園參訪。Columbia 位於 Morningside Heights，擁有界線分明的傳統校園，同時坐擁紐約市的資源。學生將實地觀察校園建築、圖書館、學生中心與周邊生活圈，感受美國頂尖大學的學術氛圍與真實樣貌。</p>
+            <p>下午延伸至 Upper West Side 與 Central Park West 一帶，體驗紐約相對安靜、文教氣息濃厚的一面。晚上安排小組討論，帶領學生整理參訪心得：自己是否適合 Columbia 這類學術密度高、又能享有城市資源的大學？</p>
+            <div class="day-block__focus">
+              <span class="day-block__focus-label">學習重點</span>
+              <span class="chip">Ivy League 校園</span><span class="chip">學術氛圍</span><span class="chip">大學生活</span><span class="chip">選校思考</span>
+            </div>
+          </div>
+
+          <div class="day-block">
+            <div class="day-block__head">
+              <span class="day-block__num">DAY 4</span>
+              <h3 class="day-block__title">NYU＋SoHo 年輕潮流區</h3>
+            </div>
+            <p>參訪 New York University。NYU 位於 Greenwich Village，校園與城市街區高度融合，是美國城市型大學的代表。與前一天的 Columbia 對照，NYU 沒有傳統封閉式校園，學習與生活直接嵌入紐約市中心——這組對比，正是學生理解「不同大學型態」最具體的一課。</p>
+            <p>下午探索 SoHo、NoHo 與 Greenwich Village，觀察紐約的設計品牌、咖啡文化與創意產業。晚上欣賞 Broadway 或 Off-Broadway 演出，感受紐約作為全球表演藝術中心的文化能量。</p>
+            <div class="day-block__focus">
+              <span class="day-block__focus-label">學習重點</span>
+              <span class="chip">城市型大學</span><span class="chip">校園比較</span><span class="chip">藝術文化</span><span class="chip">青年生活</span><span class="chip">創意產業</span>
+            </div>
+          </div>
+
+          <div class="day-block">
+            <div class="day-block__head">
+              <span class="day-block__num">DAY 5</span>
+              <h3 class="day-block__title">自由女神＋Downtown Manhattan</h3>
+            </div>
+            <p>上午前往自由女神像與 Ellis Island 移民博物館。自由女神象徵自由、機會與美國精神；Ellis Island 則記錄了數千萬移民踏上美國的第一步。透過這一天，學生能具體理解美國作為移民國家的歷史脈絡——對未來赴美讀書的學生而言，這是最重要的文化基礎之一。</p>
+            <p>下午走訪 Wall Street、Charging Bull 與 Downtown Manhattan，認識紐約作為全球金融中心的角色，特別適合對 business、economics、finance、international relations 有興趣的學生。晚上在 Seaport 或 Battery Park 一帶晚餐，感受 Lower Manhattan 的城市氛圍。</p>
+            <div class="day-block__focus">
+              <span class="day-block__focus-label">學習重點</span>
+              <span class="chip">美國移民史</span><span class="chip">自由與機會</span><span class="chip">金融中心</span><span class="chip">全球城市</span>
+            </div>
+          </div>
+
+          <div class="day-block">
+            <div class="day-block__head">
+              <span class="day-block__num">DAY 6</span>
+              <h3 class="day-block__title">Brooklyn 年輕文化日</h3>
+            </div>
+            <p>上午步行跨越 Brooklyn Bridge，從 Manhattan 走向 Brooklyn，親身體驗紐約最經典的城市景觀。接著造訪 DUMBO、Time Out Market 與 Brooklyn Heights Promenade——DUMBO 是城市更新與創意產業的代表街區，設計、藝術、餐飲與河岸景觀在此交會。</p>
+            <p>晚上前往 Williamsburg。這裡是紐約年輕世代、藝術工作者與獨立品牌的聚集地，讓學生看見 Manhattan 之外、更貼近在地生活的紐約。</p>
+            <div class="day-block__focus">
+              <span class="day-block__focus-label">學習重點</span>
+              <span class="chip">城市更新</span><span class="chip">創意產業</span><span class="chip">社區文化</span><span class="chip">青年生活</span>
+            </div>
+          </div>
+
+          <div class="day-block">
+            <div class="day-block__head">
+              <span class="day-block__num">DAY 7</span>
+              <h3 class="day-block__title">The Met＋Central Park Chill Day</h3>
+            </div>
+            <p>上午參觀世界級的大都會博物館（The Met），館藏橫跨古文明、歐洲藝術、亞洲藝術與美國藝術。學生將在導覽與自主探索中培養觀察力與跨文化理解。</p>
+            <p>下午漫步 Central Park 並欣賞 Guggenheim 建築外觀。Central Park 不只是公園，更是紐約城市規劃平衡自然、生活與公共空間的典範。晚上舉行 Reflection Session：分享最有印象的展品、街區與大學參訪經驗，並思考這些觀察與自己升學方向的連結。</p>
+            <div class="day-block__focus">
+              <span class="day-block__focus-label">學習重點</span>
+              <span class="chip">藝術人文</span><span class="chip">文明史</span><span class="chip">城市公共空間</span><span class="chip">反思表達</span>
+            </div>
+          </div>
+
+          <div class="day-block">
+            <div class="day-block__head">
+              <span class="day-block__num">DAY 8</span>
+              <h3 class="day-block__title">球賽體驗日＋Chelsea / Hudson Yards</h3>
+            </div>
+            <p>白天安排較輕鬆的路線：Chelsea Market 的美食與創意空間、由舊鐵道改造而成的高架公園 High Line，以及紐約最新的商業開發區 Hudson Yards，一路看見這座城市如何不斷更新自己。</p>
+            <p>晚上是許多學生最期待的行程——現場觀賞美國職業球賽。依實際月份與賽程，安排 Yankees、Mets（MLB）、Knicks、Nets（NBA）、Rangers 或 Islanders（NHL）主場賽事，親身感受美國體育文化、球迷文化與城市認同。</p>
+            <div class="day-block__focus">
+              <span class="day-block__focus-label">學習重點</span>
+              <span class="chip">城市更新</span><span class="chip">公共空間</span><span class="chip">體育文化</span><span class="chip">團隊精神</span>
+            </div>
+          </div>
+
+          <div class="day-block">
+            <div class="day-block__head">
+              <span class="day-block__num">DAY 9</span>
+              <h3 class="day-block__title">Outlet 購物日＋歡送晚宴</h3>
+            </div>
+            <p>在密集的文化與城市探索之後，第九天安排較放鬆的購物與自由時間。依團體需求選擇 Woodbury Common（品牌最完整的 outlet 體驗）或 Jersey Gardens（交通較便利、時間好掌控），學生可採購紀念品與返台伴手禮。</p>
+            <p>晚上舉行 Farewell Dinner 歡送晚宴，作為行程的正式收尾，學生輪流分享這十天最深刻的地點、學校與文化體驗。</p>
+            <div class="day-block__focus">
+              <span class="day-block__focus-label">學習重點</span>
+              <span class="chip">美國消費文化</span><span class="chip">品牌觀察</span><span class="chip">旅程總結</span><span class="chip">團體交流</span>
+            </div>
+          </div>
+
+          <div class="day-block">
+            <div class="day-block__head">
+              <span class="day-block__num">DAY 10</span>
+              <h3 class="day-block__title">Little Island / West Village＋返程</h3>
+            </div>
+            <p>最後一天以輕鬆節奏收尾。退房並寄放行李後，前往 Little Island 或 West Village 進行簡單的自由活動——前者是近年深受年輕人喜愛的河岸公共空間，後者則保留了最具代表性的紐約街區生活氛圍。</p>
+            <p>下午或晚間依航班時間前往機場，為十天的紐約升學文化探索畫下句點。</p>
+            <div class="day-block__focus">
+              <span class="day-block__focus-label">學習重點</span>
+              <span class="chip">城市生活觀察</span><span class="chip">旅程回顧</span><span class="chip">返程準備</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- What students gain -->
+        <section style="margin-bottom:72px;">
+          <span class="section-label">TAKEAWAYS</span>
+          <h2 class="section-title">學生將帶回什麼？</h2>
+          <div class="section-divider"></div>
+
+          <ul class="gain-list">
+            <li><span><strong>更清楚的升學方向：</strong>透過 Columbia 與 NYU 的實地對照，具體理解不同大學環境，思考適合自己的校園型態與學習模式。</span></li>
+            <li><span><strong>更真實的美國城市經驗：</strong>不只走訪觀光景點，更深入不同街區，認識紐約作為全球城市的多元面貌。</span></li>
+            <li><span><strong>更完整的文化理解：</strong>從移民史、藝術人文到金融發展，建立對美國社會與文化的立體認識。</span></li>
+            <li><span><strong>更貼近年輕人的生活體驗：</strong>潮流街區、職業球賽與城市空間，親身感受美國青年文化與城市節奏。</span></li>
+            <li><span><strong>更有深度的申請素材：</strong>旅程中的觀察、反思與成長，都可能成為未來申請 essay、面試回答與選校方向的重要養分。</span></li>
+          </ul>
+        </section>
+
+        <!-- Who it's for -->
+        <section style="margin-bottom:72px;">
+          <span class="section-label">WHO IT'S FOR</span>
+          <h2 class="section-title">適合對象與行程主軸</h2>
+          <div class="section-divider"></div>
+          <p style="font-size:15.5px;color:var(--text);line-height:1.9;margin-bottom:20px;max-width:72ch;">
+            本行程適合正在準備、或未來計畫申請美國大學的學生，特別是希望提前了解美國大學環境、城市生活與升學方向的<strong>國高中生</strong>。
+          </p>
+          <div class="pill-row">
+            <span class="pill">大學參訪</span>
+            <span class="pill">升學啟發</span>
+            <span class="pill">城市探索</span>
+            <span class="pill">文化理解</span>
+            <span class="pill">青年生活</span>
+            <span class="pill">體育體驗</span>
+            <span class="pill">購物休閒</span>
+            <span class="pill">國際視野</span>
+          </div>
+        </section>
+
+        <!-- Parent note -->
+        <div class="parent-note">
+          <div class="parent-note__label">A Word to Parents · 給家長的話</div>
+          <p>紐約是一座充滿機會、文化與可能性的城市。對孩子而言，這 10 天不只是一次旅行，而是一段認識世界、探索自我、思考未來的過程。</p>
+          <p>我們希望透過本次探索營，讓孩子走進真實的美國大學與城市環境，看見課本之外的世界——帶回來的不只是照片與回憶，更是一份對未來升學與人生選擇的方向感。</p>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-box">
+          <h3>想為孩子報名，或了解梯次與費用？</h3>
+          <p>名額有限，梯次日期與費用資訊請洽日暘顧問，<br/>我們將依學生年級與需求提供完整說明。</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
+            <a href="https://line.me/R/oaMessage/%40nh3707/?%E3%80%90%E6%B4%BB%E5%8B%95%E8%AB%AE%E8%A9%A2%E3%80%91%0A%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%E3%80%8C%E7%B4%90%E7%B4%84%2010%20%E5%A4%A9%E5%8D%87%E5%AD%B8%E6%96%87%E5%8C%96%E6%8E%A2%E7%B4%A2%E7%87%9F%E3%80%8D%EF%BC%8C%E8%AB%8B%E6%8F%90%E4%BE%9B%E6%A2%AF%E6%AC%A1%E6%97%A5%E6%9C%9F%E8%88%87%E8%B2%BB%E7%94%A8%E8%B3%87%E8%A8%8A%E3%80%82%0A%E2%80%94%E2%80%94%0A%EF%BC%88%E4%BE%86%E8%87%AA%E5%AE%98%E7%B6%B2%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%89" target="_blank" rel="noopener" class="btn btn-gold">LINE 諮詢報名</a>
+            <a href="/contact/index.html" class="btn btn-ghost" style="border-color:rgba(255,255,255,0.5);">預約顧問諮詢</a>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <div id="site-footer"></div>
+    <script src="/js/main.js"></script>
+  </body>
+</html>
