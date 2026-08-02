@@ -4,13 +4,54 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>紐約 10 天升學文化探索營 | 日暘國際教育</title>
-    <meta name="description" content="走進真實的美國大學與城市生活：參訪 Columbia 與 NYU、自由女神、大都會博物館、華爾街與布魯克林，現場觀賞職業球賽。以升學啟發 × 文化探索 × 城市體驗為核心的 10 天紐約探索營。" />
-    <!-- 草稿頁：內容修訂中，暫不對外公開、不收錄搜尋。正式上架時移除下行 noindex。 -->
-    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="2027 寒假 1/22–1/31 出發，7–12 年級適用。參訪 Columbia 與 NYU、自由女神、大都會博物館、華爾街與布魯克林，現場觀賞職業球賽，完成營隊可獲 3 個美國學分。以升學啟發 × 文化探索 × 城市體驗為核心的 10 天紐約探索營。" />
+    <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://www.newhorizons.com.tw/news/nyc-camp.html" />
+
+    <!-- Open Graph（Facebook / LINE / Threads 分享預覽） -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="日暘國際教育" />
+    <meta property="og:title" content="紐約 10 天升學文化探索營｜完成營隊可獲 3 個美國學分" />
+    <meta property="og:description" content="2027 寒假 1/22–1/31 出發，7–12 年級適用。參訪 Columbia 與 NYU，走訪自由女神、大都會博物館與華爾街，現場觀賞職業球賽，把海外探索變成升學方向的起點。" />
+    <meta property="og:url" content="https://www.newhorizons.com.tw/news/nyc-camp.html" />
+    <meta property="og:image" content="https://www.newhorizons.com.tw/assets/images/articles/nyc-camp-news.jpg" />
+    <meta property="og:locale" content="zh_TW" />
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/inner.css" />
     <style>
+      /* ── Hero 資訊膠囊 ── */
+      .hero-pill-row { display: flex; gap: 8px; flex-wrap: wrap; margin: 0 0 24px; }
+      .hero-pill {
+        font-size: 13px; font-weight: 600; color: #fff;
+        background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.25);
+        border-radius: 50px; padding: 6px 15px;
+      }
+
+      /* ── 活動資訊 ── */
+      .camp-info-layout { display: grid; grid-template-columns: 400px 1fr; gap: 40px; align-items: start; }
+      .camp-poster {
+        margin: 0; border: 1px solid var(--border); border-radius: var(--radius-lg);
+        overflow: hidden; box-shadow: var(--shadow);
+      }
+      .camp-poster img { display: block; width: 100%; height: auto; }
+      .camp-info-list { list-style: none; margin: 0 0 20px; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+      .camp-info-list li {
+        display: flex; gap: 16px; align-items: baseline;
+        background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
+        padding: 15px 20px;
+      }
+      .camp-info-list li span {
+        flex-shrink: 0; font-size: 12px; font-weight: 800; color: var(--gold); letter-spacing: 0.08em;
+      }
+      .camp-info-list li strong { font-size: 15px; color: var(--text); line-height: 1.6; }
+      .credit-box {
+        background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand) 100%);
+        color: #fff; border-radius: var(--radius-lg); padding: 28px 30px; margin-bottom: 20px;
+      }
+      .credit-box__label { font-size: 12px; font-weight: 700; letter-spacing: 0.18em; color: #F5ECD7; margin-bottom: 8px; text-transform: uppercase; }
+      .credit-box__num { font-size: 26px; font-weight: 900; color: var(--gold-light, #F5ECD7); margin-bottom: 10px; }
+      .credit-box p { font-size: 14px; line-height: 1.85; margin: 0; opacity: 0.92; text-wrap: pretty; }
+
       /* ── 五大特色 ── */
       .nyc-features { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
       .nyc-feature {
@@ -84,8 +125,13 @@
       .parent-note p:last-child { margin-bottom: 0; }
 
       /* ── 手機 ── */
+      @media (max-width: 900px) {
+        .camp-info-layout { grid-template-columns: 1fr; gap: 28px; }
+        .camp-poster { max-width: 480px; margin: 0 auto; }
+      }
       @media (max-width: 720px) {
         .nyc-features { grid-template-columns: 1fr; gap: 14px; }
+        .credit-box { padding: 24px 22px; }
         .nyc-feature { padding: 22px 20px; }
         .day-block { padding: 22px 20px; }
         .day-block__title { font-size: 16.5px; }
@@ -120,6 +166,12 @@
             New York College, Culture &amp; City Experience Program<br/>
             走進真實的美國大學與城市生活，把旅行變成升學方向的起點。
           </p>
+          <div class="hero-pill-row">
+            <span class="hero-pill">📅 2027/1/22 – 1/31</span>
+            <span class="hero-pill">👥 7 – 12 年級</span>
+            <span class="hero-pill">📍 美國紐約市</span>
+            <span class="hero-pill">🎓 完成營隊可獲 3 個美國學分</span>
+          </div>
           <div style="display:flex;gap:12px;flex-wrap:wrap;">
             <a href="https://line.me/R/oaMessage/%40nh3707/?%E3%80%90%E6%B4%BB%E5%8B%95%E8%AB%AE%E8%A9%A2%E3%80%91%0A%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%E3%80%8C%E7%B4%90%E7%B4%84%2010%20%E5%A4%A9%E5%8D%87%E5%AD%B8%E6%96%87%E5%8C%96%E6%8E%A2%E7%B4%A2%E7%87%9F%E3%80%8D%EF%BC%8C%E8%AB%8B%E6%8F%90%E4%BE%9B%E6%A2%AF%E6%AC%A1%E6%97%A5%E6%9C%9F%E8%88%87%E8%B2%BB%E7%94%A8%E8%B3%87%E8%A8%8A%E3%80%82%0A%E2%80%94%E2%80%94%0A%EF%BC%88%E4%BE%86%E8%87%AA%E5%AE%98%E7%B6%B2%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%89" target="_blank" rel="noopener" class="btn btn-gold">LINE 諮詢報名</a>
             <a href="#itinerary" class="btn btn-ghost">查看 10 天行程 →</a>
@@ -139,14 +191,41 @@
               <div class="page-hero__stat-label">經典地標與街區</div>
             </div>
             <div>
-              <div class="page-hero__stat-num">1 場</div>
-              <div class="page-hero__stat-label">MLB / NBA / NHL 球賽</div>
+              <div class="page-hero__stat-num">3 學分</div>
+              <div class="page-hero__stat-label">完成營隊可獲美國學分</div>
             </div>
           </div>
         </div>
       </section>
 
       <div class="container inner-body">
+
+        <!-- Key info -->
+        <section style="margin-bottom:72px;">
+          <span class="section-label">INFORMATION</span>
+          <h2 class="section-title">活動資訊</h2>
+          <div class="section-divider"></div>
+
+          <div class="camp-info-layout">
+            <figure class="camp-poster">
+              <img src="/assets/images/nyc-camp-poster.jpg" alt="紐約 10 天升學文化探索營活動海報：走進世界名校與多元文化之都，開啟你的升學視野" />
+            </figure>
+            <div>
+              <ul class="camp-info-list">
+                <li><span>活動日期</span><strong>2027/1/22 – 1/31（寒假出發，共 10 天）</strong></li>
+                <li><span>招生對象</span><strong>7 – 12 年級學生</strong></li>
+                <li><span>活動地點</span><strong>美國紐約市</strong></li>
+                <li><span>營隊費用</span><strong>請洽官方 LINE</strong></li>
+              </ul>
+              <div class="credit-box">
+                <div class="credit-box__label">Academic Credits · 學術加值</div>
+                <div class="credit-box__num">完成營隊可獲 3 個美國學分</div>
+                <p>這不只是一趟旅行，更是一場結合升學啟發 × 文化探索 × 城市體驗 × 學分認證的國際學習旅程。完成本營隊後，學生可獲得 3 個美國學分，讓海外探索不只留下回憶，也成為未來升學歷程中的實質學習成果。</p>
+              </div>
+              <a href="https://line.me/R/oaMessage/%40nh3707/?%E3%80%90%E6%B4%BB%E5%8B%95%E8%AB%AE%E8%A9%A2%E3%80%91%0A%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%E3%80%8C%E7%B4%90%E7%B4%84%2010%20%E5%A4%A9%E5%8D%87%E5%AD%B8%E6%96%87%E5%8C%96%E6%8E%A2%E7%B4%A2%E7%87%9F%E3%80%8D%EF%BC%8C%E8%AB%8B%E6%8F%90%E4%BE%9B%E6%A2%AF%E6%AC%A1%E6%97%A5%E6%9C%9F%E8%88%87%E8%B2%BB%E7%94%A8%E8%B3%87%E8%A8%8A%E3%80%82%0A%E2%80%94%E2%80%94%0A%EF%BC%88%E4%BE%86%E8%87%AA%E5%AE%98%E7%B6%B2%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%89" target="_blank" rel="noopener" class="btn btn-gold">LINE 索取完整行程與學分資訊</a>
+            </div>
+          </div>
+        </section>
 
         <!-- Intro -->
         <section style="margin-bottom:72px;">
@@ -412,8 +491,8 @@
 
         <!-- CTA -->
         <div class="cta-box">
-          <h3>想為孩子報名，或了解梯次與費用？</h3>
-          <p>名額有限，梯次日期與費用資訊請洽日暘顧問，<br/>我們將依學生年級與需求提供完整說明。</p>
+          <h3>想為孩子報名，或了解費用與細節？</h3>
+          <p>2027 寒假 1/22 – 1/31 出發、名額有限，<br/>費用與報名資訊請洽日暘顧問，我們將依學生年級與需求提供完整說明。</p>
           <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
             <a href="https://line.me/R/oaMessage/%40nh3707/?%E3%80%90%E6%B4%BB%E5%8B%95%E8%AB%AE%E8%A9%A2%E3%80%91%0A%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%E3%80%8C%E7%B4%90%E7%B4%84%2010%20%E5%A4%A9%E5%8D%87%E5%AD%B8%E6%96%87%E5%8C%96%E6%8E%A2%E7%B4%A2%E7%87%9F%E3%80%8D%EF%BC%8C%E8%AB%8B%E6%8F%90%E4%BE%9B%E6%A2%AF%E6%AC%A1%E6%97%A5%E6%9C%9F%E8%88%87%E8%B2%BB%E7%94%A8%E8%B3%87%E8%A8%8A%E3%80%82%0A%E2%80%94%E2%80%94%0A%EF%BC%88%E4%BE%86%E8%87%AA%E5%AE%98%E7%B6%B2%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%89" target="_blank" rel="noopener" class="btn btn-gold">LINE 諮詢報名</a>
             <a href="/contact/index.html" class="btn btn-ghost" style="border-color:rgba(255,255,255,0.5);">預約顧問諮詢</a>
