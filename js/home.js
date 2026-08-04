@@ -103,6 +103,8 @@ function toNewsCard(article) {
     const tagText  = tagEl?.textContent?.trim() || "文章";
     const date     = article.querySelector(".article-card__date")?.textContent?.trim() || "";
     const title    = article.querySelector(".article-card__title")?.textContent?.trim() || "";
+    // 保留標題內的詞組斷行 span（中文換行不拆詞）；來源為站內自家列表頁，內容可信
+    const titleHTML = article.querySelector(".article-card__title")?.innerHTML?.trim() || "";
     const excerpt  = article.querySelector(".article-card__excerpt")?.textContent?.trim() || "";
     const img      = article.querySelector("img");
     const imgSrc   = img?.getAttribute("src") || "";
@@ -117,7 +119,7 @@ function toNewsCard(article) {
             <span class="${escape(tagClass)}">${escape(tagText)}</span>
             <span class="news-card__date">${escape(date)}</span>
           </div>
-          <h3 class="news-card__title">${escape(title)}</h3>
+          <h3 class="news-card__title">${titleHTML}</h3>
           <p class="news-card__excerpt">${escape(excerpt)}</p>
           <span class="news-card__readmore">閱讀全文 →</span>
         </div>
