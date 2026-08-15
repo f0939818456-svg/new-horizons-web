@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="2026 IB 成績與熱門科目分析">
+  <defs>
+    <linearGradient id="ibbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3B2520"/>
+      <stop offset="1" stop-color="#4E342E"/>
+    </linearGradient>
+    <linearGradient id="ibbar" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#7D5A50"/>
+      <stop offset="1" stop-color="#B8943F"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#ibbg)"/>
+
+  <!-- Floating dots -->
+  <g opacity="0.18" fill="#F5ECD7">
+    <circle cx="90" cy="80" r="2"/><circle cx="170" cy="40" r="1.5"/>
+    <circle cx="650" cy="60" r="2"/><circle cx="730" cy="140" r="1.5"/>
+    <circle cx="70" cy="520" r="2"/><circle cx="740" cy="500" r="2"/>
+    <circle cx="620" cy="545" r="1.5"/><circle cx="150" cy="560" r="1.5"/>
+  </g>
+
+  <!-- Left: grade distribution bar chart (grades 1–7) -->
+  <g transform="translate(70 130)">
+    <!-- baseline -->
+    <line x1="0" y1="300" x2="330" y2="300" stroke="#B8943F" stroke-width="2" opacity="0.7"/>
+    <!-- bars: IB 單科成績 1–7，中段最多、7 分最少但重點標示 -->
+    <rect x="8"   y="270" width="34" height="30"  rx="6" fill="url(#ibbar)" opacity="0.4"/>
+    <rect x="54"  y="245" width="34" height="55"  rx="6" fill="url(#ibbar)" opacity="0.5"/>
+    <rect x="100" y="190" width="34" height="110" rx="6" fill="url(#ibbar)" opacity="0.6"/>
+    <rect x="146" y="110" width="34" height="190" rx="6" fill="url(#ibbar)" opacity="0.75"/>
+    <rect x="192" y="60"  width="34" height="240" rx="6" fill="url(#ibbar)" opacity="0.9"/>
+    <rect x="238" y="120" width="34" height="180" rx="6" fill="url(#ibbar)" opacity="0.8"/>
+    <rect x="284" y="185" width="34" height="115" rx="6" fill="url(#ibbar)" stroke="#F5ECD7" stroke-width="1.5"/>
+    <!-- grade labels -->
+    <g font-family="-apple-system, 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="800" fill="#F5ECD7" text-anchor="middle" opacity="0.85">
+      <text x="25"  y="326">1</text>
+      <text x="71"  y="326">2</text>
+      <text x="117" y="326">3</text>
+      <text x="163" y="326">4</text>
+      <text x="209" y="326">5</text>
+      <text x="255" y="326">6</text>
+      <text x="301" y="326">7</text>
+    </g>
+    <!-- highlight star on the 7 bar -->
+    <text x="301" y="170" text-anchor="middle" font-family="-apple-system, Arial, sans-serif" font-size="20" fill="#B8943F">★</text>
+    <!-- trend arrow up -->
+    <g stroke="#8FBF8F" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.9">
+      <path d="M 30 90 L 120 40 L 200 66 L 300 6"/>
+      <path d="M 276 10 L 300 6 L 297 30"/>
+    </g>
+  </g>
+
+  <!-- Right: title + stat chips -->
+  <g transform="translate(575 120)">
+    <text x="0" y="0" text-anchor="middle" font-family="-apple-system, 'Helvetica Neue', Arial, sans-serif" font-size="64" font-weight="900" fill="#F5ECD7" letter-spacing="2">IB</text>
+    <text x="0" y="34" text-anchor="middle" font-family="-apple-system, 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="800" fill="#B8943F" letter-spacing="6">2026</text>
+
+    <!-- Stat 1 -->
+    <g transform="translate(0 100)">
+      <rect x="-105" y="-30" width="210" height="56" rx="10" fill="rgba(245,236,215,0.08)" stroke="#B8943F" stroke-width="1.2"/>
+      <text x="0" y="-2" text-anchor="middle" font-family="-apple-system, 'Helvetica Neue', Arial, sans-serif" font-size="21" font-weight="900" fill="#F5ECD7" letter-spacing="0.5">通過率 82.6%</text>
+      <text x="0" y="18" text-anchor="middle" font-family="-apple-system, 'PingFang TC', sans-serif" font-size="11" font-weight="600" fill="#F5ECD7" opacity="0.65" letter-spacing="3">DP 全球通過率上升</text>
+    </g>
+    <!-- Stat 2 -->
+    <g transform="translate(0 186)">
+      <rect x="-105" y="-30" width="210" height="56" rx="10" fill="rgba(245,236,215,0.08)" stroke="#B8943F" stroke-width="1.2"/>
+      <text x="0" y="-2" text-anchor="middle" font-family="-apple-system, 'Helvetica Neue', Arial, sans-serif" font-size="21" font-weight="900" fill="#F5ECD7" letter-spacing="0.5">平均 30.8 分</text>
+      <text x="0" y="18" text-anchor="middle" font-family="-apple-system, 'PingFang TC', sans-serif" font-size="11" font-weight="600" fill="#F5ECD7" opacity="0.65" letter-spacing="3">40+ 約占 10.1%</text>
+    </g>
+    <!-- Stat 3 -->
+    <g transform="translate(0 272)">
+      <rect x="-105" y="-30" width="210" height="56" rx="10" fill="rgba(245,236,215,0.08)" stroke="#B8943F" stroke-width="1.2"/>
+      <text x="0" y="-2" text-anchor="middle" font-family="-apple-system, 'Helvetica Neue', Arial, sans-serif" font-size="21" font-weight="900" fill="#F5ECD7" letter-spacing="0.5">Physics HL 20.5%</text>
+      <text x="0" y="18" text-anchor="middle" font-family="-apple-system, 'PingFang TC', sans-serif" font-size="11" font-weight="600" fill="#F5ECD7" opacity="0.65" letter-spacing="3">熱門科目 7 分率最高</text>
+    </g>
+  </g>
+
+  <!-- Footer text -->
+  <text x="400" y="555" text-anchor="middle" font-family="-apple-system, 'PingFang TC', sans-serif" font-size="22" font-weight="800" fill="#F5ECD7" letter-spacing="3">2026 IB 成績與熱門科目分析</text>
+</svg>
