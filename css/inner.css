@@ -1531,3 +1531,12 @@
   .prep-stage { padding: 20px 18px; }
   .prep-stage__badge { width: 48px; height: 48px; font-size: 12px; }
 }
+
+/* ── 文章頁手機版：縮小橫幅與內文上緣留白 ──
+   各文章頁的 <style> 排在本檔之後，同權重會被蓋掉，
+   因此特意用 section./div. 提高選擇器權重。 */
+@media (max-width: 700px) {
+  section.article-hero { padding: 48px 0 40px; }
+  div.article-body { padding: 40px 0 64px; }
+  .article-wrap > h2:first-child { margin-top: 0; }
+}
